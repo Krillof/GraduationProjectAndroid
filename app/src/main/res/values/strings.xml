@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GraduationProjectAndroid</string>
+
+    <string name="activity_login_header">Создай свой аккаунт</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_checkbox_text">Запомнить</string>
+    <string name="button_text_login_1">Далее</string>
+</resources>
