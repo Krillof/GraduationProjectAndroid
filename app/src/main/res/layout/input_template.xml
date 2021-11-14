@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout
+
+    android:background="@drawable/input_frame_1"
+    android:layout_width="328dp"
+    android:layout_height="43dp"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <EditText
+            android:id="@+id/input_text"
+            android:layout_width="280dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="13dp"
+            android:background="@android:color/transparent"
+            android:gravity="top"
+
+            android:importantForAutofill="no"
+            android:inputType="text|textEmailAddress"
+            android:textAppearance="@style/inputs_hint"
+            tools:ignore="TouchTargetSizeCheck" />
+    </FrameLayout>

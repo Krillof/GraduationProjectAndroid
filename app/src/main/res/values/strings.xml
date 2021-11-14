@@ -6,4 +6,7 @@
     <string name="password">Password</string>
     <string name="login_checkbox_text">Запомнить</string>
     <string name="button_text_login_1">Далее</string>
+    <string name="text_login_2">Мы отправили код на указанную почту. Введите его в поле ниже</string>
+    <string name="code">pG13j78</string>
+    <string name="or_enter_by_header">Или войди через соцсети:</string>
 </resources>
