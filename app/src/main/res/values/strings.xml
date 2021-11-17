@@ -9,4 +9,6 @@
     <string name="text_login_2">Мы отправили код на указанную почту. Введите его в поле ниже</string>
     <string name="code">pG13j78</string>
     <string name="or_enter_by_header">Или войди через соцсети:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
