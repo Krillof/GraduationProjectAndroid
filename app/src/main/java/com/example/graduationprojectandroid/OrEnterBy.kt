@@ -1,6 +1,5 @@
 package com.example.graduationprojectandroid
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,13 +8,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.commit
 
 
-
 /**
  * A simple [Fragment] subclass.
- * Use the [GetCode.newInstance] factory method to
+ * Use the [OrEnterBy.newInstance] factory method to
  * create an instance of this fragment.
  */
-class GetCode(private var listener: () -> Unit) : Fragment(){
+class OrEnterBy(private var listener: () -> Unit) : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,36 +26,24 @@ class GetCode(private var listener: () -> Unit) : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_get_code, container, false)
+        return inflater.inflate(R.layout.fragment_or_enter_by, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragmentManager?.commit {
+
+        fragmentManager?.commit{
             val header: Header = Header.newInstance(
-                getString(R.string.activity_login_header)
+                getString(R.string.or_enter_by_header)
             )
-            add(R.id.header, header)
-
-            val input: Input = Input.newInstance(
-                getString(R.string.code)
-            )
-            add(R.id.input, input)
-
-            val button: Button = Button.newInstance(
-                getString(R.string.button_text_login_1)
-            ) {
-                listener()
-            }
-            add(R.id.button, button)
+            add(R.id.header_or_enter_by, header)
         }
-
     }
 
     companion object {
 
         @JvmStatic
         fun newInstance(listener: () -> Unit) =
-            GetCode(listener)
+            OrEnterBy(listener)
     }
 }

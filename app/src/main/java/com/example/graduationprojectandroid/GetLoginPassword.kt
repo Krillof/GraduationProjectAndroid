@@ -31,6 +31,11 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fragmentManager?.commit {
 
+            val header: Header = Header.newInstance(
+                getString(R.string.activity_login_header)
+            )
+            add(R.id.header, header)
+
             val input1: Input = Input.newInstance(
                 getString(R.string.email)
             )
@@ -40,6 +45,11 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
                 getString(R.string.password)
             )
             add(R.id.input_2, input2)
+
+            val checkBox: CheckBox = CheckBox.newInstance(
+                getString(R.string.login_checkbox_text)
+            )
+            add(R.id.checkbox, checkBox)
 
             val button: Button = Button.newInstance(
                 getString(R.string.button_text_login_1)

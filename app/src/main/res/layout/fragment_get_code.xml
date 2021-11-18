@@ -7,28 +7,20 @@
     tools:context=".GetCode">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
-        android:id="@+id/login_entering_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible">
 
-        <RelativeLayout
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/header"
+
             android:layout_width="328dp"
             android:layout_height="21dp"
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <include
-                android:id="@+id/header_login_2"
-                layout="@layout/header_template"
-
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </RelativeLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
 
         <TextView
