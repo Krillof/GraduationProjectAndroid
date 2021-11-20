@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".OrEnterBy">
 
-    <RelativeLayout android:layout_width="fill_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:background="@drawable/or_enter_by_background"
-        >
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/header_or_enter_by"
@@ -27,35 +27,38 @@
             android:id="@+id/rectangle_1"
             android:layout_width="96dp"
             android:layout_height="56dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="122dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/small_rectangle"
             android:elevation="25dp"
-            />
+            app:layout_constraintStart_toStartOf="@+id/header_or_enter_by"
+            app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
+
 
         <View
             android:id="@+id/rectangle_2"
             android:layout_width="96dp"
             android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
             android:layout_toEndOf="@id/rectangle_1"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="122dp"
             android:background="@drawable/small_rectangle"
             android:elevation="25dp"
-            />
+            app:layout_constraintStart_toEndOf="@+id/rectangle_3"
+            app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
 
         <View
             android:id="@+id/rectangle_3"
             android:layout_width="96dp"
             android:layout_height="56dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
             android:layout_toEndOf="@id/rectangle_2"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="122dp"
-
             android:background="@drawable/small_rectangle"
-            android:elevation="25dp" />
+            android:elevation="25dp"
+            app:layout_constraintStart_toEndOf="@+id/rectangle_1"
+            app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

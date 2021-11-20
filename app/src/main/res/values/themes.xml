@@ -48,6 +48,26 @@
 
     </style>
 
+    <style name="small_text_style">
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #444444
+        </item>
+    </style>
+
+    <style name="bar_text">
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
+
     <style name="white_text">
 
         <item name="android:textSize">
@@ -58,5 +78,25 @@
             #FFFFFF
         </item>
 
+    </style>
+
+    <style name="main_pages_names_on">
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+    </style>
+
+    <style name="main_pages_names_off">
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #A9B5F4
+        </item>
     </style>
 </resources>

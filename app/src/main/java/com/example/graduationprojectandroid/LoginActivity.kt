@@ -1,25 +1,22 @@
 package com.example.graduationprojectandroid
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.*
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.Group
-import androidx.core.view.isVisible
 import androidx.fragment.app.commit
-import androidx.fragment.app.replace
+
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        val context = this
         supportFragmentManager.commit {
             val get_login_password = GetLoginPassword() {
                 supportFragmentManager.commit {
                     val get_code = GetCode() {
-                        TODO("After code code")
+                        startActivity(Intent(context, MainPage::class.java))
+                        finish()
                     }
                     replace(R.id.main_login_fragment, get_code)
                 }

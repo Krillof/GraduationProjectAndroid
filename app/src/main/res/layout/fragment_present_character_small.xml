@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PresentCharacterSmall">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/header"
+
+        android:layout_width="328dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+
+        />
+
+    <View
+        android:id="@+id/character_rectangle"
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="61dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/tmp_square_present_character_small"
+        />
+
+    <TextView
+        android:id="@+id/health_text_header"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="82dp"
+        android:layout_marginStart="196dp"
+
+        android:text="@string/health"
+        android:textAppearance="@style/small_text_style"
+        />
+
+    <View
+        android:id="@+id/health_bar_background"
+
+        android:layout_width="156dp"
+        android:layout_height="18dp"
+
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="188dp"
+
+        android:background="@drawable/health_bar_background"
+        />
+
+    <View
+        android:id="@+id/health_bar_foreground"
+
+        android:layout_width="120dp"
+        android:layout_height="18dp"
+
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="188dp"
+
+        android:background="@drawable/health_bar_foreground"
+        />
+
+    <TextView
+        android:id="@+id/health_text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="101dp"
+        android:layout_marginStart="248dp"
+
+        android:text="85/100"
+        android:textAppearance="@style/bar_text"
+        />
+
+    <TextView
+        android:id="@+id/exp_text_header"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="122dp"
+        android:layout_marginStart="196dp"
+
+        android:text="@string/experience"
+        android:textAppearance="@style/small_text_style"
+        />
+
+    <View
+        android:id="@+id/exp_bar_background"
+
+        android:layout_width="156dp"
+        android:layout_height="18dp"
+
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="188dp"
+
+        android:background="@drawable/exp_bar_background"
+        />
+
+    <View
+        android:id="@+id/exp_bar_foreground"
+
+        android:layout_width="86dp"
+        android:layout_height="18dp"
+
+        android:layout_marginTop="140dp"
+        android:layout_marginStart="188dp"
+
+        android:background="@drawable/exp_bar_foreground"
+        />
+
+    <TextView
+        android:id="@+id/exp_text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="141dp"
+        android:layout_marginStart="248dp"
+
+        android:text="248/465"
+        android:textAppearance="@style/bar_text"
+        />
+
+    <TextView
+        android:id="@+id/level_text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="184dp"
+        android:layout_marginStart="188dp"
+
+        android:text="Уровень 13"
+        android:textAppearance="@style/text_style"
+        />
+
+</FrameLayout>
