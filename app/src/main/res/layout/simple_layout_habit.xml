@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/another_header"
+        style="@style/header_text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="44dp"
+        />
+
+    <View
+        android:id="@+id/done_checkbox"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+        android:background="@drawable/tick_in_circle"
+        />
+
+    <View
+        android:id="@+id/undone_checkbox"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+        android:layout_marginTop="28dp"
+
+        android:background="@drawable/minus_in_circle"
+        />
+
+    <TextView
+        android:id="@+id/text"
+        style="@style/text_style"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="25dp"
+
+
+        />
+
+</FrameLayout>

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.21302083333333333" />
         <entry key="..\:/Coding/ANDROID_STUDIO/GraduationProjectAndroid/app/src/main/res/drawable/button_frame.xml" value="0.4036458333333333" />
         <entry key="..\:/Coding/ANDROID_STUDIO/GraduationProjectAndroid/app/src/main/res/drawable/input_frame_1.xml" value="1.925" />
         <entry key="..\:/Coding/ANDROID_STUDIO/GraduationProjectAndroid/app/src/main/res/drawable/square_unchecked.xml" value="0.23541666666666666" />
@@ -38,6 +39,8 @@
         <entry key="..\:/GitHubRepos/GraduationProjectAndroid/app/src/main/res/layout/underactivity_login_1.xml" value="0.67" />
         <entry key="..\:/GitHubRepos/GraduationProjectAndroid/app/src/main/res/layout/underactivity_login_2.xml" value="0.3875" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/drawable/bottom_menu_character_off.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/bottom_menu_character_on.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/bottom_menu_habits.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/bottom_menu_rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/brandico_fa.xml" value="0.371875" />
@@ -48,24 +51,39 @@
         <entry key="app/src/main/res/drawable/health_bar_background.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/health_bar_foreground.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/drawable/lists_rectangle.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/minus_in_circle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/or_enter_by_background.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/plus.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/small_circle.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/tick_in_circle.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/tmp_circle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/tmp_square_present_character_small.xml" value="0.371875" />
+        <entry key="app/src/main/res/drawable/top_menu.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/top_menu_rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/layout-v31/fragment_or_enter_by.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_creating_character.xml" value="0.3546195652173913" />
+        <entry key="app/src/main/res/layout/activity_creating_habit.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/activity_habits.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
         <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_bottom_menu.xml" value="0.8063851699279093" />
+        <entry key="app/src/main/res/layout/fragment_button.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_check_box.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_creating_habit.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_get_code.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/fragment_get_login_password.xml" value="0.3546195652173913" />
-        <entry key="app/src/main/res/layout/fragment_habits_list.xml" value="0.3546195652173913" />
+        <entry key="app/src/main/res/layout/fragment_habits_list.xml" value="0.40948275862068967" />
+        <entry key="app/src/main/res/layout/fragment_header.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_input.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_one_habit.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/fragment_or_enter_by.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/fragment_present_character1.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/fragment_present_character_in_habits.xml" value="0.3546195652173913" />
-        <entry key="app/src/main/res/layout/fragment_present_character_small.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_present_character_small.xml" value="0.75" />
         <entry key="app/src/main/res/layout/fragment_tasks_list.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/simple_layout_habit.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.371875" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2140625" />
         <entry key="app/src/main/res/xml/network_security_config.xml" value="0.1" />

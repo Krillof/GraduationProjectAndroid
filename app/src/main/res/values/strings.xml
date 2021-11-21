@@ -16,4 +16,6 @@
     <string name="health">Здоровье</string>
     <string name="experience">Опыт</string>
     <string name="level">Уровень</string>
+    <string name="save">Сохранить</string>
+    <string name="creating_habit">Создание привычки</string>
 </resources>

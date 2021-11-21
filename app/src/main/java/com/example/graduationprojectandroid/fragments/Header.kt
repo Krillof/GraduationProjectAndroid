@@ -1,4 +1,4 @@
-package com.example.graduationprojectandroid
+package com.example.graduationprojectandroid.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,17 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.commit
+import com.example.graduationprojectandroid.R
 
 
 private const val ARG_PARAM_TEXT = "text"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Button.newInstance] factory method to
+ * Use the [Header.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Button(private var listener: () -> Unit) : Fragment() {
+class Header : Fragment() {
+    // TODO: Rename and change types of parameters
     private var text: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,23 +32,20 @@ class Button(private var listener: () -> Unit) : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_button, container, false)
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_header, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button_text = view.findViewById<TextView>(R.id.button_text)
-        button_text.text = text
-        val button_frame = view.findViewById<ConstraintLayout>(R.id.button_frame)
-        button_frame.setOnClickListener{
-            listener()
-        }
+        val header_text = view.findViewById<TextView>(R.id.header_text)
+        header_text.text = text
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(text: String, listener: () -> Unit) =
-            Button(listener).apply{
+        fun newInstance(text: String) =
+            Header().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_TEXT, text)
                 }

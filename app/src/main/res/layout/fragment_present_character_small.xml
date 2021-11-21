@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PresentCharacterSmall">
+    tools:context=".fragments.for_main_page.PresentCharacterSmall">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/header"
@@ -134,6 +134,29 @@
         android:layout_marginStart="188dp"
 
         android:text="Уровень 13"
+        android:textAppearance="@style/text_style"
+        />
+
+    <View
+        android:layout_width="18dp"
+        android:layout_height="13dp"
+        android:layout_marginStart="290dp"
+        android:layout_marginTop="188dp"
+
+        android:background="@drawable/money"
+
+        />
+
+    <TextView
+        android:id="@+id/money_text"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="311dp"
+        android:layout_marginTop="184dp"
+
+        android:text="129"
         android:textAppearance="@style/text_style"
         />
 

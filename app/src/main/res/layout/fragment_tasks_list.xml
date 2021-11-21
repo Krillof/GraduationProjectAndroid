@@ -3,12 +3,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TasksList">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.for_main_page.TasksList">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <View
+        android:id="@+id/background_rectangle"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/lists_rectangle"
+        />
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+        android:layout_gravity="end"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+
+        android:background="@drawable/small_orange_circle"
+        />
+
+    <View
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+
+        android:layout_gravity="end"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="19.98dp"
+
+        android:background="@drawable/plus"
+        />
+
+    <View
+        android:id="@+id/add_button"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+
+        android:layout_gravity="end"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tasks_list_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="50dp"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tasks_list"
+            android:divider="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 </FrameLayout>

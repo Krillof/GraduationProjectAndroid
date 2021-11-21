@@ -1,4 +1,4 @@
-package com.example.graduationprojectandroid
+package com.example.graduationprojectandroid.fragments.for_login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.commit
+import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.fragments.Header
 
 
 /**

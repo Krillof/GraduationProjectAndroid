@@ -16,16 +16,19 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
         <activity
-            android:name=".MainPage"
+            android:name=".activities.CreatingHabit"
             android:exported="true" />
         <activity
-            android:name=".CreatingCharacter"
+            android:name=".activities.MainPage"
             android:exported="true" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.CreatingCharacter"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

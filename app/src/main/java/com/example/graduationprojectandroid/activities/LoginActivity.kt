@@ -1,9 +1,13 @@
-package com.example.graduationprojectandroid
+package com.example.graduationprojectandroid.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.commit
+import com.example.graduationprojectandroid.fragments.for_login.GetCode
+import com.example.graduationprojectandroid.fragments.for_login.GetLoginPassword
+import com.example.graduationprojectandroid.fragments.for_login.OrEnterBy
+import com.example.graduationprojectandroid.R
 
 
 class LoginActivity : AppCompatActivity() {

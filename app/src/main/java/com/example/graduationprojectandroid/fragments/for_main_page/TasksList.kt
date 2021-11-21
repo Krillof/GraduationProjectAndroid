@@ -1,18 +1,19 @@
-package com.example.graduationprojectandroid
+package com.example.graduationprojectandroid.fragments.for_main_page
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
+import com.example.graduationprojectandroid.R
 
 /**
  * A simple [Fragment] subclass.
- * Use the [HabitsList.newInstance] factory method to
+ * Use the [TasksList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HabitsList : Fragment() {
+class TasksList : Fragment() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,18 +25,12 @@ class HabitsList : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_habits_list, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
+        return inflater.inflate(R.layout.fragment_tasks_list, container, false)
     }
 
     companion object {
         @JvmStatic
         fun newInstance() =
-            HabitsList()
+            TasksList()
     }
 }

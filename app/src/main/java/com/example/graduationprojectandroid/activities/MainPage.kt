@@ -1,11 +1,14 @@
-package com.example.graduationprojectandroid
+package com.example.graduationprojectandroid.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.fragment.app.FragmentContainerView
+import com.example.graduationprojectandroid.fragments.for_main_page.HabitsList
+import com.example.graduationprojectandroid.fragments.for_main_page.PresentCharacterSmall
+import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.fragments.for_main_page.TasksList
 
 class MainPage : AppCompatActivity() {
 
@@ -14,8 +17,6 @@ class MainPage : AppCompatActivity() {
         tasks,
         character
     }
-
-    private val current_page: Pages = Pages.habits
 
 
     //-------------------------------------------
@@ -54,15 +55,19 @@ class MainPage : AppCompatActivity() {
             context.turnPageOnBottomMenuTo(Pages.habits)
 
             val presentCharacterSmall
-                = PresentCharacterSmall.newInstance(login , 85, 248, 13)
+                = PresentCharacterSmall.newInstance(login, 85, 248, 13)
 
             val habitsList
                 = HabitsList.newInstance()
+            {
+                startActivity(Intent(context, CreatingHabit::class.java))
+                finish()
+            }
 
 
             supportFragmentManager.beginTransaction()
-                .add(R.id.first_fragment, presentCharacterSmall)
-                .add(R.id.second_fragment, habitsList)
+                .replace(R.id.first_fragment, presentCharacterSmall)
+                .replace(R.id.second_fragment, habitsList)
                 .commit()
 
         }
@@ -71,15 +76,15 @@ class MainPage : AppCompatActivity() {
             context.turnPageOnBottomMenuTo(Pages.tasks)
 
             val presentCharacterSmall
-                    = PresentCharacterSmall.newInstance(login , 85, 248, 13)
+                    = PresentCharacterSmall.newInstance(login, 85, 248, 13)
 
             val tasksList
                     = TasksList.newInstance()
 
 
             supportFragmentManager.beginTransaction()
-                .add(R.id.first_fragment, presentCharacterSmall)
-                .add(R.id.second_fragment, tasksList)
+                .replace(R.id.first_fragment, presentCharacterSmall)
+                .replace(R.id.second_fragment, tasksList)
                 .commit()
 
         }
