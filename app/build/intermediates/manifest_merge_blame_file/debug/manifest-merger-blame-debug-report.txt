@@ -1,0 +1,83 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.graduationprojectandroid"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="23"
+8-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:6:5-67
+11-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:6:22-64
+12
+13    <application
+13-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:8:5-39:19
+14        android:allowBackup="true"
+14-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:9:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] /home/krilof/.gradle/caches/transforms-3/22fc58c1aba25a38624b19fcaec4a163/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:extractNativeLibs="false"
+18        android:icon="@mipmap/ic_launcher"
+18-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:10:9-43
+19        android:label="@string/app_name"
+19-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:11:9-41
+20        android:networkSecurityConfig="@xml/network_security_config"
+20-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:12:9-69
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:13:9-54
+22        android:supportsRtl="true"
+22-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:14:9-35
+23        android:testOnly="true"
+24        android:theme="@style/Theme.GraduationProjectAndroid"
+24-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:15:9-62
+25        android:usesCleartextTraffic="true" >
+25-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:16:9-44
+26        <activity
+26-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:18:9-20:39
+27            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
+27-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:19:13-53
+28            android:exported="true" />
+28-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:20:13-36
+29        <activity
+29-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:21:9-23:39
+30            android:name="com.example.graduationprojectandroid.activities.MainPage"
+30-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:22:13-48
+31            android:exported="true" />
+31-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:23:13-36
+32        <activity
+32-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:24:9-26:39
+33            android:name="com.example.graduationprojectandroid.activities.CreatingCharacter"
+33-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:25:13-57
+34            android:exported="true" />
+34-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:26:13-36
+35        <activity
+35-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:27:9-29:39
+36            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
+36-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:28:13-53
+37            android:exported="true" />
+37-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:29:13-36
+38        <activity
+38-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:30:9-38:20
+39            android:name="com.example.graduationprojectandroid.activities.MainActivity"
+39-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:31:13-52
+40            android:exported="true" >
+40-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:32:13-36
+41            <intent-filter>
+41-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:33:13-37:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:34:17-69
+42-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:34:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:36:17-77
+44-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:36:27-74
+45            </intent-filter>
+46        </activity>
+47    </application>
+48
+49</manifest>

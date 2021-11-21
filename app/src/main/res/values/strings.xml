@@ -18,4 +18,5 @@
     <string name="level">Уровень</string>
     <string name="save">Сохранить</string>
     <string name="creating_habit">Создание привычки</string>
+    <string name="habit_name">Название привычки</string>
 </resources>

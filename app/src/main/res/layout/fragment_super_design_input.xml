@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SuperDesignInput">
+
+    <View
+    android:id="@+id/white_rectangle"
+    android:layout_width="328dp"
+    android:layout_height="46dp"
+    android:background="@drawable/white_rectangle"
+    />
+
+
+    <TextView
+        android:id="@+id/hiding_text"
+
+        style="@style/text_style"
+        android:layout_width="307dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="14.5dp"
+        android:text="@string/hello_blank_fragment" />
+
+    <TextView
+        android:id="@+id/small_header_text"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginStart="16dp"
+        style="@style/small_gray_header"
+        android:text="@string/hello_blank_fragment" />
+
+    <EditText
+        android:id="@+id/input_text"
+        android:lines="1"
+        android:background="@android:color/transparent"
+        android:visibility="gone"
+        style="@style/text_style"
+        android:layout_width="match_parent"
+        android:layout_height="17dp"
+
+        android:layout_marginTop="23dp"
+        android:layout_marginStart="16dp"
+        />
+
+</FrameLayout>

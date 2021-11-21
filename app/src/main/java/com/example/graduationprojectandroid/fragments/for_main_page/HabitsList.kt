@@ -32,6 +32,11 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val add_button = view.findViewById<View>(R.id.add_button)
+        add_button.setOnClickListener {
+            listener()
+        }
+
 
         //TODO: Make normal habits load
         //--------------------------------------------
