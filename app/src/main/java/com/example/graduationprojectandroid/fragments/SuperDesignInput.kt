@@ -40,11 +40,23 @@ class SuperDesignInput : Fragment() {
         val header_text: TextView = view.findViewById(R.id.small_header_text)
         val white_rectangle: View = view.findViewById(R.id.white_rectangle)
         val input_text: EditText = view.findViewById(R.id.input_text)
+
+        hiding_text.text = header
+        header_text.text = header
+
         white_rectangle.setOnClickListener{
             hiding_text.visibility = View.GONE
             header_text.visibility = View.VISIBLE
             input_text.visibility = View.VISIBLE
             input_text.requestFocus()
+        }
+
+        input_text.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus && input_text.text.toString() == ""){
+                hiding_text.visibility = View.VISIBLE
+                header_text.visibility = View.GONE
+                input_text.visibility = View.GONE
+            }
         }
     }
 
@@ -53,21 +65,12 @@ class SuperDesignInput : Fragment() {
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SuperDesignInput.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(header: String) =
             SuperDesignInput().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_HEADER, header)
-                }
+            }
             }
     }
 }

@@ -39,6 +39,9 @@
         <entry key="..\:/GitHubRepos/GraduationProjectAndroid/app/src/main/res/layout/underactivity_login_1.xml" value="0.67" />
         <entry key="..\:/GitHubRepos/GraduationProjectAndroid/app/src/main/res/layout/underactivity_login_2.xml" value="0.3875" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/drawable/big_white_rectangle.xml" value="0.3779487179487179" />
+        <entry key="app/src/main/res/drawable/blue_normal_rectangle_for_checkbox.xml" value="0.2140625" />
+        <entry key="app/src/main/res/drawable/blue_normal_rectangle_for_checkbox_off.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/bottom_menu_character_off.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/bottom_menu_character_on.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/bottom_menu_habits.xml" value="0.371875" />
@@ -65,15 +68,18 @@
         <entry key="app/src/main/res/drawable/white_rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/layout-v31/fragment_or_enter_by.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_creating_character.xml" value="0.3546195652173913" />
-        <entry key="app/src/main/res/layout/activity_creating_habit.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/activity_creating_habit.xml" value="0.47463516330785266" />
         <entry key="app/src/main/res/layout/activity_habits.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
         <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_big_rectangle_check_box.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_bottom_menu.xml" value="0.8063851699279093" />
         <entry key="app/src/main/res/layout/fragment_button.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_check_box.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_creating_habit.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/fragment_description_input.xml" value="0.3066123188405797" />
+        <entry key="app/src/main/res/layout/fragment_description_super_design_input.xml" value="0.3066123188405797" />
         <entry key="app/src/main/res/layout/fragment_get_code.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/fragment_get_login_password.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/fragment_habits_list.xml" value="0.40948275862068967" />

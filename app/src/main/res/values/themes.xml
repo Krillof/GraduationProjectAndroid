@@ -69,7 +69,7 @@
         </item>
     </style>
 
-    <style name="white_text">
+    <style name="big_white_text">
 
         <item name="android:textSize">
             18sp
@@ -81,7 +81,7 @@
 
     </style>
 
-    <style name="main_pages_names_on">
+    <style name="small_white_text">
         <item name="android:textSize">
             10sp
         </item>

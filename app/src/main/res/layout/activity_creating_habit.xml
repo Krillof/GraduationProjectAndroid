@@ -27,6 +27,18 @@
         android:background="@drawable/close_in_circle"
         />
 
+    <View
+        android:id="@+id/exit_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        />
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/header"
 
@@ -55,16 +67,335 @@
 
         />
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/description_super_design_input"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="120dp"
+        android:layout_marginStart="16dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+
+        />
+
+
+
+    <View
+        android:id="@+id/good_habit_checkbox_pic"
+        android:layout_height="24dp"
+        android:layout_width="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="272dp"
+        android:layout_marginStart="16dp"
+
+        android:background="@drawable/good_habit_off"
+
+        />
+
+    <View
+        android:id="@+id/good_habit_checkbox_touch_area"
+        android:layout_height="24dp"
+        android:layout_width="match_parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="272dp"
+        android:layout_marginStart="16dp"
+
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        style="@style/text_style"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="274dp"
+        android:layout_marginStart="56dp"
+
+        android:text="@string/good_habit"
+        />
+
+
+
+    <View
+        android:id="@+id/bad_habit_checkbox_pic"
+        android:layout_height="24dp"
+        android:layout_width="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="304dp"
+        android:layout_marginStart="16dp"
+
+        android:background="@drawable/bad_habit_off"
+
+        />
+
+    <View
+        android:id="@+id/bad_habit_checkbox_touch_area"
+        android:layout_height="24dp"
+        android:layout_width="match_parent"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="304dp"
+        android:layout_marginStart="16dp"
+
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        style="@style/text_style"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="306dp"
+        android:layout_marginStart="56dp"
+
+        android:text="@string/bad_habit"
+        />
+
+
+
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            style="@style/text_style"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="352dp"
+            android:layout_marginStart="16dp"
+
+            android:text="@string/difficulty"
+            />
+
+    <View
+        android:id="@+id/simple_difficulty_radiobutton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="377dp"
+        android:layout_marginStart="16dp"
+
+        android:background="@drawable/simple_off"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/simple"
+        style="@style/small_text_style"
+
+        app:layout_constraintTop_toBottomOf="@+id/simple_difficulty_radiobutton"
+        app:layout_constraintStart_toStartOf="@+id/simple_difficulty_radiobutton"
+        app:layout_constraintEnd_toEndOf="@+id/simple_difficulty_radiobutton"
+        android:layout_marginTop="6dp"
+
+        />
+
+    <View
+        android:id="@+id/easy_difficulty_radiobutton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="377dp"
+        android:layout_marginStart="107dp"
+
+        android:background="@drawable/easy_off"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/easy"
+        style="@style/small_text_style"
+
+        app:layout_constraintTop_toBottomOf="@+id/easy_difficulty_radiobutton"
+        app:layout_constraintStart_toStartOf="@+id/easy_difficulty_radiobutton"
+        app:layout_constraintEnd_toEndOf="@+id/easy_difficulty_radiobutton"
+        android:layout_marginTop="6dp"
+
+        />
+
+    <View
+        android:id="@+id/normal_difficulty_radiobutton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="377dp"
+        android:layout_marginStart="198dp"
+
+        android:background="@drawable/normal_off"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/normal"
+        style="@style/small_text_style"
+
+        app:layout_constraintTop_toBottomOf="@+id/normal_difficulty_radiobutton"
+        app:layout_constraintStart_toStartOf="@+id/normal_difficulty_radiobutton"
+        app:layout_constraintEnd_toEndOf="@+id/normal_difficulty_radiobutton"
+        android:layout_marginTop="6dp"
+
+        />
+
+    <View
+        android:id="@+id/hard_difficulty_radiobutton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="377dp"
+        android:layout_marginStart="288dp"
+
+        android:background="@drawable/hard_off"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/hard"
+        style="@style/small_text_style"
+
+        app:layout_constraintTop_toBottomOf="@+id/hard_difficulty_radiobutton"
+        app:layout_constraintStart_toStartOf="@+id/hard_difficulty_radiobutton"
+        app:layout_constraintEnd_toEndOf="@+id/hard_difficulty_radiobutton"
+        android:layout_marginTop="6dp"
+
+        />
+
+
+
+
+
+
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        style="@style/text_style"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="477dp"
+        android:layout_marginStart="16dp"
+
+        android:text="@string/how_often_to_do"
+        />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/everyday_checkbox"
+
+
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="506dp"
+        android:layout_marginStart="16dp"
+
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/everyweek_checkbox"
+
+
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="506dp"
+        android:layout_marginStart="132dp"
+
+        />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/everymonth_checkbox"
+
+
+        android:layout_width="96dp"
+        android:layout_height="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="506dp"
+        android:layout_marginStart="248dp"
+
+        />
+
+
+
+
+
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/checkbox"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="555dp"
+        android:layout_marginStart="16dp"
+
+        />
+
 
     <androidx.fragment.app.FragmentContainerView
 
         android:id="@+id/button_confirm"
 
-        android:layout_width="match_parent"
+        android:layout_width="328dp"
         android:layout_height="48dp"
 
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"
 
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
         />
 

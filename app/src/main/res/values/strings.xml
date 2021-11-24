@@ -19,4 +19,17 @@
     <string name="save">Сохранить</string>
     <string name="creating_habit">Создание привычки</string>
     <string name="habit_name">Название привычки</string>
+    <string name="notes">Заметки</string>
+    <string name="good_habit">Хорошая привычка</string>
+    <string name="bad_habit">Вредная привычка</string>
+    <string name="difficulty">Сложность</string>
+    <string name="mark_as_done">Отметить, как выполненную</string>
+    <string name="how_often_to_do">Как часто выполнять?</string>
+    <string name="everyday">Ежедневно</string>
+    <string name="everyweek">Еженедельно</string>
+    <string name="everymonth">Ежемесячно</string>
+    <string name="simple">Просто</string>
+    <string name="easy">Легко</string>
+    <string name="normal">Нормально</string>
+    <string name="hard">Сложно</string>
 </resources>
