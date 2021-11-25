@@ -1,26 +1,48 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.graduationprojectandroid.R
 
-class HabitsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        TODO("Not yet implemented")
-    }
+const val resource: Int = R.layout.simple_layout_habit
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        TODO("Not yet implemented")
-    }
+class HabitsAdapter(
+    private var context: Context,
+    private var habits_arr: ArrayList<Habit>)
 
-    override fun getItemCount(): Int {
-        TODO("Not yet implemented")
-    }
+    : RecyclerView.Adapter<HabitsAdapter.HabitView>()
+{
+    class HabitView(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var header: TextView? = null
+        var description: TextView? = null
+        var checkbox_done: View? = null
+        var checkbox_undone: View? = null
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        init{
-
+        init {
+            header = itemView.findViewById(R.id.another_header)
+            description = itemView.findViewById(R.id.text)
+            checkbox_done = itemView.findViewById(R.id.done_checkbox)
+            checkbox_undone = itemView.findViewById(R.id.undone_checkbox)
         }
-
     }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HabitView {
+        return HabitView(
+            LayoutInflater.from(context).inflate(resource, parent, false )
+        )
+    }
+
+    override fun getItemCount(): Int = habits_arr.size
+
+    override fun onBindViewHolder(holder: HabitView, position: Int) {
+        holder.header?.text = habits_arr[position].header
+        holder.description?.text = habits_arr[position].text
+    }
+
 }

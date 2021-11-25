@@ -5,8 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.HabitsAdapter
 
 
 /**
@@ -41,6 +45,7 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
         //TODO: Make normal habits load
         //--------------------------------------------
         //TMP
+
         val habit1 = Habit(
             1,
             "Бегать по утрам",
@@ -61,11 +66,19 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
             0
         )
+        val habits: ArrayList<Habit> = ArrayList()
+        habits.add(habit1)
+        habits.add(habit2)
+        habits.add(habit3)
         //TMP
         //----------------------------------------------
 
-        //val habitsListAdapter = HabitsAdapter(view.context, listOf(habit1, habit2, habit3))
-        //val habitsListLayout = view.findViewById<ConstraintLayout>(R.id.habits_list_layout)
+        val habitsListAdapter = HabitsAdapter(view.context, habits)
+        val habitsListView = view.findViewById<RecyclerView>(R.id.habits_list)
+        val habitsListViewLayout = view.findViewById<ConstraintLayout>(R.id.habits_list_layout)
+
+        habitsListView.layoutManager = LinearLayoutManager(habitsListViewLayout.context)
+        habitsListView.adapter = habitsListAdapter
 
 
     }
