@@ -1,5 +1,6 @@
 package com.example.graduationprojectandroid.fragments
 
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -69,6 +70,8 @@ class DescriptionSuperDesignInput : Fragment() {
         val header_text: TextView = view.findViewById(R.id.small_header_text)
         val white_rectangle: View = view.findViewById(R.id.white_rectangle)
         val input_text: EditText = view.findViewById(R.id.input_text)
+
+        val context = this.view
 
         hiding_text.text = header
         header_text.text = header

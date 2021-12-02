@@ -3,8 +3,10 @@ package com.example.graduationprojectandroid.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
+import androidx.fragment.app.FragmentContainerView
 import com.example.graduationprojectandroid.fragments.for_main_page.HabitsList
 import com.example.graduationprojectandroid.fragments.for_main_page.PresentCharacterSmall
 import com.example.graduationprojectandroid.R
@@ -69,7 +71,6 @@ class MainPage : AppCompatActivity() {
                 .replace(R.id.first_fragment, presentCharacterSmall)
                 .replace(R.id.second_fragment, habitsList)
                 .commit()
-
         }
 
         tasks_menu_choice.setOnClickListener {
@@ -79,7 +80,9 @@ class MainPage : AppCompatActivity() {
                     = PresentCharacterSmall.newInstance(login, 85, 248, 13)
 
             val tasksList
-                    = TasksList.newInstance()
+                    = TasksList.newInstance(){
+
+            }
 
 
             supportFragmentManager.beginTransaction()

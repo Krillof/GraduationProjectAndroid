@@ -1864,6 +1864,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
+drawable selection_band_overlay
 drawable simple_off
 drawable simple_on
 drawable small_orange_circle
@@ -2114,7 +2115,6 @@ id grouping
 id groups
 id guideline
 id habits_list
-id habits_list_layout
 id habits_menu_choice
 id habits_menu_choice_click_rectangle
 id hard_difficulty_radiobutton
@@ -2532,7 +2532,6 @@ layout fragment_get_login_password
 layout fragment_habits_list
 layout fragment_header
 layout fragment_input
-layout fragment_one_habit
 layout fragment_or_enter_by
 layout fragment_present_character_small
 layout fragment_super_design_input
