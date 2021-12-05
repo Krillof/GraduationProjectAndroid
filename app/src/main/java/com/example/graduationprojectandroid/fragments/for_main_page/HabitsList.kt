@@ -1,23 +1,15 @@
 package com.example.graduationprojectandroid.fragments.for_main_page
 
-import android.content.Context
+
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.widget.NestedScrollView
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentHabitsListBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.HabitsAdapter
-import java.lang.Exception
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
+
 
 
 /**
@@ -25,9 +17,11 @@ import java.lang.Exception
  * Use the [HabitsList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HabitsList(private var listener: () -> Unit) : Fragment() {
+class HabitsList(
+    private var listener: () -> Unit
+) : Fragment() {
 
-    lateinit var binding: FragmentHabitsListBinding
+    private lateinit var binding: FragmentHabitsListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,8 +52,9 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
 
         habitsList.layoutManager = LinearLayoutManager(habitsList.context)
         habitsList.adapter = habitsListAdapter
-
     }
+
+
 
     private fun getHabits() : ArrayList<Habit>{
         val habits: ArrayList<Habit> = ArrayList()
@@ -71,124 +66,124 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
             1,
             "Бегать по утрам",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit2 = Habit(
             2,
             "Учить английский",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit3 = Habit(
             3,
             "Бросить пить",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
         val habit4 = Habit(
             4,
             "Точно не йога",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit5 = Habit(
             5,
             "Учить немецкий",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit6 = Habit(
             6,
             "Бросить курить",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit7 = Habit(
             7,
             "Спать",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit8 = Habit(
             8,
             "Учить французский",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit9 = Habit(
             9,
             "Бросить есть сладкое",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit10 = Habit(
-            1,
+            10,
             "2 Бегать по утрам",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit11 = Habit(
-            2,
+            11,
             "2 Учить английский",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit12 = Habit(
-            3,
+            12,
             "2 Бросить пить",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
         val habit13 = Habit(
-            4,
+            13,
             "2 Точно не йога",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit14 = Habit(
-            5,
+            14,
             "2 Учить немецкий",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit15 = Habit(
-            6,
+            15,
             "2 Бросить курить",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit16 = Habit(
-            7,
+            16,
             "2 Спать",
             "С 6:30 до 7:00, не забыть разминку перед бегом и после",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit17 = Habit(
-            8,
+            17,
             "2 Учить французский",
             "По средам урок в 18:00",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
         val habit18 = Habit(
-            9,
+            18,
             "2 Бросить есть сладкое",
             "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
-            0
+            HabitDoneStates.UNKNOWN
         )
 
 
@@ -217,19 +212,35 @@ class HabitsList(private var listener: () -> Unit) : Fragment() {
             -1,
             "",
             "",
-            0,
-            true
+            HabitDoneStates.UNKNOWN,
+            View.INVISIBLE
         )
         val filler_habit2 = Habit(
             -1,
             "",
             "",
-            0,
-            true
+            HabitDoneStates.UNKNOWN,
+            View.INVISIBLE
+        )
+        val filler_habit3 = Habit(
+            -1,
+            "",
+            "",
+            HabitDoneStates.UNKNOWN,
+            View.INVISIBLE
+        )
+        val filler_habit4 = Habit(
+            -1,
+            "",
+            "",
+            HabitDoneStates.UNKNOWN,
+            View.INVISIBLE
         )
 
         habits.add(filler_habit1)
         habits.add(filler_habit2)
+        habits.add(filler_habit3)
+        habits.add(filler_habit4)
         return habits
     }
 

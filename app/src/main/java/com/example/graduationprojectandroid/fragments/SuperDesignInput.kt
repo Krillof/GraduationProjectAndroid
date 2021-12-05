@@ -1,13 +1,20 @@
 package com.example.graduationprojectandroid.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.example.graduationprojectandroid.R
+import androidx.core.content.ContextCompat.getSystemService
+
+
+
 
 private const val ARG_PARAM_HEADER = "header"
 
@@ -18,6 +25,8 @@ private const val ARG_PARAM_HEADER = "header"
  */
 class SuperDesignInput : Fragment() {
     private var header: String? = null
+
+    var input_text: EditText? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +48,7 @@ class SuperDesignInput : Fragment() {
         val hiding_text: TextView = view.findViewById(R.id.hiding_text)
         val header_text: TextView = view.findViewById(R.id.small_header_text)
         val white_rectangle: View = view.findViewById(R.id.white_rectangle)
-        val input_text: EditText = view.findViewById(R.id.input_text)
+        input_text = view.findViewById(R.id.input_text)
 
         hiding_text.text = header
         header_text.text = header
@@ -47,21 +56,31 @@ class SuperDesignInput : Fragment() {
         white_rectangle.setOnClickListener{
             hiding_text.visibility = View.GONE
             header_text.visibility = View.VISIBLE
-            input_text.visibility = View.VISIBLE
-            input_text.requestFocus()
+            input_text?.visibility = View.VISIBLE
+            input_text?.requestFocus()
         }
 
-        input_text.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus && input_text.text.toString() == ""){
+        input_text?.setOnFocusChangeListener { v, hasFocus ->
+            if (!hasFocus && input_text?.text.toString() == ""){
                 hiding_text.visibility = View.VISIBLE
                 header_text.visibility = View.GONE
-                input_text.visibility = View.GONE
+                input_text?.visibility = View.GONE
+            }
+
+
+            if (! hasFocus) {
+                val imm =
+                    view
+                        .context
+                        .getSystemService(Context.INPUT_METHOD_SERVICE)
+                            as InputMethodManager
+                imm.hideSoftInputFromWindow(view.windowToken, 0)
             }
         }
     }
 
     public fun getText() : String {
-        TODO("RETURN STRING")
+        return if (input_text == null) "" else input_text?.text.toString()
     }
 
     companion object {

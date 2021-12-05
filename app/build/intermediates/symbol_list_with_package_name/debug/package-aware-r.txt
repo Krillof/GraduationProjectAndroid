@@ -1836,7 +1836,8 @@ drawable material_ic_keyboard_arrow_previous_black_24dp
 drawable material_ic_keyboard_arrow_right_black_24dp
 drawable material_ic_menu_arrow_down_black_24dp
 drawable material_ic_menu_arrow_up_black_24dp
-drawable minus_in_circle
+drawable minus_in_circle_off
+drawable minus_in_circle_on
 drawable money
 drawable mtrl_dialog_background
 drawable mtrl_dropdown_arrow
@@ -1872,7 +1873,8 @@ drawable small_rectangle
 drawable square_checked
 drawable square_unchecked
 drawable test_custom_background
-drawable tick_in_circle
+drawable tick_in_circle_off
+drawable tick_in_circle_on
 drawable tmp_square_present_character_small
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -2033,6 +2035,7 @@ id currentState
 id custom
 id customPanel
 id cut
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -2367,7 +2370,6 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id tasks_list
-id tasks_list_layout
 id tasks_menu_choice
 id tasks_menu_choice_click_rectangle
 id test_checkbox_android_button_tint
@@ -2504,6 +2506,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_creating_character
 layout activity_creating_habit
+layout activity_creating_task
 layout activity_login
 layout activity_main
 layout activity_main_page
@@ -2598,6 +2601,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_layout_habit
+layout simple_layout_task
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_chip_zero_corner_radius
