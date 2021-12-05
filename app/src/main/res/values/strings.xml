@@ -32,4 +32,5 @@
     <string name="easy">Легко</string>
     <string name="normal">Нормально</string>
     <string name="hard">Сложно</string>
+    <string name="dos">Задачи</string>
 </resources>

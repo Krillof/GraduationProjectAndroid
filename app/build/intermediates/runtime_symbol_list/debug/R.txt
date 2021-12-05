@@ -1802,6 +1802,10 @@ int drawable design_ic_visibility 0x7f07006f
 int drawable design_ic_visibility_off 0x7f070070
 int drawable design_password_eye 0x7f070071
 int drawable design_snackbar_background 0x7f070072
+int drawable drawer_menu_current_task_rectangle 0x7f0700c5
+int drawable drawer_menu_item_divider 0x7f0700c6
+int drawable drawer_menu_item_off 0x7f0700c7
+int drawable drawer_menu_item_on 0x7f0700c8
 int drawable drawer_rectangle 0x7f0700c4
 int drawable easy_off 0x7f070073
 int drawable easy_on 0x7f070074
@@ -2033,6 +2037,7 @@ int id coordinator 0x7f080093
 int id cos 0x7f080094
 int id counterclockwise 0x7f080095
 int id currentState 0x7f080096
+int id current_task_rectangle 0x7f080231
 int id custom 0x7f080097
 int id customPanel 0x7f080098
 int id cut 0x7f080099
@@ -2068,6 +2073,7 @@ int id dragRight 0x7f0800b6
 int id dragStart 0x7f0800b7
 int id dragUp 0x7f0800b8
 int id drawer 0x7f08022d
+int id drawer_item_rectangle 0x7f080232
 int id drawer_layout 0x7f080230
 int id dropdown_menu 0x7f0800b9
 int id easeIn 0x7f0800ba
@@ -2672,6 +2678,7 @@ int string clear_text_end_icon_content_description 0x7f0f0026
 int string code 0x7f0f0027
 int string creating_habit 0x7f0f0028
 int string difficulty 0x7f0f0029
+int string dos 0x7f0f0088
 int string easy 0x7f0f002a
 int string email 0x7f0f002b
 int string error_icon_content_description 0x7f0f002c

@@ -1803,6 +1803,10 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawer_menu_current_task_rectangle
+drawable drawer_menu_item_divider
+drawable drawer_menu_item_off
+drawable drawer_menu_item_on
 drawable drawer_rectangle
 drawable easy_off
 drawable easy_on
@@ -2034,6 +2038,7 @@ id coordinator
 id cos
 id counterclockwise
 id currentState
+id current_task_rectangle
 id custom
 id customPanel
 id cut
@@ -2069,6 +2074,7 @@ id dragRight
 id dragStart
 id dragUp
 id drawer
+id drawer_item_rectangle
 id drawer_layout
 id dropdown_menu
 id easeIn
@@ -2673,6 +2679,7 @@ string clear_text_end_icon_content_description
 string code
 string creating_habit
 string difficulty
+string dos
 string easy
 string email
 string error_icon_content_description

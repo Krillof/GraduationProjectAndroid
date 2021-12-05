@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="fragments.for_main_page.dos.Dos"
-    android:id="@+id/drawer_layout"
-    >
+    android:id="@+id/drawer_layout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -32,11 +31,50 @@
 
         android:id="@+id/drawer"
         >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="546"
+
+        <View
+            android:layout_width="172dp"
+            android:layout_height="68dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            android:id="@+id/current_task_rectangle"
+
+            android:background="@drawable/drawer_menu_current_task_rectangle"
+
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
             />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:id="@+id/drawer_item_rectangle"
+
+            android:background="@drawable/drawer_menu_item_on"
+
+            app:layout_constraintTop_toBottomOf="@id/current_task_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="16dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_item_rectangle"
+            app:layout_constraintTop_toTopOf="@id/drawer_item_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+
+            style="@style/text_style"
+
+            android:text="@string/dos"
+            />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -28,6 +28,10 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_dos.xml"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_drawer_menu_item_off.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/drawer_menu_item_off.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_health_bar_foreground.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/health_bar_foreground.xml"
     },
@@ -260,12 +264,20 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/generated/res/pngs/debug/drawable-xxhdpi/bottom_menu_tasks_on.png"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_drawer_menu_current_task_rectangle.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/drawer_menu_current_task_rectangle.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_money.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/money.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_top_menu.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/top_menu.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_drawer_menu_item_divider.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/drawer_menu_item_divider.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -366,6 +378,10 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable-hdpi_bottom_menu_tasks_on.png.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/generated/res/pngs/debug/drawable-hdpi/bottom_menu_tasks_on.png"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_drawer_menu_item_on.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/drawer_menu_item_on.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_input.xml.flat",
