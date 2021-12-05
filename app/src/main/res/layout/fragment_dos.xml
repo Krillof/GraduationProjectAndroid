@@ -1,0 +1,235 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".activities.MainPage">
+
+    <View
+        android:id="@+id/top_menu_rectangle"
+        android:layout_width="fill_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/top_menu_rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/top_menu"
+        android:layout_width="36dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        android:background="@drawable/top_menu"
+        />
+
+    <View
+        android:id="@+id/top_menu_click_area"
+        android:layout_width="50dp"
+        android:layout_height="32dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/first_fragment"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_menu_rectangle"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/second_fragment"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_fragment"
+
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        />
+
+
+
+
+
+    <View
+        android:id="@+id/bottom_menu_rectangle"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="0dp"
+
+        android:background="@drawable/bottom_menu_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+        android:id="@+id/habits_menu_choice_click_rectangle"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+
+
+        android:layout_marginStart="-25dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toStartOf="@+id/habits_menu_choice"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+
+
+        />
+
+    <TextView
+        android:id="@+id/main_page_habits_text_off"
+
+        style="@style/main_pages_names_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_habits"
+        app:layout_constraintEnd_toEndOf="@+id/habits_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/habits_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/habits_menu_choice" />
+
+    <TextView
+        android:id="@+id/main_page_habits_text_on"
+        android:visibility="gone"
+
+        style="@style/small_white_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_habits"
+        app:layout_constraintEnd_toEndOf="@+id/habits_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/habits_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/habits_menu_choice" />
+
+    <View
+        android:id="@+id/habits_menu_choice"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+
+        android:layout_marginEnd="80dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bottom_menu_habits_off"
+        app:layout_constraintEnd_toStartOf="@+id/tasks_menu_choice"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+        />
+
+    <View
+        android:id="@+id/tasks_menu_choice_click_rectangle"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+
+
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="@id/bottom_menu_rectangle"
+        app:layout_constraintStart_toStartOf="@id/bottom_menu_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+
+
+        />
+
+    <TextView
+        android:id="@+id/main_page_tasks_text_off"
+
+        style="@style/main_pages_names_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_tasks"
+        app:layout_constraintEnd_toEndOf="@+id/tasks_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/tasks_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_menu_choice" />
+
+    <TextView
+        android:id="@+id/main_page_tasks_text_on"
+        android:visibility="gone"
+
+        style="@style/small_white_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_tasks"
+        app:layout_constraintEnd_toEndOf="@+id/tasks_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/tasks_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/tasks_menu_choice" />
+
+    <View
+        android:id="@+id/tasks_menu_choice"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="4dp"
+
+        android:background="@drawable/bottom_menu_tasks_off"
+        app:layout_constraintEnd_toEndOf="@id/bottom_menu_rectangle"
+        app:layout_constraintStart_toStartOf="@id/bottom_menu_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+
+        />
+
+    <View
+        android:id="@+id/character_menu_choice_click_rectangle"
+        android:layout_width="70dp"
+        android:layout_height="48dp"
+
+
+        android:layout_marginStart="-25dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toStartOf="@+id/character_menu_choice"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+
+
+        />
+
+    <TextView
+        android:id="@+id/main_page_character_text_off"
+
+        style="@style/main_pages_names_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_character"
+        app:layout_constraintEnd_toEndOf="@+id/character_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/character_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/character_menu_choice" />
+
+    <TextView
+        android:id="@+id/main_page_character_text_on"
+        android:visibility="gone"
+
+        style="@style/small_white_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="@string/main_page_character"
+        app:layout_constraintEnd_toEndOf="@+id/character_menu_choice"
+        app:layout_constraintStart_toStartOf="@+id/character_menu_choice"
+        app:layout_constraintTop_toBottomOf="@+id/character_menu_choice" />
+
+    <View
+        android:id="@+id/character_menu_choice"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bottom_menu_character_off"
+        app:layout_constraintStart_toEndOf="@+id/tasks_menu_choice"
+        app:layout_constraintTop_toTopOf="@+id/bottom_menu_rectangle"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,13 @@
 com/example/graduationprojectandroid/network/NetworkService.java
  com.example.graduationprojectandroid.network.NetworkService
-com/example/graduationprojectandroid/databinding/ActivityCreatingCharacterBinding.java
- com.example.graduationprojectandroid.databinding.ActivityCreatingCharacterBinding
+com/example/graduationprojectandroid/BuildConfig.java
+ com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/network/endpoints/JSONPlaceHolderApi.java
  com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
+com/example/graduationprojectandroid/network/endpoints/Test.java
+ com.example.graduationprojectandroid.network.endpoints.Test
+com/example/graduationprojectandroid/databinding/ActivityCreatingCharacterBinding.java
+ com.example.graduationprojectandroid.databinding.ActivityCreatingCharacterBinding
 com/example/graduationprojectandroid/databinding/ActivityCreatingTaskBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingTaskBinding
 com/example/graduationprojectandroid/databinding/FragmentBigRectangleCheckBoxBinding.java
@@ -12,12 +16,12 @@ com/example/graduationprojectandroid/databinding/FragmentGetLoginPasswordBinding
  com.example.graduationprojectandroid.databinding.FragmentGetLoginPasswordBinding
 com/example/graduationprojectandroid/databinding/ActivityMainPageBinding.java
  com.example.graduationprojectandroid.databinding.ActivityMainPageBinding
-com/example/graduationprojectandroid/network/endpoints/Test.java
- com.example.graduationprojectandroid.network.endpoints.Test
 com/example/graduationprojectandroid/databinding/FragmentInputBinding.java
  com.example.graduationprojectandroid.databinding.FragmentInputBinding
 com/example/graduationprojectandroid/databinding/ActivityCreatingHabitBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingHabitBinding
+com/example/graduationprojectandroid/databinding/FragmentDosBinding.java
+ com.example.graduationprojectandroid.databinding.FragmentDosBinding
 com/example/graduationprojectandroid/databinding/FragmentOrEnterByBinding.java
  com.example.graduationprojectandroid.databinding.FragmentOrEnterByBinding
 com/example/graduationprojectandroid/databinding/FragmentHeaderBinding.java
@@ -26,8 +30,6 @@ com/example/graduationprojectandroid/databinding/FragmentPresentCharacterSmallBi
  com.example.graduationprojectandroid.databinding.FragmentPresentCharacterSmallBinding
 com/example/graduationprojectandroid/databinding/FragmentButtonBinding.java
  com.example.graduationprojectandroid.databinding.FragmentButtonBinding
-com/example/graduationprojectandroid/BuildConfig.java
- com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/databinding/FragmentCheckBoxBinding.java
  com.example.graduationprojectandroid.databinding.FragmentCheckBoxBinding
 com/example/graduationprojectandroid/databinding/FragmentGetCodeBinding.java

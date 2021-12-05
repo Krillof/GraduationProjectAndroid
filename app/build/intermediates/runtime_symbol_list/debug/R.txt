@@ -1802,6 +1802,7 @@ int drawable design_ic_visibility 0x7f07006f
 int drawable design_ic_visibility_off 0x7f070070
 int drawable design_password_eye 0x7f070071
 int drawable design_snackbar_background 0x7f070072
+int drawable drawer_rectangle 0x7f0700c4
 int drawable easy_off 0x7f070073
 int drawable easy_on 0x7f070074
 int drawable ellipse_checked_1 0x7f070075
@@ -1864,6 +1865,7 @@ int drawable notification_template_icon_low_bg 0x7f0700ac
 int drawable notification_tile_bg 0x7f0700ad
 int drawable notify_panel_notification_icon_bg 0x7f0700ae
 int drawable plus 0x7f0700af
+int drawable purple_circle 0x7f0700c3
 int drawable selection_band_overlay 0x7f0700b0
 int drawable simple_off 0x7f0700b1
 int drawable simple_on 0x7f0700b2
@@ -2065,6 +2067,8 @@ int id dragLeft 0x7f0800b5
 int id dragRight 0x7f0800b6
 int id dragStart 0x7f0800b7
 int id dragUp 0x7f0800b8
+int id drawer 0x7f08022d
+int id drawer_layout 0x7f080230
 int id dropdown_menu 0x7f0800b9
 int id easeIn 0x7f0800ba
 int id easeInOut 0x7f0800bb
@@ -2172,6 +2176,8 @@ int id login_activity 0x7f080120
 int id main_login_fragment 0x7f080121
 int id main_page_character_text_off 0x7f080122
 int id main_page_character_text_on 0x7f080123
+int id main_page_content 0x7f08022e
+int id main_page_fragment 0x7f08022f
 int id main_page_habits_text_off 0x7f080124
 int id main_page_habits_text_on 0x7f080125
 int id main_page_tasks_text_off 0x7f080126
@@ -2352,6 +2358,7 @@ int id stop 0x7f0801d4
 int id stretch 0x7f0801d5
 int id submenuarrow 0x7f0801d6
 int id submit_area 0x7f0801d7
+int id subtasks_counter_circle 0x7f08022c
 int id super_design_input 0x7f0801d8
 int id supportScrollUp 0x7f0801d9
 int id tabMode 0x7f0801da
@@ -2529,6 +2536,7 @@ int layout fragment_big_rectangle_check_box 0x7f0b0031
 int layout fragment_button 0x7f0b0032
 int layout fragment_check_box 0x7f0b0033
 int layout fragment_description_super_design_input 0x7f0b0034
+int layout fragment_dos 0x7f0b008f
 int layout fragment_get_code 0x7f0b0035
 int layout fragment_get_login_password 0x7f0b0036
 int layout fragment_habits_list 0x7f0b0037

@@ -1803,6 +1803,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable drawer_rectangle
 drawable easy_off
 drawable easy_on
 drawable ellipse_checked_1
@@ -1865,6 +1866,7 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
+drawable purple_circle
 drawable selection_band_overlay
 drawable simple_off
 drawable simple_on
@@ -2066,6 +2068,8 @@ id dragLeft
 id dragRight
 id dragStart
 id dragUp
+id drawer
+id drawer_layout
 id dropdown_menu
 id easeIn
 id easeInOut
@@ -2173,6 +2177,8 @@ id login_activity
 id main_login_fragment
 id main_page_character_text_off
 id main_page_character_text_on
+id main_page_content
+id main_page_fragment
 id main_page_habits_text_off
 id main_page_habits_text_on
 id main_page_tasks_text_off
@@ -2353,6 +2359,7 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id subtasks_counter_circle
 id super_design_input
 id supportScrollUp
 id tabMode
@@ -2530,6 +2537,7 @@ layout fragment_big_rectangle_check_box
 layout fragment_button
 layout fragment_check_box
 layout fragment_description_super_design_input
+layout fragment_dos
 layout fragment_get_code
 layout fragment_get_login_password
 layout fragment_habits_list
