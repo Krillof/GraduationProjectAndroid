@@ -1874,6 +1874,8 @@ drawable purple_circle
 drawable selection_band_overlay
 drawable simple_off
 drawable simple_on
+drawable small_check
+drawable small_circle
 drawable small_orange_circle
 drawable small_rectangle
 drawable square_checked
@@ -2074,7 +2076,10 @@ id dragRight
 id dragStart
 id dragUp
 id drawer
-id drawer_item_rectangle
+id drawer_item1_rectangle
+id drawer_item2_rectangle
+id drawer_item3_rectangle
+id drawer_item4_rectangle
 id drawer_layout
 id dropdown_menu
 id easeIn
@@ -2335,7 +2340,9 @@ id sin
 id skipCollapsed
 id skipped
 id slide
+id small_checkbox
 id small_header_text
+id small_text
 id snackbar_action
 id snackbar_text
 id snap
@@ -2365,7 +2372,9 @@ id stop
 id stretch
 id submenuarrow
 id submit_area
+id subtask_layout
 id subtasks_counter_circle
+id subtasks_list
 id super_design_input
 id supportScrollUp
 id tabMode
@@ -2615,6 +2624,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_layout_habit
+layout simple_layout_subtask
 layout simple_layout_task
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
@@ -2667,6 +2677,7 @@ string abc_toolbar_collapse_description
 string activity_login_header
 string app_name
 string appbar_scrolling_view_behavior
+string avatar
 string bad_habit
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
@@ -2677,6 +2688,7 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string code
+string communities
 string creating_habit
 string difficulty
 string dos
@@ -2698,6 +2710,7 @@ string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string how_often_to_do
 string icon_content_description
+string inventory
 string item_view_role_description
 string level
 string login_checkbox_text

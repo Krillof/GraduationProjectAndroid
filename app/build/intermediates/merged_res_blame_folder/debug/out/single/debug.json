@@ -12,6 +12,10 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_habit.xml"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_small_circle.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_circle.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_gray_right_top_cirled_background.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/gray_right_top_cirled_background.xml"
     },
@@ -252,6 +256,10 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_small_check.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_check.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_health_bar_background.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/health_bar_background.xml"
     },
@@ -338,6 +346,10 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_good_habit_on.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/good_habit_on.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_simple_layout_subtask.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_subtask.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable-xhdpi_bottom_menu_tasks_off.png.flat",

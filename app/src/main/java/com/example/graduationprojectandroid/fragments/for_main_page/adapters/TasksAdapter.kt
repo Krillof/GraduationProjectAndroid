@@ -1,11 +1,13 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.SimpleLayoutHabitBinding
+import com.example.graduationprojectandroid.databinding.SimpleLayoutTaskBinding
 
 class TasksAdapter(
     private var tasks_arr: ArrayList<Task>)
@@ -13,25 +15,73 @@ class TasksAdapter(
     : RecyclerView.Adapter<TasksAdapter.TaskView>()
 {
     class TaskView(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding = SimpleLayoutHabitBinding.bind(itemView)
-        fun bind(task: Task) = with(binding){
+        val binding = SimpleLayoutTaskBinding.bind(itemView)
+
+        fun before() = with(binding){
+            subtasksList.layoutManager = LinearLayoutManager(subtasksList.context)
+        }
+
+        fun bind(task: Task, this_adapter: TasksAdapter) = with(binding){
+
+            anotherHeader.visibility = task.visibility
+            text.visibility = task.visibility
+            doneCheckbox.visibility = task.visibility
+            subtasksCounterCircle.visibility = task.show_subtasks_always
+            subtasksList.visibility = task.show_subtasks_always
+
+            subtasksList.visibility = task.getCurrentShowSubtasks()
+
             anotherHeader.text = task.header
             text.text = task.text
+
+            doneCheckbox.setOnClickListener {
+                task.setDone(! task.isDone())
+
+                doneCheckbox.setBackgroundResource(
+                    if (task.isDone())
+                        R.drawable.tick_in_circle_on
+                    else
+                        R.drawable.tick_in_circle_off
+                )
+
+                this_adapter.notifyDataSetChanged()
+            }
+
+            subtasksList.adapter = task.getAdapter()
+
+            subtasksCounterCircle.setOnClickListener {
+
+                task.setCurrentShowSubtasks(
+                    if (task.getCurrentShowSubtasks() == View.GONE)
+                        View.VISIBLE
+                    else
+                        View.GONE
+                )
+
+                subtasksList.visibility = task.getCurrentShowSubtasks()
+
+                this_adapter.notifyDataSetChanged()
+            }
+
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskView {
-        return TaskView(
+        val value = TaskView(
             LayoutInflater
                 .from(parent.context)
                 .inflate(R.layout.simple_layout_task, parent, false )
         )
+
+        value.before()
+
+        return value
     }
 
     override fun getItemCount(): Int = tasks_arr.size
 
     override fun onBindViewHolder(holder: TaskView, position: Int) {
-        holder.bind(tasks_arr[position])
+        holder.bind(tasks_arr[position],this)
     }
 
 }

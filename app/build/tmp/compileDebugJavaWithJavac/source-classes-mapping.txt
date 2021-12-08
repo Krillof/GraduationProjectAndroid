@@ -1,9 +1,9 @@
 com/example/graduationprojectandroid/network/NetworkService.java
  com.example.graduationprojectandroid.network.NetworkService
-com/example/graduationprojectandroid/BuildConfig.java
- com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/network/endpoints/JSONPlaceHolderApi.java
  com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
+com/example/graduationprojectandroid/BuildConfig.java
+ com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/network/endpoints/Test.java
  com.example.graduationprojectandroid.network.endpoints.Test
 com/example/graduationprojectandroid/databinding/ActivityCreatingCharacterBinding.java
@@ -44,6 +44,8 @@ com/example/graduationprojectandroid/databinding/FragmentHabitsListBinding.java
  com.example.graduationprojectandroid.databinding.FragmentHabitsListBinding
 com/example/graduationprojectandroid/databinding/FragmentSuperDesignInputBinding.java
  com.example.graduationprojectandroid.databinding.FragmentSuperDesignInputBinding
+com/example/graduationprojectandroid/databinding/SimpleLayoutSubtaskBinding.java
+ com.example.graduationprojectandroid.databinding.SimpleLayoutSubtaskBinding
 com/example/graduationprojectandroid/databinding/ActivityLoginBinding.java
  com.example.graduationprojectandroid.databinding.ActivityLoginBinding
 com/example/graduationprojectandroid/databinding/SimpleLayoutTaskBinding.java

@@ -50,7 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="32dp"
 
-            android:id="@+id/drawer_item_rectangle"
+            android:id="@+id/drawer_item1_rectangle"
 
             android:background="@drawable/drawer_menu_item_on"
 
@@ -63,14 +63,107 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/drawer_item_rectangle"
-            app:layout_constraintTop_toTopOf="@id/drawer_item_rectangle"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_item1_rectangle"
+            app:layout_constraintTop_toTopOf="@id/drawer_item1_rectangle"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp"
 
             style="@style/text_style"
 
             android:text="@string/dos"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:id="@+id/drawer_item2_rectangle"
+
+            android:background="@drawable/drawer_menu_item_off"
+
+            app:layout_constraintTop_toBottomOf="@id/current_task_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="48dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_item2_rectangle"
+            app:layout_constraintTop_toTopOf="@id/drawer_item2_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+
+            style="@style/text_style"
+
+            android:text="@string/inventory"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:id="@+id/drawer_item3_rectangle"
+
+            android:background="@drawable/drawer_menu_item_off"
+
+            app:layout_constraintTop_toBottomOf="@id/current_task_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="80dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_item3_rectangle"
+            app:layout_constraintTop_toTopOf="@id/drawer_item3_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+
+            style="@style/text_style"
+
+            android:text="@string/avatar"
+            />
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:background="@drawable/drawer_menu_item_divider"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/drawer_item3_rectangle"
+            />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+
+            android:id="@+id/drawer_item4_rectangle"
+
+            android:background="@drawable/drawer_menu_item_off"
+
+            app:layout_constraintTop_toBottomOf="@id/current_task_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="118dp"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/drawer_item4_rectangle"
+            app:layout_constraintTop_toTopOf="@id/drawer_item4_rectangle"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+
+            style="@style/text_style"
+
+            android:text="@string/communities"
             />
 
 

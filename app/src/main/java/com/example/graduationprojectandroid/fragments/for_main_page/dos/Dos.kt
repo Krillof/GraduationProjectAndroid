@@ -60,7 +60,10 @@ class Dos(
             context.turnPageOnBottomMenuTo(Pages.character, view)
 
 
+            fragmentManager?.commit{
 
+
+            }
 
         }
 
