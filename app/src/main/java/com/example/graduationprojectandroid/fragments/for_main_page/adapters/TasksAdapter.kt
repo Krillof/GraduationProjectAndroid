@@ -23,34 +23,34 @@ class TasksAdapter(
 
         fun bind(task: Task, this_adapter: TasksAdapter) = with(binding){
 
+            task.setParentAdapterForSubtasks(this_adapter)
+
             anotherHeader.visibility = task.visibility
             text.visibility = task.visibility
             doneCheckbox.visibility = task.visibility
             subtasksCounterCircle.visibility = task.show_subtasks_always
-            subtasksList.visibility = task.show_subtasks_always
-
             subtasksList.visibility = task.getCurrentShowSubtasks()
 
             anotherHeader.text = task.header
             text.text = task.text
 
+            doneCheckbox.setBackgroundResource(
+                if (task.isDone())
+                    R.drawable.tick_in_circle_on
+                else
+                    R.drawable.tick_in_circle_off
+            )
+
+
+            subtasksList.adapter = task.getAdapter()
+
             doneCheckbox.setOnClickListener {
                 task.setDone(! task.isDone())
-
-                doneCheckbox.setBackgroundResource(
-                    if (task.isDone())
-                        R.drawable.tick_in_circle_on
-                    else
-                        R.drawable.tick_in_circle_off
-                )
 
                 this_adapter.notifyDataSetChanged()
             }
 
-            subtasksList.adapter = task.getAdapter()
-
             subtasksCounterCircle.setOnClickListener {
-
                 task.setCurrentShowSubtasks(
                     if (task.getCurrentShowSubtasks() == View.GONE)
                         View.VISIBLE
@@ -59,8 +59,6 @@ class TasksAdapter(
                 )
 
                 subtasksList.visibility = task.getCurrentShowSubtasks()
-
-                this_adapter.notifyDataSetChanged()
             }
 
         }

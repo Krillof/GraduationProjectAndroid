@@ -109,11 +109,25 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
             View.GONE //because there is 0 subtasks
         )
 
+
+
+        tasksList.add(task1)
+        tasksList.add(task2)
+        tasksList.add(task3)
+
+        //TMP
+        //-------------------------------------
+
+        var subtasks0: MutableList<Subtask> = MutableList(
+            0,
+            {index -> Subtask(false, "")}
+        )
+
         var task0 = Task(
             -1,
             "",
             "",
-            subtasks3,
+            subtasks0,
             View.GONE,
             View.GONE
         )
@@ -122,7 +136,7 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
             -2,
             "",
             "",
-            subtasks3,
+            subtasks0,
             View.GONE,
             View.GONE
         )
@@ -131,7 +145,7 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
             -3,
             "",
             "",
-            subtasks3,
+            subtasks0,
             View.GONE,
             View.GONE
         )
@@ -140,20 +154,14 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
             -4,
             "",
             "",
-            subtasks3,
+            subtasks0,
             View.GONE,
             View.GONE
         )
-
-        tasksList.add(task1)
-        tasksList.add(task2)
-        tasksList.add(task3)
         tasksList.add(task0)
         tasksList.add(task00)
         tasksList.add(task000)
         tasksList.add(task0000)
-        //TMP
-        //-------------------------------------
         return tasksList
     }
 

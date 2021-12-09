@@ -16,6 +16,12 @@ class Task(
     private var adapter = SubtaskAdapter(subtasks)
     private var done: Boolean = false
 
+    public fun setParentAdapterForSubtasks(value: TasksAdapter) {
+        for (i in 0 until subtasks.size){
+            subtasks[i].setParent(value)
+        }
+    }
+
     public fun getAdapter(): SubtaskAdapter{
         return adapter
     }

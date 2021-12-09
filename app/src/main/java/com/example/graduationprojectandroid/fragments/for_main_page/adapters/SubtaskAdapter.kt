@@ -21,17 +21,17 @@ class SubtaskAdapter(
             subtaskLayout.setOnClickListener {
                 st.done = !st.done
 
-                Log.println(Log.INFO, "Subtask " + smallText.text,  st.done.toString())
-
-                smallCheckbox.setBackgroundResource(
-                    if (st.done)
-                        R.drawable.small_check
-                    else
-                        R.drawable.small_circle
-                )
+                st.getParent().notifyDataSetChanged()
 
                 this_adapter.notifyDataSetChanged()
             }
+
+            smallCheckbox.setBackgroundResource(
+                if (st.done)
+                    R.drawable.small_check
+                else
+                    R.drawable.small_circle
+            )
 
             smallText.text = st.text
 
