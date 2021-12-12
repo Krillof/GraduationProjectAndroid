@@ -43,7 +43,7 @@ tools:context=".activities.MainPage">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/top_menu_rectangle"
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <androidx.fragment.app.FragmentContainerView
@@ -53,7 +53,7 @@ tools:context=".activities.MainPage">
         app:layout_constraintTop_toBottomOf="@id/first_fragment"
 
 
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
 

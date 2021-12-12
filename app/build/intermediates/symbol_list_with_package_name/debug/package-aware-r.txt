@@ -1779,6 +1779,7 @@ drawable avd_show_password
 drawable bad_habit_off
 drawable bad_habit_on
 drawable big_white_rectangle
+drawable black_white_money
 drawable blue_normal_rectangle_for_checkbox_off
 drawable blue_normal_rectangle_for_checkbox_on
 drawable bottom_menu_character_off
@@ -1788,6 +1789,9 @@ drawable bottom_menu_habits_on
 drawable bottom_menu_rectangle
 drawable bottom_menu_tasks_off
 drawable bottom_menu_tasks_on
+drawable brandico_facebook
+drawable brandico_google
+drawable brandico_vk
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1831,6 +1835,7 @@ drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable input_frame_1
 drawable lists_rectangle
+drawable market_item_background
 drawable material_cursor_drawable
 drawable material_ic_calendar_black_24dp
 drawable material_ic_clear_black_24dp
@@ -1870,12 +1875,16 @@ drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable plus
+drawable present_character_big_rectangle
+drawable present_character_big_small_rectangles
 drawable purple_circle
 drawable selection_band_overlay
 drawable simple_off
 drawable simple_on
 drawable small_check
 drawable small_circle
+drawable small_exp_bar_background
+drawable small_health_bar_background
 drawable small_orange_circle
 drawable small_rectangle
 drawable square_checked
@@ -1987,6 +1996,7 @@ id baseline
 id beginOnFirstDraw
 id beginning
 id bestChoice
+id black_white_money_logo
 id blocking
 id blue_rectangle
 id bottom
@@ -2103,6 +2113,7 @@ id exitUntilCollapsed
 id exit_button
 id exp_bar_background
 id exp_bar_foreground
+id exp_plus_text
 id exp_text
 id exp_text_header
 id expand_activities_button
@@ -2142,6 +2153,7 @@ id header_text
 id header_title
 id health_bar_background
 id health_bar_foreground
+id health_plus_text
 id health_text
 id health_text_header
 id hideable
@@ -2152,6 +2164,7 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id idk_rectangle
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2194,6 +2207,8 @@ id main_page_habits_text_off
 id main_page_habits_text_on
 id main_page_tasks_text_off
 id main_page_tasks_text_on
+id market_item_background
+id market_items_list
 id masked
 id match_constraint
 id match_parent
@@ -2220,6 +2235,7 @@ id media_actions
 id message
 id middle
 id mini
+id money_logo
 id money_text
 id month_grid
 id month_navigation_bar
@@ -2277,6 +2293,7 @@ id outline
 id outward
 id overshoot
 id packed
+id pants_rectangle
 id parallax
 id parent
 id parentPanel
@@ -2287,6 +2304,7 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id pet_rectangle
 id pin
 id position
 id postLayout
@@ -2331,6 +2349,7 @@ id selected
 id selection_type
 id sharedValueSet
 id sharedValueUnset
+id shirt_rectangle
 id shortcut
 id showCustom
 id showHome
@@ -2341,7 +2360,9 @@ id skipCollapsed
 id skipped
 id slide
 id small_checkbox
+id small_exp_bar_background
 id small_header_text
+id small_health_bar_background
 id small_text
 id snackbar_action
 id snackbar_text
@@ -2558,7 +2579,9 @@ layout fragment_get_login_password
 layout fragment_habits_list
 layout fragment_header
 layout fragment_input
+layout fragment_market_list
 layout fragment_or_enter_by
+layout fragment_present_character_big
 layout fragment_present_character_small
 layout fragment_super_design_input
 layout fragment_tasks_list
@@ -2624,6 +2647,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout simple_layout_habit
+layout simple_layout_market_item
 layout simple_layout_subtask
 layout simple_layout_task
 layout support_simple_spinner_dropdown_item
@@ -2718,6 +2742,7 @@ string main_page_character
 string main_page_habits
 string main_page_tasks
 string mark_as_done
+string market
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -3520,6 +3545,8 @@ style header_text
 style inputs_hint
 style main_pages_names_off
 style small_gray_header
+style small_orange_text
+style small_red_text
 style small_text_style
 style small_white_text
 style text_style

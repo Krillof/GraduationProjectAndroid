@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="96dp"
+    android:layout_height="148dp"
+
+    android:layout_marginStart="16dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/market_item_background"
+
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+
+        android:background="@drawable/market_item_background"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/black_white_money_logo"
+
+
+        android:layout_width="12dp"
+        android:layout_height="8dp"
+
+        android:background="@drawable/black_white_money"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/market_item_background"
+
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/money_text"
+
+        style="@style/text_style"
+
+        app:layout_constraintStart_toEndOf="@id/black_white_money_logo"
+        app:layout_constraintTop_toTopOf="@+id/black_white_money_logo"
+        app:layout_constraintBottom_toBottomOf="@id/black_white_money_logo"
+
+        android:text="19"
+
+        android:layout_marginStart="6dp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

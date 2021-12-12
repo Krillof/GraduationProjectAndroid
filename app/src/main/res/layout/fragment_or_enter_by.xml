@@ -29,9 +29,22 @@
             android:layout_height="56dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/small_rectangle"
-            android:elevation="25dp"
+
             app:layout_constraintStart_toStartOf="@+id/header_or_enter_by"
             app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:background="@drawable/brandico_facebook"
+
+            app:layout_constraintStart_toStartOf="@+id/rectangle_1"
+            app:layout_constraintEnd_toEndOf="@id/rectangle_1"
+            app:layout_constraintBottom_toBottomOf="@id/rectangle_1"
+            app:layout_constraintTop_toTopOf="@id/rectangle_1"
+
+            />
 
 
         <View
@@ -42,9 +55,22 @@
             android:layout_marginTop="16dp"
             android:layout_toEndOf="@id/rectangle_1"
             android:background="@drawable/small_rectangle"
-            android:elevation="25dp"
             app:layout_constraintStart_toEndOf="@+id/rectangle_3"
             app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
+
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:background="@drawable/brandico_google"
+
+            app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+            app:layout_constraintEnd_toEndOf="@id/rectangle_2"
+            app:layout_constraintBottom_toBottomOf="@id/rectangle_2"
+            app:layout_constraintTop_toTopOf="@id/rectangle_2"
+
+            />
 
         <View
             android:id="@+id/rectangle_3"
@@ -54,9 +80,21 @@
             android:layout_marginTop="16dp"
             android:layout_toEndOf="@id/rectangle_2"
             android:background="@drawable/small_rectangle"
-            android:elevation="25dp"
             app:layout_constraintStart_toEndOf="@+id/rectangle_1"
             app:layout_constraintTop_toBottomOf="@+id/header_or_enter_by" />
+
+        <View
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+
+            android:background="@drawable/brandico_vk"
+
+            app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+            app:layout_constraintEnd_toEndOf="@id/rectangle_3"
+            app:layout_constraintBottom_toBottomOf="@id/rectangle_3"
+            app:layout_constraintTop_toTopOf="@id/rectangle_3"
+
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

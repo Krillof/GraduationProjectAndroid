@@ -20,6 +20,10 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/gray_right_top_cirled_background.xml"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_present_character_big_small_rectangles.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/present_character_big_small_rectangles.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_plus.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/plus.xml"
     },
@@ -40,6 +44,14 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/health_bar_foreground.xml"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_brandico_google.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/brandico_google.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_present_character_big_rectangle.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/present_character_big_rectangle.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_white_rectangle.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/white_rectangle.xml"
     },
@@ -52,16 +64,20 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_orange_circle.xml"
     },
     {
-        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_minus_in_circle_on.xml.flat",
-        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/minus_in_circle_on.xml"
-    },
-    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable-xhdpi_bottom_menu_tasks_on.png.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/generated/res/pngs/debug/drawable-xhdpi/bottom_menu_tasks_on.png"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_minus_in_circle_on.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/minus_in_circle_on.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable-hdpi_bottom_menu_tasks_off.png.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/generated/res/pngs/debug/drawable-hdpi/bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_black_white_money.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/black_white_money.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
@@ -70,6 +86,10 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_button.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_button.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_brandico_facebook.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/brandico_facebook.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_square_unchecked.xml.flat",
@@ -216,6 +236,10 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_rectangle.xml"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_market_list.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_market_list.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_get_code.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_get_code.xml"
     },
@@ -238,6 +262,10 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_tick_in_circle_off.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/tick_in_circle_off.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_brandico_vk.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/brandico_vk.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -274,6 +302,10 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_drawer_menu_current_task_rectangle.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/drawer_menu_current_task_rectangle.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_small_health_bar_background.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_health_bar_background.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_money.xml.flat",
@@ -344,6 +376,14 @@
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_market_item_background.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/market_item_background.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_small_exp_bar_background.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/small_exp_bar_background.xml"
+    },
+    {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_good_habit_on.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/good_habit_on.xml"
     },
@@ -382,6 +422,14 @@
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/drawable_input_frame_1.xml.flat",
         "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/drawable/input_frame_1.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_present_character_big.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_present_character_big.xml"
+    },
+    {
+        "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_simple_layout_market_item.xml.flat",
+        "source": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_market_item.xml"
     },
     {
         "merged": "/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/build/intermediates/merged_res/debug/layout_fragment_big_rectangle_check_box.xml.flat",

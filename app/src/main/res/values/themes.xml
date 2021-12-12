@@ -105,4 +105,14 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">#999999</item>
     </style>
+
+    <style name="small_red_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FF645A</item>
+    </style>
+
+    <style name="small_orange_text">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">#FFA45A</item>
+    </style>
 </resources>

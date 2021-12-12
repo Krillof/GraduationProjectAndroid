@@ -61,7 +61,16 @@ class Dos(
 
 
             fragmentManager?.commit{
+                val presentCharacterBig
+                    = PresentCharacterBig.newInstance()
 
+                val marketList
+                    = MarketList.newInstance()
+
+
+
+                replace(R.id.first_fragment, presentCharacterBig)
+                replace(R.id.second_fragment, marketList)
 
             }
 

@@ -1778,6 +1778,7 @@ int drawable avd_show_password 0x7f070057
 int drawable bad_habit_off 0x7f070058
 int drawable bad_habit_on 0x7f070059
 int drawable big_white_rectangle 0x7f07005a
+int drawable black_white_money 0x7f0700cb
 int drawable blue_normal_rectangle_for_checkbox_off 0x7f07005b
 int drawable blue_normal_rectangle_for_checkbox_on 0x7f07005c
 int drawable bottom_menu_character_off 0x7f07005d
@@ -1787,6 +1788,9 @@ int drawable bottom_menu_habits_on 0x7f070060
 int drawable bottom_menu_rectangle 0x7f070061
 int drawable bottom_menu_tasks_off 0x7f070062
 int drawable bottom_menu_tasks_on 0x7f070063
+int drawable brandico_facebook 0x7f0700d1
+int drawable brandico_google 0x7f0700d2
+int drawable brandico_vk 0x7f0700d3
 int drawable btn_checkbox_checked_mtrl 0x7f070064
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f070065
 int drawable btn_checkbox_unchecked_mtrl 0x7f070066
@@ -1830,6 +1834,7 @@ int drawable ic_mtrl_chip_checked_circle 0x7f070086
 int drawable ic_mtrl_chip_close_circle 0x7f070087
 int drawable input_frame_1 0x7f070088
 int drawable lists_rectangle 0x7f070089
+int drawable market_item_background 0x7f0700cc
 int drawable material_cursor_drawable 0x7f07008a
 int drawable material_ic_calendar_black_24dp 0x7f07008b
 int drawable material_ic_clear_black_24dp 0x7f07008c
@@ -1869,12 +1874,16 @@ int drawable notification_template_icon_low_bg 0x7f0700ac
 int drawable notification_tile_bg 0x7f0700ad
 int drawable notify_panel_notification_icon_bg 0x7f0700ae
 int drawable plus 0x7f0700af
+int drawable present_character_big_rectangle 0x7f0700cd
+int drawable present_character_big_small_rectangles 0x7f0700ce
 int drawable purple_circle 0x7f0700c3
 int drawable selection_band_overlay 0x7f0700b0
 int drawable simple_off 0x7f0700b1
 int drawable simple_on 0x7f0700b2
 int drawable small_check 0x7f0700c9
 int drawable small_circle 0x7f0700ca
+int drawable small_exp_bar_background 0x7f0700cf
+int drawable small_health_bar_background 0x7f0700d0
 int drawable small_orange_circle 0x7f0700b3
 int drawable small_rectangle 0x7f0700b4
 int drawable square_checked 0x7f0700b5
@@ -1986,6 +1995,7 @@ int id baseline 0x7f08005e
 int id beginOnFirstDraw 0x7f08005f
 int id beginning 0x7f080060
 int id bestChoice 0x7f080061
+int id black_white_money_logo 0x7f08023b
 int id blocking 0x7f080062
 int id blue_rectangle 0x7f080063
 int id bottom 0x7f080064
@@ -2102,6 +2112,7 @@ int id exitUntilCollapsed 0x7f0800cb
 int id exit_button 0x7f0800cc
 int id exp_bar_background 0x7f0800cd
 int id exp_bar_foreground 0x7f0800ce
+int id exp_plus_text 0x7f08023c
 int id exp_text 0x7f0800cf
 int id exp_text_header 0x7f0800d0
 int id expand_activities_button 0x7f0800d1
@@ -2141,6 +2152,7 @@ int id header_text 0x7f0800f2
 int id header_title 0x7f0800f3
 int id health_bar_background 0x7f0800f4
 int id health_bar_foreground 0x7f0800f5
+int id health_plus_text 0x7f08023d
 int id health_text 0x7f0800f6
 int id health_text_header 0x7f0800f7
 int id hideable 0x7f0800f8
@@ -2151,6 +2163,7 @@ int id honorRequest 0x7f0800fc
 int id horizontal_only 0x7f0800fd
 int id icon 0x7f0800fe
 int id icon_group 0x7f0800ff
+int id idk_rectangle 0x7f08023e
 int id ifRoom 0x7f080100
 int id ignore 0x7f080101
 int id ignoreRequest 0x7f080102
@@ -2193,6 +2206,8 @@ int id main_page_habits_text_off 0x7f080124
 int id main_page_habits_text_on 0x7f080125
 int id main_page_tasks_text_off 0x7f080126
 int id main_page_tasks_text_on 0x7f080127
+int id market_item_background 0x7f08023f
+int id market_items_list 0x7f080240
 int id masked 0x7f080128
 int id match_constraint 0x7f080129
 int id match_parent 0x7f08012a
@@ -2219,6 +2234,7 @@ int id media_actions 0x7f08013e
 int id message 0x7f08013f
 int id middle 0x7f080140
 int id mini 0x7f080141
+int id money_logo 0x7f080241
 int id money_text 0x7f080142
 int id month_grid 0x7f080143
 int id month_navigation_bar 0x7f080144
@@ -2276,6 +2292,7 @@ int id outline 0x7f080177
 int id outward 0x7f080178
 int id overshoot 0x7f080179
 int id packed 0x7f08017a
+int id pants_rectangle 0x7f080242
 int id parallax 0x7f08017b
 int id parent 0x7f08017c
 int id parentPanel 0x7f08017d
@@ -2286,6 +2303,7 @@ int id path 0x7f080181
 int id pathRelative 0x7f080182
 int id peekHeight 0x7f080183
 int id percent 0x7f080184
+int id pet_rectangle 0x7f080243
 int id pin 0x7f080185
 int id position 0x7f080186
 int id postLayout 0x7f080187
@@ -2330,6 +2348,7 @@ int id selected 0x7f0801ad
 int id selection_type 0x7f0801ae
 int id sharedValueSet 0x7f0801af
 int id sharedValueUnset 0x7f0801b0
+int id shirt_rectangle 0x7f080244
 int id shortcut 0x7f0801b1
 int id showCustom 0x7f0801b2
 int id showHome 0x7f0801b3
@@ -2340,7 +2359,9 @@ int id skipCollapsed 0x7f0801b7
 int id skipped 0x7f0801b8
 int id slide 0x7f0801b9
 int id small_checkbox 0x7f080233
+int id small_exp_bar_background 0x7f080245
 int id small_header_text 0x7f0801ba
+int id small_health_bar_background 0x7f080246
 int id small_text 0x7f080234
 int id snackbar_action 0x7f0801bb
 int id snackbar_text 0x7f0801bc
@@ -2557,7 +2578,9 @@ int layout fragment_get_login_password 0x7f0b0036
 int layout fragment_habits_list 0x7f0b0037
 int layout fragment_header 0x7f0b0038
 int layout fragment_input 0x7f0b0039
+int layout fragment_market_list 0x7f0b0091
 int layout fragment_or_enter_by 0x7f0b003a
+int layout fragment_present_character_big 0x7f0b0092
 int layout fragment_present_character_small 0x7f0b003b
 int layout fragment_super_design_input 0x7f0b003c
 int layout fragment_tasks_list 0x7f0b003d
@@ -2623,6 +2646,7 @@ int layout select_dialog_item_material 0x7f0b0078
 int layout select_dialog_multichoice_material 0x7f0b0079
 int layout select_dialog_singlechoice_material 0x7f0b007a
 int layout simple_layout_habit 0x7f0b007c
+int layout simple_layout_market_item 0x7f0b0093
 int layout simple_layout_subtask 0x7f0b0090
 int layout simple_layout_task 0x7f0b007d
 int layout support_simple_spinner_dropdown_item 0x7f0b007e
@@ -2717,6 +2741,7 @@ int string main_page_character 0x7f0f003f
 int string main_page_habits 0x7f0f0040
 int string main_page_tasks 0x7f0f0041
 int string mark_as_done 0x7f0f0042
+int string market 0x7f0f008c
 int string material_clock_display_divider 0x7f0f0043
 int string material_clock_toggle_content_description 0x7f0f0044
 int string material_hour_selection 0x7f0f0045
@@ -3519,6 +3544,8 @@ int style header_text 0x7f1002d9
 int style inputs_hint 0x7f1002da
 int style main_pages_names_off 0x7f1002db
 int style small_gray_header 0x7f1002dc
+int style small_orange_text 0x7f1002e0
+int style small_red_text 0x7f1002e1
 int style small_text_style 0x7f1002dd
 int style small_white_text 0x7f1002de
 int style text_style 0x7f1002df
