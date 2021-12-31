@@ -1780,6 +1780,7 @@ drawable bad_habit_off
 drawable bad_habit_on
 drawable big_white_rectangle
 drawable black_white_money
+drawable blue_close
 drawable blue_normal_rectangle_for_checkbox_off
 drawable blue_normal_rectangle_for_checkbox_on
 drawable bottom_menu_character_off
@@ -1801,6 +1802,7 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_frame
+drawable card_save_changes
 drawable close_in_circle
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1878,6 +1880,8 @@ drawable plus
 drawable present_character_big_rectangle
 drawable present_character_big_small_rectangles
 drawable purple_circle
+drawable save_changes_no_button
+drawable save_changes_yes_button
 drawable selection_band_overlay
 drawable simple_off
 drawable simple_on
@@ -1897,6 +1901,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable top_menu
 drawable top_menu_rectangle
+drawable transparent_gray_rectangle
 drawable white_rectangle
 id ALT
 id BOTTOM_END
@@ -2037,6 +2042,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id clockwise
+id close_button
 id closest
 id collapseActionView
 id confirm_button
@@ -2139,6 +2145,7 @@ id good_habit_checkbox_pic
 id good_habit_checkbox_touch_area
 id graph
 id graph_wrap
+id gray_dialogue
 id group_divider
 id grouping
 id groups
@@ -2278,6 +2285,7 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id noScroll
 id noState
+id no_button
 id none
 id normal
 id normal_difficulty_radiobutton
@@ -2391,6 +2399,7 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
+id subfragment
 id submenuarrow
 id submit_area
 id subtask_layout
@@ -2479,6 +2488,7 @@ id wrap_content
 id wrap_content_constrained
 id x_left
 id x_right
+id yes_button
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2576,6 +2586,7 @@ layout fragment_description_super_design_input
 layout fragment_dos
 layout fragment_get_code
 layout fragment_get_login_password
+layout fragment_gray_back_screen
 layout fragment_habits_list
 layout fragment_header
 layout fragment_input
@@ -2583,6 +2594,7 @@ layout fragment_market_list
 layout fragment_or_enter_by
 layout fragment_present_character_big
 layout fragment_present_character_small
+layout fragment_save_changes_dialogue
 layout fragment_super_design_input
 layout fragment_tasks_list
 layout material_chip_input_combo
@@ -2735,6 +2747,7 @@ string hide_bottom_view_on_scroll_behavior
 string how_often_to_do
 string icon_content_description
 string inventory
+string is_save_changes
 string item_view_role_description
 string level
 string login_checkbox_text
@@ -2798,6 +2811,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string no
 string normal
 string notes
 string or_enter_by_header
@@ -2812,6 +2826,7 @@ string search_menu_title
 string simple
 string status_bar_notification_info_overflow
 string text_login_2
+string yes
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
@@ -3544,6 +3559,7 @@ style big_white_text
 style header_text
 style inputs_hint
 style main_pages_names_off
+style simple_white_text
 style small_gray_header
 style small_orange_text
 style small_red_text
