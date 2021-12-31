@@ -17,7 +17,10 @@ private const val ARG_PARAM_TEXT = "text"
  * Use the [CheckBox.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CheckBox : Fragment() {
+class CheckBox(
+    private val startValue: Boolean,
+    private val listener: (value: Boolean)->Unit
+) : Fragment() {
     // TODO: Rename and change types of parameters
     private var text: String? = null
 
@@ -47,6 +50,9 @@ class CheckBox : Fragment() {
         val full_checkbox = view.findViewById<FrameLayout>(R.id.full_checkbox)
         full_checkbox.setOnClickListener {
             checked = !checked
+
+            listener(checked)
+
             square_checkbox.setBackgroundResource(
                 if (checked)  R.drawable.square_checked else R.drawable.square_unchecked
             )
@@ -55,8 +61,12 @@ class CheckBox : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(text: String) =
-            CheckBox().apply {
+        fun newInstance(
+            text: String,
+            startValue: Boolean = false,
+            listener: (value: Boolean) -> Unit = {}
+        ) =
+            CheckBox(startValue, listener).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_TEXT, text)
                 }

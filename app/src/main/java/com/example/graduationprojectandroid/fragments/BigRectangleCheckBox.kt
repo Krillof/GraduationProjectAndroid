@@ -15,10 +15,13 @@ private const val ARG_PARAM_TEXT = "text"
  * Use the [BigRectangleCheckBox.newInstance] factory method to
  * create an instance of this fragment.
  */
-class BigRectangleCheckBox : Fragment() {
+class BigRectangleCheckBox(
+    private val startValue: Boolean,
+    private val listener: (value: Boolean)->Unit
+) : Fragment() {
     private var text: String? = null
 
-    private var checked: Boolean = false
+    private var checked: Boolean = startValue
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +45,8 @@ class BigRectangleCheckBox : Fragment() {
         rectangle.setOnClickListener {
             checked = !checked
 
+            listener(checked)
+
             rectangle.setBackgroundResource(
                 if (checked)
                     R.drawable.blue_normal_rectangle_for_checkbox_on
@@ -58,8 +63,12 @@ class BigRectangleCheckBox : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(text: String) =
-            BigRectangleCheckBox().apply {
+        fun newInstance(
+            text: String,
+            startValue: Boolean = false,
+            listener: (value: Boolean)->Unit = {}
+        ) =
+            BigRectangleCheckBox(startValue, listener).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_TEXT, text)
                 }

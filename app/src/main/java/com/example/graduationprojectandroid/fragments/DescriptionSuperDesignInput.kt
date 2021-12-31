@@ -23,10 +23,13 @@ private const val ARG_PARAM_HEADER = "header"
  * Use the [DescriptionSuperDesignInput.newInstance] factory method to
  * create an instance of this fragment.
  */
-class DescriptionSuperDesignInput : Fragment() {
+class DescriptionSuperDesignInput(
+    private val startValue: String,
+    private val listener: (value: String)->Unit
+) : Fragment() {
     private var header: String? = null
-
     private var input_text: EditText? = null
+    var wasCreated: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,10 +46,12 @@ class DescriptionSuperDesignInput : Fragment() {
         return inflater.inflate(R.layout.fragment_description_super_design_input, container, false)
     }
 
-    class ThreeLinesTextWatcher(input_text: EditText?) : TextWatcher {
+    class ThreeLinesTextWatcher(
+        private var input_text: EditText?,
+        private var listener: (value: String) -> Unit
+    ) : TextWatcher {
         var lastSpecialRequestsCursorPosition: Int = 0
         var specialRequests: String = ""
-        val input_text: EditText? = input_text
 
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             lastSpecialRequestsCursorPosition = input_text?.getSelectionStart()!!
@@ -66,7 +71,7 @@ class DescriptionSuperDesignInput : Fragment() {
 
             input_text?.addTextChangedListener(this);
 
-
+            listener(input_text?.text.toString())
         }
 
     }
@@ -78,12 +83,17 @@ class DescriptionSuperDesignInput : Fragment() {
         val white_rectangle: View = view.findViewById(R.id.white_rectangle)
         input_text = view.findViewById(R.id.input_text)
 
+        if (! wasCreated){
+            input_text?.setText(startValue)
+            wasCreated = true
+        }
+
         val context = this.view
 
         hiding_text.text = header
         header_text.text = header
 
-        input_text?.addTextChangedListener(ThreeLinesTextWatcher(input_text))
+        input_text?.addTextChangedListener(ThreeLinesTextWatcher(input_text, listener))
 
         white_rectangle.setOnClickListener{
             hiding_text.visibility = View.GONE
@@ -116,8 +126,12 @@ class DescriptionSuperDesignInput : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(header: String) =
-            DescriptionSuperDesignInput().apply {
+        fun newInstance(
+            header: String,
+            startValue: String = "",
+            listener: (value: String) -> Unit = {}
+        ) =
+            DescriptionSuperDesignInput(startValue, listener).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_HEADER, header)
                 }

@@ -37,4 +37,7 @@
     <string name="avatar">Аватар</string>
     <string name="communities">Сообщества</string>
     <string name="market">Магазин</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="is_save_changes">Сохранить изменения, прежде чем выйти?</string>
 </resources>

@@ -8,12 +8,16 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutHabitBinding
 
 class HabitsAdapter(
-    private var habits_arr: ArrayList<Habit>
+    private var habits_arr: ArrayList<Habit>,
+    var edit_listener: (h: Habit?) -> Unit
     ) : RecyclerView.Adapter<HabitsAdapter.HabitView>()
 {
 
 
-    class HabitView(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class HabitView(
+        var itemView: View,
+        var edit_listener: (h: Habit?) -> Unit
+    ) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutHabitBinding.bind(itemView)
 
         fun bind(habit: Habit, adapter: HabitsAdapter) = with(binding) {
@@ -63,6 +67,10 @@ class HabitsAdapter(
                 }
             )
 
+            text.setOnClickListener {
+                edit_listener(habit)
+            }
+
         }
     }
 
@@ -70,7 +78,8 @@ class HabitsAdapter(
         return HabitView(
             LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.simple_layout_habit, parent, false )
+                .inflate(R.layout.simple_layout_habit, parent, false ),
+            edit_listener
         )
     }
 

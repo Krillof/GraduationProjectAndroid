@@ -18,7 +18,7 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
  * create an instance of this fragment.
  */
 class HabitsList(
-    private var listener: () -> Unit
+    private var listener: (h: Habit?) -> Unit
 ) : Fragment() {
 
     private lateinit var binding: FragmentHabitsListBinding
@@ -44,10 +44,10 @@ class HabitsList(
 
     private fun init() = with(binding){
         addButton.setOnClickListener {
-            listener()
+            listener(null)
         }
 
-        val habitsListAdapter = HabitsAdapter(getHabits())
+        val habitsListAdapter = HabitsAdapter(getHabits(), listener)
 
         habitsList.layoutManager = LinearLayoutManager(habitsList.context)
         habitsList.adapter = habitsListAdapter
@@ -245,7 +245,7 @@ class HabitsList(
 
     companion object {
         @JvmStatic
-        fun newInstance(listener: () -> Unit) =
+        fun newInstance(listener: (h: Habit?) -> Unit) =
             HabitsList(listener)
     }
 }

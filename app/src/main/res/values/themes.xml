@@ -69,6 +69,18 @@
         </item>
     </style>
 
+    <style name="simple_white_text">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
     <style name="big_white_text">
 
         <item name="android:textSize">

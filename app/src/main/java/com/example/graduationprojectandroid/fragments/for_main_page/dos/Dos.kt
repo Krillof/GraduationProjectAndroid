@@ -10,13 +10,14 @@ import android.widget.TextView
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.activities.CreatingHabit
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
 
 private const val ARG_PARAM_LOGIN = "login"
 
 
 class Dos(
     private val listener_open_menu: ()->Unit,
-    private val listener_open_creating_habit: ()->Unit
+    private val listener_open_creating_habit: (h: Habit?)->Unit
 ) : Fragment() {
     private var login: String? = null
 
@@ -89,7 +90,7 @@ class Dos(
                 val habitsList
                         = HabitsList.newInstance()
                 {
-                    listener_open_creating_habit()
+                    listener_open_creating_habit(it)
                 }
 
                 replace(R.id.first_fragment, presentCharacterSmall)
@@ -169,7 +170,7 @@ class Dos(
         fun newInstance(
             login: String,
             listener_open_menu: ()->Unit,
-            listener_open_creating_habit: ()->Unit
+            listener_open_creating_habit: (h: Habit?)->Unit
         ) =
             Dos(
                 listener_open_menu,
