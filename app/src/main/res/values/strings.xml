@@ -40,4 +40,6 @@
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="is_save_changes">Сохранить изменения, прежде чем выйти?</string>
+    <string name="new_list_element">Новый пункт списка</string>
+    <string name="list">Список</string>
 </resources>

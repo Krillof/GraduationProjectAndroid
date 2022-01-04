@@ -1804,6 +1804,9 @@ drawable btn_radio_on_to_off_mtrl_animation
 drawable button_frame
 drawable card_save_changes
 drawable close_in_circle
+drawable creating_subtask_close
+drawable creating_subtask_plus
+drawable creating_subtask_rect
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2055,6 +2058,7 @@ id continuousVelocity
 id coordinator
 id cos
 id counterclockwise
+id creating_subtasks_list
 id currentState
 id current_task_rectangle
 id custom
@@ -2075,6 +2079,7 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id dialog_button
+id difficulty_header
 id dimensions
 id direct
 id disableHome
@@ -2169,6 +2174,7 @@ id home
 id homeAsUp
 id honorRequest
 id horizontal_only
+id how_often_do_header
 id icon
 id icon_group
 id idk_rectangle
@@ -2182,6 +2188,7 @@ id info
 id input
 id input_1
 id input_2
+id input_hint
 id input_text
 id invisible
 id inward
@@ -2314,12 +2321,14 @@ id peekHeight
 id percent
 id pet_rectangle
 id pin
+id plus_or_close
 id position
 id postLayout
 id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rect
 id rectangle_1
 id rectangle_2
 id rectangle_3
@@ -2404,6 +2413,7 @@ id submenuarrow
 id submit_area
 id subtask_layout
 id subtasks_counter_circle
+id subtasks_header
 id subtasks_list
 id super_design_input
 id supportScrollUp
@@ -2582,6 +2592,7 @@ layout design_text_input_start_icon
 layout fragment_big_rectangle_check_box
 layout fragment_button
 layout fragment_check_box
+layout fragment_creating_subtasks_list
 layout fragment_description_super_design_input
 layout fragment_dos
 layout fragment_get_code
@@ -2658,6 +2669,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_layout_creating_subtask
 layout simple_layout_habit
 layout simple_layout_market_item
 layout simple_layout_subtask
@@ -2750,6 +2762,7 @@ string inventory
 string is_save_changes
 string item_view_role_description
 string level
+string list
 string login_checkbox_text
 string main_page_character
 string main_page_habits
@@ -2811,6 +2824,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string new_list_element
 string no
 string normal
 string notes
@@ -3559,8 +3573,10 @@ style big_white_text
 style header_text
 style inputs_hint
 style main_pages_names_off
+style pre_small_text_style
 style simple_white_text
 style small_gray_header
+style small_input_hint
 style small_orange_text
 style small_red_text
 style small_text_style

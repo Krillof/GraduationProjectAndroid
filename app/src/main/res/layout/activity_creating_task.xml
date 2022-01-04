@@ -6,4 +6,365 @@
     android:layout_height="match_parent"
     tools:context=".activities.CreatingTask">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+
+        android:background="@drawable/gray_right_top_cirled_background"
+        />
+
+    <View
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+
+        android:background="@drawable/close_in_circle"
+        />
+
+    <View
+        android:id="@+id/exit_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        />
+
+
+
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                >
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/header"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="17dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/super_design_input"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="62dp"
+                    android:layout_marginStart="16dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+
+                    />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/description_super_design_input"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="120dp"
+                    android:layout_marginStart="16dp"
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/subtasks_header"
+
+                    style="@style/text_style"
+
+                    app:layout_constraintTop_toBottomOf="@id/description_super_design_input"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+
+                    android:text="@string/list"
+                    />
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/creating_subtasks_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginStart="16dp"
+
+                    app:layout_constraintTop_toBottomOf="@id/subtasks_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/difficulty_header"
+
+                    style="@style/text_style"
+
+                    app:layout_constraintTop_toBottomOf="@id/creating_subtasks_list"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginStart="16dp"
+
+                    android:text="@string/difficulty"
+                    />
+
+                <View
+                    android:id="@+id/simple_difficulty_radiobutton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp"
+
+                    android:background="@drawable/simple_off"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/simple"
+                    style="@style/small_text_style"
+
+                    app:layout_constraintTop_toBottomOf="@+id/simple_difficulty_radiobutton"
+                    app:layout_constraintStart_toStartOf="@+id/simple_difficulty_radiobutton"
+                    app:layout_constraintEnd_toEndOf="@+id/simple_difficulty_radiobutton"
+                    android:layout_marginTop="6dp"
+
+                    />
+
+                <View
+                    android:id="@+id/easy_difficulty_radiobutton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="107dp"
+
+                    android:background="@drawable/easy_off"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/easy"
+                    style="@style/small_text_style"
+
+                    app:layout_constraintTop_toBottomOf="@+id/easy_difficulty_radiobutton"
+                    app:layout_constraintStart_toStartOf="@+id/easy_difficulty_radiobutton"
+                    app:layout_constraintEnd_toEndOf="@+id/easy_difficulty_radiobutton"
+                    android:layout_marginTop="6dp"
+
+                    />
+
+                <View
+                    android:id="@+id/normal_difficulty_radiobutton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="198dp"
+
+                    android:background="@drawable/normal_off"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/normal"
+                    style="@style/small_text_style"
+
+                    app:layout_constraintTop_toBottomOf="@+id/normal_difficulty_radiobutton"
+                    app:layout_constraintStart_toStartOf="@+id/normal_difficulty_radiobutton"
+                    app:layout_constraintEnd_toEndOf="@+id/normal_difficulty_radiobutton"
+                    android:layout_marginTop="6dp"
+
+                    />
+
+                <View
+                    android:id="@+id/hard_difficulty_radiobutton"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="288dp"
+                    android:layout_marginEnd="16dp"
+
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+
+
+                    android:background="@drawable/hard_off"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/hard"
+                    style="@style/small_text_style"
+
+                    app:layout_constraintTop_toBottomOf="@+id/hard_difficulty_radiobutton"
+                    app:layout_constraintStart_toStartOf="@+id/hard_difficulty_radiobutton"
+                    app:layout_constraintEnd_toEndOf="@+id/hard_difficulty_radiobutton"
+                    android:layout_marginTop="6dp"
+
+                    />
+
+
+
+
+
+
+
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:id="@+id/how_often_do_header"
+
+                    style="@style/text_style"
+
+                    app:layout_constraintTop_toBottomOf="@+id/difficulty_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="108dp"
+                    android:layout_marginStart="16dp"
+
+                    android:text="@string/how_often_to_do"
+                    />
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/everyday_checkbox"
+
+
+                    android:layout_width="96dp"
+                    android:layout_height="24dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/how_often_do_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="16dp"
+
+                    />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/everyweek_checkbox"
+
+
+                    android:layout_width="96dp"
+                    android:layout_height="24dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/how_often_do_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="132dp"
+
+                    />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/everymonth_checkbox"
+
+
+                    android:layout_width="96dp"
+                    android:layout_height="24dp"
+
+                    app:layout_constraintTop_toBottomOf="@+id/how_often_do_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="17dp"
+                    android:layout_marginStart="248dp"
+
+                    />
+
+
+
+
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/checkbox"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintTop_toBottomOf="@+id/how_often_do_header"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="60dp"
+                    android:layout_marginStart="16dp"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    <androidx.fragment.app.FragmentContainerView
+
+        android:id="@+id/button_confirm"
+
+        android:layout_width="328dp"
+        android:layout_height="50dp"
+
+        android:layout_marginBottom="20dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,13 +36,10 @@ class HabitsList(
         return binding.root //.inflate(, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
 
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
 
-    private fun init() = with(binding){
         addButton.setOnClickListener {
             listener(null)
         }
@@ -64,7 +61,7 @@ class HabitsList(
         val habit1 = Habit(
             1,
             "Бегать по утрам",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -78,13 +75,13 @@ class HabitsList(
         val habit3 = Habit(
             3,
             "Бросить пить",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
         val habit4 = Habit(
             4,
             "Точно не йога",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -98,14 +95,14 @@ class HabitsList(
         val habit6 = Habit(
             6,
             "Бросить курить",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
 
         val habit7 = Habit(
             7,
             "Спать",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -119,14 +116,14 @@ class HabitsList(
         val habit9 = Habit(
             9,
             "Бросить есть сладкое",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
 
         val habit10 = Habit(
             10,
             "2 Бегать по утрам",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -140,13 +137,13 @@ class HabitsList(
         val habit12 = Habit(
             12,
             "2 Бросить пить",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
         val habit13 = Habit(
             13,
             "2 Точно не йога",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -160,14 +157,14 @@ class HabitsList(
         val habit15 = Habit(
             15,
             "2 Бросить курить",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
 
         val habit16 = Habit(
             16,
             "2 Спать",
-            "С 6:30 до 7:00, не забыть разминку перед бегом и после",
+            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
         )
 
@@ -181,7 +178,7 @@ class HabitsList(
         val habit18 = Habit(
             18,
             "2 Бросить есть сладкое",
-            "Убиваем зеленаго змия весело и с пользой: во вторник встреча",
+            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
 

@@ -11,13 +11,15 @@ import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.activities.CreatingHabit
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
 
 private const val ARG_PARAM_LOGIN = "login"
 
 
 class Dos(
     private val listener_open_menu: ()->Unit,
-    private val listener_open_creating_habit: (h: Habit?)->Unit
+    private val listener_open_creating_habit: (h: Habit?)->Unit,
+    private val listener_open_creating_task: (t: Task?)->Unit
 ) : Fragment() {
     private var login: String? = null
 
@@ -57,25 +59,7 @@ class Dos(
             listener_open_menu()
         }
 
-        character_menu_choice.setOnClickListener {
-            context.turnPageOnBottomMenuTo(Pages.character, view)
 
-
-            fragmentManager?.commit{
-                val presentCharacterBig
-                    = PresentCharacterBig.newInstance()
-
-                val marketList
-                    = MarketList.newInstance()
-
-
-
-                replace(R.id.first_fragment, presentCharacterBig)
-                replace(R.id.second_fragment, marketList)
-
-            }
-
-        }
 
         habits_menu_choice.setOnClickListener{
 
@@ -110,11 +94,31 @@ class Dos(
 
                 val tasksList
                         = TasksList.newInstance(){
-
+                    listener_open_creating_task(it)
                 }
 
                 replace(R.id.first_fragment, presentCharacterSmall)
                 replace(R.id.second_fragment, tasksList)
+            }
+
+        }
+
+        character_menu_choice.setOnClickListener {
+            context.turnPageOnBottomMenuTo(Pages.character, view)
+
+
+            fragmentManager?.commit{
+                val presentCharacterBig
+                        = PresentCharacterBig.newInstance()
+
+                val marketList
+                        = MarketList.newInstance()
+
+
+
+                replace(R.id.first_fragment, presentCharacterBig)
+                replace(R.id.second_fragment, marketList)
+
             }
 
         }
@@ -170,11 +174,13 @@ class Dos(
         fun newInstance(
             login: String,
             listener_open_menu: ()->Unit,
-            listener_open_creating_habit: (h: Habit?)->Unit
+            listener_open_creating_habit: (h: Habit?)->Unit,
+            listener_open_creating_task: (t: Task?) -> Unit
         ) =
             Dos(
                 listener_open_menu,
-                listener_open_creating_habit
+                listener_open_creating_habit,
+                listener_open_creating_task
             ).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_LOGIN, login)

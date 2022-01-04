@@ -78,8 +78,8 @@
         <entry key="app/src/main/res/drawable/white_rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/layout-v31/fragment_or_enter_by.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_creating_character.xml" value="0.3546195652173913" />
-        <entry key="app/src/main/res/layout/activity_creating_habit.xml" value="0.47463516330785266" />
-        <entry key="app/src/main/res/layout/activity_creating_task.xml" value="0.3242753623188406" />
+        <entry key="app/src/main/res/layout/activity_creating_habit.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_creating_task.xml" value="0.75" />
         <entry key="app/src/main/res/layout/activity_habits.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
@@ -89,6 +89,7 @@
         <entry key="app/src/main/res/layout/fragment_button.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_check_box.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_creating_habit.xml" value="0.333786231884058" />
+        <entry key="app/src/main/res/layout/fragment_creating_subtasks_list.xml" value="0.3079710144927536" />
         <entry key="app/src/main/res/layout/fragment_description_input.xml" value="0.3066123188405797" />
         <entry key="app/src/main/res/layout/fragment_description_super_design_input.xml" value="0.3066123188405797" />
         <entry key="app/src/main/res/layout/fragment_dos.xml" value="0.31521739130434784" />
@@ -111,6 +112,7 @@
         <entry key="app/src/main/res/layout/fragment_super_design_input.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_tasks_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/simple_layout_blank.xml" value="0.3052536231884058" />
+        <entry key="app/src/main/res/layout/simple_layout_creating_subtask.xml" value="0.75" />
         <entry key="app/src/main/res/layout/simple_layout_habit.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/simple_layout_market_item.xml" value="1.1" />
         <entry key="app/src/main/res/layout/simple_layout_subtask.xml" value="1.1" />

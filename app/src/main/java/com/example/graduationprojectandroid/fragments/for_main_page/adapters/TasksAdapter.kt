@@ -10,7 +10,9 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutTaskBinding
 
 class TasksAdapter(
-    private var tasks_arr: ArrayList<Task>)
+    private var tasks_arr: ArrayList<Task>,
+    private var listener: (Task?) -> Unit
+)
 
     : RecyclerView.Adapter<TasksAdapter.TaskView>()
 {
@@ -21,7 +23,8 @@ class TasksAdapter(
             subtasksList.layoutManager = LinearLayoutManager(subtasksList.context)
         }
 
-        fun bind(task: Task, this_adapter: TasksAdapter) = with(binding){
+        fun bind(task: Task, this_adapter: TasksAdapter, listener: (Task?) -> Unit)
+        = with(binding){
 
             task.setParentAdapterForSubtasks(this_adapter)
 
@@ -33,6 +36,10 @@ class TasksAdapter(
 
             anotherHeader.text = task.header
             text.text = task.text
+
+            text.setOnClickListener {
+                listener(task)
+            }
 
             doneCheckbox.setBackgroundResource(
                 if (task.isDone())
@@ -79,7 +86,7 @@ class TasksAdapter(
     override fun getItemCount(): Int = tasks_arr.size
 
     override fun onBindViewHolder(holder: TaskView, position: Int) {
-        holder.bind(tasks_arr[position],this)
+        holder.bind(tasks_arr[position],this, listener)
     }
 
 }

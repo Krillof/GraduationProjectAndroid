@@ -27,6 +27,8 @@
         android:background="@drawable/close_in_circle"
         />
 
+
+
     <View
         android:id="@+id/exit_button"
         android:layout_width="40dp"
@@ -406,6 +408,8 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
     <androidx.fragment.app.FragmentContainerView

@@ -24,6 +24,7 @@ private const val ARG_PARAM_HEADER = "header"
  * create an instance of this fragment.
  */
 class SuperDesignInput(
+    private val isShowingTextFromStart: Boolean,
     private val startValue: String,
     private val listener: (value: String)->Unit
 ) : Fragment() {
@@ -70,8 +71,16 @@ class SuperDesignInput(
             input_text?.requestFocus()
         }
 
+        if (isShowingTextFromStart){
+            hiding_text.visibility = View.GONE
+            header_text.visibility = View.VISIBLE
+            input_text?.visibility = View.VISIBLE
+        }
+
         input_text?.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus && input_text?.text.toString() == ""){
+            if (!hasFocus && input_text?.text.toString() == ""
+                && !isShowingTextFromStart
+            ){
                 hiding_text.visibility = View.VISIBLE
                 header_text.visibility = View.GONE
                 input_text?.visibility = View.GONE
@@ -97,10 +106,11 @@ class SuperDesignInput(
         @JvmStatic
         fun newInstance(
             header: String,
+            isShowingTextFromStart: Boolean = false,
             startValue: String = "",
             listener: (value: String) -> Unit = {}
         ) =
-            SuperDesignInput(startValue, listener).apply {
+            SuperDesignInput(isShowingTextFromStart, startValue, listener).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_HEADER, header)
             }

@@ -16,7 +16,7 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Tas
  * Use the [TasksList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TasksList(private var listener: () -> Unit) : Fragment() {
+class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
     lateinit var binding: FragmentTasksListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,22 +32,18 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
 
-    private fun init() = with(binding){
+
         addButton.setOnClickListener {
-            listener()
+            listener(null)
         }
 
-        val habitsListAdapter = TasksAdapter(getTasks())
+        val habitsListAdapter = TasksAdapter(getTasks(), listener)
 
         tasksList.layoutManager = LinearLayoutManager(tasksList.context)
         tasksList.adapter = habitsListAdapter
-
     }
 
     private fun getTasks(): ArrayList<Task>{
@@ -76,10 +72,10 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
             "купить картошку",
             "приготовить картошку",
             "сделать из неё торт",
-            "подумать о картошке",
-            "купить картошку",
-            "приготовить картошку",
-            "сделать из неё торт"
+            "подумать о картошке 2",
+            "купить картошку 2",
+            "приготовить картошку 2",
+            "сделать из неё торт 2"
         )
 
         var subtasks2: MutableList<Subtask> = MutableList(
@@ -167,7 +163,7 @@ class TasksList(private var listener: () -> Unit) : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(listener: () -> Unit) =
+        fun newInstance(listener: (Task?) -> Unit) =
             TasksList(listener)
     }
 }

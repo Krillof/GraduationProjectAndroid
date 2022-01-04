@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
 
 class MainPage : AppCompatActivity() {
@@ -15,6 +16,7 @@ class MainPage : AppCompatActivity() {
 
     companion object {
         public val ARG_HABIT = "habit"
+        public val ARG_TASK = "task"
     }
     //-------------------------------------------
     //TMP
@@ -29,6 +31,13 @@ class MainPage : AppCompatActivity() {
         finish()
     }
 
+    fun open_creating_task(task: Task?){
+        val intent = Intent(this, CreatingTask::class.java)
+        intent.putExtra(ARG_TASK, task)
+        startActivity(intent)
+        finish()
+    }
+
     fun open_menu(){
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout)
         drawer.openDrawer(GravityCompat.START)
@@ -39,7 +48,7 @@ class MainPage : AppCompatActivity() {
 
         setContentView(R.layout.activity_main_page)
 
-        val dos = Dos.newInstance(login, { open_menu() }, { open_creating_habit(it) })
+        val dos = Dos.newInstance(login, { open_menu() }, { open_creating_habit(it) }, { open_creating_task(it) })
 
         supportFragmentManager.beginTransaction()
                 .replace(R.id.main_page_fragment, dos)

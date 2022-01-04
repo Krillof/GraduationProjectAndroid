@@ -2,19 +2,25 @@ package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import java.io.Serializable
 
 class Task(
     public val id: Int,
-    public val header: String,
-    public val text: String,
+    public var header: String,
+    public var text: String,
     public val subtasks: MutableList<Subtask>,
     public val visibility: Int = View.VISIBLE,
     public var show_subtasks_always: Int = View.VISIBLE
-    )
+    ) : Serializable
 {
     private var show_subtasks_current: Int = View.GONE
     private var adapter = SubtaskAdapter(subtasks)
     private var done: Boolean = false
+
+    public var isEveryday: Boolean = false
+    public var isEveryweek: Boolean = false
+    public var isEverymonth: Boolean = false
+    public var difficulty: Difficulty = Difficulty.normal
 
     public fun setParentAdapterForSubtasks(value: TasksAdapter) {
         for (i in 0 until subtasks.size){

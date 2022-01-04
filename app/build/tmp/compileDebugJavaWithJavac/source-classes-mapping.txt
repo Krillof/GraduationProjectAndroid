@@ -1,11 +1,11 @@
-com/example/graduationprojectandroid/network/NetworkService.java
- com.example.graduationprojectandroid.network.NetworkService
 com/example/graduationprojectandroid/network/endpoints/JSONPlaceHolderApi.java
  com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
-com/example/graduationprojectandroid/BuildConfig.java
- com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/network/endpoints/Test.java
  com.example.graduationprojectandroid.network.endpoints.Test
+com/example/graduationprojectandroid/network/NetworkService.java
+ com.example.graduationprojectandroid.network.NetworkService
+com/example/graduationprojectandroid/BuildConfig.java
+ com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/databinding/ActivityCreatingTaskBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingTaskBinding
 com/example/graduationprojectandroid/databinding/FragmentBigRectangleCheckBoxBinding.java
@@ -44,10 +44,14 @@ com/example/graduationprojectandroid/databinding/FragmentDescriptionSuperDesignI
  com.example.graduationprojectandroid.databinding.FragmentDescriptionSuperDesignInputBinding
 com/example/graduationprojectandroid/databinding/FragmentGrayBackScreenBinding.java
  com.example.graduationprojectandroid.databinding.FragmentGrayBackScreenBinding
+com/example/graduationprojectandroid/databinding/SimpleLayoutCreatingSubtaskBinding.java
+ com.example.graduationprojectandroid.databinding.SimpleLayoutCreatingSubtaskBinding
 com/example/graduationprojectandroid/databinding/ActivityCreatingCharacterBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingCharacterBinding
 com/example/graduationprojectandroid/databinding/ActivityMainPageBinding.java
  com.example.graduationprojectandroid.databinding.ActivityMainPageBinding
+com/example/graduationprojectandroid/databinding/FragmentCreatingSubtasksListBinding.java
+ com.example.graduationprojectandroid.databinding.FragmentCreatingSubtasksListBinding
 com/example/graduationprojectandroid/databinding/ActivityCreatingHabitBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingHabitBinding
 com/example/graduationprojectandroid/databinding/FragmentMarketListBinding.java
