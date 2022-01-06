@@ -48,7 +48,15 @@ class MainPage : AppCompatActivity() {
 
         setContentView(R.layout.activity_main_page)
 
-        val dos = Dos.newInstance(login, { open_menu() }, { open_creating_habit(it) }, { open_creating_task(it) })
+        val is_was_creating_tasks
+            = intent.extras?.get(CreatingTask.IS_WAS_CREATING_TASK) as Boolean?
+
+        val dos = Dos.newInstance(
+            if (is_was_creating_tasks == true) true else false, // because can be null - not redundant
+            login,
+            { open_menu() },
+            { open_creating_habit(it) },
+            { open_creating_task(it) })
 
         supportFragmentManager.beginTransaction()
                 .replace(R.id.main_page_fragment, dos)

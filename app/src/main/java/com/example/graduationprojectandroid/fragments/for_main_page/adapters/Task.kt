@@ -4,58 +4,56 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import java.io.Serializable
 
-class Task(
+open class Task(
     public val id: Int,
     public var header: String,
     public var text: String,
-    public val subtasks: MutableList<Subtask>,
-    public val visibility: Int = View.VISIBLE,
-    public var show_subtasks_always: Int = View.VISIBLE
-    ) : Serializable
-{
-    private var show_subtasks_current: Int = View.GONE
-    private var adapter = SubtaskAdapter(subtasks)
-    private var done: Boolean = false
-
-    public var isEveryday: Boolean = false
-    public var isEveryweek: Boolean = false
-    public var isEverymonth: Boolean = false
+    private val subtasks: MutableList<Subtask>,
+    public var isEveryday: Boolean = false,
+    public var isEveryweek: Boolean = false,
+    public var isEverymonth: Boolean = false,
     public var difficulty: Difficulty = Difficulty.normal
+) : Serializable {
 
-    public fun setParentAdapterForSubtasks(value: TasksAdapter) {
-        for (i in 0 until subtasks.size){
-            subtasks[i].setParent(value)
+    protected var done: Boolean = false
+
+    public fun setParentizedSubtasksAsSubtasks(st: MutableList<ParentizedSubtask>){
+        st.forEach {
+            subtasks.add(ParentizedSubtask(it.done, it.text))
         }
     }
 
-    public fun getAdapter(): SubtaskAdapter{
-        return adapter
+    public open fun getSubtasks() : MutableList<Subtask>{
+        return subtasks
     }
 
-    public fun getCurrentShowSubtasks(): Int = show_subtasks_current
-
-    public fun setCurrentShowSubtasks(value: Int){
-        show_subtasks_current = value
+    public fun getSubtasksAsParentizedSubtasks() : MutableList<ParentizedSubtask>{
+        var parentizedSubtasks: MutableList<ParentizedSubtask>
+                = MutableList(0, { ParentizedSubtask() })
+        subtasks.forEach {
+            parentizedSubtasks.add(ParentizedSubtask(it.done, it.text))
+        }
+        return parentizedSubtasks
     }
 
-    public fun setDone(value: Boolean){
+    public open fun setFullDone(value: Boolean){
         if (subtasks.size != 0)
-            for (i in 0 until subtasks.size){
-                subtasks[i].done = value
+            for (el in subtasks){
+                el.done = value
             }
         else
             done = value
     }
 
-    public fun setSubtaskDone(index: Int, value: Boolean){
+    public open fun setSubtaskDone(index: Int, value: Boolean){
         subtasks[index].done = value
     }
 
-    public fun isDone(): Boolean{
+    public open fun isDone(): Boolean{
         if (subtasks.size != 0) {
             var check_done = true
-            for (i in 0 until subtasks.size) {
-                check_done = check_done && subtasks[i].done
+            for (el in subtasks) {
+                check_done = check_done && el.done
             }
             return check_done
         } else {
@@ -63,10 +61,17 @@ class Task(
         }
     }
 
-    public fun isSubtaskDone(index: Int): Boolean{
+    public open fun isSubtaskDone(index: Int): Boolean{
         return subtasks[index].done
     }
 
-
+    public open fun howManySubtasksDone(): Int{
+        var amount: Int = 0
+        for (el in subtasks) {
+            if (el.done)
+                amount++
+        }
+        return amount
+    }
 
 }

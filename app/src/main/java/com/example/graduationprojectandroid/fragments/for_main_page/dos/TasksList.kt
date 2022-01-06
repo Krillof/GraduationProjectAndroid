@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentTasksListBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Subtask
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TasksAdapter
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 
 /**
  * A simple [Fragment] subclass.
@@ -40,7 +38,8 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             listener(null)
         }
 
-        val habitsListAdapter = TasksAdapter(getTasks(), listener)
+        val habitsListAdapter
+            = TasksAdapter(convertTasksToParentizedTasks(getTasks()), listener)
 
         tasksList.layoutManager = LinearLayoutManager(tasksList.context)
         tasksList.adapter = habitsListAdapter
@@ -67,6 +66,10 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             subtasks1
         )
 
+        task1.isEveryday = true
+        task1.difficulty = Difficulty.hard
+
+
         val sbtsks_strs2 = listOf(
             "подумать о картошке",
             "купить картошку",
@@ -90,6 +93,8 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             subtasks2
         )
 
+        task2.setFullDone(true)
+        task2.difficulty = Difficulty.normal
 
         var subtasks3: MutableList<Subtask> = MutableList(
             0,
@@ -100,10 +105,11 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             3,
             "Поесть",
             "Очень важно",
-            subtasks3,
-            View.VISIBLE,
-            View.GONE //because there is 0 subtasks
+            subtasks3
         )
+
+        task3.isEveryweek = true
+        task3.difficulty = Difficulty.easy
 
 
 
@@ -114,54 +120,55 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
         //TMP
         //-------------------------------------
 
-        var subtasks0: MutableList<Subtask> = MutableList(
+        return tasksList
+    }
+
+    private fun convertTasksToParentizedTasks(tasks: ArrayList<Task>)
+    : ArrayList<ParentizedTask>{
+        var pTasksList = ArrayList<ParentizedTask>()
+
+        tasks.forEach {
+            pTasksList.add(
+                ParentizedTask(
+                    it.id,
+                    it.header,
+                    it.text,
+                    it.getSubtasks(),
+                    View.VISIBLE,
+                    View.VISIBLE,
+                    it.isEveryday,
+                    it.isEveryweek,
+                    it.isEverymonth,
+                    it.difficulty
+                )
+            )
+        }
+
+        if (pTasksList.size > 0)
+            pTasksList[pTasksList.size - 1].show_subtasks_always = View.GONE
+
+        val subtasks0: MutableList<Subtask> = MutableList(
             0,
             {index -> Subtask(false, "")}
         )
 
-        var task0 = Task(
-            -1,
-            "",
-            "",
-            subtasks0,
-            View.GONE,
-            View.GONE
-        )
+        for (i in 0 until EMPTIES){
+            pTasksList.add(ParentizedTask(
+                -1,
+                "",
+                "",
+                subtasks0,
+                View.GONE,
+                View.GONE
+            ))
+        }
 
-        var task00 = Task(
-            -2,
-            "",
-            "",
-            subtasks0,
-            View.GONE,
-            View.GONE
-        )
-
-        var task000 = Task(
-            -3,
-            "",
-            "",
-            subtasks0,
-            View.GONE,
-            View.GONE
-        )
-
-        var task0000 = Task(
-            -4,
-            "",
-            "",
-            subtasks0,
-            View.GONE,
-            View.GONE
-        )
-        tasksList.add(task0)
-        tasksList.add(task00)
-        tasksList.add(task000)
-        tasksList.add(task0000)
-        return tasksList
+        return pTasksList
     }
 
     companion object {
+        public val EMPTIES = 4
+
         @JvmStatic
         fun newInstance(listener: (Task?) -> Unit) =
             TasksList(listener)

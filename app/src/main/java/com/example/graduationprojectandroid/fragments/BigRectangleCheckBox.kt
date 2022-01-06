@@ -55,6 +55,13 @@ class BigRectangleCheckBox(
             )
         }
 
+        rectangle.setBackgroundResource(
+            if (checked)
+                R.drawable.blue_normal_rectangle_for_checkbox_on
+            else
+                R.drawable.blue_normal_rectangle_for_checkbox_off
+        )
+
         val text_view: TextView = view.findViewById(R.id.text)
         text_view.text = text
     }

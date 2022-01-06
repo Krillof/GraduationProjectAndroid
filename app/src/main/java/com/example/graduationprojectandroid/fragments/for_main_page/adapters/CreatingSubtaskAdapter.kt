@@ -1,13 +1,14 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutCreatingSubtaskBinding
-import com.example.graduationprojectandroid.databinding.SimpleLayoutSubtaskBinding
+
+
 
 class CreatingSubtaskAdapter(
     private var subtasks_arr: MutableList<Subtask>
@@ -20,10 +21,10 @@ class CreatingSubtaskAdapter(
 
         fun bind(pos: Int, arr: MutableList<Subtask>, this_adapter: CreatingSubtaskAdapter)
         = with(binding) {
-            val isLast = pos == arr.size - 1
-            plusOrClose.setOnClickListener {
+            val isLast = (pos == arr.size - 1)
+            plusOrCloseTapArea.setOnClickListener {
                 if (isLast){
-                    Log.println(Log.INFO, "100000", "123")
+                    if (arr.size <= SUBTASKS_MAX_AMOUNT_WITH_ONE_EMPTY)
                     arr.add(Subtask(false, ""))
                 } else {
                     arr.remove(arr[pos])
@@ -41,6 +42,11 @@ class CreatingSubtaskAdapter(
 
             inputHint.visibility = if (isLast) View.VISIBLE else View.GONE
             inputText.visibility = if (isLast) View.GONE else View.VISIBLE
+
+            inputText.setText(arr[pos].text)
+            inputText.addTextChangedListener{
+                arr[pos].text = inputText.text.toString()
+            }
         }
     }
 
@@ -59,4 +65,7 @@ class CreatingSubtaskAdapter(
         holder.bind(position, subtasks_arr, this)
     }
 
+    companion object{
+        public val SUBTASKS_MAX_AMOUNT_WITH_ONE_EMPTY = 10
+    }
 }

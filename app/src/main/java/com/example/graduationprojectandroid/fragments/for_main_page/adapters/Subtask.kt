@@ -2,16 +2,10 @@ package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
 import java.io.Serializable
 
-class Subtask(
+open class Subtask(
     var done: Boolean,
     var text: String
-) : Serializable{
-    private var parent_adapter: TasksAdapter? = null
+) : Serializable {
 
-    public fun setParent(parent: TasksAdapter){
-        parent_adapter = parent
-    }
-
-    public fun getParent():TasksAdapter
-        = parent_adapter!!
+    constructor() : this(false, ""){}
 }

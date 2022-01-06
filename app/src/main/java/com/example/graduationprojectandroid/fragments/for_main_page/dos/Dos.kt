@@ -17,6 +17,7 @@ private const val ARG_PARAM_LOGIN = "login"
 
 
 class Dos(
+    private val isStartFromTasks: Boolean,
     private val listener_open_menu: ()->Unit,
     private val listener_open_creating_habit: (h: Habit?)->Unit,
     private val listener_open_creating_task: (t: Task?)->Unit
@@ -69,7 +70,13 @@ class Dos(
 
             fragmentManager?.commit{
                 val presentCharacterSmall
-                        = PresentCharacterSmall.newInstance(login!!, 85, 248, 13)
+                        = PresentCharacterSmall.newInstance(
+                    login!!,
+                    100,
+                    85,
+                    465,
+                    465,
+                    13)
 
                 val habitsList
                         = HabitsList.newInstance()
@@ -85,12 +92,15 @@ class Dos(
         tasks_menu_choice.setOnClickListener {
             context.turnPageOnBottomMenuTo(Pages.tasks, view)
 
-
-
-
             fragmentManager?.commit{
                 val presentCharacterSmall
-                        = PresentCharacterSmall.newInstance(login!!, 85, 248, 13)
+                        = PresentCharacterSmall.newInstance(
+                    login!!,
+                    100,
+                    85,
+                    465,
+                    248,
+                    13)
 
                 val tasksList
                         = TasksList.newInstance(){
@@ -123,7 +133,11 @@ class Dos(
 
         }
 
-        habits_menu_choice.performClick()
+        if (isStartFromTasks)
+            tasks_menu_choice.performClick()
+        else
+            habits_menu_choice.performClick()
+
     }
 
 
@@ -172,12 +186,14 @@ class Dos(
     companion object {
         @JvmStatic
         fun newInstance(
+            isStartFromTasks: Boolean,
             login: String,
             listener_open_menu: ()->Unit,
             listener_open_creating_habit: (h: Habit?)->Unit,
             listener_open_creating_task: (t: Task?) -> Unit
         ) =
             Dos(
+                isStartFromTasks,
                 listener_open_menu,
                 listener_open_creating_habit,
                 listener_open_creating_task

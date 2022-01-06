@@ -44,7 +44,7 @@ class HabitsList(
             listener(null)
         }
 
-        val habitsListAdapter = HabitsAdapter(getHabits(), listener)
+        val habitsListAdapter = HabitsAdapter(addEmptiesHabits(getHabits()), listener)
 
         habitsList.layoutManager = LinearLayoutManager(habitsList.context)
         habitsList.adapter = habitsListAdapter
@@ -120,67 +120,6 @@ class HabitsList(
             HabitDoneStates.UNKNOWN
         )
 
-        val habit10 = Habit(
-            10,
-            "2 Бегать по утрам",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit11 = Habit(
-            11,
-            "2 Учить английский",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit12 = Habit(
-            12,
-            "2 Бросить пить",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
-        val habit13 = Habit(
-            13,
-            "2 Точно не йога",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit14 = Habit(
-            14,
-            "2 Учить немецкий",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit15 = Habit(
-            15,
-            "2 Бросить курить",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit16 = Habit(
-            16,
-            "2 Спать",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit17 = Habit(
-            17,
-            "2 Учить французский",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit18 = Habit(
-            18,
-            "2 Бросить есть сладкое",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
 
 
         habits.add(habit1)
@@ -192,55 +131,32 @@ class HabitsList(
         habits.add(habit7)
         habits.add(habit8)
         habits.add(habit9)
-        habits.add(habit10)
-        habits.add(habit11)
-        habits.add(habit12)
-        habits.add(habit13)
-        habits.add(habit14)
-        habits.add(habit15)
-        habits.add(habit16)
-        habits.add(habit17)
-        habits.add(habit18)
+
 
         //TMP
         //----------------------------------------------
-        val filler_habit1 = Habit(
-            -1,
-            "",
-            "",
-            HabitDoneStates.UNKNOWN,
-            View.INVISIBLE
-        )
-        val filler_habit2 = Habit(
-            -1,
-            "",
-            "",
-            HabitDoneStates.UNKNOWN,
-            View.INVISIBLE
-        )
-        val filler_habit3 = Habit(
-            -1,
-            "",
-            "",
-            HabitDoneStates.UNKNOWN,
-            View.INVISIBLE
-        )
-        val filler_habit4 = Habit(
-            -1,
-            "",
-            "",
-            HabitDoneStates.UNKNOWN,
-            View.INVISIBLE
-        )
 
-        habits.add(filler_habit1)
-        habits.add(filler_habit2)
-        habits.add(filler_habit3)
-        habits.add(filler_habit4)
         return habits
     }
 
+    private fun addEmptiesHabits(ht: ArrayList<Habit>):ArrayList<Habit>{
+        for (i in 0 until TasksList.EMPTIES){
+            ht.add(
+                Habit(
+                    -1,
+                    "",
+                    "",
+                    HabitDoneStates.UNKNOWN,
+                    View.INVISIBLE
+                )
+            )
+        }
+        return ht
+    }
+
     companion object {
+        public val EMPTIES = 4
+
         @JvmStatic
         fun newInstance(listener: (h: Habit?) -> Unit) =
             HabitsList(listener)

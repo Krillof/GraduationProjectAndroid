@@ -270,6 +270,6 @@ class CreatingHabit : AppCompatActivity() {
 
         }
 
-        normal_choice.performClick()
+        context.changeToDifficulty(habit.difficulty)
     }
 }

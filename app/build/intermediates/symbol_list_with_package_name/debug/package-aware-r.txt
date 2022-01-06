@@ -1822,14 +1822,16 @@ drawable easy_on
 drawable ellipse_checked_1
 drawable ellipse_unchecked_1
 drawable exp_bar_background
-drawable exp_bar_foreground
+drawable exp_bar_circle
+drawable exp_bar_rectangle
 drawable good_habit_off
 drawable good_habit_on
 drawable gray_right_top_cirled_background
 drawable hard_off
 drawable hard_on
 drawable health_bar_background
-drawable health_bar_foreground
+drawable health_bar_circle
+drawable health_bar_rectangle
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2123,7 +2125,9 @@ id everyweek_checkbox
 id exitUntilCollapsed
 id exit_button
 id exp_bar_background
-id exp_bar_foreground
+id exp_bar_circle_1
+id exp_bar_circle_2
+id exp_bar_rect
 id exp_plus_text
 id exp_text
 id exp_text_header
@@ -2164,7 +2168,9 @@ id header_or_enter_by
 id header_text
 id header_title
 id health_bar_background
-id health_bar_foreground
+id health_bar_circle_1
+id health_bar_circle_2
+id health_bar_rect
 id health_plus_text
 id health_text
 id health_text_header
@@ -2322,6 +2328,7 @@ id percent
 id pet_rectangle
 id pin
 id plus_or_close
+id plus_or_close_tap_area
 id position
 id postLayout
 id progress_circular
@@ -2412,6 +2419,7 @@ id subfragment
 id submenuarrow
 id submit_area
 id subtask_layout
+id subtasks_counter
 id subtasks_counter_circle
 id subtasks_header
 id subtasks_list
@@ -3581,6 +3589,7 @@ style small_orange_text
 style small_red_text
 style small_text_style
 style small_white_text
+style subtasks_counter
 style text_style
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity

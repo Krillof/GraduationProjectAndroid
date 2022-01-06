@@ -55,6 +55,17 @@ class CreatingTask : AppCompatActivity() {
         return 0
     }
 
+    private fun goBack(task: Task){
+        task.getSubtasks().removeAt(task.getSubtasks().size - 1)
+
+        //if ID alreadly exists - than change, else make new
+        //TODO: Send to server
+        val intent = Intent(this, MainPage::class.java)
+        intent.putExtra(IS_WAS_CREATING_TASK, true)
+        startActivity(intent)
+        finish()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creating_task)
@@ -90,13 +101,11 @@ class CreatingTask : AppCompatActivity() {
             hard_choice, creating_subtasks_list,
             input, description, everyday_chbx, everyweek_chbx, everymonth_chbx, chbx, exit_button,
             button_confirm)
-        val intent = Intent(this, MainPage::class.java)
+
 
         exit_button.setOnClickListener {
             if (isNew){
-                //TODO: Send to server
-                startActivity(intent)
-                finish()
+                goBack(task)
             } else {
                 pageElements.forEach {
                     it.visibility = View.INVISIBLE
@@ -107,13 +116,10 @@ class CreatingTask : AppCompatActivity() {
 
                         when (it) {
                             true -> {
-                                //TODO: Send to server
-                                startActivity(intent)
-                                finish()
+                                goBack(task)
                             }
                             false -> {
-                                startActivity(intent)
-                                finish()
+                                goBack(task)
                             }
                             null -> {
                                 val gray_dialogue_element
@@ -197,6 +203,7 @@ class CreatingTask : AppCompatActivity() {
             replace(R.id.everymonth_checkbox, everymonth_checkbox)
 
 
+            task.getSubtasks().add(Subtask())
             val creating_subtasks_list: CreatingSubtasksList =
                 CreatingSubtasksList.newInstance(task)
             replace(R.id.creating_subtasks_list, creating_subtasks_list)
@@ -207,16 +214,14 @@ class CreatingTask : AppCompatActivity() {
                 getString(R.string.mark_as_done),
                 task.isDone()
             ){
-                task.setDone(true)
+                task.setFullDone(true)
             }
             replace(R.id.checkbox, checkbox)
 
 
 
             val button: Button = Button.newInstance(getString(R.string.save)){
-                //TODO: Send to server
-                startActivity(intent)
-                finish()
+                goBack(task)
             }
             replace(R.id.button_confirm, button)
         }
@@ -248,6 +253,10 @@ class CreatingTask : AppCompatActivity() {
 
         }
 
-        normal_choice.performClick()
+        context.changeToDifficulty(task.difficulty)
+    }
+
+    companion object {
+        public val IS_WAS_CREATING_TASK = "IS_WAS_CREATING_TASK"
     }
 }

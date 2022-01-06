@@ -20,6 +20,14 @@
         android:layout_marginStart="12dp"
         />
 
+    <View
+        android:layout_width="36dp"
+        android:layout_height="24dp"
+        android:id="@+id/plus_or_close_tap_area"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
     <TextView
 
         android:id="@+id/input_hint"
@@ -43,13 +51,17 @@
 
         android:visibility="gone"
 
+        android:maxLength="30"
+
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="41dp"
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
 
         style="@style/pre_small_text_style"
 

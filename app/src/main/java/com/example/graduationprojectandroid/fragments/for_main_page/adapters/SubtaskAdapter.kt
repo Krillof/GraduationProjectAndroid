@@ -9,7 +9,7 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutSubtaskBinding
 
 class SubtaskAdapter(
-    private var subtasks_arr: MutableList<Subtask>
+    private var subtasks_arr: MutableList<ParentizedSubtask>
 ) : RecyclerView.Adapter<SubtaskAdapter.SubtaskView>()
 {
 
@@ -17,7 +17,7 @@ class SubtaskAdapter(
     class SubtaskView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutSubtaskBinding.bind(itemView)
 
-        fun bind(st: Subtask, this_adapter: SubtaskAdapter) = with(binding) {
+        fun bind(st: ParentizedSubtask, this_adapter: SubtaskAdapter) = with(binding) {
             subtaskLayout.setOnClickListener {
                 st.done = !st.done
 

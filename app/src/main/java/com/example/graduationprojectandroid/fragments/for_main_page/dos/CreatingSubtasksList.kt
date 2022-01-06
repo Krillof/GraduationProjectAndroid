@@ -42,7 +42,7 @@ class CreatingSubtasksList(
         super.onViewCreated(view, savedInstanceState)
 
         creatingSubtasksList.layoutManager = LinearLayoutManager(creatingSubtasksList.context)
-        creatingSubtasksList.adapter = CreatingSubtaskAdapter(task.subtasks)
+        creatingSubtasksList.adapter = CreatingSubtaskAdapter(task.getSubtasks())
     }
 
     companion object {

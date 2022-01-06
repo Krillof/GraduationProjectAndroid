@@ -10,7 +10,7 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutTaskBinding
 
 class TasksAdapter(
-    private var tasks_arr: ArrayList<Task>,
+    private var tasks_arr: ArrayList<ParentizedTask>,
     private var listener: (Task?) -> Unit
 )
 
@@ -23,7 +23,7 @@ class TasksAdapter(
             subtasksList.layoutManager = LinearLayoutManager(subtasksList.context)
         }
 
-        fun bind(task: Task, this_adapter: TasksAdapter, listener: (Task?) -> Unit)
+        fun bind(task: ParentizedTask, this_adapter: TasksAdapter, listener: (Task?) -> Unit)
         = with(binding){
 
             task.setParentAdapterForSubtasks(this_adapter)
@@ -32,13 +32,27 @@ class TasksAdapter(
             text.visibility = task.visibility
             doneCheckbox.visibility = task.visibility
             subtasksCounterCircle.visibility = task.show_subtasks_always
+            subtasksCounter.visibility = task.show_subtasks_always
             subtasksList.visibility = task.getCurrentShowSubtasks()
 
             anotherHeader.text = task.header
             text.text = task.text
 
             text.setOnClickListener {
-                listener(task)
+                var value = Task(
+                    task.id,
+                    task.header,
+                    task.text,
+                    MutableList(0, {Subtask()}),
+                    task.isEveryday,
+                    task.isEveryweek,
+                    task.isEverymonth,
+                    task.difficulty
+                )
+                value.setParentizedSubtasksAsSubtasks(
+                    task.getSubtasks() as MutableList<ParentizedSubtask>
+                )
+                listener(value)
             }
 
             doneCheckbox.setBackgroundResource(
@@ -52,7 +66,7 @@ class TasksAdapter(
             subtasksList.adapter = task.getAdapter()
 
             doneCheckbox.setOnClickListener {
-                task.setDone(! task.isDone())
+                task.setFullDone(! task.isDone())
 
                 this_adapter.notifyDataSetChanged()
             }
@@ -67,6 +81,9 @@ class TasksAdapter(
 
                 subtasksList.visibility = task.getCurrentShowSubtasks()
             }
+
+            subtasksCounter
+                .text = task.howManySubtasksDone().toString() + "/" + task.getSubtasks().size.toString()
 
         }
     }

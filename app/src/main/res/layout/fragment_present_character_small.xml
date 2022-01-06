@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.for_main_page.PresentCharacterSmall">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.for_main_page.dos.PresentCharacterSmall">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/header"
@@ -12,6 +13,9 @@
         android:layout_height="21dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
         />
 
@@ -22,6 +26,8 @@
         android:layout_marginTop="61dp"
         android:layout_marginStart="16dp"
         android:background="@drawable/tmp_square_present_character_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -35,6 +41,8 @@
 
         android:text="@string/health"
         android:textAppearance="@style/small_text_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <View
@@ -47,18 +55,54 @@
         android:layout_marginStart="188dp"
 
         android:background="@drawable/health_bar_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <View
-        android:id="@+id/health_bar_foreground"
+        android:id="@+id/health_bar_circle_1"
 
-        android:layout_width="120dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+
+        android:layout_marginStart="-9dp"
+
+
+        android:background="@drawable/health_bar_circle"
+        app:layout_constraintStart_toStartOf="@+id/health_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/health_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/health_bar_rect"
+        />
+
+    <View
+        android:id="@+id/health_bar_rect"
+
+        android:layout_width="142dp"
         android:layout_height="18dp"
 
         android:layout_marginTop="100dp"
-        android:layout_marginStart="188dp"
+        android:layout_marginStart="195dp"
 
-        android:background="@drawable/health_bar_foreground"
+
+
+        android:background="@drawable/health_bar_rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/health_bar_circle_2"
+
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+
+        android:layout_marginStart="-9dp"
+
+
+        android:background="@drawable/health_bar_circle"
+        app:layout_constraintStart_toEndOf="@+id/health_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/health_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/health_bar_rect"
         />
 
     <TextView
@@ -70,8 +114,9 @@
         android:layout_marginTop="101dp"
         android:layout_marginStart="248dp"
 
-        android:text="85/100"
         android:textAppearance="@style/bar_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -85,6 +130,8 @@
 
         android:text="@string/experience"
         android:textAppearance="@style/small_text_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <View
@@ -97,18 +144,55 @@
         android:layout_marginStart="188dp"
 
         android:background="@drawable/exp_bar_background"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <View
+        android:id="@+id/exp_bar_circle_1"
+
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+
+        android:layout_marginStart="-9dp"
+
+
+        android:background="@drawable/exp_bar_circle"
+        app:layout_constraintStart_toStartOf="@+id/exp_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/exp_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/exp_bar_rect"
         />
 
     <View
-        android:id="@+id/exp_bar_foreground"
+        android:id="@+id/exp_bar_rect"
 
-        android:layout_width="86dp"
+        android:layout_width="142dp"
         android:layout_height="18dp"
 
         android:layout_marginTop="140dp"
-        android:layout_marginStart="188dp"
+        android:layout_marginStart="195dp"
 
-        android:background="@drawable/exp_bar_foreground"
+
+
+        android:background="@drawable/exp_bar_rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <View
+        android:id="@+id/exp_bar_circle_2"
+
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+
+        android:layout_marginStart="-9dp"
+
+
+        android:background="@drawable/exp_bar_circle"
+        app:layout_constraintStart_toEndOf="@+id/exp_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/exp_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/exp_bar_rect"
         />
 
     <TextView
@@ -122,6 +206,8 @@
 
         android:text="248/465"
         android:textAppearance="@style/bar_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <TextView
@@ -135,6 +221,8 @@
 
         android:text="Уровень 13"
         android:textAppearance="@style/text_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
     <View
@@ -144,6 +232,8 @@
         android:layout_marginTop="188dp"
 
         android:background="@drawable/money"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
 
         />
 
@@ -158,6 +248,8 @@
 
         android:text="129"
         android:textAppearance="@style/text_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         />
 
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,9 @@
-com/example/graduationprojectandroid/network/endpoints/JSONPlaceHolderApi.java
- com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
-com/example/graduationprojectandroid/network/endpoints/Test.java
- com.example.graduationprojectandroid.network.endpoints.Test
 com/example/graduationprojectandroid/network/NetworkService.java
  com.example.graduationprojectandroid.network.NetworkService
+com/example/graduationprojectandroid/network/endpoints/Test.java
+ com.example.graduationprojectandroid.network.endpoints.Test
+com/example/graduationprojectandroid/network/endpoints/JSONPlaceHolderApi.java
+ com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
 com/example/graduationprojectandroid/BuildConfig.java
  com.example.graduationprojectandroid.BuildConfig
 com/example/graduationprojectandroid/databinding/ActivityCreatingTaskBinding.java
