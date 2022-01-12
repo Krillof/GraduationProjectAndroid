@@ -1893,7 +1893,11 @@ drawable simple_on
 drawable small_check
 drawable small_circle
 drawable small_exp_bar_background
+drawable small_exp_bar_circle
+drawable small_exp_bar_rectangle
 drawable small_health_bar_background
+drawable small_health_bar_circle
+drawable small_health_bar_rectangle
 drawable small_orange_circle
 drawable small_rectangle
 drawable square_checked
@@ -2020,6 +2024,7 @@ id buttonPanel
 id button_confirm
 id button_frame
 id button_text
+id buy_button
 id cache_measures
 id callMeasure
 id cancel_action
@@ -2128,7 +2133,6 @@ id exp_bar_background
 id exp_bar_circle_1
 id exp_bar_circle_2
 id exp_bar_rect
-id exp_plus_text
 id exp_text
 id exp_text_header
 id expand_activities_button
@@ -2171,7 +2175,6 @@ id health_bar_background
 id health_bar_circle_1
 id health_bar_circle_2
 id health_bar_rect
-id health_plus_text
 id health_text
 id health_text_header
 id hideable
@@ -2183,7 +2186,6 @@ id horizontal_only
 id how_often_do_header
 id icon
 id icon_group
-id idk_rectangle
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2191,6 +2193,7 @@ id image
 id immediateStop
 id included
 id info
+id info_text
 id input
 id input_1
 id input_2
@@ -2326,6 +2329,10 @@ id pathRelative
 id peekHeight
 id percent
 id pet_rectangle
+id picture
+id picture_character
+id picture_hair
+id picture_shirt
 id pin
 id plus_or_close
 id plus_or_close_tap_area
@@ -2415,7 +2422,6 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
-id subfragment
 id submenuarrow
 id submit_area
 id subtask_layout
@@ -2605,10 +2611,10 @@ layout fragment_description_super_design_input
 layout fragment_dos
 layout fragment_get_code
 layout fragment_get_login_password
-layout fragment_gray_back_screen
 layout fragment_habits_list
 layout fragment_header
 layout fragment_input
+layout fragment_inventory
 layout fragment_market_list
 layout fragment_or_enter_by
 layout fragment_present_character_big
@@ -2677,6 +2683,7 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout simple_layout_buy_market_item
 layout simple_layout_creating_subtask
 layout simple_layout_habit
 layout simple_layout_market_item
@@ -2738,6 +2745,7 @@ string bad_habit
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string button_text_login_1
+string buy
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -3578,6 +3586,7 @@ style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
 style bar_text
 style big_white_text
+style black_presmall_text
 style header_text
 style inputs_hint
 style main_pages_names_off
@@ -3591,6 +3600,7 @@ style small_text_style
 style small_white_text
 style subtasks_counter
 style text_style
+style transparent
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

@@ -30,6 +30,39 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
+    <ImageView
+        android:id="@+id/picture_character"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/character_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/character_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/character_rectangle"
+        app:layout_constraintBottom_toBottomOf="@id/character_rectangle"
+        />
+
+    <ImageView
+        android:id="@+id/picture_hair"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/character_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/character_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/character_rectangle"
+        app:layout_constraintBottom_toBottomOf="@id/character_rectangle"
+        />
+
+    <ImageView
+        android:id="@+id/picture_shirt"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/character_rectangle"
+        app:layout_constraintTop_toTopOf="@+id/character_rectangle"
+        app:layout_constraintEnd_toEndOf="@+id/character_rectangle"
+        app:layout_constraintBottom_toBottomOf="@id/character_rectangle"
+        />
+
     <TextView
         android:id="@+id/health_text_header"
 
@@ -204,7 +237,6 @@
         android:layout_marginTop="141dp"
         android:layout_marginStart="248dp"
 
-        android:text="248/465"
         android:textAppearance="@style/bar_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

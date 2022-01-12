@@ -1,16 +1,12 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+import android.graphics.Bitmap
 import android.view.View
 
 class MarketItem(
-    _money: Int,
-    _visibility: Int = View.VISIBLE
-) {
-
-    private var money: Int = _money
-    private var visibility: Int = _visibility
-
-    fun getMoney(): Int = money
-
-    fun getVisibility():Int = visibility
-}
+     val id: Int,
+     val money: Int,
+     val plus_hp: Int = 0,
+     val plus_exp: Int = 0,
+     val visibility: Int = View.VISIBLE
+) {}

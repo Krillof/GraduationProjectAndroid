@@ -18,17 +18,15 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Mar
  * Use the [MarketList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class MarketList : Fragment() {
-
-    //private var param1: String? = null
+class MarketList(
+    private val money: Int
+) : Fragment() {
 
     private lateinit var binding: FragmentMarketListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            //param1 = it.getString(ARG_PARAM1)
-        }
+        arguments?.let {}
     }
 
     override fun onCreateView(
@@ -39,14 +37,13 @@ class MarketList : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        init()
-    }
-
-    private fun init() = with(binding){
         marketItemsList.layoutManager = GridLayoutManager(marketItemsList.context, 3)
-        marketItemsList.adapter = MarketItemsAdapter(getMarketItems())
+        marketItemsList.adapter = MarketItemsAdapter(parentFragmentManager, getMarketItems())
+
+
+        moneyText.text = money.toString()
     }
 
     private fun getMarketItems(): ArrayList<MarketItem>{
@@ -54,42 +51,52 @@ class MarketList : Fragment() {
 
         //---------------------------------------------------
         //TODO: Сделать загрузку предметов из магазина
-        items.add(MarketItem(19))
-        items.add(MarketItem(21))
-        items.add(MarketItem(128))
-        items.add(MarketItem(215))
-        items.add(MarketItem(15))
-        items.add(MarketItem(125))
-        items.add(MarketItem(145))
-        items.add(MarketItem(155))
-        items.add(MarketItem(165))
-        items.add(MarketItem(175))
-        items.add(MarketItem(185))
-        items.add(MarketItem(195))
-        items.add(MarketItem(11655))
-        items.add(MarketItem(1345))
-        items.add(MarketItem(135))
-        items.add(MarketItem(165))
+        items.add(MarketItem(1, 19, 10, 15))
+        items.add(MarketItem(2, 21, 3, 5))
+        items.add(MarketItem(3, 128))
+        items.add(MarketItem(1, 215))
+        items.add(MarketItem(2,15))
+        items.add(MarketItem(3,125))
+        items.add(MarketItem(1,145))
+        items.add(MarketItem(2,155))
+        items.add(MarketItem(3,165))
+        items.add(MarketItem(1,175))
+        items.add(MarketItem(2,185))
+        items.add(MarketItem(3,195))
+        items.add(MarketItem(1,11655))
+        items.add(MarketItem(2,1345))
+        items.add(MarketItem(3,135))
+        items.add(MarketItem(1,165))
+        items.add(MarketItem(1, 19, 10, 15))
+        items.add(MarketItem(2, 21, 3, 5))
+        items.add(MarketItem(3, 128))
+        items.add(MarketItem(1, 215))
+        items.add(MarketItem(2,15))
+        items.add(MarketItem(3,125))
+        items.add(MarketItem(1,145))
+        items.add(MarketItem(2,155))
+        items.add(MarketItem(3,165))
+        items.add(MarketItem(1,175))
+        items.add(MarketItem(2,185))
+        items.add(MarketItem(3,195))
+        items.add(MarketItem(1,11655))
+        items.add(MarketItem(2,1345))
+        items.add(MarketItem(3,135))
+        items.add(MarketItem(1,165))
 
 
         //---------------------------------------------------
 
         for (i in 0..15){
-            items.add(MarketItem(i, View.INVISIBLE))
+            items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
         }
 
         return items
     }
 
     companion object {
-
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance() =
-            MarketList().apply {
-                arguments = Bundle().apply {
-                    //putString(ARG_PARAM1, param1)
-                }
-            }
+        fun newInstance(money: Int) =
+            MarketList(money)
     }
 }

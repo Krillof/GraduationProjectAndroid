@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="96dp"
     android:layout_height="148dp"
+
+    android:id="@+id/layout"
 
     android:layout_marginStart="16dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -16,6 +19,22 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+
+        android:id="@+id/picture"
+
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+
+
+        app:layout_constraintStart_toStartOf="@+id/market_item_background"
+        app:layout_constraintTop_toTopOf="@+id/market_item_background"
+        app:layout_constraintBottom_toBottomOf="@+id/market_item_background"
+        app:layout_constraintEnd_toEndOf="@+id/market_item_background"
+
+
         />
 
     <View

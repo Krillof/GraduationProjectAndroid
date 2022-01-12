@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
@@ -92,10 +93,6 @@ class CreatingHabit : AppCompatActivity() {
 
 
         val exit_button: View = findViewById(R.id.exit_button)
-        val pageElements = listOf<View>(simple_choice, easy_choice, normal_choice,
-            hard_choice, good_habit_check_box_touch_area, bad_habit_check_box_touch_area,
-            input, description, everyday_chbx, everyweek_chbx, everymonth_chbx, chbx, exit_button,
-            button_confirm)
         val intent = Intent(this, MainPage::class.java)
 
         exit_button.setOnClickListener {
@@ -104,41 +101,28 @@ class CreatingHabit : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else {
-                pageElements.forEach {
-                    it.visibility = View.INVISIBLE
-                }
-                //Ask, before leave
-                supportFragmentManager.commit{
-                    val save_changes_dialogue = SaveChangesDialogue.newInstance {
 
-                        when (it) {
-                            true -> {
-                                //TODO: Send to server
-                                startActivity(intent)
-                                finish()
-                            }
-                            false -> {
-                                startActivity(intent)
-                                finish()
-                            }
-                            null -> {
-                                val gray_dialogue_element
-                                    = findViewById<View>(R.id.gray_dialogue)
-                                gray_dialogue_element.visibility = View.GONE
-                                pageElements.forEach {
-                                    it.visibility = View.VISIBLE
-                                }
-                            }
+
+                var df: DialogFragment? = null
+                df = SaveChangesDialogue {
+
+                    when (it) {
+                        true -> {
+                            //TODO: Send to server
+                            startActivity(intent)
+                            finish()
+                        }
+                        false -> {
+                            startActivity(intent)
+                            finish()
+                        }
+                        null -> {
+                            df?.dismissAllowingStateLoss()
                         }
                     }
-                    val gray_back_screen_fragment = GrayBackScreenFragment.newInstance(
-                        save_changes_dialogue
-                    )
-                    replace(R.id.gray_dialogue, gray_back_screen_fragment)
-                    val gray_dialogue_element
-                            = findViewById<View>(R.id.gray_dialogue)
-                    gray_dialogue_element.visibility = View.VISIBLE
                 }
+
+                df.show(supportFragmentManager, "save_changes")
             }
         }
 

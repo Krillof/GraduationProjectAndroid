@@ -3,7 +3,10 @@ package com.example.graduationprojectandroid.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
+import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.*
@@ -77,7 +80,7 @@ class CreatingTask : AppCompatActivity() {
         var task: Task
                 = if (isNew)
             Task(getNewId(), "", "",
-                MutableList(1, { Subtask(false, "") }))
+                MutableList(0, { Subtask(false, "") }))
         else
             gotten_task!!
 
@@ -93,52 +96,28 @@ class CreatingTask : AppCompatActivity() {
         val everymonth_chbx = findViewById<View>(R.id.everymonth_checkbox)
         val chbx = findViewById<View>(R.id.checkbox)
         val button_confirm = findViewById<View>(R.id.button_confirm)
-
-
-
         val exit_button: View = findViewById(R.id.exit_button)
-        val pageElements = listOf<View>(simple_choice, easy_choice, normal_choice,
-            hard_choice, creating_subtasks_list,
-            input, description, everyday_chbx, everyweek_chbx, everymonth_chbx, chbx, exit_button,
-            button_confirm)
-
 
         exit_button.setOnClickListener {
             if (isNew){
                 goBack(task)
             } else {
-                pageElements.forEach {
-                    it.visibility = View.INVISIBLE
-                }
                 //Ask, before leave
-                supportFragmentManager.commit{
-                    val save_changes_dialogue = SaveChangesDialogue.newInstance {
-
-                        when (it) {
-                            true -> {
-                                goBack(task)
-                            }
-                            false -> {
-                                goBack(task)
-                            }
-                            null -> {
-                                val gray_dialogue_element
-                                        = findViewById<View>(R.id.gray_dialogue)
-                                gray_dialogue_element.visibility = View.GONE
-                                pageElements.forEach {
-                                    it.visibility = View.VISIBLE
-                                }
-                            }
+                var df: DialogFragment? = null
+                df = SaveChangesDialogue {
+                    when (it) {
+                        true -> {
+                            goBack(task)
+                        }
+                        false -> {
+                            goBack(task)
+                        }
+                        null -> {
+                            df?.dismissAllowingStateLoss()
                         }
                     }
-                    val gray_back_screen_fragment = GrayBackScreenFragment.newInstance(
-                        save_changes_dialogue
-                    )
-                    replace(R.id.gray_dialogue, gray_back_screen_fragment)
-                    val gray_dialogue_element
-                            = findViewById<View>(R.id.gray_dialogue)
-                    gray_dialogue_element.visibility = View.VISIBLE
                 }
+                df.show(supportFragmentManager, "save_changes")
             }
         }
 

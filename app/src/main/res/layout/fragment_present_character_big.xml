@@ -20,7 +20,7 @@
 
         android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:text="@string/hello_blank_fragment" />
+         />
 
     <View
         android:id="@+id/character_rectangle"
@@ -52,24 +52,51 @@
 
         />
 
-    <!-- TODO: Сделать аттрибут "текст" пустым -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="12dp"
+    <View
+        android:id="@+id/health_bar_circle_1"
 
-        android:id="@+id/health_plus_text"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
 
-        style="@style/small_red_text"
+        android:layout_marginStart="-4dp"
 
-        android:text="+0"
 
-        android:layout_marginStart="6dp"
-
-        app:layout_constraintBottom_toBottomOf="@id/small_health_bar_background"
-        app:layout_constraintStart_toEndOf="@id/small_health_bar_background"
-        app:layout_constraintTop_toTopOf="@+id/small_health_bar_background"
-
+        android:background="@drawable/small_health_bar_circle"
+        app:layout_constraintStart_toStartOf="@+id/health_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/health_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/health_bar_rect"
         />
+
+    <View
+        android:id="@+id/health_bar_rect"
+
+        android:layout_width="58dp"
+        android:layout_height="6dp"
+
+        android:layout_marginStart="4dp"
+
+
+
+        android:background="@drawable/small_health_bar_rectangle"
+        app:layout_constraintStart_toStartOf="@+id/small_health_bar_background"
+        app:layout_constraintTop_toTopOf="@+id/small_health_bar_background"
+        />
+
+    <View
+        android:id="@+id/health_bar_circle_2"
+
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+
+        android:layout_marginStart="-4dp"
+
+
+        android:background="@drawable/small_health_bar_circle"
+        app:layout_constraintStart_toEndOf="@+id/health_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/health_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/health_bar_rect"
+        />
+
 
     <View
         android:id="@+id/small_exp_bar_background"
@@ -86,24 +113,51 @@
 
         />
 
-    <!-- TODO: Сделать аттрибут "текст" пустым -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="12dp"
+    <View
+        android:id="@+id/exp_bar_circle_1"
 
-        android:id="@+id/exp_plus_text"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
 
-        style="@style/small_orange_text"
+        android:layout_marginStart="-4dp"
 
-        android:text="+0"
 
-        android:layout_marginStart="6dp"
-
-        app:layout_constraintBottom_toBottomOf="@id/small_exp_bar_background"
-        app:layout_constraintStart_toEndOf="@id/small_exp_bar_background"
-        app:layout_constraintTop_toTopOf="@+id/small_exp_bar_background"
-
+        android:background="@drawable/small_exp_bar_circle"
+        app:layout_constraintStart_toStartOf="@+id/exp_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/exp_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/exp_bar_rect"
         />
+
+    <View
+        android:id="@+id/exp_bar_rect"
+
+        android:layout_width="58dp"
+        android:layout_height="6dp"
+
+        android:layout_marginStart="4dp"
+
+
+
+        android:background="@drawable/small_exp_bar_rectangle"
+        app:layout_constraintStart_toStartOf="@+id/small_exp_bar_background"
+        app:layout_constraintTop_toTopOf="@+id/small_exp_bar_background"
+        />
+
+    <View
+        android:id="@+id/exp_bar_circle_2"
+
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+
+        android:layout_marginStart="-4dp"
+
+
+        android:background="@drawable/small_exp_bar_circle"
+        app:layout_constraintStart_toEndOf="@+id/exp_bar_rect"
+        app:layout_constraintTop_toTopOf="@+id/exp_bar_rect"
+        app:layout_constraintBottom_toBottomOf="@+id/exp_bar_rect"
+        />
+
 
 
     <View
@@ -136,9 +190,8 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-    <!-- TODO: понять, что за квадратик, чтобы дать правильное название -->
     <View
-        android:id="@+id/idk_rectangle"
+        android:id="@+id/background_rectangle"
 
         android:layout_width="54dp"
         android:layout_height="54dp"

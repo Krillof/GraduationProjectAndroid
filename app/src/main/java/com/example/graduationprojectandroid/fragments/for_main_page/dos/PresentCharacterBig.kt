@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.databinding.FragmentMarketListBinding
+import com.example.graduationprojectandroid.databinding.FragmentPresentCharacterBigBinding
+import com.example.graduationprojectandroid.network.CharacterData
 
 
 /**
@@ -13,8 +16,11 @@ import com.example.graduationprojectandroid.R
  * Use the [PresentCharacterBig.newInstance] factory method to
  * create an instance of this fragment.
  */
-class PresentCharacterBig : Fragment() {
+class PresentCharacterBig(
+    private val data: CharacterData
+) : Fragment() {
 
+    private lateinit var binding: FragmentPresentCharacterBigBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,19 +31,33 @@ class PresentCharacterBig : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_present_character_big, container, false)
+        binding = FragmentPresentCharacterBigBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+        = with(binding)  {
         super.onViewCreated(view, savedInstanceState)
-        //TODO: Сделать здоровье, опыт, предметы и т.д. (их отображение здесь)
+        header.text = data.login
+
+        val health: Float = data.health.toFloat()
+        val max_health: Float = data.max_health.toFloat()
+        val exp: Float = data.exp.toFloat()
+        val max_exp: Float = data.max_exp.toFloat()
+
+        val layoutParamsHp = healthBarRect.layoutParams
+        layoutParamsHp.width = (layoutParamsHp.width * (health/max_health)).toInt()
+        healthBarRect.layoutParams = layoutParamsHp
+
+        val layoutParamsExp = expBarRect.layoutParams
+        layoutParamsExp.width = (layoutParamsExp.width * (exp/max_exp)).toInt()
+        expBarRect.layoutParams = layoutParamsExp
     }
 
     companion object {
-        //TODO: точно нужно передать хотябы логин
+
         @JvmStatic
-        fun newInstance() =
-            PresentCharacterBig()
+        fun newInstance(characterData: CharacterData) =
+            PresentCharacterBig(characterData)
     }
 }

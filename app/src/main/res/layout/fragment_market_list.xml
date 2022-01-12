@@ -29,7 +29,7 @@
         android:layout_marginEnd="45dp"
         android:layout_marginTop="12dp"
 
-        android:background="@drawable/black_white_money"
+        android:background="@drawable/money"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,14 +37,14 @@
 
 
     <TextView
+        android:id="@+id/money_text"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:layout_marginStart="10dp"
 
         style="@style/text_style"
-
-        android:text="129"
 
         app:layout_constraintStart_toEndOf="@id/money_logo"
         app:layout_constraintTop_toTopOf="@id/money_logo"

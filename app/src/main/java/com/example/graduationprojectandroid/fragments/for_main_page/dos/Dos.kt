@@ -1,6 +1,5 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.dos
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,20 +8,18 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.activities.CreatingHabit
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
+import com.example.graduationprojectandroid.network.DataService
 
 private const val ARG_PARAM_LOGIN = "login"
 
 
 class Dos(
     private val isStartFromTasks: Boolean,
-    private val listener_open_menu: ()->Unit,
     private val listener_open_creating_habit: (h: Habit?)->Unit,
     private val listener_open_creating_task: (t: Task?)->Unit
 ) : Fragment() {
-    private var login: String? = null
 
     enum class Pages{
         habits,
@@ -32,9 +29,7 @@ class Dos(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            login = it.getString(ARG_PARAM_LOGIN)
-        }
+        arguments?.let {}
     }
 
     override fun onCreateView(
@@ -51,14 +46,11 @@ class Dos(
         val character_menu_choice = view.findViewById<View>(R.id.character_menu_choice_click_rectangle)
         val habits_menu_choice = view.findViewById<View>(R.id.habits_menu_choice_click_rectangle)
         val tasks_menu_choice = view.findViewById<View>(R.id.tasks_menu_choice_click_rectangle)
-        val open_menu_area = view.findViewById<View>(R.id.top_menu_click_area)
 
+        val dataService = DataService.getDataService()
+        val characterData = dataService.getCharacterData()
 
         val context = this
-
-        open_menu_area.setOnClickListener {
-            listener_open_menu()
-        }
 
 
 
@@ -71,12 +63,7 @@ class Dos(
             fragmentManager?.commit{
                 val presentCharacterSmall
                         = PresentCharacterSmall.newInstance(
-                    login!!,
-                    100,
-                    85,
-                    465,
-                    465,
-                    13)
+                    characterData)
 
                 val habitsList
                         = HabitsList.newInstance()
@@ -95,12 +82,8 @@ class Dos(
             fragmentManager?.commit{
                 val presentCharacterSmall
                         = PresentCharacterSmall.newInstance(
-                    login!!,
-                    100,
-                    85,
-                    465,
-                    248,
-                    13)
+                    characterData
+                )
 
                 val tasksList
                         = TasksList.newInstance(){
@@ -119,10 +102,12 @@ class Dos(
 
             fragmentManager?.commit{
                 val presentCharacterBig
-                        = PresentCharacterBig.newInstance()
+                        = PresentCharacterBig.newInstance(
+                        characterData
+                        )
 
                 val marketList
-                        = MarketList.newInstance()
+                        = MarketList.newInstance(characterData.money)
 
 
 
@@ -187,20 +172,13 @@ class Dos(
         @JvmStatic
         fun newInstance(
             isStartFromTasks: Boolean,
-            login: String,
-            listener_open_menu: ()->Unit,
             listener_open_creating_habit: (h: Habit?)->Unit,
             listener_open_creating_task: (t: Task?) -> Unit
         ) =
             Dos(
                 isStartFromTasks,
-                listener_open_menu,
                 listener_open_creating_habit,
                 listener_open_creating_task
-            ).apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM_LOGIN, login)
-                }
-            }
+            )
     }
 }

@@ -86,7 +86,7 @@
         <entry key="app/src/main/res/layout/activity_habits.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.24479166666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.340625" />
-        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_big_rectangle_check_box.xml" value="0.67" />
         <entry key="app/src/main/res/layout/fragment_bottom_menu.xml" value="0.8063851699279093" />
         <entry key="app/src/main/res/layout/fragment_button.xml" value="0.19791666666666666" />
@@ -102,19 +102,22 @@
         <entry key="app/src/main/res/layout/fragment_habits_list.xml" value="0.4170258620689655" />
         <entry key="app/src/main/res/layout/fragment_header.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/fragment_input.xml" value="0.19791666666666666" />
+        <entry key="app/src/main/res/layout/fragment_inventory.xml" value="0.28532608695652173" />
         <entry key="app/src/main/res/layout/fragment_item_list.xml" value="0.3242753623188406" />
         <entry key="app/src/main/res/layout/fragment_market.xml" value="0.3211050724637681" />
-        <entry key="app/src/main/res/layout/fragment_market_list.xml" value="0.75" />
+        <entry key="app/src/main/res/layout/fragment_market_list.xml" value="1.1" />
         <entry key="app/src/main/res/layout/fragment_one_habit.xml" value="0.35054347826086957" />
         <entry key="app/src/main/res/layout/fragment_or_enter_by.xml" value="0.3559145388223033" />
         <entry key="app/src/main/res/layout/fragment_present_character1.xml" value="0.3546195652173913" />
-        <entry key="app/src/main/res/layout/fragment_present_character_big.xml" value="1.25" />
+        <entry key="app/src/main/res/layout/fragment_present_character_big.xml" value="0.8605263157894737" />
         <entry key="app/src/main/res/layout/fragment_present_character_in_habits.xml" value="0.3546195652173913" />
         <entry key="app/src/main/res/layout/fragment_present_character_small.xml" value="0.75" />
         <entry key="app/src/main/res/layout/fragment_save_changes_dialogue.xml" value="0.961890243902439" />
         <entry key="app/src/main/res/layout/fragment_super_design_input.xml" value="0.333786231884058" />
         <entry key="app/src/main/res/layout/fragment_tasks_list.xml" value="0.33" />
         <entry key="app/src/main/res/layout/simple_layout_blank.xml" value="0.3052536231884058" />
+        <entry key="app/src/main/res/layout/simple_layout_buy.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/simple_layout_buy_market_item.xml" value="1.0" />
         <entry key="app/src/main/res/layout/simple_layout_creating_subtask.xml" value="0.75" />
         <entry key="app/src/main/res/layout/simple_layout_habit.xml" value="0.19791666666666666" />
         <entry key="app/src/main/res/layout/simple_layout_market_item.xml" value="1.1" />
