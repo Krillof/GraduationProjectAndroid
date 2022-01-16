@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
 
 
-        android:background="@drawable/gray_right_top_cirled_background"
+        android:background="@drawable/gray_right_top_circled_background"
         />
 
     <View

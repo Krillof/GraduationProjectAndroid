@@ -1,6 +1,5 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutMarketItemBinding
-import com.example.graduationprojectandroid.fragments.SaveChangesDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.BuyDialogue
 import com.example.graduationprojectandroid.network.NetworkService
 

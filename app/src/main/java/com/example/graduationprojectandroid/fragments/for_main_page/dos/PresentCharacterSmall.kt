@@ -28,7 +28,6 @@ class PresentCharacterSmall(
     private val data: CharacterData
 ) : Fragment() {
 
-    private var login: String = data.login
     private var max_health: Float = data.max_health.toFloat()
     private var health: Float = data.health.toFloat()
     private var max_experience: Float = data.max_exp.toFloat()
@@ -60,7 +59,7 @@ class PresentCharacterSmall(
         fragmentManager?.commit{
             val header =
                 Header.newInstance(
-                    login
+                    data.avatar_name
                 )
 
             add(R.id.header, header)

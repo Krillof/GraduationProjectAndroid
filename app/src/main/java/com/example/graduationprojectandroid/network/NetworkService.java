@@ -4,11 +4,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem;
 import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
 
 import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -79,4 +83,48 @@ public class NetworkService {
     }
 
     //---------getting picture
+
+    public ArrayList<MarketItem> getItemsForMarket(){
+        ArrayList<MarketItem> items = new ArrayList<>();
+
+        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
+        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
+        items.add(new MarketItem(3, 128));
+        items.add(new MarketItem(1, 215));
+        items.add(new MarketItem(2,15));
+        items.add(new MarketItem(3,125));
+        items.add(new MarketItem(1,145));
+        items.add(new MarketItem(2,155));
+        items.add(new MarketItem(3,165));
+        items.add(new MarketItem(1,175));
+        items.add(new MarketItem(2,185));
+        items.add(new MarketItem(3,195));
+        items.add(new MarketItem(1,11655));
+        items.add(new MarketItem(2,1345));
+        items.add(new MarketItem(3,135));
+        items.add(new MarketItem(1,165));
+        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
+        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
+        items.add(new MarketItem(3, 128));
+        items.add(new MarketItem(1, 215));
+        items.add(new MarketItem(2,15));
+        items.add(new MarketItem(3,125));
+        items.add(new MarketItem(1,145));
+        items.add(new MarketItem(2,155));
+        items.add(new MarketItem(3,165));
+        items.add(new MarketItem(1,175));
+        items.add(new MarketItem(2,185));
+        items.add(new MarketItem(3,195));
+        items.add(new MarketItem(1,11655));
+        items.add(new MarketItem(2,1345));
+        items.add(new MarketItem(3,135));
+        items.add(new MarketItem(1,165));
+
+        return items;
+    }
+
+    public ArrayList<MarketItem> getItemsForInventory(){
+
+        return getItemsForMarket();
+    }
 }

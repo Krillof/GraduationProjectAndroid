@@ -5,14 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.ActivityCreatingHabitBinding
 import com.example.graduationprojectandroid.fragments.*
+import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Difficulty
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.HabitDoneStates
+import com.example.graduationprojectandroid.network.DataService
 
 class CreatingHabit : AppCompatActivity() {
 
@@ -55,9 +55,17 @@ class CreatingHabit : AppCompatActivity() {
 
     }
 
-    private fun getNewId(): Int {
-        //TODO: get id from server
-        return 0
+    private fun showInfoDialogue(text: String){
+        if (text == ""){
+            startActivity(intent)
+            finish()
+        } else {
+            var infoDialogue: InfoDialogue? = null
+            infoDialogue = InfoDialogue.newInstance(text){
+                infoDialogue?.dismissAllowingStateLoss()
+            }
+            infoDialogue.show(supportFragmentManager, "info_dialogue")
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,12 +73,14 @@ class CreatingHabit : AppCompatActivity() {
         setContentView(R.layout.activity_creating_habit)
         val context = this
 
+        val dataService = DataService.getDataService()
+
         val gotten_habit: Habit? = intent.extras?.get(MainPage.ARG_HABIT) as Habit?
         val isNew = (gotten_habit == null)
 
         var habit: Habit
         = if (isNew)
-            Habit(getNewId(), "", "", HabitDoneStates.UNKNOWN)
+            Habit(dataService.getNewIdForHabit(), "", "", HabitDoneStates.UNKNOWN)
         else
             gotten_habit!!
 
@@ -97,18 +107,16 @@ class CreatingHabit : AppCompatActivity() {
 
         exit_button.setOnClickListener {
             if (isNew){
-                //TODO: Send to server
+                dataService.sendHabit(habit){showInfoDialogue(it)}
                 startActivity(intent)
                 finish()
             } else {
-
-
                 var df: DialogFragment? = null
-                df = SaveChangesDialogue {
+                df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
 
                     when (it) {
                         true -> {
-                            //TODO: Send to server
+                            dataService.sendHabit(habit){showInfoDialogue(it)}
                             startActivity(intent)
                             finish()
                         }

@@ -24,6 +24,9 @@
         android:theme="@style/Theme.GraduationProjectAndroid"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.graduationprojectandroid.activities.CreatingAvatar"
+            android:exported="true" />
+        <activity
             android:name="com.example.graduationprojectandroid.activities.CreatingTask"
             android:exported="true" />
         <activity

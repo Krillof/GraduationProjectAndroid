@@ -4,6 +4,11 @@
         android:gravity="top|fill_horizontal"
         >
         <shape>
+            <size
+                android:width="360dp"
+                android:height="38dp"
+                />
+
             <solid android:color="#E0E5FF" />
 
             <padding

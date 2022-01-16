@@ -56,7 +56,7 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
             add(R.id.checkbox, checkBox)
 
             val button: Button = Button.newInstance(
-                getString(R.string.button_text_login_1)
+                getString(R.string.next)
             ) {
                 Log.println(Log.INFO, "login: ", input1.getText())
                 Log.println(Log.INFO, "password: ", input2.getText())

@@ -38,7 +38,7 @@ class PresentCharacterBig(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)
         = with(binding)  {
         super.onViewCreated(view, savedInstanceState)
-        header.text = data.login
+        header.text = data.avatar_name
 
         val health: Float = data.health.toFloat()
         val max_health: Float = data.max_health.toFloat()

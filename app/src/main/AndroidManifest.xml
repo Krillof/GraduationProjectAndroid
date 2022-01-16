@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
         <activity
+            android:name=".activities.CreatingAvatar"
+            android:exported="true" />
+        <activity
             android:name=".activities.CreatingTask"
             android:exported="true" />
         <activity

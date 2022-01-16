@@ -4,7 +4,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.SaveChangesDialogue"
+    tools:context=".fragments.AskQuestionDialogue"
     style="@style/transparent"
     >
 
@@ -39,7 +39,8 @@
         app:layout_constraintStart_toStartOf="parent"
 
         style="@style/text_style"
-        android:text="@string/is_save_changes"
+
+        android:id="@+id/text_view"
 
 
         />

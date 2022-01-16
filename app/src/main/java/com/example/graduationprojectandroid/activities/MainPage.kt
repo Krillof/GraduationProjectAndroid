@@ -7,7 +7,9 @@ import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.DialogFragment
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
@@ -18,7 +20,8 @@ class MainPage : AppCompatActivity() {
 
     enum class MainPageStates(val number: Int){
         DOS(0),
-        INVENTORY(1)
+        INVENTORY(1),
+        AVATAR(2)
     }
 
     companion object {
@@ -62,6 +65,9 @@ class MainPage : AppCompatActivity() {
             MainPageStates.INVENTORY -> {
                 initInventory()
             }
+            MainPageStates.AVATAR -> {
+                initAvatar()
+            }
         }
 
         items.forEach {
@@ -98,6 +104,18 @@ class MainPage : AppCompatActivity() {
             updatePage()
         }
 
+        items[MainPageStates.AVATAR.number].setOnClickListener {
+            var df: DialogFragment? = null
+            df = AskQuestionDialogue(getString(R.string.is_change_avatar)) {
+                df?.dismissAllowingStateLoss()
+                if (it == true){
+                    currentState = MainPageStates.AVATAR
+                    updatePage()
+                }
+            }
+            df.show(supportFragmentManager, "save_changes")
+        }
+
         updatePage()
     }
 
@@ -123,6 +141,11 @@ class MainPage : AppCompatActivity() {
             .replace(R.id.main_page_fragment, dos)
             .commit()
 
+    }
+
+    private fun initAvatar() {
+        startActivity(Intent(this, CreatingAvatar::class.java))
+        finish()
     }
 
 

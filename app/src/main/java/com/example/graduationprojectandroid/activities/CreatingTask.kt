@@ -3,15 +3,15 @@ package com.example.graduationprojectandroid.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.*
+import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.CreatingSubtasksList
+import com.example.graduationprojectandroid.network.DataService
 
 class CreatingTask : AppCompatActivity() {
 
@@ -53,11 +53,6 @@ class CreatingTask : AppCompatActivity() {
 
     }
 
-    private fun getNewId(): Int {
-        //TODO: get id from server
-        return 0
-    }
-
     private fun goBack(task: Task){
         task.getSubtasks().removeAt(task.getSubtasks().size - 1)
 
@@ -69,17 +64,32 @@ class CreatingTask : AppCompatActivity() {
         finish()
     }
 
+    private fun showInfoDialogue(text: String){
+        if (text == ""){
+            startActivity(intent)
+            finish()
+        } else {
+            var infoDialogue: InfoDialogue? = null
+            infoDialogue = InfoDialogue.newInstance(text){
+                infoDialogue?.dismissAllowingStateLoss()
+            }
+            infoDialogue.show(supportFragmentManager, "info_dialogue")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_creating_task)
         val context = this
+
+        val dataService = DataService.getDataService()
 
         val gotten_task: Task? = intent.extras?.get(MainPage.ARG_TASK) as Task?
         val isNew = (gotten_task == null)
 
         var task: Task
                 = if (isNew)
-            Task(getNewId(), "", "",
+            Task(dataService.getNewIdForTask(), "", "",
                 MutableList(0, { Subtask(false, "") }))
         else
             gotten_task!!
@@ -100,13 +110,15 @@ class CreatingTask : AppCompatActivity() {
 
         exit_button.setOnClickListener {
             if (isNew){
+                dataService.sendTask(task){showInfoDialogue(it)}
                 goBack(task)
             } else {
                 //Ask, before leave
                 var df: DialogFragment? = null
-                df = SaveChangesDialogue {
+                df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
                     when (it) {
                         true -> {
+                            dataService.sendTask(task){showInfoDialogue(it)}
                             goBack(task)
                         }
                         false -> {

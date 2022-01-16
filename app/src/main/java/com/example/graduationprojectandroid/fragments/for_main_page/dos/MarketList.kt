@@ -6,11 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.FragmentHabitsListBinding
 import com.example.graduationprojectandroid.databinding.FragmentMarketListBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItemsAdapter
+import com.example.graduationprojectandroid.network.NetworkService
 
 
 /**
@@ -49,43 +48,7 @@ class MarketList(
     private fun getMarketItems(): ArrayList<MarketItem>{
         val items = ArrayList<MarketItem>()
 
-        //---------------------------------------------------
-        //TODO: Сделать загрузку предметов из магазина
-        items.add(MarketItem(1, 19, 10, 15))
-        items.add(MarketItem(2, 21, 3, 5))
-        items.add(MarketItem(3, 128))
-        items.add(MarketItem(1, 215))
-        items.add(MarketItem(2,15))
-        items.add(MarketItem(3,125))
-        items.add(MarketItem(1,145))
-        items.add(MarketItem(2,155))
-        items.add(MarketItem(3,165))
-        items.add(MarketItem(1,175))
-        items.add(MarketItem(2,185))
-        items.add(MarketItem(3,195))
-        items.add(MarketItem(1,11655))
-        items.add(MarketItem(2,1345))
-        items.add(MarketItem(3,135))
-        items.add(MarketItem(1,165))
-        items.add(MarketItem(1, 19, 10, 15))
-        items.add(MarketItem(2, 21, 3, 5))
-        items.add(MarketItem(3, 128))
-        items.add(MarketItem(1, 215))
-        items.add(MarketItem(2,15))
-        items.add(MarketItem(3,125))
-        items.add(MarketItem(1,145))
-        items.add(MarketItem(2,155))
-        items.add(MarketItem(3,165))
-        items.add(MarketItem(1,175))
-        items.add(MarketItem(2,185))
-        items.add(MarketItem(3,195))
-        items.add(MarketItem(1,11655))
-        items.add(MarketItem(2,1345))
-        items.add(MarketItem(3,135))
-        items.add(MarketItem(1,165))
-
-
-        //---------------------------------------------------
+        items.addAll(NetworkService.getInstance().itemsForMarket)
 
         for (i in 0..15){
             items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))

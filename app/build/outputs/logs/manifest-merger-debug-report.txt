@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
 MERGED from [androidx.databinding:databinding-runtime:7.0.3] /home/krilof/.gradle/caches/transforms-3/fa88c089eb037239750e5c3ab5dc50ec/transformed/databinding-runtime-7.0.3/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:viewbinding:7.0.3] /home/krilof/.gradle/caches/transforms-3/119217694d324432b60b6cb1bf0212d0/transformed/jetified-viewbinding-7.0.3/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment-ktx:1.3.6] /home/krilof/.gradle/caches/transforms-3/6a19cb0d5d4f43081ca5db6b803a1490/transformed/jetified-fragment-ktx-1.3.6/AndroidManifest.xml:17:1-24:12
@@ -55,22 +55,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/k
 MERGED from [androidx.print:print:1.0.0] /home/krilof/.gradle/caches/transforms-3/83a821c5ed854de3bf4d1e5fa7440a04/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/krilof/.gradle/caches/transforms-3/9825ca5498c366b52bd49e6ab2f1bf0d/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] /home/krilof/.gradle/caches/transforms-3/4501bb6c1b16d6c9ef0938c5a599105f/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
-INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
+INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:4:5-51
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
 	xmlns:tools
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-44:12
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:1-47:12
 		INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:2:11-69
@@ -79,7 +79,7 @@ ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/m
 	android:name
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:6:22-64
 application
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:8:5-42:19
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:8:5-45:19
 MERGED from [com.google.android.material:material:1.4.0] /home/krilof/.gradle/caches/transforms-3/b64c581a9daa138f08ffadfeafcf90fd/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] /home/krilof/.gradle/caches/transforms-3/b64c581a9daa138f08ffadfeafcf90fd/transformed/material-1.4.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] /home/krilof/.gradle/caches/transforms-3/a440ac47a235980b1a3034f08111a466/transformed/constraintlayout-2.1.2/AndroidManifest.xml:9:5-20
@@ -108,52 +108,58 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/krilo
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:12:9-69
 	android:usesCleartextTraffic
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:16:9-44
-activity#com.example.graduationprojectandroid.activities.CreatingTask
+activity#com.example.graduationprojectandroid.activities.CreatingAvatar
 ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:18:9-20:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:19:13-52
-activity#com.example.graduationprojectandroid.activities.CreatingHabit
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:19:13-54
+activity#com.example.graduationprojectandroid.activities.CreatingTask
 ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:21:9-23:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:23:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:22:13-53
-activity#com.example.graduationprojectandroid.activities.MainPage
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:22:13-52
+activity#com.example.graduationprojectandroid.activities.CreatingHabit
 ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:24:9-26:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:26:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:25:13-48
-activity#com.example.graduationprojectandroid.activities.CreatingCharacter
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:25:13-53
+activity#com.example.graduationprojectandroid.activities.MainPage
 ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:27:9-29:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:29:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:28:13-57
-activity#com.example.graduationprojectandroid.activities.LoginActivity
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:28:13-48
+activity#com.example.graduationprojectandroid.activities.CreatingCharacter
 ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:30:9-32:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:32:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:31:13-53
-activity#com.example.graduationprojectandroid.activities.MainActivity
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:33:9-41:20
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:31:13-57
+activity#com.example.graduationprojectandroid.activities.LoginActivity
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:33:9-35:39
 	android:exported
 		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:35:13-36
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:34:13-52
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:34:13-53
+activity#com.example.graduationprojectandroid.activities.MainActivity
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:36:9-44:20
+	android:exported
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:38:13-36
+	android:name
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:37:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:36:13-40:29
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:39:13-43:29
 action#android.intent.action.MAIN
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:37:17-69
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:37:25-66
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:39:17-77
+ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:39:27-74
+		ADDED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:42:27-74
 uses-sdk
 INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml

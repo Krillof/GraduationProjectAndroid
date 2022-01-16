@@ -47,13 +47,13 @@ class Inventory : Fragment() {
                 characterData
             )
 
-            val marketList
-                    = MarketList.newInstance(characterData.money)
+            val inventoryList
+                    = InventoryList.newInstance(characterData.money)
 
 
 
             replace(R.id.first_fragment, presentCharacterBig)
-            replace(R.id.second_fragment, marketList)
+            replace(R.id.second_fragment, inventoryList)
 
         }
     }

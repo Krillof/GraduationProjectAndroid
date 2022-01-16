@@ -47,7 +47,7 @@ class GetCode(private var listener: () -> Unit) : Fragment(){
             add(R.id.input, input)
 
             val button: Button = Button.newInstance(
-                getString(R.string.button_text_login_1)
+                getString(R.string.next)
             ) {
                 listener()
             }

@@ -51,6 +51,8 @@ class BuyDialogue (
         val text_part2 = getString(R.string.experience) + " +" + item.plus_exp.toString()
         infoText.text = text_part1 + text_part2
 
+        moneyText.text = item.money.toString()
+
         NetworkService.getInstance().setPictureById(item.id, picture)
 
         closeButton.setOnClickListener {
