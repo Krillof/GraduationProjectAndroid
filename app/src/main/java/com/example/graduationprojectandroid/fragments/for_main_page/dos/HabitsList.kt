@@ -40,13 +40,12 @@ class HabitsList(
 
         super.onViewCreated(view, savedInstanceState)
 
-        val dataService = DataService.getDataService()
 
         addButton.setOnClickListener {
             listener(null)
         }
 
-        val habitsListAdapter = HabitsAdapter(addEmptiesHabits(dataService.getHabits()), listener)
+        val habitsListAdapter = HabitsAdapter(addEmptiesHabits(DataService.getHabits()), listener)
 
         habitsList.layoutManager = LinearLayoutManager(habitsList.context)
         habitsList.adapter = habitsListAdapter

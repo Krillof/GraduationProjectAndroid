@@ -34,14 +34,13 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
-        val dataService = DataService.getDataService()
 
         addButton.setOnClickListener {
             listener(null)
         }
 
         val habitsListAdapter
-            = TasksAdapter(convertTasksToParentizedTasks(dataService.getTasks()), listener)
+            = TasksAdapter(convertTasksToParentizedTasks(DataService.getTasks()), listener)
 
         tasksList.layoutManager = LinearLayoutManager(tasksList.context)
         tasksList.adapter = habitsListAdapter
@@ -60,9 +59,6 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
                     it.getSubtasks(),
                     View.VISIBLE,
                     View.VISIBLE,
-                    it.isEveryday,
-                    it.isEveryweek,
-                    it.isEverymonth,
                     it.difficulty
                 )
             )

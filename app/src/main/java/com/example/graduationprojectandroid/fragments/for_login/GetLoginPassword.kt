@@ -15,7 +15,11 @@ import com.example.graduationprojectandroid.fragments.Header
 import com.example.graduationprojectandroid.fragments.Input
 
 
-class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
+class GetLoginPassword(
+    private var listener: (login: String, password: String, isRegistering: Boolean) -> Unit,
+    private val loginErrorMessage: String,
+    private val passwordErrorMessage: String
+) : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,12 +45,14 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
             add(R.id.header, header)
 
             val input1: Input = Input.newInstance(
-                getString(R.string.email)
+                getString(R.string.login),
+                loginErrorMessage
             )
             add(R.id.input_1, input1) // Может быть, что id берётся для другого. Берегись и проверяй!
 
             val input2: Input = Input.newInstance(
-                getString(R.string.password)
+                getString(R.string.password),
+                passwordErrorMessage
             )
             add(R.id.input_2, input2)
 
@@ -58,9 +64,7 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
             val button: Button = Button.newInstance(
                 getString(R.string.next)
             ) {
-                Log.println(Log.INFO, "login: ", input1.getText())
-                Log.println(Log.INFO, "password: ", input2.getText())
-                listener()
+                listener(input1.getText(), input2.getText(), checkBox.isChecked())
             }
             add(R.id.button, button)
 
@@ -71,8 +75,11 @@ class GetLoginPassword(private var listener: () -> Unit) : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance(listener: () -> Unit) =
-            GetLoginPassword(listener)
+        fun newInstance(listener: (login: String, password: String, isRegistering: Boolean) -> Unit,
+                        loginErrorMessage: String, passwordErrorMessage: String
+        )
+        =
+            GetLoginPassword(listener, loginErrorMessage, passwordErrorMessage)
     }
 
 }

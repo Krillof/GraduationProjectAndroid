@@ -38,8 +38,7 @@ class Inventory : Fragment() {
         = with(binding){
         super.onViewCreated(view, savedInstanceState)
 
-        val dataService = DataService.getDataService()
-        val characterData = dataService.getCharacterData()
+        val characterData = DataService.getCharacterData()
 
         fragmentManager?.commit{
             val presentCharacterBig

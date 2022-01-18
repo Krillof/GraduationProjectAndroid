@@ -134,7 +134,7 @@ class AvatarPartsChoiceMenu(
             characterData.body_part = choosenPart[0]
             characterData.hair_part = choosenPart[1] - 1
             characterData.hair_part_color = hairColorPart
-            characterData.bg_part = choosenPart[2]
+            characterData.background_id = choosenPart[2]
             listener()
         }
     }

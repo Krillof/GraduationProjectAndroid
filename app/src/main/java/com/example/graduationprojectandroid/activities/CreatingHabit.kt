@@ -73,195 +73,163 @@ class CreatingHabit : AppCompatActivity() {
         setContentView(R.layout.activity_creating_habit)
         val context = this
 
-        val dataService = DataService.getDataService()
+
 
         val gotten_habit: Habit? = intent.extras?.get(MainPage.ARG_HABIT) as Habit?
         val isNew = (gotten_habit == null)
 
-        var habit: Habit
-        = if (isNew)
-            Habit(dataService.getNewIdForHabit(), "", "", HabitDoneStates.UNKNOWN)
-        else
-            gotten_habit!!
+        DataService.getNewIdForHabit {
 
-        val simple_choice = findViewById<View>(R.id.simple_difficulty_radiobutton)
-        val easy_choice = findViewById<View>(R.id.easy_difficulty_radiobutton)
-        val normal_choice = findViewById<View>(R.id.normal_difficulty_radiobutton)
-        val hard_choice = findViewById<View>(R.id.hard_difficulty_radiobutton)
-        val good_habit_check_box_touch_area = findViewById<View>(R.id.good_habit_checkbox_touch_area)
-        val bad_habit_check_box_touch_area = findViewById<View>(R.id.bad_habit_checkbox_touch_area)
-        val good_habit_check_box_pic = findViewById<View>(R.id.good_habit_checkbox_pic)
-        val bad_habit_check_box_pic = findViewById<View>(R.id.bad_habit_checkbox_pic)
-        val input = findViewById<View>(R.id.super_design_input)
-        val description = findViewById<View>(R.id.description_super_design_input)
-        val everyday_chbx = findViewById<View>(R.id.everyday_checkbox)
-        val everyweek_chbx = findViewById<View>(R.id.everyweek_checkbox)
-        val everymonth_chbx = findViewById<View>(R.id.everymonth_checkbox)
-        val chbx = findViewById<View>(R.id.checkbox)
-        val button_confirm = findViewById<View>(R.id.button_confirm)
+            var habit: Habit = if (isNew)
+                Habit(it, "", "", HabitDoneStates.UNKNOWN)
+            else
+                gotten_habit!!
+
+            val simple_choice = findViewById<View>(R.id.simple_difficulty_radiobutton)
+            val easy_choice = findViewById<View>(R.id.easy_difficulty_radiobutton)
+            val normal_choice = findViewById<View>(R.id.normal_difficulty_radiobutton)
+            val hard_choice = findViewById<View>(R.id.hard_difficulty_radiobutton)
+            val good_habit_check_box_touch_area =
+                findViewById<View>(R.id.good_habit_checkbox_touch_area)
+            val bad_habit_check_box_touch_area =
+                findViewById<View>(R.id.bad_habit_checkbox_touch_area)
+            val good_habit_check_box_pic = findViewById<View>(R.id.good_habit_checkbox_pic)
+            val bad_habit_check_box_pic = findViewById<View>(R.id.bad_habit_checkbox_pic)
+            val input = findViewById<View>(R.id.super_design_input)
+            val description = findViewById<View>(R.id.description_super_design_input)
+            val everyday_chbx = findViewById<View>(R.id.everyday_checkbox)
+            val everyweek_chbx = findViewById<View>(R.id.everyweek_checkbox)
+            val everymonth_chbx = findViewById<View>(R.id.everymonth_checkbox)
+            val chbx = findViewById<View>(R.id.checkbox)
+            val button_confirm = findViewById<View>(R.id.button_confirm)
 
 
+            val exit_button: View = findViewById(R.id.exit_button)
+            val intent = Intent(this, MainPage::class.java)
 
-        val exit_button: View = findViewById(R.id.exit_button)
-        val intent = Intent(this, MainPage::class.java)
+            exit_button.setOnClickListener {
+                if (isNew) {
+                    DataService.sendHabit(habit) { showInfoDialogue(it) }
+                    startActivity(intent)
+                    finish()
+                } else {
+                    var df: DialogFragment? = null
+                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
 
-        exit_button.setOnClickListener {
-            if (isNew){
-                dataService.sendHabit(habit){showInfoDialogue(it)}
-                startActivity(intent)
-                finish()
-            } else {
-                var df: DialogFragment? = null
-                df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
-
-                    when (it) {
-                        true -> {
-                            dataService.sendHabit(habit){showInfoDialogue(it)}
-                            startActivity(intent)
-                            finish()
-                        }
-                        false -> {
-                            startActivity(intent)
-                            finish()
-                        }
-                        null -> {
-                            df?.dismissAllowingStateLoss()
+                        when (it) {
+                            true -> {
+                                DataService.sendHabit(habit) { showInfoDialogue(it) }
+                                startActivity(intent)
+                                finish()
+                            }
+                            false -> {
+                                startActivity(intent)
+                                finish()
+                            }
+                            null -> {
+                                df?.dismissAllowingStateLoss()
+                            }
                         }
                     }
+
+                    df.show(supportFragmentManager, "save_changes")
                 }
-
-                df.show(supportFragmentManager, "save_changes")
             }
-        }
 
 
-        supportFragmentManager.commit {
+            supportFragmentManager.commit {
 
-            val header: Header = Header.newInstance(
-                getString(R.string.creating_habit)
-            )
-            replace(R.id.header, header)
-
-
-            val input1: SuperDesignInput = SuperDesignInput.newInstance(
-                getString(R.string.habit_name),
-                !isNew,
-                habit.header
-            ){
-                habit.header = it
-            }
-            replace(R.id.super_design_input, input1)
+                val header: Header = Header.newInstance(
+                    getString(R.string.creating_habit)
+                )
+                replace(R.id.header, header)
 
 
-            val description_input1: DescriptionSuperDesignInput =
-                DescriptionSuperDesignInput.newInstance(
-                    getString(R.string.notes),
+                val input1: SuperDesignInput = SuperDesignInput.newInstance(
+                    getString(R.string.habit_name),
                     !isNew,
-                    habit.text
-                ){
-                    habit.text = it
+                    habit.header
+                ) {
+                    habit.header = it
                 }
-            replace(R.id.description_super_design_input, description_input1)
+                replace(R.id.super_design_input, input1)
 
 
+                val description_input1: DescriptionSuperDesignInput =
+                    DescriptionSuperDesignInput.newInstance(
+                        getString(R.string.notes),
+                        !isNew,
+                        habit.text
+                    ) {
+                        habit.text = it
+                    }
+                replace(R.id.description_super_design_input, description_input1)
 
-            val everyday_checkbox: BigRectangleCheckBox
-            = BigRectangleCheckBox.newInstance(
-                getString(R.string.everyday),
-                habit.isEveryday
-            ){
-                habit.isEveryday = it
+
+                val checkbox: CheckBox = CheckBox.newInstance(
+                    getString(R.string.mark_as_done),
+                    habit.done == HabitDoneStates.DONE
+                ) {
+                    habit.done = if (it) HabitDoneStates.DONE
+                    else HabitDoneStates.UNKNOWN
+                }
+                replace(R.id.checkbox, checkbox)
+
+
+                val button: Button = Button.newInstance(getString(R.string.save)) {
+                    //TODO: Send to server
+                    startActivity(intent)
+                    finish()
+                }
+                replace(R.id.button_confirm, button)
             }
-            replace(R.id.everyday_checkbox, everyday_checkbox)
 
 
-            val everyweek_checkbox: BigRectangleCheckBox
-            = BigRectangleCheckBox.newInstance(
-                getString(R.string.everyweek),
-                habit.isEveryweek
-            ){
-                habit.isEveryweek = it
+
+            good_habit_check_box_touch_area.setOnClickListener {
+                good_habit_check_box_pic.setBackgroundResource(R.drawable.good_habit_on)
+                bad_habit_check_box_pic.setBackgroundResource(R.drawable.bad_habit_off)
+
+                habit.isHabitGood = true
             }
-            replace(R.id.everyweek_checkbox, everyweek_checkbox)
 
+            bad_habit_check_box_touch_area.setOnClickListener {
+                good_habit_check_box_pic.setBackgroundResource(R.drawable.good_habit_off)
+                bad_habit_check_box_pic.setBackgroundResource(R.drawable.bad_habit_on)
 
-
-            val everymonth_checkbox: BigRectangleCheckBox
-            = BigRectangleCheckBox.newInstance(
-                getString(R.string.everymonth),
-                habit.isEverymonth
-            ){
-                habit.isEverymonth = it
+                habit.isHabitGood = false
             }
-            replace(R.id.everymonth_checkbox, everymonth_checkbox)
+
+            good_habit_check_box_touch_area.performClick()
 
 
 
+            simple_choice.setOnClickListener {
 
-            val checkbox: CheckBox = CheckBox.newInstance(
-                getString(R.string.mark_as_done),
-                habit.done == HabitDoneStates.DONE
-            ){
-                habit.done = if (it)  HabitDoneStates.DONE
-                        else HabitDoneStates.UNKNOWN
+                habit.difficulty = Difficulty.simple
+                context.changeToDifficulty(Difficulty.simple)
+
             }
-            replace(R.id.checkbox, checkbox)
+            easy_choice.setOnClickListener {
 
+                habit.difficulty = Difficulty.easy
+                context.changeToDifficulty(Difficulty.easy)
 
-
-            val button: Button = Button.newInstance(getString(R.string.save)){
-                //TODO: Send to server
-                startActivity(intent)
-                finish()
             }
-            replace(R.id.button_confirm, button)
+            normal_choice.setOnClickListener {
+
+                habit.difficulty = Difficulty.normal
+                context.changeToDifficulty(Difficulty.normal)
+
+            }
+            hard_choice.setOnClickListener {
+
+                habit.difficulty = Difficulty.hard
+                context.changeToDifficulty(Difficulty.hard)
+
+            }
+
+            context.changeToDifficulty(habit.difficulty)
         }
-
-
-
-        good_habit_check_box_touch_area.setOnClickListener {
-            good_habit_check_box_pic.setBackgroundResource(R.drawable.good_habit_on)
-            bad_habit_check_box_pic.setBackgroundResource(R.drawable.bad_habit_off)
-
-            habit.isHabitGood = true
-        }
-
-        bad_habit_check_box_touch_area.setOnClickListener {
-            good_habit_check_box_pic.setBackgroundResource(R.drawable.good_habit_off)
-            bad_habit_check_box_pic.setBackgroundResource(R.drawable.bad_habit_on)
-
-            habit.isHabitGood = false
-        }
-
-        good_habit_check_box_touch_area.performClick()
-
-
-
-        simple_choice.setOnClickListener {
-
-            habit.difficulty = Difficulty.simple
-            context.changeToDifficulty(Difficulty.simple)
-
-        }
-        easy_choice.setOnClickListener {
-
-            habit.difficulty = Difficulty.easy
-            context.changeToDifficulty(Difficulty.easy)
-
-        }
-        normal_choice.setOnClickListener {
-
-            habit.difficulty = Difficulty.normal
-            context.changeToDifficulty(Difficulty.normal)
-
-        }
-        hard_choice.setOnClickListener {
-
-            habit.difficulty = Difficulty.hard
-            context.changeToDifficulty(Difficulty.hard)
-
-        }
-
-        context.changeToDifficulty(habit.difficulty)
     }
 }

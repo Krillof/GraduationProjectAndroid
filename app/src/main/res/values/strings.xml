@@ -2,8 +2,10 @@
     <string name="app_name">GraduationProjectAndroid</string>
 
     <string name="activity_login_header">Создай свой аккаунт</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="login">Имя пользователя</string>
+    <string name="email">Эл. почта</string>
+    <string name="password">Пароль</string>
+    <string name="are_you_registering">Вы регистрируетесь?</string>
     <string name="login_checkbox_text">Запомнить</string>
     <string name="next">Далее</string>
     <string name="text_login_2">Мы отправили код на указанную почту. Введите его в поле ниже</string>

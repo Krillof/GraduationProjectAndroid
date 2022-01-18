@@ -1,15 +1,19 @@
 package com.example.graduationprojectandroid.network
 
+import android.content.Context
+import android.content.SharedPreferences
+import android.view.View
+import com.example.graduationprojectandroid.PreferencesService
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 
-class DataService() {
+object DataService {
 
     private var characterData: CharacterData
     private val networkService: NetworkService
 
     init {
-        characterData = getCharacterData()
         networkService = NetworkService.getInstance()
+        characterData = getCharacterData()
     }
 
     fun getCharacterData(): CharacterData{
@@ -20,13 +24,13 @@ class DataService() {
                 "abc", "Avocado",
                 129, 65, 100, 220, 378,
                 13, 1, 1, 1, 1,
-                0, 0, 0, 0
+                0, 0, 0
             )
         }
         return characterData
     }
 
-    fun setHabitDoneState(id: Int, state: HabitDoneStates){
+    fun setHabitState(id: Int, state: HabitDoneStates){
         //TODO: Send to server
     }
 
@@ -34,33 +38,25 @@ class DataService() {
         //TODO: Send to server
     }
 
-    fun getNewIdForTask(): Int{
-        return 1
+    fun getNewIdForTask(awaiter: (Int) -> Unit){
+        //TODO: Ask from server for new ID
+        awaiter(1)
     }
 
-    fun getNewIdForHabit(): Int{
-        return 1
+    fun getNewIdForHabit(awaiter: (Int) -> Unit){
+        //TODO: Ask from server for new ID
+        awaiter(1)
     }
 
-    fun sendHabit(habit: Habit, listener: (error: String) -> Unit){
+    fun sendHabit(habit: Habit, awaiter: (error: String) -> Unit){
         //Just send - if id other - new, else - old
-        listener("Checking error dialogue")
+        awaiter("Checking error dialogue")
     }
 
-    fun sendTask(task: Task, listener: (error: String) -> Unit) {
+    fun sendTask(task: Task, awaiter: (error: String) -> Unit) {
         //Just send - if id other - new, else - old
-        listener("Checking error dialogue")
+        awaiter("Checking error dialogue")
     }
-
-    fun tryToUpdateCharacterData(){
-        characterData = CharacterData(
-            "abc", "Aristotle",
-            19, 90, 100, 220, 378,
-            5, 1, 1, 1, 1,
-            0, 0, 0, 0
-        )
-    }
-
 
     fun getTasks(): ArrayList<Task>{
         var tasksList = ArrayList<Task>()
@@ -83,7 +79,6 @@ class DataService() {
             subtasks1
         )
 
-        task1.isEveryday = true
         task1.difficulty = Difficulty.hard
 
 
@@ -125,7 +120,6 @@ class DataService() {
             subtasks3
         )
 
-        task3.isEveryweek = true
         task3.difficulty = Difficulty.easy
 
 
@@ -227,16 +221,104 @@ class DataService() {
         return habits
     }
 
+    fun getMarketItems(): ArrayList<MarketItem>{
+        val items = ArrayList<MarketItem>()
 
-    companion object{
-        private var dataService: DataService? = null
+        items.addAll(NetworkService.getInstance().itemsForMarket)
 
-        fun getDataService(): DataService{
-            if (dataService == null){
-                dataService = DataService()
-            }
-
-            return dataService!!
+        for (i in 0..15){
+            items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
         }
+
+        return items
     }
+
+
+
+
+    fun registerUser(password: String, awaiter: ()->Unit){
+
+        //TODO: Send to server
+        //TMP___________________
+        characterData = CharacterData(
+            "abc", "Aristotle",
+            19, 90, 100, 220, 378,
+            5, 1, 1, 1, 1,
+            0, 0, 0
+        )
+        //TMP___________________
+
+        awaiter()
+    }
+
+    fun updateCharacterData(awaiter: ()->Unit){
+        //TODO: Send to server (In another method! Not from registerUser!)
+        //TMP___________________
+        characterData = CharacterData(
+            "abc", "Aristotle",
+            19, 90, 100, 220, 378,
+            5, 1, 1, 1, 1,
+            0, 0, 0
+        )
+        //TMP___________________
+
+        awaiter()
+    }
+
+    // when registering, in CreatingAvatar
+    fun getNewCharacterData(login: String) : CharacterData{
+        characterData = CharacterData(
+            login, "",
+            0, 100, 100, 0, 100,
+            1, 1, 1,1,1,
+            0,0,0
+        )
+        return characterData
+    }
+
+    // use in LoginActivity
+    fun checkNewLogin(login: String, awaiter: (String)->Unit){
+        //check validation and is it new
+
+        awaiter("")
+    }
+
+    // use in LoginActivity
+    fun checkPassword(password: String, awaiter: (String)->Unit){
+        //check validation
+
+        awaiter("")
+    }
+
+    // use in LoginActivity
+    fun tryLogin(login: String, awaiter: (String)->Unit){
+        //check, is there this login
+
+        awaiter("")
+    }
+
+    // use in LoginActivity
+    fun tryEnter(login: String, password: String, awaiter: (String)->Unit){
+        //try enter with this password and login
+
+        awaiter("")
+    }
+
+    // when enter in app, to not login again
+    fun isLogined(context: Context, awaiter: (Boolean)->Unit) {
+        //check on server, if is logined
+        awaiter(PreferencesService.loadLogin(context) == "")
+    }
+
+    // after entering in
+    fun saveLogin(context: Context, login: String){
+        PreferencesService.saveLogin(context, login)
+    }
+
+    fun checkAvatarName(awaiter: (String)->Unit){
+        //TODO: send to check to server, from characterData
+        awaiter("")
+    }
+
+
 }

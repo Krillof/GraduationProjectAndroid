@@ -70,6 +70,8 @@
         <entry key="app/src/main/res/drawable/health_bar_foreground.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/health_bar_rectangle.xml" value="0.2140625" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.23385416666666667" />
+        <entry key="app/src/main/res/drawable/input_frame_1.xml" value="0.36615384615384616" />
+        <entry key="app/src/main/res/drawable/input_frame_error.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/light_gray_rectangle.xml" value="0.36615384615384616" />
         <entry key="app/src/main/res/drawable/lists_rectangle.xml" value="0.371875" />
         <entry key="app/src/main/res/drawable/market_item_background.xml" value="0.36615384615384616" />

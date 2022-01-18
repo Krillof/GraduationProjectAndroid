@@ -13,7 +13,4 @@ class Habit(
 
     public var difficulty: Difficulty = Difficulty.normal
     public var isHabitGood: Boolean = true
-    public var isEveryday: Boolean = false
-    public var isEveryweek: Boolean = false
-    public var isEverymonth: Boolean = false
 }

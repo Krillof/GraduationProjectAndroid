@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.Input"
 
-    android:background="@drawable/input_frame_1"
+    android:id="@+id/input_frame"
+
+    android:background="@drawable/input_frame"
     android:layout_width="328dp"
     android:layout_height="43dp"
     app:layout_constraintStart_toStartOf="parent"

@@ -7,54 +7,53 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.databinding.FragmentInputBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_TIP = "tip"
 
 /**
  * A simple [Fragment] subclass.
  * Use the [Input.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Input: Fragment() {
-    // TODO: Rename and change types of parameters
-    private var hint: String? = null
-    private var editText: EditText? = null
+class Input(
+    private val hint: String,
+    private val errorMessage: String
+): Fragment() {
+
+    private lateinit var binding: FragmentInputBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            hint = it.getString(ARG_TIP)
-        }
+        arguments?.let {}
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_input, container, false)
+        binding = FragmentInputBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    = with(binding){
         super.onViewCreated(view, savedInstanceState)
 
-        editText = view.findViewById<EditText>(R.id.input_text)
-        editText?.hint = hint
+        if (errorMessage != ""){
+            inputFrame.setBackgroundResource(R.drawable.input_frame_error)
+        }
+
+        inputText.hint = hint
     }
 
-    public fun getText() : String {
-        return editText?.text.toString()
+    fun getText() : String
+    = with(binding){
+        return inputText.text.toString()
     }
 
     companion object {
         @JvmStatic
-        fun newInstance(hint: String) =
-            Input().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_TIP, hint)
-                }
-            }
+        fun newInstance(hint: String, errorMessage: String = "") =
+            Input(hint, errorMessage)
     }
 }

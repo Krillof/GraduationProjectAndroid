@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatDelegate
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.network.DataService
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,16 +17,16 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        //Проверка на то, что мы залогинены
-        val entered : Boolean = false
-
-        if (entered){
-
-        } else {
-            //Запускаем активити для логина
-            startActivity(Intent(this, LoginActivity::class.java))
-            finish()
+        DataService.isLogined(this){
+            if (it){
+                startActivity(Intent(this, MainPage::class.java))
+                finish()
+            } else {
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
         }
+
 
 
 

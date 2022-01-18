@@ -22,8 +22,6 @@ com/example/graduationprojectandroid/databinding/FragmentButtonBinding.java
  com.example.graduationprojectandroid.databinding.FragmentButtonBinding
 com/example/graduationprojectandroid/databinding/FragmentCheckBoxBinding.java
  com.example.graduationprojectandroid.databinding.FragmentCheckBoxBinding
-com/example/graduationprojectandroid/databinding/FragmentGetCodeBinding.java
- com.example.graduationprojectandroid.databinding.FragmentGetCodeBinding
 com/example/graduationprojectandroid/databinding/SimpleLayoutMarketItemBinding.java
  com.example.graduationprojectandroid.databinding.SimpleLayoutMarketItemBinding
 com/example/graduationprojectandroid/databinding/SimpleLayoutHabitBinding.java
@@ -46,6 +44,8 @@ com/example/graduationprojectandroid/databinding/FragmentDescriptionSuperDesignI
  com.example.graduationprojectandroid.databinding.FragmentDescriptionSuperDesignInputBinding
 com/example/graduationprojectandroid/databinding/ActivityCreatingAvatarBinding.java
  com.example.graduationprojectandroid.databinding.ActivityCreatingAvatarBinding
+com/example/graduationprojectandroid/databinding/FragmentInfoDialogueBinding.java
+ com.example.graduationprojectandroid.databinding.FragmentInfoDialogueBinding
 com/example/graduationprojectandroid/network/NetworkService.java
  com.example.graduationprojectandroid.network.NetworkService
  com.example.graduationprojectandroid.network.NetworkService$DownloadImageTask

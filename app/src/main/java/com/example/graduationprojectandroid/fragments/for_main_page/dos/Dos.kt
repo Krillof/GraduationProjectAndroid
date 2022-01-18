@@ -47,8 +47,7 @@ class Dos(
         val habits_menu_choice = view.findViewById<View>(R.id.habits_menu_choice_click_rectangle)
         val tasks_menu_choice = view.findViewById<View>(R.id.tasks_menu_choice_click_rectangle)
 
-        val dataService = DataService.getDataService()
-        val characterData = dataService.getCharacterData()
+        val characterData = DataService.getCharacterData()
 
         val context = this
 

@@ -1847,7 +1847,8 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
-drawable input_frame_1
+drawable input_frame
+drawable input_frame_error
 drawable light_gray_rectangle
 drawable lists_rectangle
 drawable market_item_background
@@ -2146,8 +2147,6 @@ id east
 id easy_difficulty_radiobutton
 id edit_query
 id elastic
-id ellipse_1
-id ellipse_2
 id end
 id endToStart
 id end_padder
@@ -2224,9 +2223,9 @@ id immediateStop
 id included
 id info
 id info_text
-id input
 id input_1
 id input_2
+id input_frame
 id input_hint
 id input_text
 id inventory_list
@@ -2342,6 +2341,7 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id off
+id ok_button
 id on
 id onInterceptTouchReturnSwipe
 id or_enter_by
@@ -2495,7 +2495,6 @@ id textView2
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
-id text_login_2
 id text_view
 id textinput_counter
 id textinput_error
@@ -2667,10 +2666,10 @@ layout fragment_check_box
 layout fragment_creating_subtasks_list
 layout fragment_description_super_design_input
 layout fragment_dos
-layout fragment_get_code
 layout fragment_get_login_password
 layout fragment_habits_list
 layout fragment_header
+layout fragment_info_dialogue
 layout fragment_input
 layout fragment_inventory
 layout fragment_inventory_list
@@ -2800,6 +2799,7 @@ string abc_toolbar_collapse_description
 string activity_login_header
 string app_name
 string appbar_scrolling_view_behavior
+string are_you_registering
 string avatar
 string avatar_is_ready_string
 string background
@@ -2844,6 +2844,7 @@ string is_save_changes
 string item_view_role_description
 string level
 string list
+string login
 string login_checkbox_text
 string main_page_character
 string main_page_habits
@@ -2911,6 +2912,7 @@ string next
 string no
 string normal
 string notes
+string ok
 string or_enter_by_header
 string password
 string password_toggle_content_description
@@ -3655,6 +3657,7 @@ style Widget_Support_CoordinatorLayout
 style bar_text
 style big_white_text
 style black_presmall_text
+style error_text
 style header_text
 style inputs_hint
 style main_pages_names_off

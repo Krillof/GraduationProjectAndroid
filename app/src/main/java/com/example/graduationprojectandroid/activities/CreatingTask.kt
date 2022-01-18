@@ -82,169 +82,137 @@ class CreatingTask : AppCompatActivity() {
         setContentView(R.layout.activity_creating_task)
         val context = this
 
-        val dataService = DataService.getDataService()
-
         val gotten_task: Task? = intent.extras?.get(MainPage.ARG_TASK) as Task?
         val isNew = (gotten_task == null)
 
-        var task: Task
-                = if (isNew)
-            Task(dataService.getNewIdForTask(), "", "",
-                MutableList(0, { Subtask(false, "") }))
-        else
-            gotten_task!!
+        DataService.getNewIdForTask {
 
-        val simple_choice = findViewById<View>(R.id.simple_difficulty_radiobutton)
-        val easy_choice = findViewById<View>(R.id.easy_difficulty_radiobutton)
-        val normal_choice = findViewById<View>(R.id.normal_difficulty_radiobutton)
-        val hard_choice = findViewById<View>(R.id.hard_difficulty_radiobutton)
-        val input = findViewById<View>(R.id.super_design_input)
-        val description = findViewById<View>(R.id.description_super_design_input)
-        val creating_subtasks_list = findViewById<View>(R.id.creating_subtasks_list)
-        val everyday_chbx = findViewById<View>(R.id.everyday_checkbox)
-        val everyweek_chbx = findViewById<View>(R.id.everyweek_checkbox)
-        val everymonth_chbx = findViewById<View>(R.id.everymonth_checkbox)
-        val chbx = findViewById<View>(R.id.checkbox)
-        val button_confirm = findViewById<View>(R.id.button_confirm)
-        val exit_button: View = findViewById(R.id.exit_button)
 
-        exit_button.setOnClickListener {
-            if (isNew){
-                dataService.sendTask(task){showInfoDialogue(it)}
-                goBack(task)
-            } else {
-                //Ask, before leave
-                var df: DialogFragment? = null
-                df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
-                    when (it) {
-                        true -> {
-                            dataService.sendTask(task){showInfoDialogue(it)}
-                            goBack(task)
-                        }
-                        false -> {
-                            goBack(task)
-                        }
-                        null -> {
-                            df?.dismissAllowingStateLoss()
+            var task: Task = if (isNew)
+                Task(it, "", "",
+                    MutableList(0, { Subtask(false, "") })
+                )
+            else
+                gotten_task!!
+
+            val simple_choice = findViewById<View>(R.id.simple_difficulty_radiobutton)
+            val easy_choice = findViewById<View>(R.id.easy_difficulty_radiobutton)
+            val normal_choice = findViewById<View>(R.id.normal_difficulty_radiobutton)
+            val hard_choice = findViewById<View>(R.id.hard_difficulty_radiobutton)
+            val input = findViewById<View>(R.id.super_design_input)
+            val description = findViewById<View>(R.id.description_super_design_input)
+            val creating_subtasks_list = findViewById<View>(R.id.creating_subtasks_list)
+            val everyday_chbx = findViewById<View>(R.id.everyday_checkbox)
+            val everyweek_chbx = findViewById<View>(R.id.everyweek_checkbox)
+            val everymonth_chbx = findViewById<View>(R.id.everymonth_checkbox)
+            val chbx = findViewById<View>(R.id.checkbox)
+            val button_confirm = findViewById<View>(R.id.button_confirm)
+            val exit_button: View = findViewById(R.id.exit_button)
+
+            exit_button.setOnClickListener {
+                if (isNew) {
+                    DataService.sendTask(task) { showInfoDialogue(it) }
+                    goBack(task)
+                } else {
+                    //Ask, before leave
+                    var df: DialogFragment? = null
+                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
+                        when (it) {
+                            true -> {
+                                DataService.sendTask(task) { showInfoDialogue(it) }
+                                goBack(task)
+                            }
+                            false -> {
+                                goBack(task)
+                            }
+                            null -> {
+                                df?.dismissAllowingStateLoss()
+                            }
                         }
                     }
+                    df.show(supportFragmentManager, "save_changes")
                 }
-                df.show(supportFragmentManager, "save_changes")
             }
-        }
 
 
-        supportFragmentManager.commit {
+            supportFragmentManager.commit {
 
-            val header: Header = Header.newInstance(
-                getString(R.string.creating_habit)
-            )
-            replace(R.id.header, header)
-
-
-            val input1: SuperDesignInput = SuperDesignInput.newInstance(
-                getString(R.string.habit_name),
-                !isNew,
-                task.header
-            ){
-                task.header = it
-            }
-            replace(R.id.super_design_input, input1)
+                val header: Header = Header.newInstance(
+                    getString(R.string.creating_habit)
+                )
+                replace(R.id.header, header)
 
 
-            val description_input1: DescriptionSuperDesignInput =
-                DescriptionSuperDesignInput.newInstance(
-                    getString(R.string.notes),
+                val input1: SuperDesignInput = SuperDesignInput.newInstance(
+                    getString(R.string.habit_name),
                     !isNew,
-                    task.text
-                ){
-                    task.text = it
+                    task.header
+                ) {
+                    task.header = it
                 }
-            replace(R.id.description_super_design_input, description_input1)
+                replace(R.id.super_design_input, input1)
 
 
-            val everyday_checkbox: BigRectangleCheckBox
-                    = BigRectangleCheckBox.newInstance(
-                getString(R.string.everyday),
-                task.isEveryday
-            ){
-                task.isEveryday = it
+                val description_input1: DescriptionSuperDesignInput =
+                    DescriptionSuperDesignInput.newInstance(
+                        getString(R.string.notes),
+                        !isNew,
+                        task.text
+                    ) {
+                        task.text = it
+                    }
+                replace(R.id.description_super_design_input, description_input1)
+
+                task.getSubtasks().add(Subtask())
+                val creating_subtasks_list: CreatingSubtasksList =
+                    CreatingSubtasksList.newInstance(task)
+                replace(R.id.creating_subtasks_list, creating_subtasks_list)
+
+
+                val checkbox: CheckBox = CheckBox.newInstance(
+                    getString(R.string.mark_as_done),
+                    task.isDone()
+                ) {
+                    task.setFullDone(true)
+                }
+                replace(R.id.checkbox, checkbox)
+
+
+                val button: Button = Button.newInstance(getString(R.string.save)) {
+                    goBack(task)
+                }
+                replace(R.id.button_confirm, button)
             }
-            replace(R.id.everyday_checkbox, everyday_checkbox)
 
 
-            val everyweek_checkbox: BigRectangleCheckBox
-                    = BigRectangleCheckBox.newInstance(
-                getString(R.string.everyweek),
-                task.isEveryweek
-            ){
-                task.isEveryweek = it
+
+            simple_choice.setOnClickListener {
+
+                task.difficulty = Difficulty.simple
+                context.changeToDifficulty(Difficulty.simple)
+
             }
-            replace(R.id.everyweek_checkbox, everyweek_checkbox)
+            easy_choice.setOnClickListener {
 
+                task.difficulty = Difficulty.easy
+                context.changeToDifficulty(Difficulty.easy)
 
-
-            val everymonth_checkbox: BigRectangleCheckBox
-                    = BigRectangleCheckBox.newInstance(
-                getString(R.string.everymonth),
-                task.isEverymonth
-            ){
-                task.isEverymonth = it
             }
-            replace(R.id.everymonth_checkbox, everymonth_checkbox)
+            normal_choice.setOnClickListener {
 
+                task.difficulty = Difficulty.normal
+                context.changeToDifficulty(Difficulty.normal)
 
-            task.getSubtasks().add(Subtask())
-            val creating_subtasks_list: CreatingSubtasksList =
-                CreatingSubtasksList.newInstance(task)
-            replace(R.id.creating_subtasks_list, creating_subtasks_list)
-
-
-
-            val checkbox: CheckBox = CheckBox.newInstance(
-                getString(R.string.mark_as_done),
-                task.isDone()
-            ){
-                task.setFullDone(true)
             }
-            replace(R.id.checkbox, checkbox)
+            hard_choice.setOnClickListener {
 
+                task.difficulty = Difficulty.hard
+                context.changeToDifficulty(Difficulty.hard)
 
-
-            val button: Button = Button.newInstance(getString(R.string.save)){
-                goBack(task)
             }
-            replace(R.id.button_confirm, button)
+
+            context.changeToDifficulty(task.difficulty)
         }
-
-
-
-        simple_choice.setOnClickListener {
-
-            task.difficulty = Difficulty.simple
-            context.changeToDifficulty(Difficulty.simple)
-
-        }
-        easy_choice.setOnClickListener {
-
-            task.difficulty = Difficulty.easy
-            context.changeToDifficulty(Difficulty.easy)
-
-        }
-        normal_choice.setOnClickListener {
-
-            task.difficulty = Difficulty.normal
-            context.changeToDifficulty(Difficulty.normal)
-
-        }
-        hard_choice.setOnClickListener {
-
-            task.difficulty = Difficulty.hard
-            context.changeToDifficulty(Difficulty.hard)
-
-        }
-
-        context.changeToDifficulty(task.difficulty)
     }
 
     companion object {

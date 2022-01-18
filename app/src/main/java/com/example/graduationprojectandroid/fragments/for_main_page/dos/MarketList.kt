@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentMarketListBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItemsAdapter
+import com.example.graduationprojectandroid.network.DataService
 import com.example.graduationprojectandroid.network.NetworkService
 
 
@@ -39,23 +40,14 @@ class MarketList(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
         super.onViewCreated(view, savedInstanceState)
         marketItemsList.layoutManager = GridLayoutManager(marketItemsList.context, 3)
-        marketItemsList.adapter = MarketItemsAdapter(parentFragmentManager, getMarketItems())
+        marketItemsList.adapter = MarketItemsAdapter(
+            parentFragmentManager, DataService.getMarketItems())
 
 
         moneyText.text = money.toString()
     }
 
-    private fun getMarketItems(): ArrayList<MarketItem>{
-        val items = ArrayList<MarketItem>()
 
-        items.addAll(NetworkService.getInstance().itemsForMarket)
-
-        for (i in 0..15){
-            items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
-        }
-
-        return items
-    }
 
     companion object {
         @JvmStatic
