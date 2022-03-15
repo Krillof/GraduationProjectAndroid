@@ -1834,6 +1834,7 @@ drawable exp_bar_rectangle
 drawable good_habit_off
 drawable good_habit_on
 drawable gray_right_top_circled_background
+drawable green_circle_for_tasks_counter
 drawable hard_off
 drawable hard_on
 drawable health_bar_background
@@ -2041,7 +2042,8 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
+id button1
+id button2
 id buttonPanel
 id button_confirm
 id button_frame
@@ -2796,7 +2798,6 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string activity_login_header
 string app_name
 string appbar_scrolling_view_behavior
 string are_you_registering
@@ -2815,6 +2816,7 @@ string chip_text
 string clear_text_end_icon_content_description
 string code
 string communities
+string create_your_account
 string creating_habit
 string difficulty
 string dos
@@ -2837,6 +2839,8 @@ string health
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string how_often_to_do
+string i_already_have_an_account
+string i_do_not_have_an_account
 string icon_content_description
 string inventory
 string is_change_avatar
@@ -2844,6 +2848,7 @@ string is_save_changes
 string item_view_role_description
 string level
 string list
+string log_in
 string login
 string login_checkbox_text
 string main_page_character
@@ -3669,7 +3674,8 @@ style small_orange_text
 style small_red_text
 style small_text_style
 style small_white_text
-style subtasks_counter
+style subtasks_counter_off
+style subtasks_counter_on
 style text_style
 style transparent
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle

@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
                 if (it == ""){
                     val tryPassword = DataService.tryEnter(login, password){
                         if (it == ""){
-                            // go main page
+                            // go to main page
                             nextActivity(login, password, false)
                         } else {
                             // write error message for password from it

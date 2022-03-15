@@ -40,7 +40,7 @@ class AvatarGivingNameMenu(
         super.onViewCreated(view, savedInstanceState)
 
         val name_input = view.findViewById<View>(R.id.name_input)
-        //because it didn't work with nameInput from binding
+        // using "findViewById" because it didn't work with binding
 
         blueInputBox.setOnClickListener {
             name_input.requestFocus()

@@ -21,6 +21,10 @@ class GetLoginPassword(
     private val passwordErrorMessage: String
 ) : Fragment() {
 
+    private var isRegistering = true
+    private var input1: Input? = null
+    private var input2: Input? = null
+    private var checkBox: CheckBox? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,40 +41,66 @@ class GetLoginPassword(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        init()
+    }
+
+    private fun init(){
         fragmentManager?.commit {
 
             val header: Header = Header.newInstance(
-                getString(R.string.activity_login_header)
+                getString(
+                    if (isRegistering)
+                        R.string.create_your_account
+                    else
+                        R.string.log_in
+                )
             )
-            add(R.id.header, header)
+            replace(R.id.header, header)
 
-            val input1: Input = Input.newInstance(
+            if (input1 == null) input1 = Input.newInstance(
                 getString(R.string.login),
                 loginErrorMessage
             )
-            add(R.id.input_1, input1) // Может быть, что id берётся для другого. Берегись и проверяй!
+            replace(R.id.input_1, input1!!) // Может быть, что id берётся для другого. Берегись и проверяй!
 
-            val input2: Input = Input.newInstance(
+            if (input2 == null) input2= Input.newInstance(
                 getString(R.string.password),
                 passwordErrorMessage
             )
-            add(R.id.input_2, input2)
+            replace(R.id.input_2, input2!!)
 
-            val checkBox: CheckBox = CheckBox.newInstance(
-                getString(R.string.login_checkbox_text)
-            )
-            add(R.id.checkbox, checkBox)
+            if (!isRegistering) {
+                if (checkBox == null) checkBox = CheckBox.newInstance(
+                    getString(R.string.login_checkbox_text)
+                )
+                checkBox!!.view?.visibility = View.VISIBLE
+                replace(R.id.checkbox, checkBox!!)
+            } else {
+                if (checkBox != null){
+                    checkBox!!.view?.visibility = View.INVISIBLE
+                }
+            }
 
-            val button: Button = Button.newInstance(
+            val button1: Button = Button.newInstance(
                 getString(R.string.next)
             ) {
-                listener(input1.getText(), input2.getText(), checkBox.isChecked())
+                listener(input1!!.getText(), input2!!.getText(), isRegistering)
             }
-            add(R.id.button, button)
+            replace(R.id.button1, button1)
 
-
+            val button2: Button = Button.newInstance(
+                getString(
+                    if (isRegistering)
+                        R.string.i_already_have_an_account
+                    else
+                        R.string.i_do_not_have_an_account
+                )
+            ) {
+                isRegistering = !isRegistering
+                init()
+            }
+            replace(R.id.button2, button2)
         }
-
     }
 
     companion object {

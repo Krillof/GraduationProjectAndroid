@@ -151,13 +151,23 @@
         </item>
     </style>
 
-    <style name="subtasks_counter">
+    <style name="subtasks_counter_off">
         <item name="android:textSize">
             10sp
         </item>
 
         <item name="android:textColor">
             #98A5ED
+        </item>
+    </style>
+
+    <style name="subtasks_counter_on">
+        <item name="android:textSize">
+            10sp
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
         </item>
     </style>
 

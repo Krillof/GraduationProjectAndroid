@@ -6,88 +6,88 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="23"
-8-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
+8-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml
+9-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:6:5-67
-11-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:6:22-64
+11-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:6:5-67
+11-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:8:5-45:19
+13-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:8:5-45:19
 14        android:allowBackup="true"
-14-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:9:9-35
+14-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:9:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.7.0] /home/krilof/.gradle/caches/transforms-3/22fc58c1aba25a38624b19fcaec4a163/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+15-->[androidx.core:core:1.7.0] C:\Users\Артём\.gradle\caches\transforms-3\ff3a61bb8d068ad301ca46a3de77c66e\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
 16        android:debuggable="true"
 17        android:extractNativeLibs="false"
 18        android:icon="@mipmap/ic_launcher"
-18-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:10:9-43
+18-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:10:9-43
 19        android:label="@string/app_name"
-19-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:11:9-41
+19-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:11:9-41
 20        android:networkSecurityConfig="@xml/network_security_config"
-20-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:12:9-69
+20-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:12:9-69
 21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:13:9-54
+21-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:13:9-54
 22        android:supportsRtl="true"
-22-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:14:9-35
+22-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:14:9-35
 23        android:testOnly="true"
 24        android:theme="@style/Theme.GraduationProjectAndroid"
-24-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:15:9-62
+24-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:15:9-62
 25        android:usesCleartextTraffic="true" >
-25-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:16:9-44
+25-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:16:9-44
 26        <activity
-26-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:18:9-20:39
+26-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:18:9-20:39
 27            android:name="com.example.graduationprojectandroid.activities.CreatingAvatar"
-27-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:19:13-54
+27-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:13-54
 28            android:exported="true" />
-28-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:20:13-36
+28-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-36
 29        <activity
-29-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:21:9-23:39
+29-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:9-23:39
 30            android:name="com.example.graduationprojectandroid.activities.CreatingTask"
-30-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:22:13-52
+30-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:13-52
 31            android:exported="true" />
-31-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:23:13-36
+31-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-36
 32        <activity
-32-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:24:9-26:39
+32-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:9-26:39
 33            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
-33-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:25:13-53
+33-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:13-53
 34            android:exported="true" />
-34-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:26:13-36
+34-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-36
 35        <activity
-35-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:27:9-29:39
+35-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:9-29:39
 36            android:name="com.example.graduationprojectandroid.activities.MainPage"
-36-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:28:13-48
+36-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:13-48
 37            android:exported="true" />
-37-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:29:13-36
+37-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-36
 38        <activity
-38-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:30:9-32:39
+38-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:9-32:39
 39            android:name="com.example.graduationprojectandroid.activities.CreatingCharacter"
-39-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:31:13-57
+39-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-57
 40            android:exported="true" />
-40-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:32:13-36
+40-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:13-36
 41        <activity
-41-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:33:9-35:39
+41-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:9-35:39
 42            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
-42-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:34:13-53
+42-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:13-53
 43            android:exported="true" />
-43-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:35:13-36
+43-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-36
 44        <activity
-44-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:36:9-44:20
+44-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:9-44:20
 45            android:name="com.example.graduationprojectandroid.activities.MainActivity"
-45-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:37:13-52
+45-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-52
 46            android:exported="true" >
-46-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:38:13-36
+46-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:13-36
 47            <intent-filter>
-47-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:39:13-43:29
+47-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-43:29
 48                <action android:name="android.intent.action.MAIN" />
-48-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:40:17-69
-48-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:40:25-66
+48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:17-69
+48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:25-66
 49
 50                <category android:name="android.intent.category.LAUNCHER" />
-50-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:42:17-77
-50-->/home/krilof/AndroidStudioProjects/GraduationProjectAndroid/app/src/main/AndroidManifest.xml:42:27-74
+50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:17-77
+50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:27-74
 51            </intent-filter>
 52        </activity>
 53    </application>

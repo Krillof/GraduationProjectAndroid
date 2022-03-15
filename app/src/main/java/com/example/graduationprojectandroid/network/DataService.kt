@@ -233,11 +233,8 @@ object DataService {
         return items
     }
 
-
-
-
     fun registerUser(password: String, awaiter: ()->Unit){
-
+        // Login and avatar parts are in character data - get them here
         //TODO: Send to server
         //TMP___________________
         characterData = CharacterData(
@@ -278,36 +275,37 @@ object DataService {
 
     // use in LoginActivity
     fun checkNewLogin(login: String, awaiter: (String)->Unit){
-        //check validation and is it new
+        //TODO: check validation and is it new
 
         awaiter("")
     }
 
     // use in LoginActivity
     fun checkPassword(password: String, awaiter: (String)->Unit){
-        //check validation
+        //TODO: check validation
 
         awaiter("")
     }
 
     // use in LoginActivity
     fun tryLogin(login: String, awaiter: (String)->Unit){
-        //check, is there this login
+        //TODO: check, is there this login
 
         awaiter("")
     }
 
     // use in LoginActivity
     fun tryEnter(login: String, password: String, awaiter: (String)->Unit){
-        //try enter with this password and login
+        //TODO: try enter with this password and login
 
         awaiter("")
     }
 
     // when enter in app, to not login again
     fun isLogined(context: Context, awaiter: (Boolean)->Unit) {
-        //check on server, if is logined
-        awaiter(PreferencesService.loadLogin(context) == "")
+        //TODO: check on server, if is logined
+        //TODO: somewhere must be awaiter(PreferencesService.loadLogin(context) == "")
+        awaiter(false)
     }
 
     // after entering in

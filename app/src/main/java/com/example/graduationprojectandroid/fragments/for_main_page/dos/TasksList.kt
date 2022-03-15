@@ -59,6 +59,9 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
                     it.getSubtasks(),
                     View.VISIBLE,
                     View.VISIBLE,
+                    it.isEveryday,
+                    it.isEveryweek,
+                    it.isEverymonth,
                     it.difficulty
                 )
             )

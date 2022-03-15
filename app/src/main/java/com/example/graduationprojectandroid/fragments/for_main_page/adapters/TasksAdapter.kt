@@ -55,21 +55,29 @@ class TasksAdapter(
                 listener(value)
             }
 
+            val isTaskDone = task.isDone()
+
             doneCheckbox.setBackgroundResource(
-                if (task.isDone())
+                if (isTaskDone)
                     R.drawable.tick_in_circle_on
                 else
                     R.drawable.tick_in_circle_off
             )
 
-
             subtasksList.adapter = task.getAdapter()
 
             doneCheckbox.setOnClickListener {
-                task.setFullDone(! task.isDone())
+                task.setFullDone(! isTaskDone)
 
                 this_adapter.notifyDataSetChanged()
             }
+
+            subtasksCounterCircle.setBackgroundResource(
+                if (isTaskDone)
+                    R.drawable.green_circle_for_tasks_counter
+                else
+                    R.drawable.purple_circle
+            )
 
             subtasksCounterCircle.setOnClickListener {
                 task.setCurrentShowSubtasks(
@@ -81,6 +89,13 @@ class TasksAdapter(
 
                 subtasksList.visibility = task.getCurrentShowSubtasks()
             }
+
+            subtasksCounter.setTextAppearance(
+                if (isTaskDone)
+                    R.style.subtasks_counter_on
+                else
+                    R.style.subtasks_counter_off
+            )
 
             subtasksCounter
                 .text = task.howManySubtasksDone().toString() + "/" + task.getSubtasks().size.toString()

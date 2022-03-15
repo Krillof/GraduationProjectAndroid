@@ -9,6 +9,9 @@ open class Task(
     public var header: String,
     public var text: String,
     private val subtasks: MutableList<Subtask>,
+    public var isEveryday: Boolean = false,
+    public var isEveryweek: Boolean = false,
+    public var isEverymonth: Boolean = false,
     public var difficulty: Difficulty = Difficulty.normal
 ) : Serializable {
 

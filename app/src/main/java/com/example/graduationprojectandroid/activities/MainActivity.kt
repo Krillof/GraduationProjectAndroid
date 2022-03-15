@@ -20,11 +20,10 @@ class MainActivity : AppCompatActivity() {
         DataService.isLogined(this){
             if (it){
                 startActivity(Intent(this, MainPage::class.java))
-                finish()
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
-                finish()
             }
+            finish()
         }
 
 
