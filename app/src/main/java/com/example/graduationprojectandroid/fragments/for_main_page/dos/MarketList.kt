@@ -39,12 +39,14 @@ class MarketList(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        marketItemsList.layoutManager = GridLayoutManager(marketItemsList.context, 3)
-        marketItemsList.adapter = MarketItemsAdapter(
-            parentFragmentManager, DataService.getMarketItems())
 
+        DataService.getMarketItems{
+            marketItemsList.layoutManager = GridLayoutManager(marketItemsList.context, 3)
+            marketItemsList.adapter = MarketItemsAdapter(
+                parentFragmentManager, it)
 
-        moneyText.text = money.toString()
+            moneyText.text = money.toString()
+        }
     }
 
 

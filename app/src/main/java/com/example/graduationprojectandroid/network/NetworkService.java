@@ -13,9 +13,12 @@ import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi
 import java.io.InputStream;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.GET;
 
 public class NetworkService {
     //singleton
@@ -49,6 +52,19 @@ public class NetworkService {
     //      -------endpoints
 
     //--------Retrofit
+
+    //Classes for lambda functions
+
+    public interface AwaiterForMarketItems{
+        void start(ArrayList<MarketItem> items);
+    }
+
+    public interface AwaiterForInventoryItems{
+        void start(ArrayList<MarketItem> items);
+    }
+
+
+    //--------Classes for lambda functions
 
     //getting picture
 
@@ -84,9 +100,14 @@ public class NetworkService {
 
     //---------getting picture
 
-    public ArrayList<MarketItem> getItemsForMarket(){
+    //@GET(BASE_URL + )
+    //private Call<List<MarketItem>> itemsForMarket();
+
+    public void getItemsForMarket(AwaiterForMarketItems awaiter){
         ArrayList<MarketItem> items = new ArrayList<>();
 
+        //TODO: Get from server
+
         items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
         items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
         items.add(new MarketItem(3, 128));
@@ -120,11 +141,47 @@ public class NetworkService {
         items.add(new MarketItem(3,135));
         items.add(new MarketItem(1,165));
 
-        return items;
+        awaiter.start(items);
     }
 
-    public ArrayList<MarketItem> getItemsForInventory(){
+    public void getItemsForInventory(AwaiterForInventoryItems awaiter){
+        ArrayList<MarketItem> items = new ArrayList<>();
 
-        return getItemsForMarket();
+        //TODO: Get from server
+
+        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
+        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
+        items.add(new MarketItem(3, 128));
+        items.add(new MarketItem(1, 215));
+        items.add(new MarketItem(2,15));
+        items.add(new MarketItem(3,125));
+        items.add(new MarketItem(1,145));
+        items.add(new MarketItem(2,155));
+        items.add(new MarketItem(3,165));
+        items.add(new MarketItem(1,175));
+        items.add(new MarketItem(2,185));
+        items.add(new MarketItem(3,195));
+        items.add(new MarketItem(1,11655));
+        items.add(new MarketItem(2,1345));
+        items.add(new MarketItem(3,135));
+        items.add(new MarketItem(1,165));
+        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
+        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
+        items.add(new MarketItem(3, 128));
+        items.add(new MarketItem(1, 215));
+        items.add(new MarketItem(2,15));
+        items.add(new MarketItem(3,125));
+        items.add(new MarketItem(1,145));
+        items.add(new MarketItem(2,155));
+        items.add(new MarketItem(3,165));
+        items.add(new MarketItem(1,175));
+        items.add(new MarketItem(2,185));
+        items.add(new MarketItem(3,195));
+        items.add(new MarketItem(1,11655));
+        items.add(new MarketItem(2,1345));
+        items.add(new MarketItem(3,135));
+        items.add(new MarketItem(1,165));
+
+        awaiter.start(items);
     }
 }

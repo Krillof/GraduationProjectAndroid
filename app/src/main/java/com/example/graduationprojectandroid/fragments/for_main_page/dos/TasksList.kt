@@ -39,11 +39,13 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             listener(null)
         }
 
-        val habitsListAdapter
-            = TasksAdapter(convertTasksToParentizedTasks(DataService.getTasks()), listener)
+        DataService.getTasks{
+            val habitsListAdapter
+                    = TasksAdapter(convertTasksToParentizedTasks(it), listener)
 
-        tasksList.layoutManager = LinearLayoutManager(tasksList.context)
-        tasksList.adapter = habitsListAdapter
+            tasksList.layoutManager = LinearLayoutManager(tasksList.context)
+            tasksList.adapter = habitsListAdapter
+        }
     }
 
     private fun convertTasksToParentizedTasks(tasks: ArrayList<Task>)

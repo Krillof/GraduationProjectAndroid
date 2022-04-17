@@ -12,6 +12,7 @@ import com.example.graduationprojectandroid.databinding.FragmentMarketListBindin
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.InventoryItemsAdapter
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItemsAdapter
+import com.example.graduationprojectandroid.network.DataService
 import com.example.graduationprojectandroid.network.NetworkService
 
 /**
@@ -40,20 +41,10 @@ class InventoryList(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
         super.onViewCreated(view, savedInstanceState)
-        inventoryList.layoutManager = GridLayoutManager(inventoryList.context, 3)
-        inventoryList.adapter = InventoryItemsAdapter(parentFragmentManager, getInventoryItems())
-    }
-
-    private fun getInventoryItems(): ArrayList<MarketItem>{
-        val items = ArrayList<MarketItem>()
-
-        items.addAll(NetworkService.getInstance().itemsForInventory)
-
-        for (i in 0..15){
-            items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+        DataService.getInventoryItems{
+            inventoryList.layoutManager = GridLayoutManager(inventoryList.context, 3)
+            inventoryList.adapter = InventoryItemsAdapter(parentFragmentManager, it)
         }
-
-        return items
     }
 
     companion object {

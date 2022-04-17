@@ -45,10 +45,12 @@ class HabitsList(
             listener(null)
         }
 
-        val habitsListAdapter = HabitsAdapter(addEmptiesHabits(DataService.getHabits()), listener)
+        DataService.getHabits{
+            val habitsListAdapter = HabitsAdapter(addEmptiesHabits(it), listener)
 
-        habitsList.layoutManager = LinearLayoutManager(habitsList.context)
-        habitsList.adapter = habitsListAdapter
+            habitsList.layoutManager = LinearLayoutManager(habitsList.context)
+            habitsList.adapter = habitsListAdapter
+        }
     }
 
 

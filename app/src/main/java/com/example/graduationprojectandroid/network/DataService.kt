@@ -39,27 +39,31 @@ object DataService {
     }
 
     fun getNewIdForTask(awaiter: (Int) -> Unit){
+        //TODO: DELETE THIS FUNCTION - ID MUST BE GIVEN ON SERVER
         //TODO: Ask from server for new ID
         awaiter(1)
     }
 
     fun getNewIdForHabit(awaiter: (Int) -> Unit){
+        //TODO: DELETE THIS FUNCTION - ID MUST BE GIVEN ON SERVER
         //TODO: Ask from server for new ID
         awaiter(1)
     }
 
     fun sendHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        //Just send - if id other - new, else - old
+        //TODO: Just send - if id other - new, else - old
         awaiter("Checking error dialogue")
     }
 
     fun sendTask(task: Task, awaiter: (error: String) -> Unit) {
-        //Just send - if id other - new, else - old
+        //TODO: Just send - if id other - new, else - old
         awaiter("Checking error dialogue")
     }
 
-    fun getTasks(): ArrayList<Task>{
+    fun getTasks(awaiter: (ArrayList<Task>)->Unit){
         var tasksList = ArrayList<Task>()
+        //TODO: get tasks from server by user's login
+        //TODO: use awaiter
 
         //---------------------------------------
         //TMP
@@ -68,9 +72,8 @@ object DataService {
         val sbtsks_strs1 = listOf("в тетради", "потом выучи текст", "приготовь картошку")
 
         var subtasks1: MutableList<Subtask> = MutableList(
-            3,
-            {index -> Subtask(false, sbtsks_strs1[index]) }
-        )
+            3
+        ){ Subtask(false, sbtsks_strs1[it]) }
 
         var task1 = Task(
             1,
@@ -94,9 +97,8 @@ object DataService {
         )
 
         var subtasks2: MutableList<Subtask> = MutableList(
-            sbtsks_strs2.size,
-            {index -> Subtask(false, sbtsks_strs2[index]) }
-        )
+            sbtsks_strs2.size
+        ) { index -> Subtask(false, sbtsks_strs2[index]) }
 
         var task2 = Task(
             2,
@@ -109,9 +111,8 @@ object DataService {
         task2.difficulty = Difficulty.normal
 
         var subtasks3: MutableList<Subtask> = MutableList(
-            0,
-            {index -> Subtask(false, "") }
-        )
+            0
+        ) { index -> Subtask(false, "") }
 
         var task3 = Task(
             3,
@@ -131,12 +132,14 @@ object DataService {
         //TMP
         //-------------------------------------
 
-        return tasksList
+        awaiter(tasksList)
     }
 
-    fun getHabits() : ArrayList<Habit>{
+    fun getHabits(awaiter: (ArrayList<Habit>)->Unit) {
         val habits: ArrayList<Habit> = ArrayList()
         //TODO: Make normal habits load
+        //TODO: Use awaiter
+
         //--------------------------------------------
         //TMP
 
@@ -218,19 +221,34 @@ object DataService {
         //TMP
         //----------------------------------------------
 
-        return habits
+        awaiter(habits)
     }
 
-    fun getMarketItems(): ArrayList<MarketItem>{
-        val items = ArrayList<MarketItem>()
+    fun getMarketItems(awaiter: (ArrayList<MarketItem>) -> Unit){
+        NetworkService.getInstance().getItemsForMarket {
+            val items = ArrayList<MarketItem>()
+            items.addAll(it)
 
-        items.addAll(NetworkService.getInstance().itemsForMarket)
+            for (i in 0..15){
+                items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+            }
 
-        for (i in 0..15){
-            items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+            awaiter(items)
         }
 
-        return items
+    }
+
+    fun getInventoryItems(awaiter: (ArrayList<MarketItem>)->Unit ){
+        NetworkService.getInstance().getItemsForInventory{
+            val items = ArrayList<MarketItem>()
+            items.addAll(it)
+
+            for (i in 0..15){
+                items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+            }
+
+            awaiter(items)
+        }
     }
 
     fun registerUser(password: String, awaiter: ()->Unit){
@@ -275,14 +293,14 @@ object DataService {
 
     // use in LoginActivity
     fun checkNewLogin(login: String, awaiter: (String)->Unit){
-        //TODO: check validation and is it new
+        //TODO: check validation and is it new (on server)
 
         awaiter("")
     }
 
     // use in LoginActivity
     fun checkPassword(password: String, awaiter: (String)->Unit){
-        //TODO: check validation
+        //TODO: check validation (on server)
 
         awaiter("")
     }
