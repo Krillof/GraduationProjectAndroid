@@ -10,13 +10,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.SimpleLayoutBuyMarketItemBinding
 import com.example.graduationprojectandroid.databinding.SimpleLayoutWearItemBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Item
 import com.example.graduationprojectandroid.network.NetworkService
 
 class WearDialogue (
-    private var item: MarketItem,
+    private var item: Item,
     private var listener: (answer: Boolean) -> Unit
 ) : DialogFragment() {
 
@@ -66,7 +65,7 @@ class WearDialogue (
     companion object {
         @JvmStatic
         fun newInstance(
-            item: MarketItem,
+            item: Item,
             listener: (answer: Boolean) -> Unit
         ) =
             BuyDialogue(item, listener)

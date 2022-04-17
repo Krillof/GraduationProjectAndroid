@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentMarketListBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItemsAdapter
 import com.example.graduationprojectandroid.network.DataService
-import com.example.graduationprojectandroid.network.NetworkService
 
 
 /**

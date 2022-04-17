@@ -19,9 +19,10 @@ class CharacterData(
     var background_id: Int,
     val pet_id: Int,
 
-    var body_part: Int,
-    var hair_part: Int,
-    var hair_part_color: Int,
+    // getting not body_part_id from avatarParts table, getting exactly picture_id of it
+    var body_part_picture_id: Int,
+    var hair_part_picture_id: Int,
+    var background_picture_id: Int //for avatar parts
 ) {
 
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentAvatarPartsChoiceMenuBinding
 import com.example.graduationprojectandroid.network.CharacterData
+import com.example.graduationprojectandroid.network.DataService
 
 /**
  * A simple [Fragment] subclass.
@@ -15,17 +16,11 @@ import com.example.graduationprojectandroid.network.CharacterData
  * create an instance of this fragment.
  */
 class AvatarPartsChoiceMenu(
+    private var chosenParts: Array<Int>,
     private var characterData: CharacterData,
-    private val listener: ()->Unit
+    private val listener_for_next_fragment: ()->Unit,
+    private val listener_for_avatar_parts: (ap: AvatarParts) -> Unit
 ) : Fragment() {
-
-    enum class AvatarPartsPages(var number: Int){
-        BODY(0),
-        HAIR(1),
-        BACKGROUND(2)
-    }
-
-    private val AVATAR_PARTS_AMOUNT = 3
 
     private lateinit var binding: FragmentAvatarPartsChoiceMenuBinding
 
@@ -42,7 +37,9 @@ class AvatarPartsChoiceMenu(
         return binding.root
     }
 
-    private fun updatePage(page: AvatarPartsPages) = with(binding){
+    //TODO: get from SERVER choosing_pictures for avatar parts
+    //TODO: think about more than 10 max variants - make list
+    private fun updatePage(page: AvatarParts) = with(binding){
         currentAvatarPartPage = page
 
         val choices = listOf(choice1, choice2, choice3)
@@ -50,68 +47,60 @@ class AvatarPartsChoiceMenu(
         val variants = listOf(variant1, variant2, variant3, variant4, variant5,
             variant6, variant7, variant8, variant9, variant10)
 
-        when(currentAvatarPartPage){
-            AvatarPartsPages.BODY ->{
-                for (i in 1..10){
-                    variants[i-1].visibility = View.VISIBLE
+        DataService.getAmountOfOneAvatarPartType(currentAvatarPartPage){ amount ->
+            when(currentAvatarPartPage){
+                AvatarParts.BODY ->{
+                    for (i in 1..amount){
+                        variants[i-1].visibility = View.VISIBLE
+                    }
+
+                    variants[0].setBackgroundResource(R.drawable.skin_color_rect_1)
+                    variants[1].setBackgroundResource(R.drawable.skin_color_rect_2)
+                    variants[2].setBackgroundResource(R.drawable.skin_color_rect_3)
+                    variants[3].setBackgroundResource(R.drawable.skin_color_rect_4)
+                    variants[4].setBackgroundResource(R.drawable.skin_color_rect_5)
+                    variants[5].setBackgroundResource(R.drawable.skin_color_rect_6)
+                    variants[6].setBackgroundResource(R.drawable.skin_color_rect_7)
+                    variants[7].setBackgroundResource(R.drawable.skin_color_rect_8)
+                    variants[8].setBackgroundResource(R.drawable.skin_color_rect_9)
+                    variants[9].setBackgroundResource(R.drawable.skin_color_rect_10)
                 }
-                variants[0].setBackgroundResource(R.drawable.skin_color_rect_1)
-                variants[1].setBackgroundResource(R.drawable.skin_color_rect_2)
-                variants[2].setBackgroundResource(R.drawable.skin_color_rect_3)
-                variants[3].setBackgroundResource(R.drawable.skin_color_rect_4)
-                variants[4].setBackgroundResource(R.drawable.skin_color_rect_5)
-                variants[5].setBackgroundResource(R.drawable.skin_color_rect_6)
-                variants[6].setBackgroundResource(R.drawable.skin_color_rect_7)
-                variants[7].setBackgroundResource(R.drawable.skin_color_rect_8)
-                variants[8].setBackgroundResource(R.drawable.skin_color_rect_9)
-                variants[9].setBackgroundResource(R.drawable.skin_color_rect_10)
+
+                AvatarParts.HAIR ->{
+                    for (i in 1..amount){
+                        variants[i-1].visibility = View.VISIBLE
+                    }
+
+                    for (i in 1..3){
+                        variants[i-1].setBackgroundResource(R.drawable.white_rect_for_hair)
+                    }
+                }
+
+                AvatarParts.BACKGROUND->{
+                    for (i in 1..amount){
+                        variants[i-1].visibility = View.VISIBLE
+                    }
+
+                    for (i in 1..5){
+                        variants[i-1].setBackgroundResource(R.drawable.market_item_background)
+                    }
+                }
             }
-
-            AvatarPartsPages.HAIR ->{
-                for (i in 1..3){
-                    variants[i-1].visibility = View.VISIBLE
-                }
-                for (i in 4..10){
-                    variants[i-1].visibility = View.GONE
-                }
-
-                //0 is special
-                variants[0].setBackgroundResource(R.drawable.color_hair_choose_button)
-
-                for (i in 2..3){
-
-                    variants[i-1].setBackgroundResource(R.drawable.white_rect_for_hair)
-                }
-            }
-
-            AvatarPartsPages.BACKGROUND->{
-                for (i in 1..5){
-                    variants[i-1].visibility = View.VISIBLE
-                }
-                for (i in 6..10){
-                    variants[i-1].visibility = View.GONE
-                }
-
-                for (i in 1..5){
-                    variants[i-1].setBackgroundResource(R.drawable.market_item_background)
-                }
+            for (i in (amount+1)..10){
+                variants[i-1].visibility = View.GONE
             }
         }
+
 
         choices.forEach {
             it.visibility = View.GONE
         }
         choices[currentAvatarPartPage.number].visibility = View.VISIBLE
-        switchVariant(choosenPart[currentAvatarPartPage.number])
+        switchVariant(chosenParts[currentAvatarPartPage.number])
     }
 
     private fun switchVariant(index: Int) = with(binding)
     {
-        if (currentAvatarPartPage == AvatarPartsPages.HAIR
-            && index == 0){
-            return
-        }
-
         val variantBorders = listOf(variant1Border, variant2Border,
             variant3Border, variant4Border, variant5Border,
             variant6Border, variant7Border, variant8Border,
@@ -121,21 +110,19 @@ class AvatarPartsChoiceMenu(
             it.visibility = View.GONE
         }
 
-        choosenPart[currentAvatarPartPage.number] = index
+        chosenParts[currentAvatarPartPage.number] = index
         variantBorders[index].visibility = View.VISIBLE
+
+        listener_for_avatar_parts(currentAvatarPartPage)
     }
 
     fun clickButtonListener(){
-        if (currentAvatarPartPage.number < AVATAR_PARTS_AMOUNT-1){
-            updatePage(AvatarPartsPages.values().first {
+        if (currentAvatarPartPage.number < chosenParts.size-1){
+            updatePage(AvatarParts.values().first {
                 currentAvatarPartPage.number+1 == it.number
             })
         } else {
-            characterData.body_part = choosenPart[0]
-            characterData.hair_part = choosenPart[1] - 1
-            characterData.hair_part_color = hairColorPart
-            characterData.background_id = choosenPart[2]
-            listener()
+            listener_for_next_fragment()
         }
     }
 
@@ -155,28 +142,35 @@ class AvatarPartsChoiceMenu(
 
         choice_texts.forEachIndexed { i, view ->
             view.setOnClickListener {
-                updatePage(AvatarPartsPages.values().first { i == it.number })
+                updatePage(AvatarParts.values().first { i == it.number })
             }
         }
 
-        choice_texts[AvatarPartsPages.BODY.number].performClick()
+        choice_texts[AvatarParts.BODY.number].performClick()
     }
 
     companion object {
 
-        var currentAvatarPartPage: AvatarPartsPages = AvatarPartsPages.BODY
-        var choosenPart: Array<Int> = arrayOf(1, 1, 0)
+        var currentAvatarPartPage: AvatarParts = AvatarParts.BODY
         var hairColorPart: Int = 0
 
         @JvmStatic
-        fun newInstance(characterData: CharacterData, listener: ()->Unit)
+        fun newInstance(chosenParts: Array<Int>,
+                        characterData: CharacterData,
+                        listener_for_next_fragment: ()->Unit,
+                        listener_for_avatar_parts: (AvatarParts)->Unit
+        )
         : AvatarPartsChoiceMenu {
-            currentAvatarPartPage = AvatarPartsPages.BODY
-            choosenPart = arrayOf(1, 1, 0)
+            currentAvatarPartPage = AvatarParts.BODY
             hairColorPart = 0
 
 
-            return AvatarPartsChoiceMenu(characterData) {listener()}
+            return AvatarPartsChoiceMenu(
+                chosenParts,
+                characterData,
+                {listener_for_next_fragment()},
+                {listener_for_avatar_parts(it)}
+            );
         }
     }
 }

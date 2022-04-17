@@ -7,18 +7,15 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.MarketItem;
+import com.example.graduationprojectandroid.fragments.for_creating_avatar.AvatarParts;
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Item;
 import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
 
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.GET;
 
 public class NetworkService {
     //singleton
@@ -56,13 +53,16 @@ public class NetworkService {
     //Classes for lambda functions
 
     public interface AwaiterForMarketItems{
-        void start(ArrayList<MarketItem> items);
+        void start(ArrayList<Item> items);
     }
 
     public interface AwaiterForInventoryItems{
-        void start(ArrayList<MarketItem> items);
+        void start(ArrayList<Item> items);
     }
 
+    public interface AwaiterForAmountOfOneAvatarPartType{
+        void start(int amount);
+    }
 
     //--------Classes for lambda functions
 
@@ -93,9 +93,17 @@ public class NetworkService {
         }
     }
 
-    public void setPictureById(int id, ImageView view){
+    public void setPictureByURL(String URL, ImageView view){
         new DownloadImageTask(view)
                 .execute("https://awontis.com/wp-content/uploads/revslider/home-business-slide3/icon-slide4.png");
+    }
+
+    public void setPictureById(int id, ImageView view){
+        setPictureByURL(BASE_URL + "", view);
+    }
+
+    public void setPictureOfAvatarPart(int type, int id, ImageView view){
+        setPictureByURL(BASE_URL + "", view);
     }
 
     //---------getting picture
@@ -104,84 +112,104 @@ public class NetworkService {
     //private Call<List<MarketItem>> itemsForMarket();
 
     public void getItemsForMarket(AwaiterForMarketItems awaiter){
-        ArrayList<MarketItem> items = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<>();
 
         //TODO: Get from server
 
-        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
-        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
-        items.add(new MarketItem(3, 128));
-        items.add(new MarketItem(1, 215));
-        items.add(new MarketItem(2,15));
-        items.add(new MarketItem(3,125));
-        items.add(new MarketItem(1,145));
-        items.add(new MarketItem(2,155));
-        items.add(new MarketItem(3,165));
-        items.add(new MarketItem(1,175));
-        items.add(new MarketItem(2,185));
-        items.add(new MarketItem(3,195));
-        items.add(new MarketItem(1,11655));
-        items.add(new MarketItem(2,1345));
-        items.add(new MarketItem(3,135));
-        items.add(new MarketItem(1,165));
-        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
-        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
-        items.add(new MarketItem(3, 128));
-        items.add(new MarketItem(1, 215));
-        items.add(new MarketItem(2,15));
-        items.add(new MarketItem(3,125));
-        items.add(new MarketItem(1,145));
-        items.add(new MarketItem(2,155));
-        items.add(new MarketItem(3,165));
-        items.add(new MarketItem(1,175));
-        items.add(new MarketItem(2,185));
-        items.add(new MarketItem(3,195));
-        items.add(new MarketItem(1,11655));
-        items.add(new MarketItem(2,1345));
-        items.add(new MarketItem(3,135));
-        items.add(new MarketItem(1,165));
+        items.add(new Item(1,1, 19, 10, 15, View.VISIBLE));
+        items.add(new Item(2,1, 21, 3, 5, View.VISIBLE));
+        items.add(new Item(3,1, 128));
+        items.add(new Item(1,1, 215));
+        items.add(new Item(2,1,15));
+        items.add(new Item(3,1,125));
+        items.add(new Item(1,1,145));
+        items.add(new Item(2,1,155));
+        items.add(new Item(3,1,165));
+        items.add(new Item(1,1,175));
+        items.add(new Item(2,1,185));
+        items.add(new Item(3,1,195));
+        items.add(new Item(1,1,11655));
+        items.add(new Item(2,1,1345));
+        items.add(new Item(3,1,135));
+        items.add(new Item(1,1,165));
+        items.add(new Item(1,1, 19, 10, 15, View.VISIBLE));
+        items.add(new Item(2,1, 21, 3, 5, View.VISIBLE));
+        items.add(new Item(3,1, 128));
+        items.add(new Item(1,1, 215));
+        items.add(new Item(2,1,15));
+        items.add(new Item(3,1,125));
+        items.add(new Item(1,1,145));
+        items.add(new Item(2,1,155));
+        items.add(new Item(3,1,165));
+        items.add(new Item(1,1,175));
+        items.add(new Item(2,1,185));
+        items.add(new Item(3,1,195));
+        items.add(new Item(1,1,11655));
+        items.add(new Item(2,1,1345));
+        items.add(new Item(3,1,135));
+        items.add(new Item(1,1,165));
 
         awaiter.start(items);
     }
 
     public void getItemsForInventory(AwaiterForInventoryItems awaiter){
-        ArrayList<MarketItem> items = new ArrayList<>();
+        ArrayList<Item> items = new ArrayList<>();
 
         //TODO: Get from server
 
-        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
-        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
-        items.add(new MarketItem(3, 128));
-        items.add(new MarketItem(1, 215));
-        items.add(new MarketItem(2,15));
-        items.add(new MarketItem(3,125));
-        items.add(new MarketItem(1,145));
-        items.add(new MarketItem(2,155));
-        items.add(new MarketItem(3,165));
-        items.add(new MarketItem(1,175));
-        items.add(new MarketItem(2,185));
-        items.add(new MarketItem(3,195));
-        items.add(new MarketItem(1,11655));
-        items.add(new MarketItem(2,1345));
-        items.add(new MarketItem(3,135));
-        items.add(new MarketItem(1,165));
-        items.add(new MarketItem(1, 19, 10, 15, View.VISIBLE));
-        items.add(new MarketItem(2, 21, 3, 5, View.VISIBLE));
-        items.add(new MarketItem(3, 128));
-        items.add(new MarketItem(1, 215));
-        items.add(new MarketItem(2,15));
-        items.add(new MarketItem(3,125));
-        items.add(new MarketItem(1,145));
-        items.add(new MarketItem(2,155));
-        items.add(new MarketItem(3,165));
-        items.add(new MarketItem(1,175));
-        items.add(new MarketItem(2,185));
-        items.add(new MarketItem(3,195));
-        items.add(new MarketItem(1,11655));
-        items.add(new MarketItem(2,1345));
-        items.add(new MarketItem(3,135));
-        items.add(new MarketItem(1,165));
+        items.add(new Item(1, 1, 19, 10, 15, View.VISIBLE));
+        items.add(new Item(2, 1, 21, 3, 5, View.VISIBLE));
+        items.add(new Item(3,1,  128));
+        items.add(new Item(1,1,  215));
+        items.add(new Item(2,1, 15));
+        items.add(new Item(3,1, 125));
+        items.add(new Item(1,1, 145));
+        items.add(new Item(2,1, 155));
+        items.add(new Item(3,1, 165));
+        items.add(new Item(1,1, 175));
+        items.add(new Item(2,1, 185));
+        items.add(new Item(3,1, 195));
+        items.add(new Item(1,1, 11655));
+        items.add(new Item(2,1, 1345));
+        items.add(new Item(3,1, 135));
+        items.add(new Item(1,1, 165));
+        items.add(new Item(1,1,  19, 10, 15, View.VISIBLE));
+        items.add(new Item(2,1,  21, 3, 5, View.VISIBLE));
+        items.add(new Item(3,1,  128));
+        items.add(new Item(1,1,  215));
+        items.add(new Item(2,1, 15));
+        items.add(new Item(3,1, 125));
+        items.add(new Item(1,1, 145));
+        items.add(new Item(2,1, 155));
+        items.add(new Item(3,1, 165));
+        items.add(new Item(1,1, 175));
+        items.add(new Item(2,1, 185));
+        items.add(new Item(3,1, 195));
+        items.add(new Item(1,1, 11655));
+        items.add(new Item(2,1, 1345));
+        items.add(new Item(3,1, 135));
+        items.add(new Item(1,1, 165));
 
         awaiter.start(items);
+    }
+
+    public void getAmountOfOneAvatarPartType(AvatarParts ap,
+                                             AwaiterForAmountOfOneAvatarPartType awaiter)
+            throws Exception
+    {
+
+        switch (ap){ //TODO: Get from SERVER
+            case BODY:
+                awaiter.start(10);
+                break;
+            case HAIR:
+                awaiter.start(2);
+                break;
+            case BACKGROUND:
+                awaiter.start(5);
+                break;
+            default:
+                throw new Exception("NetworkService: getAmountOfOneAvatarPartType: Unknown AvatarPart");
+        }
     }
 }

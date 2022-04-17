@@ -1,9 +1,10 @@
 package com.example.graduationprojectandroid.network
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.view.View
+import android.widget.ImageView
 import com.example.graduationprojectandroid.PreferencesService
+import com.example.graduationprojectandroid.fragments.for_creating_avatar.AvatarParts
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 
 object DataService {
@@ -224,13 +225,13 @@ object DataService {
         awaiter(habits)
     }
 
-    fun getMarketItems(awaiter: (ArrayList<MarketItem>) -> Unit){
+    fun getMarketItems(awaiter: (ArrayList<Item>) -> Unit){
         NetworkService.getInstance().getItemsForMarket {
-            val items = ArrayList<MarketItem>()
+            val items = ArrayList<Item>()
             items.addAll(it)
 
             for (i in 0..15){
-                items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+                items.add(Item(0, i, 0, 0,  View.INVISIBLE))
             }
 
             awaiter(items)
@@ -238,13 +239,13 @@ object DataService {
 
     }
 
-    fun getInventoryItems(awaiter: (ArrayList<MarketItem>)->Unit ){
+    fun getInventoryItems(awaiter: (ArrayList<Item>)->Unit ){
         NetworkService.getInstance().getItemsForInventory{
-            val items = ArrayList<MarketItem>()
+            val items = ArrayList<Item>()
             items.addAll(it)
 
             for (i in 0..15){
-                items.add(MarketItem(0, i, 0, 0,  View.INVISIBLE))
+                items.add(Item(0, i, 0, 0,  View.INVISIBLE))
             }
 
             awaiter(items)
@@ -336,5 +337,12 @@ object DataService {
         awaiter("")
     }
 
+    // get body parts for avatar from server
+    fun getAvatarPartPictureForWearing(view: ImageView, ap: AvatarParts, id: Int){
+        networkService.setPictureOfAvatarPart(ap.number, id, view)
+    }
 
+    fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
+        networkService.getAmountOfOneAvatarPartType(ap, awaiter)
+    }
 }

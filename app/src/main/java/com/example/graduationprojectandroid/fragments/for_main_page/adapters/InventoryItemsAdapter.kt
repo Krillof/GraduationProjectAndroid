@@ -13,14 +13,14 @@ import com.example.graduationprojectandroid.network.NetworkService
 
 class InventoryItemsAdapter (
     private var fragment_manager: FragmentManager,
-    private var items_arr: ArrayList<MarketItem>
+    private var items_arr: ArrayList<Item>
 ) : RecyclerView.Adapter<InventoryItemsAdapter.ItemView>()
 {
 
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutInventoryItemBinding.bind(itemView)
 
-        fun bind(fragment_manager: FragmentManager, item: MarketItem)
+        fun bind(fragment_manager: FragmentManager, item: Item)
             = with(binding) {
 
 
@@ -30,7 +30,7 @@ class InventoryItemsAdapter (
 
 
             if (item.visibility == View.VISIBLE) {
-                NetworkService.getInstance().setPictureById(item.id, picture)
+                NetworkService.getInstance().setPictureById(item.picture_id, picture)
             }
 
 
