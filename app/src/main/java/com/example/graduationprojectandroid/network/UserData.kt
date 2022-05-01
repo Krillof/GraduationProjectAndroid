@@ -1,7 +1,7 @@
 package com.example.graduationprojectandroid.network
 
 
-class CharacterData(
+class UserData(
     val login: String,
     var avatar_name: String,
 
@@ -24,7 +24,7 @@ class CharacterData(
     var hair_part_picture_id: Int,
     var background_picture_id: Int //for avatar parts
 ) {
-
-
-
+    fun getPartsAsArray() : Array<Int>{
+        return arrayOf(body_part_picture_id, hair_part_picture_id, background_picture_id)
+    }
 }

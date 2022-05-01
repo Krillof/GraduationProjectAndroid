@@ -47,80 +47,76 @@ class Dos(
         val habits_menu_choice = view.findViewById<View>(R.id.habits_menu_choice_click_rectangle)
         val tasks_menu_choice = view.findViewById<View>(R.id.tasks_menu_choice_click_rectangle)
 
-        val characterData = DataService.getCharacterData()
+
 
         val context = this
 
+        DataService.getUserData() {userData ->
 
+            habits_menu_choice.setOnClickListener {
 
-        habits_menu_choice.setOnClickListener{
+                //TODO: Make getting health and exp. by internet!
 
-            //TODO: Make getting health and exp. by internet!
+                context.turnPageOnBottomMenuTo(Pages.habits, view)
 
-            context.turnPageOnBottomMenuTo(Pages.habits, view)
+                fragmentManager?.commit {
+                    val presentCharacterSmall = PresentCharacterSmall.newInstance(
+                        userData
+                    )
 
-            fragmentManager?.commit{
-                val presentCharacterSmall
-                        = PresentCharacterSmall.newInstance(
-                    characterData)
+                    val habitsList = HabitsList.newInstance()
+                    {
+                        listener_open_creating_habit(it)
+                    }
 
-                val habitsList
-                        = HabitsList.newInstance()
-                {
-                    listener_open_creating_habit(it)
+                    replace(R.id.first_fragment, presentCharacterSmall)
+                    replace(R.id.second_fragment, habitsList)
+                }
+            }
+
+            tasks_menu_choice.setOnClickListener {
+                context.turnPageOnBottomMenuTo(Pages.tasks, view)
+
+                fragmentManager?.commit {
+                    val presentCharacterSmall = PresentCharacterSmall.newInstance(
+                        userData
+                    )
+
+                    val tasksList = TasksList.newInstance() {
+                        listener_open_creating_task(it)
+                    }
+
+                    replace(R.id.first_fragment, presentCharacterSmall)
+                    replace(R.id.second_fragment, tasksList)
                 }
 
-                replace(R.id.first_fragment, presentCharacterSmall)
-                replace(R.id.second_fragment, habitsList)
             }
-        }
 
-        tasks_menu_choice.setOnClickListener {
-            context.turnPageOnBottomMenuTo(Pages.tasks, view)
+            character_menu_choice.setOnClickListener {
+                context.turnPageOnBottomMenuTo(Pages.character, view)
 
-            fragmentManager?.commit{
-                val presentCharacterSmall
-                        = PresentCharacterSmall.newInstance(
-                    characterData
-                )
 
-                val tasksList
-                        = TasksList.newInstance(){
-                    listener_open_creating_task(it)
+                fragmentManager?.commit {
+                    val presentCharacterBig = PresentCharacterBig.newInstance(
+                        userData
+                    )
+
+                    val marketList = MarketList.newInstance(userData.money)
+
+
+
+                    replace(R.id.first_fragment, presentCharacterBig)
+                    replace(R.id.second_fragment, marketList)
+
                 }
 
-                replace(R.id.first_fragment, presentCharacterSmall)
-                replace(R.id.second_fragment, tasksList)
             }
 
+            if (isStartFromTasks)
+                tasks_menu_choice.performClick()
+            else
+                habits_menu_choice.performClick()
         }
-
-        character_menu_choice.setOnClickListener {
-            context.turnPageOnBottomMenuTo(Pages.character, view)
-
-
-            fragmentManager?.commit{
-                val presentCharacterBig
-                        = PresentCharacterBig.newInstance(
-                        characterData
-                        )
-
-                val marketList
-                        = MarketList.newInstance(characterData.money)
-
-
-
-                replace(R.id.first_fragment, presentCharacterBig)
-                replace(R.id.second_fragment, marketList)
-
-            }
-
-        }
-
-        if (isStartFromTasks)
-            tasks_menu_choice.performClick()
-        else
-            habits_menu_choice.performClick()
 
     }
 

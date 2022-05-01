@@ -10,7 +10,7 @@ import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentPresentCharacterSmallBinding
 import com.example.graduationprojectandroid.fragments.Header
-import com.example.graduationprojectandroid.network.CharacterData
+import com.example.graduationprojectandroid.network.UserData
 
 private const val ARG_PARAM_LOGIN = "login"
 private const val ARG_PARAM_MAX_HEALTH = "max_health"
@@ -25,7 +25,7 @@ private const val ARG_PARAM_LEVEL = "level"
  * create an instance of this fragment.
  */
 class PresentCharacterSmall(
-    private val data: CharacterData
+    private val data: UserData
 ) : Fragment() {
 
     private var max_health: Float = data.max_health.toFloat()
@@ -88,10 +88,10 @@ class PresentCharacterSmall(
     companion object {
         @JvmStatic
         fun newInstance(
-            characterData: CharacterData
+            userData: UserData
             ) =
                 PresentCharacterSmall(
-                    characterData
+                    userData
                 )
     }
 }

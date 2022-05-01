@@ -5,10 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.FragmentMarketListBinding
 import com.example.graduationprojectandroid.databinding.FragmentPresentCharacterBigBinding
-import com.example.graduationprojectandroid.network.CharacterData
+import com.example.graduationprojectandroid.network.UserData
 
 
 /**
@@ -17,7 +15,7 @@ import com.example.graduationprojectandroid.network.CharacterData
  * create an instance of this fragment.
  */
 class PresentCharacterBig(
-    private val data: CharacterData
+    private val data: UserData
 ) : Fragment() {
 
     private lateinit var binding: FragmentPresentCharacterBigBinding
@@ -57,7 +55,7 @@ class PresentCharacterBig(
     companion object {
 
         @JvmStatic
-        fun newInstance(characterData: CharacterData) =
-            PresentCharacterBig(characterData)
+        fun newInstance(userData: UserData) =
+            PresentCharacterBig(userData)
     }
 }

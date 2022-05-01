@@ -1,14 +1,14 @@
-package com.example.graduationprojectandroid.fragments.for_creating_avatar
+package com.example.graduationprojectandroid.fragments.for_changing_avatar
 
-import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.graduationprojectandroid.R
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentAvatarPartsChoiceMenuBinding
-import com.example.graduationprojectandroid.network.CharacterData
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.network.UserData
 
 /**
  * A simple [Fragment] subclass.
@@ -17,7 +17,6 @@ import com.example.graduationprojectandroid.network.DataService
  */
 class AvatarPartsChoiceMenu(
     private var chosenParts: Array<Int>,
-    private var characterData: CharacterData,
     private val listener_for_next_fragment: ()->Unit,
     private val listener_for_avatar_parts: (ap: AvatarParts) -> Unit
 ) : Fragment() {
@@ -34,25 +33,26 @@ class AvatarPartsChoiceMenu(
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAvatarPartsChoiceMenuBinding.inflate(layoutInflater)
+
         return binding.root
     }
 
-    //TODO: get from SERVER choosing_pictures for avatar parts
-    //TODO: think about more than 10 max variants - make list
+
+
     private fun updatePage(page: AvatarParts) = with(binding){
         currentAvatarPartPage = page
 
         val choices = listOf(choice1, choice2, choice3)
 
-        val variants = listOf(variant1, variant2, variant3, variant4, variant5,
-            variant6, variant7, variant8, variant9, variant10)
-
         DataService.getAmountOfOneAvatarPartType(currentAvatarPartPage){ amount ->
-            when(currentAvatarPartPage){
-                AvatarParts.BODY ->{
-                    for (i in 1..amount){
-                        variants[i-1].visibility = View.VISIBLE
-                    }
+
+
+            avatarPartsList.layoutManager = GridLayoutManager(avatarPartsList.context, 5)
+            avatarPartsList.adapter = AvatarPartsAdapter(
+                amount, currentAvatarPartPage.number, chosenParts[currentAvatarPartPage.number]
+            ) { id, changeChosen -> switchVariant(id, changeChosen) }
+            //TODO: remove "skin_color..." and etc. - we will get them from server
+            /*
 
                     variants[0].setBackgroundResource(R.drawable.skin_color_rect_1)
                     variants[1].setBackgroundResource(R.drawable.skin_color_rect_2)
@@ -64,31 +64,20 @@ class AvatarPartsChoiceMenu(
                     variants[7].setBackgroundResource(R.drawable.skin_color_rect_8)
                     variants[8].setBackgroundResource(R.drawable.skin_color_rect_9)
                     variants[9].setBackgroundResource(R.drawable.skin_color_rect_10)
-                }
-
-                AvatarParts.HAIR ->{
-                    for (i in 1..amount){
-                        variants[i-1].visibility = View.VISIBLE
-                    }
 
                     for (i in 1..3){
                         variants[i-1].setBackgroundResource(R.drawable.white_rect_for_hair)
                     }
-                }
+                    //TMP
 
-                AvatarParts.BACKGROUND->{
-                    for (i in 1..amount){
-                        variants[i-1].visibility = View.VISIBLE
-                    }
 
                     for (i in 1..5){
                         variants[i-1].setBackgroundResource(R.drawable.market_item_background)
                     }
-                }
-            }
-            for (i in (amount+1)..10){
-                variants[i-1].visibility = View.GONE
-            }
+                    //TMP
+
+                     */
+
         }
 
 
@@ -99,19 +88,11 @@ class AvatarPartsChoiceMenu(
         switchVariant(chosenParts[currentAvatarPartPage.number])
     }
 
-    private fun switchVariant(index: Int) = with(binding)
+    private fun switchVariant(id: Int, changeChosen: (Int)->Unit = {}) = with(binding)
     {
-        val variantBorders = listOf(variant1Border, variant2Border,
-            variant3Border, variant4Border, variant5Border,
-            variant6Border, variant7Border, variant8Border,
-            variant9Border, variant10Border)
 
-        variantBorders.forEach {
-            it.visibility = View.GONE
-        }
-
-        chosenParts[currentAvatarPartPage.number] = index
-        variantBorders[index].visibility = View.VISIBLE
+        chosenParts[currentAvatarPartPage.number] = id
+        changeChosen(id)
 
         listener_for_avatar_parts(currentAvatarPartPage)
     }
@@ -131,14 +112,6 @@ class AvatarPartsChoiceMenu(
         super.onViewCreated(view, savedInstanceState)
 
         val choice_texts = listOf(choiceText1, choiceText2, choiceText3)
-        val variants = listOf(variant1, variant2, variant3, variant4, variant5,
-            variant6, variant7, variant8, variant9, variant10)
-
-        variants.forEachIndexed { index, view ->
-            view.setOnClickListener {
-                switchVariant(index)
-            }
-        }
 
         choice_texts.forEachIndexed { i, view ->
             view.setOnClickListener {
@@ -152,22 +125,15 @@ class AvatarPartsChoiceMenu(
     companion object {
 
         var currentAvatarPartPage: AvatarParts = AvatarParts.BODY
-        var hairColorPart: Int = 0
 
         @JvmStatic
         fun newInstance(chosenParts: Array<Int>,
-                        characterData: CharacterData,
                         listener_for_next_fragment: ()->Unit,
                         listener_for_avatar_parts: (AvatarParts)->Unit
         )
         : AvatarPartsChoiceMenu {
-            currentAvatarPartPage = AvatarParts.BODY
-            hairColorPart = 0
-
-
             return AvatarPartsChoiceMenu(
                 chosenParts,
-                characterData,
                 {listener_for_next_fragment()},
                 {listener_for_avatar_parts(it)}
             );

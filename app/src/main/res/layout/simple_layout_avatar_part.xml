@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="6dp"
+    android:layout_marginTop="5dp"
+    >
+
+    <ImageView
+
+        android:id="@+id/viewForImage"
+
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        />
+
+    <View
+        android:id="@+id/border"
+
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+
+        android:visibility="gone"
+        android:background="@drawable/avatar_parts_choosen_part"
+
+        />
+
+</FrameLayout>

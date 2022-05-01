@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.DialogFragment
@@ -14,7 +13,6 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Hab
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
 import com.example.graduationprojectandroid.fragments.for_main_page.inventory.Inventory
-import com.example.graduationprojectandroid.network.DataService
 
 class MainPage : AppCompatActivity() {
 
@@ -73,8 +71,6 @@ class MainPage : AppCompatActivity() {
         items.forEach {
             it.setBackgroundResource(R.drawable.drawer_menu_item_off)
         }
-
-
         items[currentState.number].setBackgroundResource(R.drawable.drawer_menu_item_on)
     }
 
@@ -132,7 +128,7 @@ class MainPage : AppCompatActivity() {
                 = intent.extras?.get(CreatingTask.IS_WAS_CREATING_TASK) as Boolean?
 
         val dos: Dos =  Dos.newInstance(
-            if (is_was_creating_tasks == true) true else false, // because can be null - not redundant
+            is_was_creating_tasks == true, // because can be null - not redundant
             { open_creating_habit(it) },
             { open_creating_task(it) }
         )
@@ -144,7 +140,7 @@ class MainPage : AppCompatActivity() {
     }
 
     private fun initAvatar() {
-        startActivity(Intent(this, CreatingAvatar::class.java))
+        startActivity(Intent(this, ChangingAvatar::class.java))
         finish()
     }
 

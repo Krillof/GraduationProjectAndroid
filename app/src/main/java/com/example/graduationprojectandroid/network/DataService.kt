@@ -4,31 +4,28 @@ import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import com.example.graduationprojectandroid.PreferencesService
-import com.example.graduationprojectandroid.fragments.for_creating_avatar.AvatarParts
+import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 
 object DataService {
 
-    private var characterData: CharacterData
     private val networkService: NetworkService
 
     init {
         networkService = NetworkService.getInstance()
-        characterData = getCharacterData()
     }
 
-    fun getCharacterData(): CharacterData{
-        //TODO: if character data updated - ask server
-        // else just return data from files
-        if (true){
-            characterData = CharacterData(
-                "abc", "Avocado",
-                129, 65, 100, 220, 378,
-                13, 1, 1, 1, 1,
-                0, 0, 0
-            )
-        }
-        return characterData
+    fun getUserData(awaiter: (UserData) -> Unit) {
+        networkService.getUserData(awaiter)
+    }
+
+    fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
+        networkService.changedAvatar(chosenParts.toList(), avatarName, awaiter)
+        awaiter()
+    }
+
+    fun setPictureOfAvatarPart(type: Int, id: Int, view: ImageView){
+        networkService.setPictureOfAvatarPart(type, id, view);
     }
 
     fun setHabitState(id: Int, state: HabitDoneStates){
@@ -252,45 +249,11 @@ object DataService {
         }
     }
 
-    fun registerUser(password: String, awaiter: ()->Unit){
-        // Login and avatar parts are in character data - get them here
-        //TODO: Send to server
-        //TMP___________________
-        characterData = CharacterData(
-            "abc", "Aristotle",
-            19, 90, 100, 220, 378,
-            5, 1, 1, 1, 1,
-            0, 0, 0
-        )
-        //TMP___________________
-
-        awaiter()
+    fun registerUser(login: String, password: String, awaiter: (String)->Unit){
+        networkService.registerUser(login, password, awaiter)
     }
 
-    fun updateCharacterData(awaiter: ()->Unit){
-        //TODO: Send to server (In another method! Not from registerUser!)
-        //TMP___________________
-        characterData = CharacterData(
-            "abc", "Aristotle",
-            19, 90, 100, 220, 378,
-            5, 1, 1, 1, 1,
-            0, 0, 0
-        )
-        //TMP___________________
 
-        awaiter()
-    }
-
-    // when registering, in CreatingAvatar
-    fun getNewCharacterData(login: String) : CharacterData{
-        characterData = CharacterData(
-            login, "",
-            0, 100, 100, 0, 100,
-            1, 1, 1,1,1,
-            0,0,0
-        )
-        return characterData
-    }
 
     // use in LoginActivity
     fun checkNewLogin(login: String, awaiter: (String)->Unit){

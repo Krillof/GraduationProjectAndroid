@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentInventoryBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.dos.MarketList
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.PresentCharacterBig
 import com.example.graduationprojectandroid.network.DataService
 
@@ -38,22 +37,21 @@ class Inventory : Fragment() {
         = with(binding){
         super.onViewCreated(view, savedInstanceState)
 
-        val characterData = DataService.getCharacterData()
+        DataService.getUserData() { userData ->
 
-        fragmentManager?.commit{
-            val presentCharacterBig
-                    = PresentCharacterBig.newInstance(
-                characterData
-            )
+            fragmentManager?.commit {
+                val presentCharacterBig = PresentCharacterBig.newInstance(
+                    userData
+                )
 
-            val inventoryList
-                    = InventoryList.newInstance(characterData.money)
+                val inventoryList = InventoryList.newInstance(userData.money)
 
 
 
-            replace(R.id.first_fragment, presentCharacterBig)
-            replace(R.id.second_fragment, inventoryList)
+                replace(R.id.first_fragment, presentCharacterBig)
+                replace(R.id.second_fragment, inventoryList)
 
+            }
         }
     }
 

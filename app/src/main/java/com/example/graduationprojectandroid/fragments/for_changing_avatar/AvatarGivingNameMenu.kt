@@ -1,4 +1,4 @@
-package com.example.graduationprojectandroid.fragments.for_creating_avatar
+package com.example.graduationprojectandroid.fragments.for_changing_avatar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentAvatarGivingNameMenuBinding
-import com.example.graduationprojectandroid.databinding.FragmentAvatarPartsChoiceMenuBinding
-import com.example.graduationprojectandroid.network.CharacterData
+import com.example.graduationprojectandroid.network.UserData
 
 
 /**
@@ -17,7 +16,7 @@ import com.example.graduationprojectandroid.network.CharacterData
  * create an instance of this fragment.
  */
 class AvatarGivingNameMenu(
-    private val characterData: CharacterData
+    private val userData: UserData
 ) : Fragment() {
 
     private lateinit var binding: FragmentAvatarGivingNameMenuBinding
@@ -53,8 +52,8 @@ class AvatarGivingNameMenu(
 
     companion object {
         @JvmStatic
-        fun newInstance(characterData: CharacterData) =
-            AvatarGivingNameMenu(characterData)
+        fun newInstance(userData: UserData) =
+            AvatarGivingNameMenu(userData)
 
     }
 }

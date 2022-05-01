@@ -1,4 +1,4 @@
-package com.example.graduationprojectandroid.fragments.for_creating_avatar
+package com.example.graduationprojectandroid.fragments.for_changing_avatar
 
 enum class AvatarParts(var number: Int){
     BODY(0),

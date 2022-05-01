@@ -7,12 +7,14 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.graduationprojectandroid.fragments.for_creating_avatar.AvatarParts;
+import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts;
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Item;
 import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
 
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -52,6 +54,10 @@ public class NetworkService {
 
     //Classes for lambda functions
 
+    public interface AwaiterForRegisterUser{
+        void start(String answer);
+    }
+
     public interface AwaiterForMarketItems{
         void start(ArrayList<Item> items);
     }
@@ -63,6 +69,16 @@ public class NetworkService {
     public interface AwaiterForAmountOfOneAvatarPartType{
         void start(int amount);
     }
+
+    public interface AwaiterForGetUserData{
+        void start(UserData userData);
+    }
+
+    public interface AwaiterForChangedAvatar{
+        void start();
+    }
+
+
 
     //--------Classes for lambda functions
 
@@ -103,6 +119,7 @@ public class NetworkService {
     }
 
     public void setPictureOfAvatarPart(int type, int id, ImageView view){
+        //TODO: get from SERVER choosing_pictures for avatar parts
         setPictureByURL(BASE_URL + "", view);
     }
 
@@ -110,6 +127,12 @@ public class NetworkService {
 
     //@GET(BASE_URL + )
     //private Call<List<MarketItem>> itemsForMarket();
+
+    public void registerUser(String login, String password, AwaiterForRegisterUser awaiter){
+        //TODO: make it
+        awaiter.start("");
+    }
+
 
     public void getItemsForMarket(AwaiterForMarketItems awaiter){
         ArrayList<Item> items = new ArrayList<>();
@@ -200,7 +223,7 @@ public class NetworkService {
 
         switch (ap){ //TODO: Get from SERVER
             case BODY:
-                awaiter.start(10);
+                awaiter.start(50);
                 break;
             case HAIR:
                 awaiter.start(2);
@@ -211,5 +234,23 @@ public class NetworkService {
             default:
                 throw new Exception("NetworkService: getAmountOfOneAvatarPartType: Unknown AvatarPart");
         }
+    }
+
+    public void getUserData(AwaiterForGetUserData awaiter){
+        //TODO: get userData from data server
+        awaiter.start(new UserData(
+                "abc", "Avocado",
+                129, 65, 100, 220, 378,
+                13, 1, 1, 1, 1,
+                1, 1, 1
+        ));
+    }
+
+    public void changedAvatar(List<Integer> chosenParts,
+                              String avatarName,
+                              AwaiterForChangedAvatar awaiter){
+        //TODO: not sure in list
+        //TODO: send choosen parts (see table with numbers)
+        awaiter.start();
     }
 }

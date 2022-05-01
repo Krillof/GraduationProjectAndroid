@@ -7,6 +7,7 @@ import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.fragments.for_login.GetLoginPassword
 import com.example.graduationprojectandroid.fragments.for_login.OrEnterBy
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.network.DataService
 
 
@@ -19,14 +20,25 @@ class LoginActivity : AppCompatActivity() {
 
     private fun nextActivity(login: String, password: String, isRegistering: Boolean){
         if (isRegistering) {
-            val intent = Intent(this, CreatingAvatar::class.java)
-            intent.putExtra(LOGIN, login)
-            intent.putExtra(PASSWORD, password)
-            startActivity(intent)
+            val context = this
+            DataService.registerUser(login, password) {
+                if (it == "") {
+                    MainPage.currentState = MainPage.MainPageStates.DOS
+                    startActivity(Intent(context, ChangingAvatar::class.java))
+                    finish()
+                } else {
+                    var infoDialogue: InfoDialogue? = null
+                    infoDialogue = InfoDialogue.newInstance(it){
+                        //it's ok that "it" isn't in use - program just informing user
+                        infoDialogue?.dismissAllowingStateLoss()
+                    }
+                    infoDialogue.show(supportFragmentManager, "info_dialogue")
+                }
+            }
         } else {
             startActivity(Intent(this, MainPage::class.java))
+            finish()
         }
-        finish()
     }
 
     private fun setGetLoginPassword(loginErrorMessage: String, passwordErrorMessage: String){
