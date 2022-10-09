@@ -46,31 +46,14 @@ class HabitsList(
         }
 
         DataService.getHabits{
-            val habitsListAdapter = HabitsAdapter(addEmptiesHabits(it), listener)
+            val habitsListAdapter = HabitsAdapter(it, listener)
 
             habitsList.layoutManager = LinearLayoutManager(habitsList.context)
             habitsList.adapter = habitsListAdapter
         }
     }
 
-
-    private fun addEmptiesHabits(ht: ArrayList<Habit>):ArrayList<Habit>{
-        for (i in 0 until TasksList.EMPTIES){
-            ht.add(
-                Habit(
-                    -1,
-                    "",
-                    "",
-                    HabitDoneStates.UNKNOWN,
-                    View.INVISIBLE
-                )
-            )
-        }
-        return ht
-    }
-
     companion object {
-        public val EMPTIES = 4
 
         @JvmStatic
         fun newInstance(listener: (h: Habit?) -> Unit) =

@@ -113,7 +113,7 @@ class SuperDesignInput(
             SuperDesignInput(isShowingTextFromStart, startValue, listener).apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM_HEADER, header)
-            }
+                }
             }
     }
 }

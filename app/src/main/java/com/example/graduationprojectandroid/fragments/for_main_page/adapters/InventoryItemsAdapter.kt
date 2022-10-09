@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutInventoryItemBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.WearDialogue
+import com.example.graduationprojectandroid.network.DataService
 import com.example.graduationprojectandroid.network.NetworkService
 
 class InventoryItemsAdapter (
@@ -30,7 +31,7 @@ class InventoryItemsAdapter (
 
 
             if (item.visibility == View.VISIBLE) {
-                NetworkService.getInstance().setPictureById(item.picture_id, picture)
+                DataService.setPictureById(item.picture_id, picture)
             }
 
 

@@ -3,6 +3,9 @@ package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnAttach
+import androidx.core.view.doOnLayout
+import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,8 +23,8 @@ class MarketItemsAdapter (
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutMarketItemBinding.bind(itemView)
 
-        fun bind(fragment_manager: FragmentManager, item: Item) = with(binding) {
-
+        fun bind(fragment_manager: FragmentManager, item: Item)
+        = with(binding) {
             moneyText.visibility = item.visibility
             marketItemBackground.visibility = item.visibility
             blackWhiteMoneyLogo.visibility = item.visibility
@@ -29,11 +32,10 @@ class MarketItemsAdapter (
             marketItemBackground.visibility = item.visibility
             picture.visibility = item.visibility
 
-
             if (item.visibility == View.VISIBLE) {
+                //TODO: check: NetworkService or DataService?
                 NetworkService.getInstance().setPictureById(item.picture_id, picture)
             }
-
 
             moneyText.text = item.money.toString()
 
@@ -42,7 +44,7 @@ class MarketItemsAdapter (
                     var df: DialogFragment? = null
                     df = BuyDialogue(item) {
                         if (it){
-                            //TODO: Buy a item by NetworkService
+                            //TODO: Buy an item by DataService
                         }
 
                         df?.dismiss()
@@ -63,7 +65,7 @@ class MarketItemsAdapter (
 
     override fun getItemCount(): Int = items_arr.size
 
-    override fun onBindViewHolder(holder: MarketItemsAdapter.ItemView, position: Int) {
+    override fun onBindViewHolder(holder: ItemView, position: Int) {
         holder.bind(fragment_manager, items_arr[position])
     }
 }

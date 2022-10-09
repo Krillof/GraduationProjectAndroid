@@ -2,8 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:gravity="top"
-        android:height="32dp"
-        android:viewportHeight="32"
+        android:height="40dp"
+        android:viewportHeight="40"
         >
         <shape>
             <solid android:color="#556ADA" />

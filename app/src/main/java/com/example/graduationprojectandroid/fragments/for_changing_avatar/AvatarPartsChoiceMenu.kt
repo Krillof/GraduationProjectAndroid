@@ -37,8 +37,6 @@ class AvatarPartsChoiceMenu(
         return binding.root
     }
 
-
-
     private fun updatePage(page: AvatarParts) = with(binding){
         currentAvatarPartPage = page
 
@@ -51,7 +49,7 @@ class AvatarPartsChoiceMenu(
             avatarPartsList.adapter = AvatarPartsAdapter(
                 amount, currentAvatarPartPage.number, chosenParts[currentAvatarPartPage.number]
             ) { id, changeChosen -> switchVariant(id, changeChosen) }
-            //TODO: remove "skin_color..." and etc. - we will get them from server
+            //TODO: remove "skin_color..." and etc. from drawable - we will get them from server
             /*
 
                     variants[0].setBackgroundResource(R.drawable.skin_color_rect_1)

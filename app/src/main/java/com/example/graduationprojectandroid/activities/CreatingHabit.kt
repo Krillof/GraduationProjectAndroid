@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
@@ -109,6 +110,7 @@ class CreatingHabit : AppCompatActivity() {
 
             exit_button.setOnClickListener {
                 if (isNew) {
+                    //TODO: Исправь!
                     DataService.sendHabit(habit) { showInfoDialogue(it) }
                     startActivity(intent)
                     finish()
@@ -134,6 +136,10 @@ class CreatingHabit : AppCompatActivity() {
 
                     df.show(supportFragmentManager, "save_changes")
                 }
+            }
+
+            onBackPressedDispatcher.addCallback{
+                exit_button.performClick()
             }
 
 

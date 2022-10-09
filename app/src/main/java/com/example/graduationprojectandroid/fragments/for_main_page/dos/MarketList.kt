@@ -40,9 +40,7 @@ class MarketList(
 
         DataService.getMarketItems{
             marketItemsList.layoutManager = GridLayoutManager(marketItemsList.context, 3)
-            marketItemsList.adapter = MarketItemsAdapter(
-                parentFragmentManager, it)
-
+            marketItemsList.adapter = MarketItemsAdapter(parentFragmentManager, it)
             moneyText.text = money.toString()
         }
     }

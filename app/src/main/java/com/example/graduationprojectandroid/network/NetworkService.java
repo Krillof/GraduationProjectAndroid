@@ -223,7 +223,7 @@ public class NetworkService {
 
         switch (ap){ //TODO: Get from SERVER
             case BODY:
-                awaiter.start(50);
+                awaiter.start(15);
                 break;
             case HAIR:
                 awaiter.start(2);

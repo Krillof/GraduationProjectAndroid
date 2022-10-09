@@ -63,7 +63,6 @@ class AvatarPartsAdapter(
                 context.notifyItemChanged(chosen-1) // id -> position
                 chosen = it
                 context.notifyItemChanged(chosen-1) // id -> position
-
             }
         }
     }

@@ -13,6 +13,10 @@ import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.network.DataService
 
 class ChangingAvatar : AppCompatActivity() {
+    override fun onBackPressed() {
+        //TODO: Доделай, что делать, если нажали на кнопку "Назад" здесь
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_changing_avatar)

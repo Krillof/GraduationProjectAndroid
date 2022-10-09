@@ -109,7 +109,7 @@
 
         style="@style/text_style"
 
-        android:text="@string/background"
+        android:text="@string/eyes"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -139,6 +139,9 @@
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
+        android:paddingBottom="300dp"
+        android:clipToPadding="false"
 
         />
 

@@ -1,11 +1,13 @@
 package com.example.graduationprojectandroid.network
 
 import android.content.Context
-import android.view.View
 import android.widget.ImageView
+import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.PreferencesService
+import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
 
 object DataService {
 
@@ -13,6 +15,14 @@ object DataService {
 
     init {
         networkService = NetworkService.getInstance()
+    }
+
+    fun setPictureById(picture_id: Int, picture_view: ImageView){
+        networkService.setPictureById(picture_id, picture_view)
+    }
+
+    fun setOtherUserFacePicture(user_login: String, picture_view: ImageView){
+        //TODO
     }
 
     fun getUserData(awaiter: (UserData) -> Unit) {
@@ -223,37 +233,84 @@ object DataService {
     }
 
     fun getMarketItems(awaiter: (ArrayList<Item>) -> Unit){
+        //TODO: Это точно нормально?
         NetworkService.getInstance().getItemsForMarket {
             val items = ArrayList<Item>()
             items.addAll(it)
-
-            for (i in 0..15){
-                items.add(Item(0, i, 0, 0,  View.INVISIBLE))
-            }
-
             awaiter(items)
         }
 
     }
 
     fun getInventoryItems(awaiter: (ArrayList<Item>)->Unit ){
+        //TODO: Это точно нормально?
         NetworkService.getInstance().getItemsForInventory{
             val items = ArrayList<Item>()
             items.addAll(it)
-
-            for (i in 0..15){
-                items.add(Item(0, i, 0, 0,  View.INVISIBLE))
-            }
-
             awaiter(items)
         }
+    }
+
+    fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
+        //TMP
+        val news: ArrayList<NewsItem> = ArrayList()
+        val n1: NewsItem = NewsItem(
+            1, "20.12.2021", "Новогодний адвент",
+            "Хо-хо-хо! В страну Do заглянул Санта и оставил подарки нашим пользовательям! " +
+                    "Скорее скачивай последнюю версию!", ""
+            )
+
+        val n2: NewsItem = NewsItem(
+            2, "28.11.2021", "Версия 3.0.1.2",
+            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.", ""
+        )
+
+        val n3: NewsItem = NewsItem(
+            3, "27.11.2021", "Версия 3.0.1.1",
+            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.", ""
+        )
+
+        news.add(n1)
+        news.add(n2)
+        news.add(n3)
+
+        //TMP
+        awaiter(news)
+    }
+
+    fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){
+        //TMP
+        val news: ArrayList<NewsItem> = ArrayList()
+        val n1: NewsItem = NewsItem(
+            1, "20.12.2021", "Новогодний адвент",
+            "Хо-хо-хо! В страну Do заглянул Санта и оставил подарки нашим пользовательям! " +
+                    "Скорее скачивай последнюю версию!",
+            "1 " + App.getAppResources().getString(R.string.large_text)
+        )
+
+        val n2: NewsItem = NewsItem(
+            2, "28.11.2021", "Версия 3.0.1.2",
+            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.",
+            "2 " + App.getAppResources().getString(R.string.large_text)
+        )
+
+        val n3: NewsItem = NewsItem(
+            3, "27.11.2021", "Версия 3.0.1.1",
+            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.",
+            "3 " + App.getAppResources().getString(R.string.large_text)
+        )
+
+        news.add(n1)
+        news.add(n2)
+        news.add(n3)
+
+        //TMP
+        awaiter(news[id-1])
     }
 
     fun registerUser(login: String, password: String, awaiter: (String)->Unit){
         networkService.registerUser(login, password, awaiter)
     }
-
-
 
     // use in LoginActivity
     fun checkNewLogin(login: String, awaiter: (String)->Unit){
@@ -307,5 +364,17 @@ object DataService {
 
     fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
         networkService.getAmountOfOneAvatarPartType(ap, awaiter)
+    }
+
+    fun getUserTeachers(awaiter: (ArrayList<TeacherItem>) -> Unit){
+        var list: ArrayList<TeacherItem> = ArrayList()
+        //TODO: Это временное заполнение
+        list.add(TeacherItem("Анна Павловна", 10))
+        list.add(TeacherItem("Сергей Николаевич", 21))
+        list.add(TeacherItem("1111111111111111111111111", 15))
+        list.add(TeacherItem("2222222222222222222222222", 100))
+        list.add(TeacherItem("3333333333333333333333", 1))
+        list.add(TeacherItem("sdfhgdf", 72))
+        awaiter(list)
     }
 }

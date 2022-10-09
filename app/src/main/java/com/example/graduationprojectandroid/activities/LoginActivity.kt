@@ -9,6 +9,7 @@ import com.example.graduationprojectandroid.fragments.for_login.OrEnterBy
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.network.DataService
+import kotlin.system.exitProcess
 
 
 class LoginActivity : AppCompatActivity() {
@@ -43,12 +44,12 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setGetLoginPassword(loginErrorMessage: String, passwordErrorMessage: String){
         supportFragmentManager.commit {
-            val get_login_password = GetLoginPassword(
+            val getLoginPassword = GetLoginPassword(
                 { login, password, isRegistering ->
                     tryGetIn(login, password, isRegistering)
                 },
                 "", "")
-            replace(R.id.main_login_fragment, get_login_password)
+            replace(R.id.main_login_fragment, getLoginPassword)
         }
     }
 
@@ -92,24 +93,29 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        moveTaskToBack(true)
+        android.os.Process.killProcess(android.os.Process.myPid())
+        exitProcess(1)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         supportFragmentManager.commit {
-            val get_login_password = GetLoginPassword(
+            val getLoginPassword = GetLoginPassword(
                 { login, password, isRegistering ->
 
                     tryGetIn(login, password, isRegistering)
                 },
                 "", "")
-            replace(R.id.main_login_fragment, get_login_password)
+            replace(R.id.main_login_fragment, getLoginPassword)
 
-            val or_enter_by: OrEnterBy = OrEnterBy.newInstance() {
+            val orEnterBy: OrEnterBy = OrEnterBy.newInstance() {
                 TODO("Another way to get in")
             }
-            add(R.id.or_enter_by, or_enter_by)
+            add(R.id.or_enter_by, orEnterBy)
         }
     }
 

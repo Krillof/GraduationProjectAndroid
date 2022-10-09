@@ -22,9 +22,9 @@ class UserData(
     // getting not body_part_id from avatarParts table, getting exactly picture_id of it
     var body_part_picture_id: Int,
     var hair_part_picture_id: Int,
-    var background_picture_id: Int //for avatar parts
+    var eyes_part_picture_id: Int
 ) {
     fun getPartsAsArray() : Array<Int>{
-        return arrayOf(body_part_picture_id, hair_part_picture_id, background_picture_id)
+        return arrayOf(body_part_picture_id, hair_part_picture_id, eyes_part_picture_id)
     }
 }

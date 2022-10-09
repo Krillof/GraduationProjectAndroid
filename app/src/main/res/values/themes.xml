@@ -195,4 +195,13 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">#FFA45A</item>
     </style>
+
+    <style name="Theme.GraduationProjectAndroid.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.GraduationProjectAndroid.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.GraduationProjectAndroid.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

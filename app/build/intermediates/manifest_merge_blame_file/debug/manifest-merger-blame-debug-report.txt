@@ -15,81 +15,99 @@
 11-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:6:22-64
 12
 13    <application
-13-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:8:5-45:19
-14        android:allowBackup="true"
-14-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:9:9-35
-15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-15-->[androidx.core:core:1.7.0] C:\Users\Артём\.gradle\caches\transforms-3\ff3a61bb8d068ad301ca46a3de77c66e\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-16        android:debuggable="true"
-17        android:extractNativeLibs="false"
-18        android:icon="@mipmap/ic_launcher"
-18-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:10:9-43
-19        android:label="@string/app_name"
+13-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:8:5-54:19
+14        android:name="com.example.graduationprojectandroid.App"
+14-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:9:9-28
+15        android:allowBackup="true"
+15-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:10:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] C:\Users\Артём\.gradle\caches\transforms-3\adacc4bbdca3c037c01e5031782c646c\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:extractNativeLibs="false"
+19        android:icon="@drawable/do_logo"
 19-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:11:9-41
-20        android:networkSecurityConfig="@xml/network_security_config"
-20-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:12:9-69
-21        android:roundIcon="@mipmap/ic_launcher_round"
-21-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:13:9-54
-22        android:supportsRtl="true"
-22-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:14:9-35
-23        android:testOnly="true"
-24        android:theme="@style/Theme.GraduationProjectAndroid"
-24-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:15:9-62
-25        android:usesCleartextTraffic="true" >
-25-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:16:9-44
-26        <activity
-26-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:18:9-20:39
-27            android:name="com.example.graduationprojectandroid.activities.CreatingAvatar"
-27-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:13-54
-28            android:exported="true" />
-28-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-36
-29        <activity
-29-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:9-23:39
-30            android:name="com.example.graduationprojectandroid.activities.CreatingTask"
-30-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:13-52
-31            android:exported="true" />
-31-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-36
+20        android:label="@string/app_name"
+20-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:12:9-41
+21        android:networkSecurityConfig="@xml/network_security_config"
+21-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:13:9-69
+22        android:roundIcon="@drawable/do_logo"
+22-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:14:9-46
+23        android:supportsRtl="true"
+23-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:15:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.GraduationProjectAndroid"
+25-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:16:9-62
+26        android:usesCleartextTraffic="true" >
+26-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:17:9-44
+27        <activity
+27-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:9-23:81
+28            android:name="com.example.graduationprojectandroid.activities.NewsItemPage"
+28-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-52
+29            android:exported="false"
+29-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:13-37
+30            android:screenOrientation="portrait"
+30-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:13-49
+31            android:theme="@style/Theme.GraduationProjectAndroid.NoActionBar" />
+31-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-78
 32        <activity
-32-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:9-26:39
-33            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
-33-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:13-53
-34            android:exported="true" />
+32-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:9-27:52
+33            android:name="com.example.graduationprojectandroid.activities.ChangingAvatar"
+33-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:13-54
+34            android:exported="true"
 34-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-36
-35        <activity
-35-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:9-29:39
-36            android:name="com.example.graduationprojectandroid.activities.MainPage"
-36-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:13-48
-37            android:exported="true" />
-37-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-36
-38        <activity
-38-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:9-32:39
-39            android:name="com.example.graduationprojectandroid.activities.CreatingCharacter"
-39-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-57
-40            android:exported="true" />
-40-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:13-36
-41        <activity
-41-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:9-35:39
-42            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
-42-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:13-53
-43            android:exported="true" />
-43-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-36
+35            android:screenOrientation="portrait" />
+35-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:13-49
+36        <activity
+36-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:9-31:52
+37            android:name="com.example.graduationprojectandroid.activities.CreatingTask"
+37-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-52
+38            android:exported="true"
+38-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:13-36
+39            android:screenOrientation="portrait" />
+39-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-49
+40        <activity
+40-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:9-35:52
+41            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
+41-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:13-53
+42            android:exported="true"
+42-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:13-36
+43            android:screenOrientation="portrait" />
+43-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-49
 44        <activity
-44-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:9-44:20
-45            android:name="com.example.graduationprojectandroid.activities.MainActivity"
-45-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-52
-46            android:exported="true" >
+44-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:9-39:52
+45            android:name="com.example.graduationprojectandroid.activities.MainPage"
+45-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-48
+46            android:exported="true"
 46-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:13-36
-47            <intent-filter>
-47-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-43:29
-48                <action android:name="android.intent.action.MAIN" />
-48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:17-69
-48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:25-66
-49
-50                <category android:name="android.intent.category.LAUNCHER" />
-50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:17-77
-50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:27-74
-51            </intent-filter>
-52        </activity>
-53    </application>
-54
-55</manifest>
+47            android:screenOrientation="portrait" />
+47-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-49
+48        <activity
+48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:9-43:52
+49            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
+49-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:41:13-53
+50            android:exported="true"
+50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:13-36
+51            android:screenOrientation="portrait" />
+51-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:43:13-49
+52        <activity
+52-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:44:9-53:20
+53            android:name="com.example.graduationprojectandroid.activities.MainActivity"
+53-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:45:13-52
+54            android:exported="true"
+54-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:46:13-36
+55            android:screenOrientation="portrait" >
+55-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:47:13-49
+56            <intent-filter>
+56-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:48:13-52:29
+57                <action android:name="android.intent.action.MAIN" />
+57-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:17-69
+57-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:25-66
+58
+59                <category android:name="android.intent.category.LAUNCHER" />
+59-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:17-77
+59-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:27-74
+60            </intent-filter>
+61        </activity>
+62    </application>
+63
+64</manifest>

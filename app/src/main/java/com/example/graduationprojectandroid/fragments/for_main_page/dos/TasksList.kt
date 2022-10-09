@@ -72,27 +72,10 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
         if (pTasksList.size > 0)
             pTasksList[pTasksList.size - 1].show_subtasks_always = View.GONE
 
-        val subtasks0: MutableList<Subtask> = MutableList(
-            0,
-            {index -> Subtask(false, "")}
-        )
-
-        for (i in 0 until EMPTIES){
-            pTasksList.add(ParentizedTask(
-                -1,
-                "",
-                "",
-                subtasks0,
-                View.GONE,
-                View.GONE
-            ))
-        }
-
         return pTasksList
     }
 
     companion object {
-        public val EMPTIES = 4
 
         @JvmStatic
         fun newInstance(listener: (Task?) -> Unit) =

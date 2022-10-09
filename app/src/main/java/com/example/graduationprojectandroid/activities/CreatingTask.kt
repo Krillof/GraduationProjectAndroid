@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
@@ -82,18 +83,18 @@ class CreatingTask : AppCompatActivity() {
         setContentView(R.layout.activity_creating_task)
         val context = this
 
-        val gotten_task: Task? = intent.extras?.get(MainPage.ARG_TASK) as Task?
-        val isNew = (gotten_task == null)
+        val gottenTask: Task? = intent.extras?.get(MainPage.ARG_TASK) as Task?
+        val isNew = (gottenTask == null)
 
         DataService.getNewIdForTask {
 
 
-            var task: Task = if (isNew)
+            val task: Task = if (isNew)
                 Task(it, "", "",
-                    MutableList(0, { Subtask(false, "") })
+                    MutableList(0) { Subtask(false, "") }
                 )
             else
-                gotten_task!!
+                gottenTask!!
 
             val simple_choice = findViewById<View>(R.id.simple_difficulty_radiobutton)
             val easy_choice = findViewById<View>(R.id.easy_difficulty_radiobutton)
@@ -109,8 +110,13 @@ class CreatingTask : AppCompatActivity() {
             val button_confirm = findViewById<View>(R.id.button_confirm)
             val exit_button: View = findViewById(R.id.exit_button)
 
+            //val exit_function =
+
+
+
             exit_button.setOnClickListener {
                 if (isNew) {
+                    //TODO: Исправь!
                     DataService.sendTask(task) { showInfoDialogue(it) }
                     goBack(task)
                 } else {
@@ -134,6 +140,10 @@ class CreatingTask : AppCompatActivity() {
                 }
             }
 
+            onBackPressedDispatcher.addCallback{
+                exit_button.performClick()
+            }
+
 
             supportFragmentManager.commit {
 
@@ -153,7 +163,7 @@ class CreatingTask : AppCompatActivity() {
                 replace(R.id.super_design_input, input1)
 
 
-                val description_input1: DescriptionSuperDesignInput =
+                val descriptionInput1: DescriptionSuperDesignInput =
                     DescriptionSuperDesignInput.newInstance(
                         getString(R.string.notes),
                         !isNew,
@@ -161,12 +171,12 @@ class CreatingTask : AppCompatActivity() {
                     ) {
                         task.text = it
                     }
-                replace(R.id.description_super_design_input, description_input1)
+                replace(R.id.description_super_design_input, descriptionInput1)
 
                 task.getSubtasks().add(Subtask())
-                val creating_subtasks_list: CreatingSubtasksList =
+                val creatingSubtasksList: CreatingSubtasksList =
                     CreatingSubtasksList.newInstance(task)
-                replace(R.id.creating_subtasks_list, creating_subtasks_list)
+                replace(R.id.creating_subtasks_list, creatingSubtasksList)
 
 
                 val checkbox: CheckBox = CheckBox.newInstance(
@@ -216,6 +226,6 @@ class CreatingTask : AppCompatActivity() {
     }
 
     companion object {
-        public val IS_WAS_CREATING_TASK = "IS_WAS_CREATING_TASK"
+        const val IS_WAS_CREATING_TASK = "IS_WAS_CREATING_TASK"
     }
 }
