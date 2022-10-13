@@ -21,7 +21,7 @@ class GetLoginPassword(
     private val passwordErrorMessage: String
 ) : Fragment() {
 
-    private var isRegistering = true
+    private var isRegistering = false
     private var input1: Input? = null
     private var input2: Input? = null
     private var checkBox: CheckBox? = null

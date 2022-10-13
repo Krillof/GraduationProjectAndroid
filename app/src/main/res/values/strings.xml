@@ -37,12 +37,14 @@
     <string name="easy">Легко</string>
     <string name="normal">Нормально</string>
     <string name="hard">Сложно</string>
-    <string name="dos">Задачи</string>
+    <string name="dos">Задачи, привычки и магазин</string>
     <string name="inventory">Инвентарь</string>
     <string name="avatar">Аватар</string>
     <string name="show_teachers">Ваши учителя</string>
     <string name="find_teachers">Найти нового учителя</string>
+    <string name="find_by_login">Поиск по логину</string>
     <string name="show_students">Ваши ученики</string>
+    <string name="study_requests">Запросы в ученики</string>
     <string name="news">Новости</string>
     <string name="news_header">Новости Do</string>
     <string name="more">Подробнее</string>
@@ -61,6 +63,18 @@
     <string name="eyes"> Глаза </string>
     <string name="mouth"> Рот </string>
     <string name="background"> Фон </string>
+
+    <string name="abandon"> Отказаться </string>
+    <string name="assignments"> Поручения </string>
+    <string name="request"> Попроситься </string>
+    <string name="accept"> Принять </string>
+
+    <string name="are_you_sure_to_abandon_teacher">
+        Вы уверены, что хотите отказаться от этого учителя?
+    </string>
+    <string name="are_you_sure_to_abandon_student">
+        Вы уверены, что хотите отказаться от этого ученика?
+    </string>
 
     <string name="avatar_is_ready_string">
         Поздравляю персонаж готов! Пришло время придумать ему имя.

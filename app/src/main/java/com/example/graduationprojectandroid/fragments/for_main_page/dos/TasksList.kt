@@ -15,7 +15,11 @@ import com.example.graduationprojectandroid.network.DataService
  * Use the [TasksList.newInstance] factory method to
  * create an instance of this fragment.
  */
-class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
+class TasksList(
+    private var loginFrom: String,
+    private var loginTo: String,
+    private var listener: (Task?) -> Unit
+) : Fragment() {
     lateinit var binding: FragmentTasksListBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +35,23 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
         return binding.root
     }
 
+    private fun updateList(){
+        val context = this
+        DataService.getTasks(loginFrom, loginTo){
+            val habitsListAdapter
+                    = TasksAdapter(convertTasksToParentizedTasks(it))
+            { task ->
+                listener(task)
+                context.updateList()
+            }
+
+            binding.tasksList.layoutManager = LinearLayoutManager(
+                binding.tasksList.context
+            )
+            binding.tasksList.adapter = habitsListAdapter
+        }
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -39,13 +60,7 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
             listener(null)
         }
 
-        DataService.getTasks{
-            val habitsListAdapter
-                    = TasksAdapter(convertTasksToParentizedTasks(it), listener)
-
-            tasksList.layoutManager = LinearLayoutManager(tasksList.context)
-            tasksList.adapter = habitsListAdapter
-        }
+        updateList()
     }
 
     private fun convertTasksToParentizedTasks(tasks: ArrayList<Task>)
@@ -78,7 +93,7 @@ class TasksList(private var listener: (Task?) -> Unit) : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance(listener: (Task?) -> Unit) =
-            TasksList(listener)
+        fun newInstance(loginFrom: String, loginTo: String, listener: (Task?) -> Unit) =
+            TasksList(loginFrom, loginTo, listener)
     }
 }

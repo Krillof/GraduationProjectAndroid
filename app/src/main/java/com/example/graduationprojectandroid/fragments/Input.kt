@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.core.widget.doAfterTextChanged
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentInputBinding
 
@@ -17,7 +18,8 @@ import com.example.graduationprojectandroid.databinding.FragmentInputBinding
  */
 class Input(
     private val hint: String,
-    private val errorMessage: String
+    private val errorMessage: String,
+    private val listener: (value: String)->Unit
 ): Fragment() {
 
     private lateinit var binding: FragmentInputBinding
@@ -35,8 +37,8 @@ class Input(
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
-    = with(binding){
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit
+        = with(binding){
         super.onViewCreated(view, savedInstanceState)
 
         if (errorMessage != ""){
@@ -44,6 +46,9 @@ class Input(
         }
 
         inputText.hint = hint
+        inputText.doAfterTextChanged {
+            listener(inputText.text.toString())
+        }
     }
 
     fun getText() : String
@@ -53,7 +58,8 @@ class Input(
 
     companion object {
         @JvmStatic
-        fun newInstance(hint: String, errorMessage: String = "") =
-            Input(hint, errorMessage)
+        fun newInstance(hint: String, errorMessage: String = "",
+                        listener: (value: String) -> Unit = {}) =
+            Input(hint, errorMessage, listener)
     }
 }

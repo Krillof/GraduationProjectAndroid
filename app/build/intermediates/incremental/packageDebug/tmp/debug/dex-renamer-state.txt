@@ -1,4 +1,4 @@
-#Sun Oct 09 17:56:50 MSK 2022
+#Thu Oct 13 19:34:45 MSK 2022
 path.4=15/classes.dex
 path.3=11/classes.dex
 path.2=10/classes.dex
@@ -9,7 +9,6 @@ path.8=6/classes.dex
 path.7=5/classes.dex
 path.6=2/classes.dex
 path.5=1/classes.dex
-renamed.11=classes12.dex
 renamed.10=classes11.dex
 path.0=classes.dex
 base.4=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
@@ -20,11 +19,10 @@ base.0=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
-path.10=4/classes.dex
+path.10=14/classes.dex
 renamed.0=classes.dex
 base.9=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
 path.9=7/classes.dex
-path.11=14/classes.dex
 renamed.7=classes8.dex
 base.8=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\6\\classes.dex
 renamed.6=classes7.dex
@@ -33,5 +31,4 @@ renamed.5=classes6.dex
 base.6=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\2\\classes.dex
 renamed.4=classes5.dex
 base.5=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.11=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.10=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+base.10=D\:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex

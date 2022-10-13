@@ -56,12 +56,6 @@ class CreatingTask : AppCompatActivity() {
 
     private fun goBack(task: Task){
         task.getSubtasks().removeAt(task.getSubtasks().size - 1)
-
-        //if ID alreadly exists - than change, else make new
-        //TODO: Send to server
-        val intent = Intent(this, MainPage::class.java)
-        intent.putExtra(IS_WAS_CREATING_TASK, true)
-        startActivity(intent)
         finish()
     }
 
@@ -83,14 +77,16 @@ class CreatingTask : AppCompatActivity() {
         setContentView(R.layout.activity_creating_task)
         val context = this
 
-        val gottenTask: Task? = intent.extras?.get(MainPage.ARG_TASK) as Task?
+        val gottenTask: Task? = intent.extras?.get(ARG_TASK) as Task?
+        val loginFrom: String? = intent.extras?.get(ARG_LOGIN_FROM) as String?
+        val loginTo: String? = intent.extras?.get(ARG_LOGIN_TO) as String?
         val isNew = (gottenTask == null)
 
         DataService.getNewIdForTask {
 
 
             val task: Task = if (isNew)
-                Task(it, "", "",
+                Task(it, loginFrom!!, loginTo!!, "", "",
                     MutableList(0) { Subtask(false, "") }
                 )
             else
@@ -110,22 +106,23 @@ class CreatingTask : AppCompatActivity() {
             val button_confirm = findViewById<View>(R.id.button_confirm)
             val exit_button: View = findViewById(R.id.exit_button)
 
-            //val exit_function =
-
-
 
             exit_button.setOnClickListener {
                 if (isNew) {
                     //TODO: Исправь!
-                    DataService.sendTask(task) { showInfoDialogue(it) }
+                    DataService.sendTask(task) { answer ->
+                        showInfoDialogue(answer)
+                    }
                     goBack(task)
                 } else {
                     //Ask, before leave
                     var df: DialogFragment? = null
-                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
-                        when (it) {
+                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) { choice ->
+                        when (choice) {
                             true -> {
-                                DataService.sendTask(task) { showInfoDialogue(it) }
+                                DataService.sendTask(task) { answer ->
+                                    showInfoDialogue(answer)
+                                }
                                 goBack(task)
                             }
                             false -> {
@@ -226,6 +223,8 @@ class CreatingTask : AppCompatActivity() {
     }
 
     companion object {
-        const val IS_WAS_CREATING_TASK = "IS_WAS_CREATING_TASK"
+        const val ARG_TASK = "task"
+        const val ARG_LOGIN_FROM = "login_from"
+        const val ARG_LOGIN_TO = "login_to"
     }
 }

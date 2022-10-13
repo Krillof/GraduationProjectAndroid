@@ -23,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class News(
-    val open_reading_news_item: (Int)->Unit
+    private val open_reading_news_item: (Int)->Unit
 ) : Fragment() {
     private lateinit var binding: FragmentNewsBinding
 

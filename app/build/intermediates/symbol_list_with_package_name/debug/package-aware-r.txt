@@ -1807,6 +1807,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable adapter_item_button
 drawable avatar_parts_background_choice
 drawable avatar_parts_choosen_part
 drawable avatar_parts_first_choice
@@ -1934,7 +1935,6 @@ drawable purple_circle
 drawable save_changes_no_button
 drawable save_changes_yes_button
 drawable selection_band_overlay
-drawable show_teacher_item
 drawable simple_off
 drawable simple_on
 drawable skin_color_rect_1
@@ -1963,6 +1963,7 @@ drawable small_rectangle
 drawable square_checked
 drawable square_unchecked
 drawable support_item_background
+drawable teacher_item
 drawable test_custom_background
 drawable tick_in_circle_off
 drawable tick_in_circle_on
@@ -2090,10 +2091,18 @@ id button1
 id button2
 id buttonPanel
 id button_background
+id button_background_abandon
+id button_background_accept
+id button_background_assignments
+id button_background_request
 id button_confirm
 id button_frame
 id button_next
 id button_text
+id button_text_abandon
+id button_text_accept
+id button_text_assignments
+id button_text_request
 id buy_button
 id cache_measures
 id callMeasure
@@ -2190,6 +2199,7 @@ id drawer_item4_rectangle
 id drawer_item5_rectangle
 id drawer_item6_rectangle
 id drawer_item7_rectangle
+id drawer_item8_rectangle
 id drawer_layout
 id dropdown_menu
 id easeIn
@@ -2298,7 +2308,6 @@ id left
 id leftToRight
 id left_cap
 id legacy
-id level_info
 id level_text
 id line1
 id line3
@@ -2430,6 +2439,7 @@ id plus_or_close
 id plus_or_close_tap_area
 id position
 id postLayout
+id potential_students_list
 id progress_circular
 id progress_horizontal
 id radio
@@ -2463,6 +2473,7 @@ id search_button
 id search_close_btn
 id search_edit_frame
 id search_go_btn
+id search_input
 id search_mag_icon
 id search_plate
 id search_src_text
@@ -2515,6 +2526,7 @@ id staticPostLayout
 id status_bar_latest_event_content
 id stop
 id stretch
+id students_list
 id submenuarrow
 id submit_area
 id subtask_layout
@@ -2710,6 +2722,7 @@ layout fragment_check_box
 layout fragment_creating_subtasks_list
 layout fragment_description_super_design_input
 layout fragment_dos
+layout fragment_find_teachers
 layout fragment_get_login_password
 layout fragment_habits_list
 layout fragment_header
@@ -2722,8 +2735,10 @@ layout fragment_news
 layout fragment_or_enter_by
 layout fragment_present_character_big
 layout fragment_present_character_small
+layout fragment_show_students
 layout fragment_show_teachers
 layout fragment_small_button
+layout fragment_study_requests
 layout fragment_super_design_input
 layout fragment_tasks_list
 layout material_chip_input_combo
@@ -2790,11 +2805,14 @@ layout select_dialog_singlechoice_material
 layout simple_layout_avatar_part
 layout simple_layout_buy_market_item
 layout simple_layout_creating_subtask
+layout simple_layout_find_teacher_item
 layout simple_layout_habit
 layout simple_layout_inventory_item
 layout simple_layout_market_item
 layout simple_layout_news_item
-layout simple_layout_show_teachers_item
+layout simple_layout_show_students_item
+layout simple_layout_show_teacher_item
+layout simple_layout_study_requests
 layout simple_layout_subtask
 layout simple_layout_task
 layout simple_layout_wear_item
@@ -2819,6 +2837,7 @@ menu example_menu2
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
+string abandon
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2846,9 +2865,13 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string accept
 string app_name
 string appbar_scrolling_view_behavior
 string are_you_registering
+string are_you_sure_to_abandon_student
+string are_you_sure_to_abandon_teacher
+string assignments
 string avatar
 string avatar_is_ready_string
 string background
@@ -2878,6 +2901,7 @@ string exposed_dropdown_menu_content_description
 string eyes
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string find_by_login
 string find_teachers
 string good_habit
 string habit_name
@@ -2979,12 +3003,14 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string request
 string save
 string search_menu_title
 string show_students
 string show_teachers
 string simple
 string status_bar_notification_info_overflow
+string study_requests
 string text_login_2
 string title_activity_one_news_page
 string wear

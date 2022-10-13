@@ -37,14 +37,24 @@ class ShowTeachers : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit
-        = with(binding) {
+    private fun getUserTeachers(){
+        val context = this
+        DataService.getUserTeachers {
+            binding.teachersList.layoutManager = LinearLayoutManager(
+                binding.teachersList.context
+            )
+            binding.teachersList.adapter = ShowTeachersItemsAdapter(
+                requireFragmentManager(), it
+            ){
+                context.getUserTeachers()
+            }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit {
         super.onViewCreated(view, savedInstanceState)
 
-        DataService.getUserTeachers {
-            teachersList.layoutManager = LinearLayoutManager(teachersList.context)
-            teachersList.adapter = ShowTeachersItemsAdapter(it)
-        }
+        getUserTeachers()
 
         fragmentManager?.commit {
             val headerFragment: Header = Header.newInstance(getString(R.string.show_teachers))

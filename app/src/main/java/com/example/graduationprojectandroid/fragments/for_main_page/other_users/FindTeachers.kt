@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentFindTeachersBinding
-import com.example.graduationprojectandroid.fragments.SuperDesignInput
+import com.example.graduationprojectandroid.fragments.Header
+import com.example.graduationprojectandroid.fragments.Input
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.FindTeachersItemsAdapter
+import com.example.graduationprojectandroid.network.DataService
 
 
 /**
@@ -36,23 +39,45 @@ class FindTeachers : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit
-        = with(binding){
+    private fun findTeachers(loginStartsWith: String){
+        val context = this
+        DataService.getTeachersToFind(loginStartsWith){
+            binding.teachersList.layoutManager = LinearLayoutManager(
+                binding.teachersList.context
+            )
+            binding.teachersList.adapter = FindTeachersItemsAdapter(it){
+                context.findTeachers(
+                    loginStartsWith
+                )
+            }
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit {
         super.onViewCreated(view, savedInstanceState)
 
-
-        //teachersList.layoutManager = LinearLayoutManager(teachersList.context)
-        //teachersList.adapter = FindTeachersItemsAdapter()
+        findTeachers("")
 
         fragmentManager?.commit {
-            val superDesignInputFragment: SuperDesignInput = SuperDesignInput.newInstance(
-                getString(R.string.find_teachers), true,
-                ""
-            ){ // after text changed
+            val headerFragment: Header = Header.newInstance(
+                getString(R.string.find_teachers)
+            )
+            replace(R.id.header, headerFragment)
 
+            val inputFragment: Input = Input.newInstance(
+                getString(R.string.find_by_login),
+                ""
+            ){
+                // after text changed to it
+                findTeachers(it)
             }
-            replace(R.id.search_input, superDesignInputFragment)
+            replace(R.id.search_input, inputFragment)
         }
+    }
+
+    override fun onStop() {
+        App.hideKeyboardFrom(this.context, this.view)
+        super.onStop()
     }
 
     companion object {

@@ -18,6 +18,8 @@ import com.example.graduationprojectandroid.network.DataService
  * create an instance of this fragment.
  */
 class HabitsList(
+    private var loginFrom: String,
+    private var loginTo: String,
     private var listener: (h: Habit?) -> Unit
 ) : Fragment() {
 
@@ -33,7 +35,22 @@ class HabitsList(
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentHabitsListBinding.inflate(layoutInflater)
-        return binding.root //.inflate(, container, false)
+        return binding.root
+    }
+
+    private fun updateList(){
+        val context = this
+        DataService.getHabits(loginFrom, loginTo){
+            val habitsListAdapter = HabitsAdapter(it){ habit ->
+                listener(habit)
+                context.updateList()
+            }
+
+            binding.habitsList.layoutManager = LinearLayoutManager(
+                binding.habitsList.context
+            )
+            binding.habitsList.adapter = habitsListAdapter
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?)= with(binding) {
@@ -45,18 +62,12 @@ class HabitsList(
             listener(null)
         }
 
-        DataService.getHabits{
-            val habitsListAdapter = HabitsAdapter(it, listener)
-
-            habitsList.layoutManager = LinearLayoutManager(habitsList.context)
-            habitsList.adapter = habitsListAdapter
-        }
+        updateList()
     }
 
     companion object {
-
         @JvmStatic
-        fun newInstance(listener: (h: Habit?) -> Unit) =
-            HabitsList(listener)
+        fun newInstance(loginFrom: String, loginTo: String, listener: (h: Habit?) -> Unit) =
+            HabitsList(loginFrom, loginTo, listener)
     }
 }

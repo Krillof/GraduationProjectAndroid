@@ -5,14 +5,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import java.io.Serializable
 
 open class Task(
-    public val id: Int,
-    public var header: String,
-    public var text: String,
+    val id: Int,
+    val loginFrom: String,
+    val loginTo: String,
+    var header: String,
+    var text: String,
     private val subtasks: MutableList<Subtask>,
-    public var isEveryday: Boolean = false,
-    public var isEveryweek: Boolean = false,
-    public var isEverymonth: Boolean = false,
-    public var difficulty: Difficulty = Difficulty.normal
+    var isEveryday: Boolean = false,
+    var isEveryweek: Boolean = false,
+    var isEverymonth: Boolean = false,
+    var difficulty: Difficulty = Difficulty.normal
+
 ) : Serializable {
 
     protected var done: Boolean = false

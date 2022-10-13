@@ -16,7 +16,6 @@ private const val ARG_PARAM_LOGIN = "login"
 
 
 class Dos(
-    private val isStartFromTasks: Boolean,
     private val listener_open_creating_habit: (h: Habit?)->Unit,
     private val listener_open_creating_task: (t: Task?)->Unit
 ) : Fragment() {
@@ -64,7 +63,7 @@ class Dos(
                         userData
                     )
 
-                    val habitsList = HabitsList.newInstance()
+                    val habitsList = HabitsList.newInstance(userData.login, userData.login)
                     {
                         listener_open_creating_habit(it)
                     }
@@ -82,7 +81,8 @@ class Dos(
                         userData
                     )
 
-                    val tasksList = TasksList.newInstance() {
+                    val tasksList = TasksList.newInstance(userData.login, userData.login)
+                    {
                         listener_open_creating_task(it)
                     }
 
@@ -111,11 +111,6 @@ class Dos(
                 }
 
             }
-
-            if (isStartFromTasks)
-                tasks_menu_choice.performClick()
-            else
-                habits_menu_choice.performClick()
         }
 
     }
@@ -166,12 +161,10 @@ class Dos(
     companion object {
         @JvmStatic
         fun newInstance(
-            isStartFromTasks: Boolean,
             listener_open_creating_habit: (h: Habit?)->Unit,
             listener_open_creating_task: (t: Task?) -> Unit
         ) =
             Dos(
-                isStartFromTasks,
                 listener_open_creating_habit,
                 listener_open_creating_task
             )

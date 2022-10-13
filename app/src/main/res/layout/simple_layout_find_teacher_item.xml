@@ -34,24 +34,43 @@
         android:layout_marginStart="130dp"
 
         style="@style/header_text"
+        android:maxLines="2"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
         />
 
+
+    <View
+        android:id="@+id/button_background_request"
+
+        android:layout_width="152dp"
+        android:layout_height="25dp"
+
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="8dp"
+
+        android:background="@drawable/adapter_item_button"
+
+        />
+
     <TextView
-        android:id="@+id/level_info"
+        android:id="@+id/button_text_request"
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:maxWidth="178dp"
+        app:layout_constraintTop_toTopOf="@+id/button_background_request"
+        app:layout_constraintBottom_toBottomOf="@+id/button_background_request"
+        app:layout_constraintStart_toStartOf="@+id/button_background_request"
+        app:layout_constraintEnd_toEndOf="@+id/button_background_request"
 
-        android:layout_marginStart="130dp"
-
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/request"
+        style="@style/simple_white_text"
 
         />
 

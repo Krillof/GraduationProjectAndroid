@@ -13,34 +13,19 @@ class NewsItemPage : AppCompatActivity() {
     private lateinit var binding: ActivityNewsItemPageBinding
 
     companion object {
-        const val IS_GOT_FROM_READING_NEWS_ITEM = "READING_NEWS_ITEM"
-    }
-
-    private fun getVerticalTextSpace(size: Int): String{
-        var s: String = ""
-        for (i in 0..size){
-            s += "\n"
-        }
-        return s
-    }
-
-    private fun goBack(){
-        val intent = Intent(this, MainPage::class.java)
-        intent.putExtra(IS_GOT_FROM_READING_NEWS_ITEM, true)
-        startActivity(intent)
-        finish()
+        const val ARG_NEWS_ITEM_ID = "news_item"
     }
 
     override fun onBackPressed() {
-        goBack()
+        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val newsItemId = intent.extras?.getInt(MainPage.ARG_NEWS_ITEM_ID)
+        val newsItemId = intent.extras?.getInt(ARG_NEWS_ITEM_ID)
         if (newsItemId == null){
-            goBack()
+            finish()
         } else {
             DataService.getNewsItemById(newsItemId) {
                 binding = ActivityNewsItemPageBinding.inflate(layoutInflater)
@@ -51,7 +36,7 @@ class NewsItemPage : AppCompatActivity() {
                 binding.infoText.text = it.info_text
                 binding.mainText.text = it.main_text
                 binding.exitButton.setOnClickListener {
-                    goBack()
+                    finish()
                 }
             }
         }

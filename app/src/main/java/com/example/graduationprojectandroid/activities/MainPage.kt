@@ -14,7 +14,10 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Hab
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
 import com.example.graduationprojectandroid.fragments.for_main_page.inventory.Inventory
+import com.example.graduationprojectandroid.fragments.for_main_page.other_users.FindTeachers
+import com.example.graduationprojectandroid.fragments.for_main_page.other_users.ShowStudents
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.ShowTeachers
+import com.example.graduationprojectandroid.fragments.for_main_page.other_users.StudyRequests
 import kotlin.system.exitProcess
 
 class MainPage : AppCompatActivity() {
@@ -26,14 +29,11 @@ class MainPage : AppCompatActivity() {
         SHOW_TEACHERS(3),
         FIND_TEACHERS(4),
         SHOW_STUDENTS(5),
-        NEWS(6)
+        STUDY_REQUESTS(6),
+        NEWS(7)
     }
 
     companion object {
-        const val ARG_HABIT = "habit"
-        const val ARG_TASK = "task"
-        const val ARG_NEWS_ITEM_ID = "news_item"
-
         var currentState: MainPageStates = MainPageStates.DOS
         lateinit var items: List<View>
         lateinit var inits: List<()->Unit>
@@ -41,23 +41,20 @@ class MainPage : AppCompatActivity() {
 
     private fun openCreatingHabit(habit: Habit?){
         val intent = Intent(this, CreatingHabit::class.java)
-        intent.putExtra(ARG_HABIT, habit)
+        intent.putExtra(CreatingHabit.ARG_HABIT, habit)
         startActivity(intent)
-        finish()
     }
 
     private fun openCreatingTask(task: Task?){
         val intent = Intent(this, CreatingTask::class.java)
-        intent.putExtra(ARG_TASK, task)
+        intent.putExtra(CreatingTask.ARG_TASK, task)
         startActivity(intent)
-        finish()
     }
 
     private fun openReadingNewsItem(newsItemId: Int){
         val intent = Intent(this, NewsItemPage::class.java)
-        intent.putExtra(ARG_NEWS_ITEM_ID, newsItemId)
+        intent.putExtra(NewsItemPage.ARG_NEWS_ITEM_ID, newsItemId)
         startActivity(intent)
-        finish()
     }
 
     private fun openMenu(){
@@ -89,12 +86,6 @@ class MainPage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
-        val isGotFromReadingNewsItem
-                = intent.extras?.get(NewsItemPage.IS_GOT_FROM_READING_NEWS_ITEM) as Boolean?
-        if (isGotFromReadingNewsItem != null){
-            currentState = MainPageStates.NEWS
-        }
-
         val openMenuArea = findViewById<View>(R.id.top_menu_click_area)
         openMenuArea.setOnClickListener {
             openMenu()
@@ -108,11 +99,12 @@ class MainPage : AppCompatActivity() {
             findViewById(R.id.drawer_item5_rectangle),
             findViewById(R.id.drawer_item6_rectangle),
             findViewById(R.id.drawer_item7_rectangle),
+            findViewById(R.id.drawer_item8_rectangle)
             )
 
         inits = listOf(
             {initDos()}, {initInventory()}, {initAvatar()}, {initShowTeachers()},
-            {initFindTeacher()}, {initShowStudents()}, {initNews()}
+            {initFindTeacher()}, {initShowStudents()}, {initStudyRequests()}, {initNews()}
         )
 
         for (i in items.indices){
@@ -148,11 +140,8 @@ class MainPage : AppCompatActivity() {
 
     private fun initDos(){
         closeMenu()
-        val isWasCreatingTasks
-                = intent.extras?.get(CreatingTask.IS_WAS_CREATING_TASK) as Boolean?
 
         val dos: Dos =  Dos.newInstance(
-            isWasCreatingTasks == true, // because can be null - not redundant
             { openCreatingHabit(it) },
             { openCreatingTask(it) }
         )
@@ -170,7 +159,9 @@ class MainPage : AppCompatActivity() {
 
     private fun initShowTeachers(){
         closeMenu()
-        val showTeachersFragment: ShowTeachers = ShowTeachers.newInstance()
+        val showTeachersFragment: ShowTeachers = ShowTeachers.newInstance(
+
+        )
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_page_fragment, showTeachersFragment)
             .commit()
@@ -178,12 +169,26 @@ class MainPage : AppCompatActivity() {
 
     private fun initFindTeacher(){
         closeMenu()
-
+        val findTeachersFragment: FindTeachers = FindTeachers.newInstance()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_page_fragment, findTeachersFragment)
+            .commit()
     }
 
     private fun initShowStudents(){
         closeMenu()
+        val showStudentsFragment: ShowStudents = ShowStudents.newInstance()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_page_fragment, showStudentsFragment)
+            .commit()
+    }
 
+    private fun initStudyRequests(){
+        closeMenu()
+        val studyRequestsFragment: StudyRequests = StudyRequests.newInstance()
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_page_fragment, studyRequestsFragment)
+            .commit()
     }
 
     private fun initNews() {

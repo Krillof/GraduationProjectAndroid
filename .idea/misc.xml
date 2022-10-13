@@ -11,9 +11,12 @@
         <entry key="..\:/Coding/ANDROID_STUDIO/GraduationProjectAndroid/app/src/main/res/layout/activity_main.xml" value="0.3734375" />
         <entry key="..\:/Coding/ANDROID_STUDIO/GraduationProjectAndroid/app/src/main/res/layout/underactivity_login_entering.xml" value="0.3763586956521739" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.307" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/adapter_item_button.xml" value="0.285" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/button_frame.xml" value="0.3015" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/do_logo.xml" value="0.307" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.307" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/light_gray_rectangle.xml" value="0.285" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/skin_color_rect_1.xml" value="0.285" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/drawable/top_menu_rectangle.xml" value="0.3015" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_changing_avatar.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_creating_avatar.xml" value="0.67" />
@@ -23,6 +26,7 @@
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_news_item_page.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_one_news_page.xml" value="0.23094867807153965" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_show_teachers.xml" value="0.3333333333333333" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/activity_teacher_assignments.xml" value="0.29846014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/content_scrolling.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/content_show_teachers.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_avatar_giving_name_menu.xml" value="0.31431159420289856" />
@@ -36,6 +40,7 @@
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_habits_list.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_header.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_info_dialogue.xml" value="0.3333333333333333" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_input.xml" value="0.67" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_inventory.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_inventory_list.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_market_list.xml" value="0.16927083333333334" />
@@ -43,16 +48,24 @@
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_news_item_card.xml" value="0.1546875" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_present_character_big.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_second.xml" value="0.3333333333333333" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_show_students.xml" value="0.29846014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_show_teachers.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_small_button.xml" value="0.6761433868974042" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_study_requests.xml" value="0.29846014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/fragment_tasks_list.xml" value="0.31431159420289856" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_avatar_part.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_buy_market_item.xml" value="0.32971014492753625" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_find_teacher_item.xml" value="0.16927083333333334" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_habit.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_market_item.xml" value="0.32971014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_news_item.xml" value="0.32971014492753625" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_show_stdudents_item.xml" value="0.29846014492753625" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_show_teacher_item.xml" value="0.16927083333333334" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_show_teachers_item.xml" value="0.3333333333333333" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_student_item.xml" value="0.29846014492753625" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_study_requests.xml" value="0.29846014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_task.xml" value="0.31431159420289856" />
+        <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/layout/simple_layout_teachers_item.xml" value="0.29846014492753625" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/menu/menu_one_news_page.xml" value="0.3333333333333333" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.307" />
         <entry key="..\:/GitHubProjects/GraduationProjectAndroid/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.307" />

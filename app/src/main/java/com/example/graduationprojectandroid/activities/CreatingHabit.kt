@@ -76,13 +76,15 @@ class CreatingHabit : AppCompatActivity() {
 
 
 
-        val gotten_habit: Habit? = intent.extras?.get(MainPage.ARG_HABIT) as Habit?
+        val gotten_habit: Habit? = intent.extras?.get(ARG_HABIT) as Habit?
+        val loginFrom: String? = intent.extras?.get(CreatingTask.ARG_LOGIN_FROM) as String?
+        val loginTo: String? = intent.extras?.get(CreatingTask.ARG_LOGIN_TO) as String?
         val isNew = (gotten_habit == null)
 
         DataService.getNewIdForHabit {
 
             var habit: Habit = if (isNew)
-                Habit(it, "", "", HabitDoneStates.UNKNOWN)
+                Habit(it, loginFrom!!, loginTo!!,"", "", HabitDoneStates.UNKNOWN)
             else
                 gotten_habit!!
 
@@ -106,26 +108,26 @@ class CreatingHabit : AppCompatActivity() {
 
 
             val exit_button: View = findViewById(R.id.exit_button)
-            val intent = Intent(this, MainPage::class.java)
 
             exit_button.setOnClickListener {
                 if (isNew) {
                     //TODO: Исправь!
-                    DataService.sendHabit(habit) { showInfoDialogue(it) }
-                    startActivity(intent)
+                    DataService.sendHabit(habit) { answer ->
+                        showInfoDialogue(answer)
+                    }
                     finish()
                 } else {
                     var df: DialogFragment? = null
-                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) {
+                    df = AskQuestionDialogue(getString(R.string.is_save_changes)) { choice ->
 
-                        when (it) {
+                        when (choice) {
                             true -> {
-                                DataService.sendHabit(habit) { showInfoDialogue(it) }
-                                startActivity(intent)
+                                DataService.sendHabit(habit) { answer ->
+                                    showInfoDialogue(answer)
+                                }
                                 finish()
                             }
                             false -> {
-                                startActivity(intent)
                                 finish()
                             }
                             null -> {
@@ -237,5 +239,11 @@ class CreatingHabit : AppCompatActivity() {
 
             context.changeToDifficulty(habit.difficulty)
         }
+    }
+
+    companion object {
+        const val ARG_HABIT = "habit"
+        const val ARG_LOGIN_FROM = "login_from"
+        const val ARG_LOGIN_TO = "login_to"
     }
 }

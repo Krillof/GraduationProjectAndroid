@@ -11,11 +11,7 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Tea
 
 object DataService {
 
-    private val networkService: NetworkService
-
-    init {
-        networkService = NetworkService.getInstance()
-    }
+    private val networkService: NetworkService = NetworkService.getInstance()
 
     fun setPictureById(picture_id: Int, picture_view: ImageView){
         networkService.setPictureById(picture_id, picture_view)
@@ -68,9 +64,9 @@ object DataService {
         awaiter("Checking error dialogue")
     }
 
-    fun getTasks(awaiter: (ArrayList<Task>)->Unit){
+    fun getTasks(loginFrom:String, loginTo: String, awaiter: (ArrayList<Task>)->Unit){
         var tasksList = ArrayList<Task>()
-        //TODO: get tasks from server by user's login
+        //TODO: get tasks from server
         //TODO: use awaiter
 
         //---------------------------------------
@@ -85,6 +81,7 @@ object DataService {
 
         var task1 = Task(
             1,
+            "", "",
             "Сделать англ",
             "Очень надо, у меня не зачёт",
             subtasks1
@@ -110,6 +107,7 @@ object DataService {
 
         var task2 = Task(
             2,
+            "", "",
             "Приготовиться к гостям",
             "Гости-то придут",
             subtasks2
@@ -124,6 +122,7 @@ object DataService {
 
         var task3 = Task(
             3,
+            "", "",
             "Поесть",
             "Очень важно",
             subtasks3
@@ -143,7 +142,7 @@ object DataService {
         awaiter(tasksList)
     }
 
-    fun getHabits(awaiter: (ArrayList<Habit>)->Unit) {
+    fun getHabits(loginFrom: String, loginTo: String, awaiter: (ArrayList<Habit>)->Unit) {
         val habits: ArrayList<Habit> = ArrayList()
         //TODO: Make normal habits load
         //TODO: Use awaiter
@@ -153,6 +152,7 @@ object DataService {
 
         val habit1 = Habit(
             1,
+            "", "",
             "Бегать по утрам",
             "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
@@ -160,6 +160,7 @@ object DataService {
 
         val habit2 = Habit(
             2,
+            "", "",
             "Учить английский",
             "По средам урок в 18:00",
             HabitDoneStates.UNKNOWN
@@ -167,12 +168,14 @@ object DataService {
 
         val habit3 = Habit(
             3,
+            "", "",
             "Бросить пить",
             "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
         )
         val habit4 = Habit(
             4,
+            "", "",
             "Точно не йога",
             "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
@@ -180,6 +183,7 @@ object DataService {
 
         val habit5 = Habit(
             5,
+            "", "",
             "Учить немецкий",
             "По средам урок в 18:00",
             HabitDoneStates.UNKNOWN
@@ -187,6 +191,7 @@ object DataService {
 
         val habit6 = Habit(
             6,
+            "", "",
             "Бросить курить",
             "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
@@ -194,6 +199,7 @@ object DataService {
 
         val habit7 = Habit(
             7,
+            "", "",
             "Спать",
             "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
             HabitDoneStates.UNKNOWN
@@ -201,6 +207,7 @@ object DataService {
 
         val habit8 = Habit(
             8,
+            "", "",
             "Учить французский",
             "По средам урок в 18:00",
             HabitDoneStates.UNKNOWN
@@ -208,6 +215,7 @@ object DataService {
 
         val habit9 = Habit(
             9,
+            "", "",
             "Бросить есть сладкое",
             "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
             HabitDoneStates.UNKNOWN
@@ -369,12 +377,73 @@ object DataService {
     fun getUserTeachers(awaiter: (ArrayList<TeacherItem>) -> Unit){
         var list: ArrayList<TeacherItem> = ArrayList()
         //TODO: Это временное заполнение
-        list.add(TeacherItem("Анна Павловна", 10))
-        list.add(TeacherItem("Сергей Николаевич", 21))
-        list.add(TeacherItem("1111111111111111111111111", 15))
-        list.add(TeacherItem("2222222222222222222222222", 100))
-        list.add(TeacherItem("3333333333333333333333", 1))
-        list.add(TeacherItem("sdfhgdf", 72))
+        list.add(TeacherItem("Анна Павловна"))
+        list.add(TeacherItem("Сергей Николаевич"))
+        list.add(TeacherItem("1111111111111111111111111"))
+        list.add(TeacherItem("2222222222222222222222222"))
+        list.add(TeacherItem("3333333333333333333333"))
+        list.add(TeacherItem("sdfhgdf"))
         awaiter(list)
+    }
+
+    fun getTeachersToFind(loginStartsWith: String, awaiter: (ArrayList<TeacherItem>) -> Unit){
+        var list: ArrayList<TeacherItem> = ArrayList()
+        //TODO: Это временное заполнение
+        list.add(TeacherItem("Анна Павловна"))
+        list.add(TeacherItem("Сергей Николаевич"))
+        list.add(TeacherItem("1111111111111111111111111"))
+        list.add(TeacherItem("2222222222222222222222222"))
+        list.add(TeacherItem("3333333333333333333333"))
+        list.add(TeacherItem("sdfhgdf"))
+        awaiter(list)
+    }
+
+    fun getUserStudents(awaiter: (ArrayList<StudentItem>) -> Unit){
+        var list: ArrayList<StudentItem> = ArrayList()
+        //TODO: Это временное заполнение
+        list.add(StudentItem("Анна Павловна"))
+        list.add(StudentItem("Сергей Николаевич"))
+        list.add(StudentItem("1111111111111111111111111"))
+        list.add(StudentItem("2222222222222222222222222"))
+        list.add(StudentItem("3333333333333333333333"))
+        list.add(StudentItem("sdfhgdf"))
+        awaiter(list)
+    }
+
+    fun getStudyRequests(loginStartsWith: String, awaiter: (ArrayList<StudentItem>) -> Unit){
+        var list: ArrayList<StudentItem> = ArrayList()
+        //TODO: Это временное заполнение
+        list.add(StudentItem("Анна Павловна"))
+        list.add(StudentItem("Сергей Николаевич"))
+        list.add(StudentItem("1111111111111111111111111"))
+        list.add(StudentItem("2222222222222222222222222"))
+        list.add(StudentItem("3333333333333333333333"))
+        list.add(StudentItem("sdfhgdf"))
+        awaiter(list)
+    }
+
+    fun abandonStudyWithTeacher(login: String, awaiter: () -> Unit){
+        //TODO: доделать
+        awaiter()
+    }
+
+    fun abandonStudyWithStudent(login: String, awaiter: () -> Unit){
+        //TODO: доделать
+        awaiter()
+    }
+
+    fun abandonStudyRequest(login: String, awaiter: () -> Unit){
+        //TODO: доделать
+        awaiter()
+    }
+
+    fun makeStudyRequest(login: String, awaiter: ()->Unit){
+        //TODO: доделать
+        awaiter()
+    }
+
+    fun acceptStudyRequest(login: String, awaiter: ()->Unit){
+        //TODO: доделать
+        awaiter()
     }
 }

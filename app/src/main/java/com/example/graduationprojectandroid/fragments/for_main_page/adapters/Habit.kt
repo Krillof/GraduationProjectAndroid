@@ -5,6 +5,8 @@ import java.io.Serializable
 
 class Habit(
     val id: Int,
+    val loginFrom: String,
+    val loginTo: String,
     var header: String,
     var text: String,
     var done: Int,// use with HabitDoneStates

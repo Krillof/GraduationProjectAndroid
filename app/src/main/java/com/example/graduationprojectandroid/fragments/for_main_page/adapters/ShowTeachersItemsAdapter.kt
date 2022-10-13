@@ -1,33 +1,52 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.databinding.SimpleLayoutTeachersItemBinding
+import com.example.graduationprojectandroid.databinding.SimpleLayoutShowTeacherItemBinding
+import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.network.DataService
 
 class ShowTeachersItemsAdapter (
-    private var items_arr: ArrayList<TeacherItem>
+    private var fragmentManager: FragmentManager,
+    private var items_arr: ArrayList<TeacherItem>,
+    private var updateListener: ()->Unit
 ) : RecyclerView.Adapter<ShowTeachersItemsAdapter.ItemView>()
 {
 
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding = SimpleLayoutTeachersItemBinding.bind(itemView)
+        val binding = SimpleLayoutShowTeacherItemBinding.bind(itemView)
 
         @SuppressLint("SetTextI18n")
-        fun bind(item: TeacherItem)
+        fun bind(fragmentManager: FragmentManager, item: TeacherItem, updateListener: ()->Unit)
                 = with(binding) {
-
             DataService.setOtherUserFacePicture(item.login, picture)
             header.text = item.login
-            levelInfo.text = App.getAppResources().getString(R.string.level) + " " + item.level.toString()
+            buttonBackgroundAssignments.setOnClickListener {
+                //TODO: open page with assignments
+                
+            }
+            buttonBackgroundAbandon.setOnClickListener {
+                var dialog: AskQuestionDialogue? = null
+                dialog = AskQuestionDialogue.newInstance(
+                    App.getAppResources().getString(R.string.are_you_sure_to_abandon_teacher)
+                ) {
+                    if (it == true){
+                        DataService.abandonStudyWithTeacher(item.login) {
+                            updateListener()
+                        }
+                    }
+                    dialog?.dismiss()
+                }
+                dialog?.show(fragmentManager, "")
 
-            // TODO: Обновляй список после каждого маленького изменения текста
-
+            }
         }
     }
 
@@ -35,13 +54,13 @@ class ShowTeachersItemsAdapter (
         return ItemView(
             LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.simple_layout_teachers_item, parent, false)
+                .inflate(R.layout.simple_layout_show_teacher_item, parent, false)
         )
     }
 
     override fun getItemCount(): Int = items_arr.size
 
     override fun onBindViewHolder(holder: ItemView, position: Int) {
-        holder.bind(items_arr[position])
+        holder.bind(fragmentManager, items_arr[position], updateListener)
     }
 }
