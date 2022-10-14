@@ -11,13 +11,16 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.News
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.StudentItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
 import com.example.graduationprojectandroid.fragments.for_main_page.inventory.Inventory
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.FindTeachers
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.ShowStudents
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.ShowTeachers
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.StudyRequests
+import com.example.graduationprojectandroid.network.DataService
 import kotlin.system.exitProcess
 
 class MainPage : AppCompatActivity() {
@@ -40,20 +43,40 @@ class MainPage : AppCompatActivity() {
     }
 
     private fun openCreatingHabit(habit: Habit?){
-        val intent = Intent(this, CreatingHabit::class.java)
-        intent.putExtra(CreatingHabit.ARG_HABIT, habit)
-        startActivity(intent)
+        DataService.getUserData { user ->
+            val intent = Intent(this, CreatingHabit::class.java)
+            intent.putExtra(CreatingHabit.ARG_HABIT, habit)
+            intent.putExtra(CreatingHabit.ARG_LOGIN_FROM, "") // all habits from all
+            intent.putExtra(CreatingHabit.ARG_LOGIN_TO, user.login)
+            startActivity(intent)
+        }
     }
 
     private fun openCreatingTask(task: Task?){
-        val intent = Intent(this, CreatingTask::class.java)
-        intent.putExtra(CreatingTask.ARG_TASK, task)
-        startActivity(intent)
+        DataService.getUserData { user ->
+            val intent = Intent(this, CreatingTask::class.java)
+            intent.putExtra(CreatingTask.ARG_TASK, task)
+            intent.putExtra(CreatingTask.ARG_LOGIN_FROM, "") // all tasks from all
+            intent.putExtra(CreatingTask.ARG_LOGIN_TO, user.login)
+            startActivity(intent)
+        }
     }
 
     private fun openReadingNewsItem(newsItemId: Int){
         val intent = Intent(this, NewsItemPage::class.java)
         intent.putExtra(NewsItemPage.ARG_NEWS_ITEM_ID, newsItemId)
+        startActivity(intent)
+    }
+
+    private fun openTeacherAssignments(teacher: TeacherItem){
+        val intent = Intent(this, TeacherAssignments::class.java)
+        intent.putExtra(TeacherAssignments.ARG_TEACHER, teacher)
+        startActivity(intent)
+    }
+
+    private fun openStudentAssignments(student: StudentItem){
+        val intent = Intent(this, StudentAssignments::class.java)
+        intent.putExtra(StudentAssignments.ARG_STUDENT, student)
         startActivity(intent)
     }
 
@@ -141,7 +164,7 @@ class MainPage : AppCompatActivity() {
     private fun initDos(){
         closeMenu()
 
-        val dos: Dos =  Dos.newInstance(
+        val dos: Dos = Dos.newInstance(
             { openCreatingHabit(it) },
             { openCreatingTask(it) }
         )
@@ -159,9 +182,11 @@ class MainPage : AppCompatActivity() {
 
     private fun initShowTeachers(){
         closeMenu()
-        val showTeachersFragment: ShowTeachers = ShowTeachers.newInstance(
-
-        )
+        val showTeachersFragment: ShowTeachers = ShowTeachers.newInstance {
+            openTeacherAssignments(
+                it
+            )
+        }
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_page_fragment, showTeachersFragment)
             .commit()
@@ -177,7 +202,11 @@ class MainPage : AppCompatActivity() {
 
     private fun initShowStudents(){
         closeMenu()
-        val showStudentsFragment: ShowStudents = ShowStudents.newInstance()
+        val showStudentsFragment: ShowStudents = ShowStudents.newInstance {
+            openStudentAssignments(
+                it
+            )
+        }
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_page_fragment, showStudentsFragment)
             .commit()

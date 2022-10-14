@@ -26,7 +26,7 @@
         android:layout_width="64dp"
         android:layout_height="38dp"
 
-        android:background="@drawable/avatar_parts_first_choice"
+        android:background="@drawable/avatar_parts_edge_choice"
 
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,7 +92,7 @@
 
         android:layout_marginStart="146dp"
 
-        android:background="@drawable/avatar_parts_first_choice"
+        android:background="@drawable/avatar_parts_edge_choice"
 
 
         app:layout_constraintStart_toEndOf="@+id/choice_2"

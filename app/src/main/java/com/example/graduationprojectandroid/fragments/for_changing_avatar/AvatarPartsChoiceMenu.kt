@@ -33,7 +33,6 @@ class AvatarPartsChoiceMenu(
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentAvatarPartsChoiceMenuBinding.inflate(layoutInflater)
-
         return binding.root
     }
 

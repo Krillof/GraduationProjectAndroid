@@ -12,7 +12,6 @@ import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Ite
 import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
 
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -228,7 +227,7 @@ public class NetworkService {
             case HAIR:
                 awaiter.start(2);
                 break;
-            case BACKGROUND:
+            case EYES:
                 awaiter.start(5);
                 break;
             default:

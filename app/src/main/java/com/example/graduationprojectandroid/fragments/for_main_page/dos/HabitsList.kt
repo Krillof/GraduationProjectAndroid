@@ -20,6 +20,7 @@ import com.example.graduationprojectandroid.network.DataService
 class HabitsList(
     private var loginFrom: String,
     private var loginTo: String,
+    private var hideAddButton: Boolean = false,
     private var listener: (h: Habit?) -> Unit
 ) : Fragment() {
 
@@ -41,15 +42,14 @@ class HabitsList(
     private fun updateList(){
         val context = this
         DataService.getHabits(loginFrom, loginTo){
-            val habitsListAdapter = HabitsAdapter(it){ habit ->
-                listener(habit)
-                context.updateList()
-            }
-
             binding.habitsList.layoutManager = LinearLayoutManager(
                 binding.habitsList.context
             )
-            binding.habitsList.adapter = habitsListAdapter
+            binding.habitsList.adapter = HabitsAdapter(it)
+            { habit ->
+                listener(habit)
+                context.updateList()
+            }
         }
     }
 
@@ -57,9 +57,14 @@ class HabitsList(
 
         super.onViewCreated(view, savedInstanceState)
 
-
-        addButton.setOnClickListener {
-            listener(null)
+        if (hideAddButton){
+            addButton.visibility = View.GONE
+            addButtonBackground.visibility = View.GONE
+            addButtonPlus.visibility = View.GONE
+        } else {
+            addButton.setOnClickListener {
+                listener(null)
+            }
         }
 
         updateList()
@@ -67,7 +72,8 @@ class HabitsList(
 
     companion object {
         @JvmStatic
-        fun newInstance(loginFrom: String, loginTo: String, listener: (h: Habit?) -> Unit) =
-            HabitsList(loginFrom, loginTo, listener)
+        fun newInstance(loginFrom: String, loginTo: String,
+                        hideAddButton: Boolean = false, listener: (h: Habit?) -> Unit) =
+            HabitsList(loginFrom, loginTo, hideAddButton, listener)
     }
 }

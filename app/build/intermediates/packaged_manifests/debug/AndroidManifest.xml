@@ -25,6 +25,12 @@
         android:theme="@style/Theme.GraduationProjectAndroid"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.graduationprojectandroid.activities.StudentAssignments"
+            android:exported="false" />
+        <activity
+            android:name="com.example.graduationprojectandroid.activities.TeacherAssignments"
+            android:exported="false" />
+        <activity
             android:name="com.example.graduationprojectandroid.activities.NewsItemPage"
             android:exported="false"
             android:screenOrientation="portrait"

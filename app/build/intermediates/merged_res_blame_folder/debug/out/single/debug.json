@@ -4,44 +4,20 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\good_habit_on.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_plus.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\plus.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_transparent_gray_rectangle.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\transparent_gray_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_do_logo.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\do_logo.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_orange_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_orange_circle.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_study_requests.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_study_requests.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_or_enter_by.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_or_enter_by.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tick_in_circle_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tick_in_circle_on.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_show_students.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_show_students.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_bottom_menu_tasks_on.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\bottom_menu_tasks_on.png"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_easy_off.xml.flat",
@@ -52,10 +28,6 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_header.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_news_item_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\news_item_background.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_show_students_item.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_show_students_item.xml"
     },
@@ -64,60 +36,16 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_7.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_bottom_menu_tasks_off.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\bottom_menu_tasks_off.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_white_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\white_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_do_logo.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\do_logo.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_button.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_hard_off.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\hard_off.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_show_teachers.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_show_teachers.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_health_bar_background.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\health_bar_background.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_inventory.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_inventory.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_very_big_character_rectangle.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\very_big_character_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_creating_subtasks_list.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_creating_subtasks_list.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_normal_rectangle_for_checkbox_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_normal_rectangle_for_checkbox_on.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_check_box.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_check_box.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_save_changes_no_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\save_changes_no_button.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_google.xml.flat",
@@ -128,32 +56,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\ellipse_checked_1.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_big_white_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\big_white_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_facebook.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\brandico_facebook.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_creating_task.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_creating_task.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_square_checked.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\square_checked.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_health_bar_background.xml.flat",
@@ -164,16 +72,8 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_inventory_item.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_inventory_item.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_lists_rectangle.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\lists_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_avatar_giving_name_menu.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_avatar_giving_name_menu.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_tasks_list.xml.flat",
@@ -184,52 +84,16 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\bottom_menu_tasks_on.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_bottom_menu_tasks_off.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\bottom_menu_tasks_off.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_square_unchecked.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\square_unchecked.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_bottom_menu_tasks_on.png.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\bottom_menu_tasks_on.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_avatar_parts_choice_menu.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_avatar_parts_choice_menu.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_6.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_6.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_bottom_menu_tasks_on.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\bottom_menu_tasks_on.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_present_character_big.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_present_character_big.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_menu_character_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bottom_menu_character_off.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_normal_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\normal_on.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_bottom_menu_tasks_off.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\bottom_menu_tasks_off.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
@@ -240,20 +104,8 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_5.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_frame.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\button_frame.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_button_cap_left.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_button_cap_left.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_task.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_task.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tmp_square_present_character_small.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tmp_square_present_character_small.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_market_item.xml.flat",
@@ -268,36 +120,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_present_character_big_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\present_character_big_rectangle.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_present_character_big_small_rectangles.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\present_character_big_small_rectangles.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_avatar_parts_choosen_part.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\avatar_parts_choosen_part.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_item_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\drawer_menu_item_on.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_circle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_health_bar_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\health_bar_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bad_habit_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bad_habit_on.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ellipse_unchecked_1.xml.flat",
@@ -308,42 +136,6 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\drawer_rectangle.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_changing_avatar.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_changing_avatar.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_inventory_list.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_inventory_list.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_bottom_menu_tasks_on.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\bottom_menu_tasks_on.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_news_item_page.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_news_item_page.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_exp_bar_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\exp_bar_circle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_save_changes_yes_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\save_changes_yes_button.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_big_rectangle_check_box.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_big_rectangle_check_box.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_ask_question_dialogue.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_ask_question_dialogue.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_right_top_circled_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_right_top_circled_background.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_wear_item.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_wear_item.xml"
     },
@@ -352,44 +144,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_news.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_creating_subtask_close.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\creating_subtask_close.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_exp_bar_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_exp_bar_background.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_bottom_menu_tasks_off.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\bottom_menu_tasks_off.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_support_item_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\support_item_background.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_market_item_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\market_item_background.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_minus_in_circle_on.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\minus_in_circle_on.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_8.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_8.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_color_hair_choose_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\color_hair_choose_button.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_super_design_input.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_super_design_input.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_exp_bar_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_exp_bar_circle.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_avatar_parts_background_choice.xml.flat",
@@ -404,14 +164,6 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\minus_in_circle_off.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tick_in_circle_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tick_in_circle_off.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_normal_rectangle_for_checkbox_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_normal_rectangle_for_checkbox_off.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_3.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_3.xml"
     },
@@ -420,16 +172,8 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_exp_bar_rectangle.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_teacher_item.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\teacher_item.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_hard_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\hard_on.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_find_teacher_item.xml.flat",
@@ -452,24 +196,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\do_logo.png"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_avatar_parts_edge_choice.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\avatar_parts_edge_choice.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_health_bar_rectangle.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_health_bar_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_avatar_parts_first_choice.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\avatar_parts_first_choice.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_exp_bar_rectangle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\exp_bar_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_item_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\drawer_menu_item_off.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_item_divider.xml.flat",
@@ -484,28 +216,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\input_frame_error.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_check.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_check.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_present_character_small.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_present_character_small.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_get_login_password.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_get_login_password.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_gray_right_top_circled_background.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\gray_right_top_circled_background.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_2.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_2.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_good_habit_off.xml.flat",
@@ -524,18 +240,6 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_avatar_part.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_find_teachers.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_find_teachers.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_news_item.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_news_item.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_9.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_9.xml"
     },
@@ -544,40 +248,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\black_white_money.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_subtask.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_subtask.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_white_rect_for_hair.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\white_rect_for_hair.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_habit.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_habit.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_simple_on.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\simple_on.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_small_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_small_button.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_dos.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_dos.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_money.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\money.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_purple_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\purple_circle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bad_habit_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bad_habit_off.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_bottom_menu_tasks_off.png.flat",
@@ -590,10 +266,6 @@
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_market_list.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_market_list.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_do_logo.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\do_logo.png"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_bottom_menu_tasks_on.png.flat",
@@ -612,16 +284,8 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_info_dialogue.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_normal_off.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\normal_off.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_creating_subtask.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_creating_subtask.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_health_bar_circle.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\health_bar_circle.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_do_logo.xml.flat",
@@ -634,10 +298,6 @@
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_card_save_changes.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\card_save_changes.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_study_requests.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_study_requests.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_current_task_rectangle.xml.flat",
@@ -664,10 +324,6 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\bottom_menu_tasks_on.png"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_input_box.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_input_box.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_vk.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\brandico_vk.xml"
     },
@@ -680,44 +336,16 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\easy_on.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_bottom_menu_tasks_off.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\bottom_menu_tasks_off.png"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_menu_rectangle.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bottom_menu_rectangle.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_creating_subtask_rect.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\creating_subtask_rect.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_do_logo.png.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\do_logo.png"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_close.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_close.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_buy_market_item.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_buy_market_item.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_4.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_4.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_adapter_item_button.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\adapter_item_button.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_button_more.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_button_more.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -728,20 +356,8 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bottom_menu_character_on.xml"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_creating_habit.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_creating_habit.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_10.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_10.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_menu_habits_off.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bottom_menu_habits_off.xml"
-    },
-    {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_1.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_1.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_menu_habits_on.xml.flat",
@@ -758,6 +374,402 @@
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_bottom_menu_tasks_off.png.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_plus.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\plus.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_do_logo.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\do_logo.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_orange_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_orange_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tick_in_circle_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tick_in_circle_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_bottom_menu_tasks_on.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\bottom_menu_tasks_on.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_news_item_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\news_item_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_bottom_menu_tasks_off.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_white_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\white_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-ldpi_do_logo.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\do_logo.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_show_teachers.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_show_teachers.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_inventory.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_inventory.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_creating_subtasks_list.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_creating_subtasks_list.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_normal_rectangle_for_checkbox_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_normal_rectangle_for_checkbox_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_check_box.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_check_box.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_save_changes_no_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\save_changes_no_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_big_white_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\big_white_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_facebook.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\brandico_facebook.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_creating_task.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_creating_task.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_inventory_item.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_inventory_item.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_avatar_giving_name_menu.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_avatar_giving_name_menu.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_bottom_menu_tasks_off.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_square_unchecked.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\square_unchecked.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_avatar_parts_choice_menu.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_avatar_parts_choice_menu.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_bottom_menu_tasks_on.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\bottom_menu_tasks_on.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_present_character_big.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_present_character_big.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bottom_menu_character_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bottom_menu_character_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_normal_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\normal_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_frame.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\button_frame.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_button_cap_left.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_button_cap_left.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tmp_square_present_character_small.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tmp_square_present_character_small.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_present_character_big_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\present_character_big_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_item_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\drawer_menu_item_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_health_bar_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\health_bar_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bad_habit_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bad_habit_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_student_assignments.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_student_assignments.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_changing_avatar.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_changing_avatar.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_inventory_list.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_inventory_list.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_bottom_menu_tasks_on.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\bottom_menu_tasks_on.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_news_item_page.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_news_item_page.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_exp_bar_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\exp_bar_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_save_changes_yes_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\save_changes_yes_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_big_rectangle_check_box.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_big_rectangle_check_box.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_ask_question_dialogue.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_ask_question_dialogue.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_right_top_circled_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_right_top_circled_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_creating_subtask_close.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\creating_subtask_close.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_exp_bar_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_exp_bar_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_bottom_menu_tasks_off.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_support_item_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\support_item_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_market_item_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\market_item_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_color_hair_choose_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\color_hair_choose_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_super_design_input.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_super_design_input.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_exp_bar_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_exp_bar_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_normal_rectangle_for_checkbox_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_normal_rectangle_for_checkbox_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_tick_in_circle_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\tick_in_circle_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_teacher_item.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\teacher_item.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_hard_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\hard_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_exp_bar_rectangle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\exp_bar_rectangle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_drawer_menu_item_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\drawer_menu_item_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_check.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_check.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_gray_right_top_circled_background.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\gray_right_top_circled_background.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_2.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_2.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_find_teachers.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_find_teachers.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_news_item.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_news_item.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_subtask.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_subtask.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_simple_on.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\simple_on.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_small_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_small_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_dos.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\fragment_dos.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_money.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\money.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_purple_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\purple_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_bad_habit_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\bad_habit_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_do_logo.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxxhdpi\\do_logo.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_teacher_assignments.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_teacher_assignments.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_normal_off.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\normal_off.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_health_bar_circle.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\health_bar_circle.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_study_requests.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_study_requests.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_input_box.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_input_box.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_bottom_menu_tasks_off.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\bottom_menu_tasks_off.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_do_logo.png.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-xxhdpi\\do_logo.png"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_blue_close.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\blue_close.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_buy_market_item.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_buy_market_item.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_adapter_item_button.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\adapter_item_button.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_small_button_more.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\small_button_more.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_creating_habit.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\activity_creating_habit.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_10.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_10.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_skin_color_rect_1.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\skin_color_rect_1.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_orange_rectangle.xml.flat",

@@ -18,6 +18,7 @@ import com.example.graduationprojectandroid.network.DataService
 class TasksList(
     private var loginFrom: String,
     private var loginTo: String,
+    private var hideAddButton: Boolean = false,
     private var listener: (Task?) -> Unit
 ) : Fragment() {
     lateinit var binding: FragmentTasksListBinding
@@ -38,26 +39,28 @@ class TasksList(
     private fun updateList(){
         val context = this
         DataService.getTasks(loginFrom, loginTo){
-            val habitsListAdapter
-                    = TasksAdapter(convertTasksToParentizedTasks(it))
+            binding.tasksList.layoutManager = LinearLayoutManager(
+                binding.tasksList.context
+            )
+            binding.tasksList.adapter = TasksAdapter(convertTasksToParentizedTasks(it))
             { task ->
                 listener(task)
                 context.updateList()
             }
-
-            binding.tasksList.layoutManager = LinearLayoutManager(
-                binding.tasksList.context
-            )
-            binding.tasksList.adapter = habitsListAdapter
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        addButton.setOnClickListener {
-            listener(null)
+        if (hideAddButton){
+            addButton.visibility = View.GONE
+            addButtonBackground.visibility = View.GONE
+            addButtonPlus.visibility = View.GONE
+        } else {
+            addButton.setOnClickListener {
+                listener(null)
+            }
         }
 
         updateList()
@@ -65,12 +68,14 @@ class TasksList(
 
     private fun convertTasksToParentizedTasks(tasks: ArrayList<Task>)
     : ArrayList<ParentizedTask>{
-        var pTasksList = ArrayList<ParentizedTask>()
+        val pTasksList = ArrayList<ParentizedTask>()
 
         tasks.forEach {
             pTasksList.add(
                 ParentizedTask(
                     it.id,
+                    it.loginFrom,
+                    it.loginTo,
                     it.header,
                     it.text,
                     it.getSubtasks(),
@@ -93,7 +98,8 @@ class TasksList(
     companion object {
 
         @JvmStatic
-        fun newInstance(loginFrom: String, loginTo: String, listener: (Task?) -> Unit) =
-            TasksList(loginFrom, loginTo, listener)
+        fun newInstance(loginFrom: String, loginTo: String,
+                        hideAddButton: Boolean = false, listener: (Task?) -> Unit) =
+            TasksList(loginFrom, loginTo, hideAddButton, listener)
     }
 }

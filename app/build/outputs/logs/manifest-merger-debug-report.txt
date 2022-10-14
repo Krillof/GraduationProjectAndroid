@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
 MERGED from [androidx.databinding:databinding-runtime:7.0.3] C:\Users\Артём\.gradle\caches\transforms-3\4f2cf73d71959599adc4f2c89121b641\transformed\databinding-runtime-7.0.3\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.databinding:viewbinding:7.1.2] C:\Users\Артём\.gradle\caches\transforms-3\0ec85a1051d97f26d277f32b0649ba60\transformed\jetified-viewbinding-7.1.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.5] C:\Users\Артём\.gradle\caches\transforms-3\e4347bd73900c8b6581a9e4454f19547\transformed\navigation-fragment-ktx-2.3.5\AndroidManifest.xml:17:1-24:12
@@ -63,22 +63,22 @@ MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\User
 MERGED from [androidx.print:print:1.0.0] C:\Users\Артём\.gradle\caches\transforms-3\bf11d5f709f8b4982d65ae78eb7a0a6a\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Артём\.gradle\caches\transforms-3\69a4388af68bad3cfd5a877ec530d9c8\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\Артём\.gradle\caches\transforms-3\4f1a47d5479d4f3d8d4d4695b638601c\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
-INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
 	package
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:4:5-51
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-56:12
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:1-62:12
 		INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:2:11-69
@@ -87,7 +87,7 @@ ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManife
 	android:name
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:6:22-64
 application
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:8:5-54:19
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:8:5-60:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Артём\.gradle\caches\transforms-3\f99eb1d7d0e62f22cdb2be9437700ba7\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\Артём\.gradle\caches\transforms-3\f99eb1d7d0e62f22cdb2be9437700ba7\transformed\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.2] C:\Users\Артём\.gradle\caches\transforms-3\56090da43a17dbd06d2d793226e5e00e\transformed\constraintlayout-2.1.2\AndroidManifest.xml:9:5-20
@@ -118,74 +118,86 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\А
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:17:9-44
 	android:name
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:9:9-28
-activity#com.example.graduationprojectandroid.activities.NewsItemPage
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:9-23:81
-	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:13-49
+activity#com.example.graduationprojectandroid.activities.StudentAssignments
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:9-21:40
 	android:exported
 		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:13-37
+	android:name
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-58
+activity#com.example.graduationprojectandroid.activities.TeacherAssignments
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:9-24:40
+	android:exported
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:13-37
+	android:name
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-58
+activity#com.example.graduationprojectandroid.activities.NewsItemPage
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:9-29:81
+	android:screenOrientation
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:13-49
+	android:exported
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:13-37
 	android:theme
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-78
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-78
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-52
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-52
 activity#com.example.graduationprojectandroid.activities.ChangingAvatar
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:9-27:52
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:9-33:52
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:13-54
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-54
 activity#com.example.graduationprojectandroid.activities.CreatingTask
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:9-31:52
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:9-37:52
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-52
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-52
 activity#com.example.graduationprojectandroid.activities.CreatingHabit
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:9-35:52
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:9-41:52
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:41:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:13-53
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-53
 activity#com.example.graduationprojectandroid.activities.MainPage
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:9-39:52
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:9-45:52
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:45:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:44:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-48
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:43:13-48
 activity#com.example.graduationprojectandroid.activities.LoginActivity
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:9-43:52
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:46:9-49:52
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:43:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:48:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:41:13-53
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:47:13-53
 activity#com.example.graduationprojectandroid.activities.MainActivity
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:44:9-53:20
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:50:9-59:20
 	android:screenOrientation
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:47:13-49
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:53:13-49
 	android:exported
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:46:13-36
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:52:13-36
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:45:13-52
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:13-52
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:48:13-52:29
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:54:13-58:29
 action#android.intent.action.MAIN
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:17-69
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:17-69
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:25-66
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:17-77
+ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:17-77
 	android:name
-		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:27-74
+		ADDED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:27-74
 uses-sdk
 INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml

@@ -20,26 +20,26 @@ open class Task(
 
     protected var done: Boolean = false
 
-    public fun setParentizedSubtasksAsSubtasks(st: MutableList<ParentizedSubtask>){
+    fun setParentizedSubtasksAsSubtasks(st: MutableList<ParentizedSubtask>){
         st.forEach {
             subtasks.add(ParentizedSubtask(it.done, it.text))
         }
     }
 
-    public open fun getSubtasks() : MutableList<Subtask>{
+    fun getSubtasks() : MutableList<Subtask>{
         return subtasks
     }
 
-    public fun getSubtasksAsParentizedSubtasks() : MutableList<ParentizedSubtask>{
+    fun getSubtasksAsParentizedSubtasks() : MutableList<ParentizedSubtask>{
         var parentizedSubtasks: MutableList<ParentizedSubtask>
-                = MutableList(0, { ParentizedSubtask() })
+                = MutableList(0) { ParentizedSubtask() }
         subtasks.forEach {
             parentizedSubtasks.add(ParentizedSubtask(it.done, it.text))
         }
         return parentizedSubtasks
     }
 
-    public open fun setFullDone(value: Boolean){
+    open fun setFullDone(value: Boolean){
         if (subtasks.size != 0)
             for (el in subtasks){
                 el.done = value
@@ -48,11 +48,11 @@ open class Task(
             done = value
     }
 
-    public open fun setSubtaskDone(index: Int, value: Boolean){
+    open fun setSubtaskDone(index: Int, value: Boolean){
         subtasks[index].done = value
     }
 
-    public open fun isDone(): Boolean{
+    open fun isDone(): Boolean{
         if (subtasks.size != 0) {
             var check_done = true
             for (el in subtasks) {
@@ -64,11 +64,11 @@ open class Task(
         }
     }
 
-    public open fun isSubtaskDone(index: Int): Boolean{
+    open fun isSubtaskDone(index: Int): Boolean{
         return subtasks[index].done
     }
 
-    public open fun howManySubtasksDone(): Int{
+    open fun howManySubtasksDone(): Int{
         var amount: Int = 0
         for (el in subtasks) {
             if (el.done)

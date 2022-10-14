@@ -24,6 +24,7 @@ class SubtaskAdapter(
                 st.getParent().notifyDataSetChanged()
 
                 this_adapter.notifyDataSetChanged()
+
             }
 
             smallCheckbox.setBackgroundResource(

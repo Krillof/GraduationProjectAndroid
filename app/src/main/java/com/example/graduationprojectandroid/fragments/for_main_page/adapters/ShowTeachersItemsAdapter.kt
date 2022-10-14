@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.activities.TeacherAssignments
 import com.example.graduationprojectandroid.databinding.SimpleLayoutShowTeacherItemBinding
 import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.network.DataService
@@ -16,6 +17,7 @@ import com.example.graduationprojectandroid.network.DataService
 class ShowTeachersItemsAdapter (
     private var fragmentManager: FragmentManager,
     private var items_arr: ArrayList<TeacherItem>,
+    private var teacherAssignmentsListener: (TeacherItem)->Unit,
     private var updateListener: ()->Unit
 ) : RecyclerView.Adapter<ShowTeachersItemsAdapter.ItemView>()
 {
@@ -24,13 +26,13 @@ class ShowTeachersItemsAdapter (
         val binding = SimpleLayoutShowTeacherItemBinding.bind(itemView)
 
         @SuppressLint("SetTextI18n")
-        fun bind(fragmentManager: FragmentManager, item: TeacherItem, updateListener: ()->Unit)
+        fun bind(fragmentManager: FragmentManager, item: TeacherItem,
+                 teacherAssignmentsListener: (TeacherItem)->Unit, updateListener: ()->Unit)
                 = with(binding) {
             DataService.setOtherUserFacePicture(item.login, picture)
             header.text = item.login
             buttonBackgroundAssignments.setOnClickListener {
-                //TODO: open page with assignments
-                
+                teacherAssignmentsListener(item)
             }
             buttonBackgroundAbandon.setOnClickListener {
                 var dialog: AskQuestionDialogue? = null
@@ -61,6 +63,8 @@ class ShowTeachersItemsAdapter (
     override fun getItemCount(): Int = items_arr.size
 
     override fun onBindViewHolder(holder: ItemView, position: Int) {
-        holder.bind(fragmentManager, items_arr[position], updateListener)
+        holder.bind(
+            fragmentManager, items_arr[position], teacherAssignmentsListener, updateListener
+        )
     }
 }

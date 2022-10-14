@@ -1,5 +1,7 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+import java.io.Serializable
+
 class TeacherItem(
     val login: String
-) {} // picture will get by login
+) : Serializable {} // picture will get by login

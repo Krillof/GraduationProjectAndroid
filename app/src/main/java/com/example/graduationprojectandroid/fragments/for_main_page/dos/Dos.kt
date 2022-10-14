@@ -1,6 +1,7 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.dos
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -46,15 +47,11 @@ class Dos(
         val habits_menu_choice = view.findViewById<View>(R.id.habits_menu_choice_click_rectangle)
         val tasks_menu_choice = view.findViewById<View>(R.id.tasks_menu_choice_click_rectangle)
 
-
-
         val context = this
 
         DataService.getUserData() {userData ->
 
             habits_menu_choice.setOnClickListener {
-
-                //TODO: Make getting health and exp. by internet!
 
                 context.turnPageOnBottomMenuTo(Pages.habits, view)
 
@@ -111,6 +108,8 @@ class Dos(
                 }
 
             }
+
+            habits_menu_choice.performClick()
         }
 
     }

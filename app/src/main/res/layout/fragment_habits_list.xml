@@ -11,27 +11,30 @@
         android:id="@+id/background_rectangle"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="24dp"
         android:background="@drawable/lists_rectangle"
         />
 
     <View
+        android:id="@+id/add_button_background"
+
         android:layout_width="24dp"
         android:layout_height="24dp"
 
         android:layout_gravity="end"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
 
         android:background="@drawable/small_orange_circle"
         />
 
     <View
+        android:id="@+id/add_button_plus"
+
         android:layout_width="16dp"
         android:layout_height="16dp"
 
         android:layout_gravity="end"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="19.98dp"
 
         android:background="@drawable/plus"
@@ -43,7 +46,7 @@
         android:layout_height="50dp"
 
         android:layout_gravity="end"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="10dp"
         />
 
@@ -55,7 +58,6 @@
         android:layout_height="wrap_content"
 
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="24dp"
 
         android:paddingBottom="500dp"
         android:clipToPadding="false"

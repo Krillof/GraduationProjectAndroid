@@ -77,8 +77,8 @@ class CreatingHabit : AppCompatActivity() {
 
 
         val gotten_habit: Habit? = intent.extras?.get(ARG_HABIT) as Habit?
-        val loginFrom: String? = intent.extras?.get(CreatingTask.ARG_LOGIN_FROM) as String?
-        val loginTo: String? = intent.extras?.get(CreatingTask.ARG_LOGIN_TO) as String?
+        val loginFrom: String? = intent.extras?.get(ARG_LOGIN_FROM) as String?
+        val loginTo: String? = intent.extras?.get(ARG_LOGIN_TO) as String?
         val isNew = (gotten_habit == null)
 
         DataService.getNewIdForHabit {

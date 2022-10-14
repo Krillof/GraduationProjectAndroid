@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
+import com.example.graduationprojectandroid.activities.StudentAssignments
 import com.example.graduationprojectandroid.databinding.SimpleLayoutShowStudentsItemBinding
 import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.network.DataService
@@ -15,6 +16,7 @@ import com.example.graduationprojectandroid.network.DataService
 class ShowStudentsItemsAdapter(
     private var fragmentManager: FragmentManager,
     private var items_arr: ArrayList<StudentItem>,
+    private var studentAssignmentsListener: (StudentItem)->Unit,
     private var updateListener: ()->Unit
 ) : RecyclerView.Adapter<ShowStudentsItemsAdapter.ItemView>()
 {
@@ -23,12 +25,13 @@ class ShowStudentsItemsAdapter(
         val binding = SimpleLayoutShowStudentsItemBinding.bind(itemView)
 
         @SuppressLint("SetTextI18n")
-        fun bind(fragmentManager: FragmentManager, item: StudentItem, updateListener: ()->Unit)
+        fun bind(fragmentManager: FragmentManager, item: StudentItem,
+                 studentAssignmentsListener: (StudentItem)->Unit, updateListener: ()->Unit)
                 = with(binding) {
             DataService.setOtherUserFacePicture(item.login, picture)
             header.text = item.login
             buttonBackgroundAssignments.setOnClickListener {
-                //TODO: page with assignments for this student
+                studentAssignmentsListener(item)
             }
             buttonBackgroundAbandon.setOnClickListener{
                 var dialog: AskQuestionDialogue? = null
@@ -60,6 +63,8 @@ class ShowStudentsItemsAdapter(
     override fun getItemCount(): Int = items_arr.size
 
     override fun onBindViewHolder(holder: ItemView, position: Int) {
-        holder.bind(fragmentManager, items_arr[position], updateListener)
+        holder.bind(
+            fragmentManager, items_arr[position], studentAssignmentsListener, updateListener
+        )
     }
 }

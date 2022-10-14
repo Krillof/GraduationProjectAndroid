@@ -1,5 +1,6 @@
 package com.example.graduationprojectandroid.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,28 +8,30 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.Header
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.StudentItem
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.HabitsList
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.TasksList
 import com.example.graduationprojectandroid.network.DataService
 
-class TeacherAssignments : AppCompatActivity() {
-
+class StudentAssignments : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_teacher_assignments)
+        setContentView(R.layout.activity_student_assignments)
 
-        val teacher: TeacherItem = (intent.extras?.get(ARG_TEACHER) as TeacherItem?)!!
+        val student: StudentItem = (
+                intent.extras?.get(ARG_STUDENT) as StudentItem?
+                )!!
 
         val showTeacherItem = findViewById<View>(R.id.show_teacher_item)
         val loginHeader = showTeacherItem.findViewById<TextView>(R.id.header)
         val picture = showTeacherItem.findViewById<ImageView>(R.id.picture)
-        DataService.setOtherUserFacePicture(teacher.login, picture)
-        loginHeader.text = teacher.login
+        DataService.setOtherUserFacePicture(student.login, picture)
+        loginHeader.text = student.login
 
         val colorRectangle = findViewById<View>(R.id.color_rectangle)
 
-        val header: Header = Header.newInstance(getString(R.string.your_assignments_from))
+        val header: Header = Header.newInstance(getString(R.string.your_assignments_for))
         val choiceHabitsBackground = findViewById<View>(R.id.choice_1)
         val choiceTasksBackground = findViewById<View>(R.id.choice_2)
         val choiceHabitsClickArea = findViewById<View>(R.id.choice_click_area_1)
@@ -49,9 +52,15 @@ class TeacherAssignments : AppCompatActivity() {
 
             DataService.getUserData { user ->
                 val habitsList: HabitsList = HabitsList.newInstance(
-                    teacher.login, user.login, true
-                ){
-                    // nothing, because habit is not yours
+                    user.login, student.login
+                ) { habit ->
+
+                    val intent = Intent(this, CreatingHabit::class.java)
+                    intent.putExtra(CreatingHabit.ARG_HABIT, habit)
+                    intent.putExtra(CreatingHabit.ARG_LOGIN_FROM, user.login)
+                    intent.putExtra(CreatingHabit.ARG_LOGIN_TO, student.login)
+                    startActivity(intent)
+
                 }
 
                 supportFragmentManager.beginTransaction()
@@ -68,9 +77,15 @@ class TeacherAssignments : AppCompatActivity() {
 
             DataService.getUserData { user ->
                 val tasksList: TasksList = TasksList.newInstance(
-                    teacher.login, user.login, true
-                ){
-                    // nothing, because task is not yours
+                    user.login, student.login
+                ) { task ->
+
+                    val intent = Intent(this, CreatingTask::class.java)
+                    intent.putExtra(CreatingTask.ARG_TASK, task)
+                    intent.putExtra(CreatingTask.ARG_LOGIN_FROM, user.login)
+                    intent.putExtra(CreatingTask.ARG_LOGIN_TO, student.login)
+                    startActivity(intent)
+
                 }
 
                 supportFragmentManager.beginTransaction()
@@ -81,10 +96,9 @@ class TeacherAssignments : AppCompatActivity() {
         }
 
         choiceHabitsClickArea.performClick()
-
     }
 
     companion object {
-        const val ARG_TEACHER = "teacher"
+        const val ARG_STUDENT = "student"
     }
 }

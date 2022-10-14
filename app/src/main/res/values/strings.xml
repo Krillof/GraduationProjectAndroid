@@ -68,6 +68,8 @@
     <string name="assignments"> Поручения </string>
     <string name="request"> Попроситься </string>
     <string name="accept"> Принять </string>
+    <string name="habits"> Привычки </string>
+    <string name="tasks"> Задачи </string>
 
     <string name="are_you_sure_to_abandon_teacher">
         Вы уверены, что хотите отказаться от этого учителя?
@@ -81,6 +83,8 @@
     </string>
 
     <string name="your_teachers"> Ваши учителя </string>
+    <string name="your_assignments_from"> Ваши поручения от </string>
+    <string name="your_assignments_for"> Ваши поручения для </string>
 
     <string name="ok"> ОК </string>
     <string name="title_activity_one_news_page">OneNewsPage</string>

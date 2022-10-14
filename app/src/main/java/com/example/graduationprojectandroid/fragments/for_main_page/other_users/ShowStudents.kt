@@ -12,6 +12,7 @@ import com.example.graduationprojectandroid.databinding.FragmentShowStudentsBind
 import com.example.graduationprojectandroid.fragments.Header
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.ShowStudentsItemsAdapter
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.ShowTeachersItemsAdapter
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.StudentItem
 import com.example.graduationprojectandroid.network.DataService
 
 /**
@@ -19,7 +20,9 @@ import com.example.graduationprojectandroid.network.DataService
  * Use the [ShowStudents.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ShowStudents : Fragment() {
+class ShowStudents(
+    private var studentAssignmentsListener: (StudentItem)->Unit
+) : Fragment() {
     lateinit var binding: FragmentShowStudentsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +45,7 @@ class ShowStudents : Fragment() {
                 binding.studentsList.context
             )
             binding.studentsList.adapter = ShowStudentsItemsAdapter(
-                requireFragmentManager(), it
+                requireFragmentManager(), it, studentAssignmentsListener
             ){
                 context.getUserStudents()
             }
@@ -63,7 +66,7 @@ class ShowStudents : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() =
-            ShowStudents()
+        fun newInstance(studentAssignmentsListener: (StudentItem)->Unit) =
+            ShowStudents(studentAssignmentsListener)
     }
 }

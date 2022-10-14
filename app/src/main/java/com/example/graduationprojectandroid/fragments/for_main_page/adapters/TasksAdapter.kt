@@ -1,5 +1,6 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class TasksAdapter(
             subtasksList.layoutManager = LinearLayoutManager(subtasksList.context)
         }
 
+        @SuppressLint("SetTextI18n")
         fun bind(task: ParentizedTask, this_adapter: TasksAdapter, listener: (Task?) -> Unit)
         = with(binding){
 
@@ -39,18 +41,20 @@ class TasksAdapter(
             text.text = task.text
 
             text.setOnClickListener {
-                var value = Task(
+                val value = Task(
                     task.id,
+                    task.loginFrom,
+                    task.loginTo,
                     task.header,
                     task.text,
-                    MutableList(0, {Subtask()}),
+                    MutableList(0) { Subtask() },
                     task.isEveryday,
                     task.isEveryweek,
                     task.isEverymonth,
                     task.difficulty
                 )
                 value.setParentizedSubtasksAsSubtasks(
-                    task.getSubtasks() as MutableList<ParentizedSubtask>
+                    task.getParentizedSubtasks() //TODO: Проверь, я мог тут что-то сломать
                 )
                 listener(value)
             }

@@ -5,6 +5,8 @@ import java.io.Serializable
 
 class ParentizedTask(
     id: Int,
+    loginFrom: String,
+    loginTo: String,
     header: String,
     text: String,
     subtasks: MutableList<Subtask>,
@@ -14,9 +16,11 @@ class ParentizedTask(
     isEveryweek: Boolean = false,
     isEverymonth: Boolean = false,
     difficulty: Difficulty = Difficulty.normal
-) : Serializable, Task(id, header, text, subtasks, isEveryday, isEveryweek, isEverymonth, difficulty)
+) : Serializable, Task(
+    id, loginFrom, loginTo, header, text, subtasks, isEveryday, isEveryweek, isEverymonth, difficulty
+)
 {
-    private var parentizedSubtasksList: MutableList<ParentizedSubtask> = MutableList(0, {ParentizedSubtask()})
+    private var parentizedSubtasksList: MutableList<ParentizedSubtask> = MutableList(0) { ParentizedSubtask() }
 
     private var show_subtasks_current: Int = View.GONE
 
@@ -28,27 +32,27 @@ class ParentizedTask(
 
     private var adapter = SubtaskAdapter(parentizedSubtasksList)
 
-    public override fun getSubtasks() : MutableList<Subtask> {
-        return parentizedSubtasksList as MutableList<Subtask>
-    }
-
-    public fun setParentAdapterForSubtasks(value: TasksAdapter) {
+    fun setParentAdapterForSubtasks(value: TasksAdapter) {
         for (el in parentizedSubtasksList) {
             el.setParent(value)
         }
     }
 
-    public fun getAdapter(): SubtaskAdapter{
+    fun getParentizedSubtasks() : MutableList<ParentizedSubtask>{
+        return parentizedSubtasksList
+    }
+
+    fun getAdapter(): SubtaskAdapter{
         return adapter
     }
 
-    public fun getCurrentShowSubtasks(): Int = show_subtasks_current
+    fun getCurrentShowSubtasks(): Int = show_subtasks_current
 
-    public fun setCurrentShowSubtasks(value: Int){
+    fun setCurrentShowSubtasks(value: Int){
         show_subtasks_current = value
     }
 
-    public override fun setFullDone(value: Boolean){
+    override fun setFullDone(value: Boolean){
         if (parentizedSubtasksList.size != 0)
             for (el in parentizedSubtasksList) {
                 el.done = value
@@ -57,11 +61,11 @@ class ParentizedTask(
             done = value
     }
 
-    public override fun setSubtaskDone(index: Int, value: Boolean){
+    override fun setSubtaskDone(index: Int, value: Boolean){
         parentizedSubtasksList[index].done = value
     }
 
-    public override fun isDone(): Boolean{
+    override fun isDone(): Boolean{
         if (parentizedSubtasksList.size != 0) {
             var check_done = true
             for (el in parentizedSubtasksList) {
@@ -73,11 +77,11 @@ class ParentizedTask(
         }
     }
 
-    public override fun isSubtaskDone(index: Int): Boolean{
+    override fun isSubtaskDone(index: Int): Boolean{
         return parentizedSubtasksList[index].done
     }
 
-    public override fun howManySubtasksDone(): Int{
+    override fun howManySubtasksDone(): Int{
         var amount: Int = 0
         for (el in parentizedSubtasksList) {
             if (el.done)

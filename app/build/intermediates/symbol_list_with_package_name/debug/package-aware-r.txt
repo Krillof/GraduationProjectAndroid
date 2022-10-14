@@ -1810,7 +1810,7 @@ drawable abc_vector_test
 drawable adapter_item_button
 drawable avatar_parts_background_choice
 drawable avatar_parts_choosen_part
-drawable avatar_parts_first_choice
+drawable avatar_parts_edge_choice
 drawable avatar_parts_middle_choice
 drawable avd_hide_password
 drawable avd_show_password
@@ -1822,6 +1822,7 @@ drawable blue_close
 drawable blue_input_box
 drawable blue_normal_rectangle_for_checkbox_off
 drawable blue_normal_rectangle_for_checkbox_on
+drawable blue_rectangle
 drawable blue_right_top_circled_background
 drawable bottom_menu_character_off
 drawable bottom_menu_character_on
@@ -2049,6 +2050,8 @@ id actions
 id activity_chooser_view_content
 id add
 id add_button
+id add_button_background
+id add_button_plus
 id alertTitle
 id aligned
 id all
@@ -2061,6 +2064,7 @@ id antiClockwise
 id anticipate
 id arc
 id asConfigured
+id assignments_list
 id async
 id auto
 id autoComplete
@@ -2129,6 +2133,8 @@ id chip_group
 id choice_1
 id choice_2
 id choice_3
+id choice_click_area_1
+id choice_click_area_2
 id choice_text_1
 id choice_text_2
 id choice_text_3
@@ -2141,6 +2147,7 @@ id clockwise
 id close_button
 id closest
 id collapseActionView
+id color_rectangle
 id confirm_button
 id constraint
 id container
@@ -2350,6 +2357,7 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
+id menu_background
 id message
 id middle
 id mini
@@ -2418,6 +2426,7 @@ id outline
 id outward
 id overshoot
 id packed
+id page_header
 id pants_rectangle
 id parallax
 id parent
@@ -2489,6 +2498,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id show_teacher_item
 id simple_difficulty_radiobutton
 id sin
 id skipCollapsed
@@ -2697,6 +2707,8 @@ layout activity_login
 layout activity_main
 layout activity_main_page
 layout activity_news_item_page
+layout activity_student_assignments
+layout activity_teacher_assignments
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2905,6 +2917,7 @@ string find_by_login
 string find_teachers
 string good_habit
 string habit_name
+string habits
 string hair
 string hard
 string health
@@ -3011,10 +3024,13 @@ string show_teachers
 string simple
 string status_bar_notification_info_overflow
 string study_requests
+string tasks
 string text_login_2
 string title_activity_one_news_page
 string wear
 string yes
+string your_assignments_for
+string your_assignments_from
 string your_teachers
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
