@@ -6,11 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentCreatingSubtasksListBinding
-import com.example.graduationprojectandroid.databinding.FragmentHabitsListBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.CreatingSubtaskAdapter
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
+import com.example.graduationprojectandroid.data.Items.Task
 
 /**
  * A simple [Fragment] subclass.

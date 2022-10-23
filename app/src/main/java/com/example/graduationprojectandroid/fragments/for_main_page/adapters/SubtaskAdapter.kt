@@ -1,12 +1,12 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutSubtaskBinding
+import com.example.graduationprojectandroid.data.Items.ParentizedSubtask
 
 class SubtaskAdapter(
     private var subtasks_arr: MutableList<ParentizedSubtask>

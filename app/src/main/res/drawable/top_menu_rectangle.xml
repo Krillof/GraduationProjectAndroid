@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
+    <inventoryItem
         android:gravity="top"
         android:height="40dp"
         android:viewportHeight="40"
@@ -14,5 +14,5 @@
 
 
         </shape>
-    </item>
+    </inventoryItem>
 </layer-list>

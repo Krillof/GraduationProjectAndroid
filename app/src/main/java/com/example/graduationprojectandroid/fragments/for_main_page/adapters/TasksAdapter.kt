@@ -1,7 +1,6 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutTaskBinding
+import com.example.graduationprojectandroid.data.Items.ParentizedTask
+import com.example.graduationprojectandroid.data.Items.Subtask
+import com.example.graduationprojectandroid.data.Items.Task
+import com.example.graduationprojectandroid.network.DataService
 
 class TasksAdapter(
     private var tasks_arr: ArrayList<ParentizedTask>,
@@ -72,6 +75,8 @@ class TasksAdapter(
 
             doneCheckbox.setOnClickListener {
                 task.setFullDone(! isTaskDone)
+
+                DataService.setTaskState(task.id, isTaskDone)
 
                 this_adapter.notifyDataSetChanged()
             }

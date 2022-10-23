@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        DataService.isLogined(this){
+        DataService.isLogined(){
             if (it){
                 startActivity(Intent(this, MainPage::class.java))
             } else {

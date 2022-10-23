@@ -7,7 +7,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutCreatingSubtaskBinding
-
+import com.example.graduationprojectandroid.data.Items.Subtask
 
 
 class CreatingSubtaskAdapter(

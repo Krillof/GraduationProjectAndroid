@@ -11,7 +11,7 @@ import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.FragmentShowTeachersBinding
 import com.example.graduationprojectandroid.fragments.Header
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.ShowTeachersItemsAdapter
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
+import com.example.graduationprojectandroid.data.Items.TeacherItem
 import com.example.graduationprojectandroid.network.DataService
 
 

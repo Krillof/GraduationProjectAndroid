@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutStudyRequestsBinding
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.data.Items.StudentItem
 
 class StudyRequestsAdapter (
     private var items_arr: ArrayList<StudentItem>,

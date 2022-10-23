@@ -56,9 +56,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun tryGetIn(login: String, password: String, isRegistering: Boolean){
         if (isRegistering){
-            val newLoginAnswer = DataService.checkNewLogin(login){
+            val newLoginAnswer = DataService.checkLoginUniquness(login){
                 if (it == ""){
-                    val passwordAnswer = DataService.checkPassword(password){
+                    val passwordAnswer = DataService.checkIsPasswordOK(password){
                         if (it == ""){
                             // go to avatar creating
                             nextActivity(login, password, true)
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
         } else {
-            val tryLogin = DataService.tryLogin(login){
+            val tryLogin = DataService.checkIsLoginExists(login){
                 if (it == ""){
                     val tryPassword = DataService.tryEnter(login, password){
                         if (it == ""){

@@ -1,6 +1,8 @@
-package com.example.graduationprojectandroid.fragments.for_main_page.adapters
+package com.example.graduationprojectandroid.data.Items
 
 import android.view.View
+import com.example.graduationprojectandroid.data.States.Difficulty
+import com.example.graduationprojectandroid.data.States.HabitDoneStates
 import java.io.Serializable
 
 class Habit(
@@ -9,7 +11,7 @@ class Habit(
     val loginTo: String,
     var header: String,
     var text: String,
-    var done: Int,// use with HabitDoneStates
+    var done: HabitDoneStates,
     val visibility: Int = View.VISIBLE
     ) : Serializable{
 

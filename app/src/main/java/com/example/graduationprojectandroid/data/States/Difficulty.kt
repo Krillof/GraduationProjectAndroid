@@ -1,4 +1,4 @@
-package com.example.graduationprojectandroid.fragments.for_main_page.adapters
+package com.example.graduationprojectandroid.data.States
 
 enum class Difficulty(var type: Int){
     simple(0),

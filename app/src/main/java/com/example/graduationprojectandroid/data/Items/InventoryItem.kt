@@ -1,9 +1,8 @@
-package com.example.graduationprojectandroid.fragments.for_main_page.adapters
+package com.example.graduationprojectandroid.data.Items
 
-import android.graphics.Bitmap
 import android.view.View
 
-class Item(
+class InventoryItem(
      val id: Int,
      val picture_id: Int,
      val money: Int,

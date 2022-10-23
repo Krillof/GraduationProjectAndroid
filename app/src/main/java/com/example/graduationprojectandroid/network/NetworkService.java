@@ -8,7 +8,12 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts;
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Item;
+import com.example.graduationprojectandroid.data.Items.InventoryItem;
+import com.example.graduationprojectandroid.network.endpoints.APIs.HabitsAPI;
+import com.example.graduationprojectandroid.network.endpoints.APIs.ItemsAPI;
+import com.example.graduationprojectandroid.network.endpoints.APIs.NewsAPI;
+import com.example.graduationprojectandroid.network.endpoints.APIs.TasksAPI;
+import com.example.graduationprojectandroid.network.endpoints.APIs.UserAPI;
 import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
 
 import java.io.InputStream;
@@ -32,7 +37,7 @@ public class NetworkService {
 
     //Retrofit
     private static final String BASE_URL = "https://graduationprojectdo.azurewebsites.net/";
-    private Retrofit mRetrofit;
+    private final Retrofit mRetrofit;
 
     private NetworkService() {
         mRetrofit = new Retrofit.Builder()
@@ -41,45 +46,37 @@ public class NetworkService {
                 .build();
     }
 
-    //      endpoints
+    //      APIs
 
-    public JSONPlaceHolderApi getJSONApi() {
-        return mRetrofit.create(JSONPlaceHolderApi.class);
+    //public JSONPlaceHolderApi getJSONApi() {
+    //    return mRetrofit.create(JSONPlaceHolderApi.class);
+    //}
+
+    public UserAPI getUserAPI(){
+        return mRetrofit.create(UserAPI.class);
     }
 
-    //      -------endpoints
+    public HabitsAPI getHabitsAPI(){
+        return mRetrofit.create(HabitsAPI.class);
+    }
+
+    public TasksAPI getTasksAPI(){
+        return mRetrofit.create(TasksAPI.class);
+    }
+
+    public ItemsAPI getItemsAPI(){
+        return mRetrofit.create(ItemsAPI.class);
+    }
+
+    public NewsAPI getNewsAPI(){
+        return mRetrofit.create(NewsAPI.class);
+    }
+
+    //      -------APIs
 
     //--------Retrofit
 
-    //Classes for lambda functions
 
-    public interface AwaiterForRegisterUser{
-        void start(String answer);
-    }
-
-    public interface AwaiterForMarketItems{
-        void start(ArrayList<Item> items);
-    }
-
-    public interface AwaiterForInventoryItems{
-        void start(ArrayList<Item> items);
-    }
-
-    public interface AwaiterForAmountOfOneAvatarPartType{
-        void start(int amount);
-    }
-
-    public interface AwaiterForGetUserData{
-        void start(UserData userData);
-    }
-
-    public interface AwaiterForChangedAvatar{
-        void start();
-    }
-
-
-
-    //--------Classes for lambda functions
 
     //getting picture
 
@@ -124,8 +121,9 @@ public class NetworkService {
 
     //---------getting picture
 
-    //@GET(BASE_URL + )
-    //private Call<List<MarketItem>> itemsForMarket();
+
+    //--------------------
+
 
     public void registerUser(String login, String password, AwaiterForRegisterUser awaiter){
         //TODO: make it
@@ -134,85 +132,85 @@ public class NetworkService {
 
 
     public void getItemsForMarket(AwaiterForMarketItems awaiter){
-        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
 
         //TODO: Get from server
 
-        items.add(new Item(1,1, 19, 10, 15, View.VISIBLE));
-        items.add(new Item(2,1, 21, 3, 5, View.VISIBLE));
-        items.add(new Item(3,1, 128));
-        items.add(new Item(1,1, 215));
-        items.add(new Item(2,1,15));
-        items.add(new Item(3,1,125));
-        items.add(new Item(1,1,145));
-        items.add(new Item(2,1,155));
-        items.add(new Item(3,1,165));
-        items.add(new Item(1,1,175));
-        items.add(new Item(2,1,185));
-        items.add(new Item(3,1,195));
-        items.add(new Item(1,1,11655));
-        items.add(new Item(2,1,1345));
-        items.add(new Item(3,1,135));
-        items.add(new Item(1,1,165));
-        items.add(new Item(1,1, 19, 10, 15, View.VISIBLE));
-        items.add(new Item(2,1, 21, 3, 5, View.VISIBLE));
-        items.add(new Item(3,1, 128));
-        items.add(new Item(1,1, 215));
-        items.add(new Item(2,1,15));
-        items.add(new Item(3,1,125));
-        items.add(new Item(1,1,145));
-        items.add(new Item(2,1,155));
-        items.add(new Item(3,1,165));
-        items.add(new Item(1,1,175));
-        items.add(new Item(2,1,185));
-        items.add(new Item(3,1,195));
-        items.add(new Item(1,1,11655));
-        items.add(new Item(2,1,1345));
-        items.add(new Item(3,1,135));
-        items.add(new Item(1,1,165));
+        inventoryItems.add(new InventoryItem(1,1, 19, 10, 15, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(2,1, 21, 3, 5, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(3,1, 128));
+        inventoryItems.add(new InventoryItem(1,1, 215));
+        inventoryItems.add(new InventoryItem(2,1,15));
+        inventoryItems.add(new InventoryItem(3,1,125));
+        inventoryItems.add(new InventoryItem(1,1,145));
+        inventoryItems.add(new InventoryItem(2,1,155));
+        inventoryItems.add(new InventoryItem(3,1,165));
+        inventoryItems.add(new InventoryItem(1,1,175));
+        inventoryItems.add(new InventoryItem(2,1,185));
+        inventoryItems.add(new InventoryItem(3,1,195));
+        inventoryItems.add(new InventoryItem(1,1,11655));
+        inventoryItems.add(new InventoryItem(2,1,1345));
+        inventoryItems.add(new InventoryItem(3,1,135));
+        inventoryItems.add(new InventoryItem(1,1,165));
+        inventoryItems.add(new InventoryItem(1,1, 19, 10, 15, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(2,1, 21, 3, 5, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(3,1, 128));
+        inventoryItems.add(new InventoryItem(1,1, 215));
+        inventoryItems.add(new InventoryItem(2,1,15));
+        inventoryItems.add(new InventoryItem(3,1,125));
+        inventoryItems.add(new InventoryItem(1,1,145));
+        inventoryItems.add(new InventoryItem(2,1,155));
+        inventoryItems.add(new InventoryItem(3,1,165));
+        inventoryItems.add(new InventoryItem(1,1,175));
+        inventoryItems.add(new InventoryItem(2,1,185));
+        inventoryItems.add(new InventoryItem(3,1,195));
+        inventoryItems.add(new InventoryItem(1,1,11655));
+        inventoryItems.add(new InventoryItem(2,1,1345));
+        inventoryItems.add(new InventoryItem(3,1,135));
+        inventoryItems.add(new InventoryItem(1,1,165));
 
-        awaiter.start(items);
+        awaiter.start(inventoryItems);
     }
 
     public void getItemsForInventory(AwaiterForInventoryItems awaiter){
-        ArrayList<Item> items = new ArrayList<>();
+        ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
 
         //TODO: Get from server
 
-        items.add(new Item(1, 1, 19, 10, 15, View.VISIBLE));
-        items.add(new Item(2, 1, 21, 3, 5, View.VISIBLE));
-        items.add(new Item(3,1,  128));
-        items.add(new Item(1,1,  215));
-        items.add(new Item(2,1, 15));
-        items.add(new Item(3,1, 125));
-        items.add(new Item(1,1, 145));
-        items.add(new Item(2,1, 155));
-        items.add(new Item(3,1, 165));
-        items.add(new Item(1,1, 175));
-        items.add(new Item(2,1, 185));
-        items.add(new Item(3,1, 195));
-        items.add(new Item(1,1, 11655));
-        items.add(new Item(2,1, 1345));
-        items.add(new Item(3,1, 135));
-        items.add(new Item(1,1, 165));
-        items.add(new Item(1,1,  19, 10, 15, View.VISIBLE));
-        items.add(new Item(2,1,  21, 3, 5, View.VISIBLE));
-        items.add(new Item(3,1,  128));
-        items.add(new Item(1,1,  215));
-        items.add(new Item(2,1, 15));
-        items.add(new Item(3,1, 125));
-        items.add(new Item(1,1, 145));
-        items.add(new Item(2,1, 155));
-        items.add(new Item(3,1, 165));
-        items.add(new Item(1,1, 175));
-        items.add(new Item(2,1, 185));
-        items.add(new Item(3,1, 195));
-        items.add(new Item(1,1, 11655));
-        items.add(new Item(2,1, 1345));
-        items.add(new Item(3,1, 135));
-        items.add(new Item(1,1, 165));
+        inventoryItems.add(new InventoryItem(1, 1, 19, 10, 15, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(2, 1, 21, 3, 5, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(3,1,  128));
+        inventoryItems.add(new InventoryItem(1,1,  215));
+        inventoryItems.add(new InventoryItem(2,1, 15));
+        inventoryItems.add(new InventoryItem(3,1, 125));
+        inventoryItems.add(new InventoryItem(1,1, 145));
+        inventoryItems.add(new InventoryItem(2,1, 155));
+        inventoryItems.add(new InventoryItem(3,1, 165));
+        inventoryItems.add(new InventoryItem(1,1, 175));
+        inventoryItems.add(new InventoryItem(2,1, 185));
+        inventoryItems.add(new InventoryItem(3,1, 195));
+        inventoryItems.add(new InventoryItem(1,1, 11655));
+        inventoryItems.add(new InventoryItem(2,1, 1345));
+        inventoryItems.add(new InventoryItem(3,1, 135));
+        inventoryItems.add(new InventoryItem(1,1, 165));
+        inventoryItems.add(new InventoryItem(1,1,  19, 10, 15, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(2,1,  21, 3, 5, View.VISIBLE));
+        inventoryItems.add(new InventoryItem(3,1,  128));
+        inventoryItems.add(new InventoryItem(1,1,  215));
+        inventoryItems.add(new InventoryItem(2,1, 15));
+        inventoryItems.add(new InventoryItem(3,1, 125));
+        inventoryItems.add(new InventoryItem(1,1, 145));
+        inventoryItems.add(new InventoryItem(2,1, 155));
+        inventoryItems.add(new InventoryItem(3,1, 165));
+        inventoryItems.add(new InventoryItem(1,1, 175));
+        inventoryItems.add(new InventoryItem(2,1, 185));
+        inventoryItems.add(new InventoryItem(3,1, 195));
+        inventoryItems.add(new InventoryItem(1,1, 11655));
+        inventoryItems.add(new InventoryItem(2,1, 1345));
+        inventoryItems.add(new InventoryItem(3,1, 135));
+        inventoryItems.add(new InventoryItem(1,1, 165));
 
-        awaiter.start(items);
+        awaiter.start(inventoryItems);
     }
 
     public void getAmountOfOneAvatarPartType(AvatarParts ap,

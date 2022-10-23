@@ -1,6 +1,9 @@
-package com.example.graduationprojectandroid.fragments.for_main_page.adapters
+package com.example.graduationprojectandroid.data.Items
 
 import android.view.View
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.SubtaskAdapter
+import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TasksAdapter
+import com.example.graduationprojectandroid.data.States.Difficulty
 import java.io.Serializable
 
 class ParentizedTask(
@@ -42,7 +45,7 @@ class ParentizedTask(
         return parentizedSubtasksList
     }
 
-    fun getAdapter(): SubtaskAdapter{
+    fun getAdapter(): SubtaskAdapter {
         return adapter
     }
 

@@ -1,7 +1,6 @@
-package com.example.graduationprojectandroid.fragments.for_main_page.adapters
+package com.example.graduationprojectandroid.data.Items
 
-import android.view.View
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.graduationprojectandroid.data.States.Difficulty
 import java.io.Serializable
 
 open class Task(

@@ -2,21 +2,21 @@
 
 
     <style name="Theme.GraduationProjectAndroid" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <inventoryItem name="android:forceDarkAllowed" tools:targetApi="q">false</inventoryItem>
 
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
+        <inventoryItem name="windowActionBar">false</inventoryItem>
+        <inventoryItem name="windowNoTitle">true</inventoryItem>
+        <inventoryItem name="android:windowFullscreen">true</inventoryItem>
 
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <inventoryItem name="colorPrimary">@color/purple_200</inventoryItem>
+        <inventoryItem name="colorPrimaryVariant">@color/purple_700</inventoryItem>
+        <inventoryItem name="colorOnPrimary">@color/black</inventoryItem>
 
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <inventoryItem name="colorSecondary">@color/teal_200</inventoryItem>
+        <inventoryItem name="colorSecondaryVariant">@color/teal_200</inventoryItem>
+        <inventoryItem name="colorOnSecondary">@color/black</inventoryItem>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <inventoryItem name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</inventoryItem>
 
     </style>
 

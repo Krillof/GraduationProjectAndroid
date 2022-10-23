@@ -6,369 +6,360 @@ import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.PreferencesService
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
+import com.example.graduationprojectandroid.data.Items.*
+import com.example.graduationprojectandroid.data.States.Difficulty
+import com.example.graduationprojectandroid.data.States.HabitDoneStates
+import com.google.gson.Gson
+import com.google.gson.JsonArray
+import com.google.gson.JsonObject
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.lang.reflect.Type
+import kotlin.reflect.typeOf
 
 object DataService {
 
     private val networkService: NetworkService = NetworkService.getInstance()
 
-    fun setPictureById(picture_id: Int, picture_view: ImageView){
-        networkService.setPictureById(picture_id, picture_view)
-    }
-
-    fun setOtherUserFacePicture(user_login: String, picture_view: ImageView){
+    fun openErrorPage(){
         //TODO
     }
 
-    fun getUserData(awaiter: (UserData) -> Unit) {
-        networkService.getUserData(awaiter)
+    class DataCallback<T>(
+        val awaiter: (T)->Unit
+    ) : Callback<T>{
+        override fun onResponse(call: Call<T>,  response: Response<T>){
+            if (response.isSuccessful){
+                awaiter(response.body()!!)
+            } else {
+                openErrorPage()
+            }
+        }
+
+        override fun onFailure(call: Call<T>, t: Throwable) {
+            openErrorPage()
+        }
     }
 
-    fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
-        networkService.changedAvatar(chosenParts.toList(), avatarName, awaiter)
-        awaiter()
+    data class HabitsArrayJson (
+        var data: ArrayList<Habit>
+    ) {}
+
+    data class TasksArrayJson (
+        var data: ArrayList<Task>
+    ) {}
+
+    data class ItemsArrayJson (
+        var data: ArrayList<InventoryItem>
+    ) {}
+
+    data class NewsArrayJson (
+        var data: ArrayList<NewsItem>
+    ) {}
+
+
+
+
+
+    fun setPictureById(picture_id: Int, picture_view: ImageView){
+        networkService.setPictureById(picture_id, picture_view)
     }
 
     fun setPictureOfAvatarPart(type: Int, id: Int, view: ImageView){
         networkService.setPictureOfAvatarPart(type, id, view);
     }
 
-    fun setHabitState(id: Int, state: HabitDoneStates){
-        //TODO: Send to server
-    }
-
-    fun setTaskState(id: Int, state: Boolean){
-        //TODO: Send to server
-    }
-
-    fun getNewIdForTask(awaiter: (Int) -> Unit){
-        //TODO: DELETE THIS FUNCTION - ID MUST BE GIVEN ON SERVER
-        //TODO: Ask from server for new ID
-        awaiter(1)
-    }
-
-    fun getNewIdForHabit(awaiter: (Int) -> Unit){
-        //TODO: DELETE THIS FUNCTION - ID MUST BE GIVEN ON SERVER
-        //TODO: Ask from server for new ID
-        awaiter(1)
-    }
-
-    fun sendHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        //TODO: Just send - if id other - new, else - old
-        awaiter("Checking error dialogue")
-    }
-
-    fun sendTask(task: Task, awaiter: (error: String) -> Unit) {
-        //TODO: Just send - if id other - new, else - old
-        awaiter("Checking error dialogue")
-    }
-
-    fun getTasks(loginFrom:String, loginTo: String, awaiter: (ArrayList<Task>)->Unit){
-        var tasksList = ArrayList<Task>()
-        //TODO: get tasks from server
-        //TODO: use awaiter
-
-        //---------------------------------------
-        //TMP
-        //val task1 =
-
-        val sbtsks_strs1 = listOf("в тетради", "потом выучи текст", "приготовь картошку")
-
-        var subtasks1: MutableList<Subtask> = MutableList(
-            3
-        ){ Subtask(false, sbtsks_strs1[it]) }
-
-        var task1 = Task(
-            1,
-            "", "",
-            "Сделать англ",
-            "Очень надо, у меня не зачёт",
-            subtasks1
-        )
-
-        task1.difficulty = Difficulty.hard
-
-
-        val sbtsks_strs2 = listOf(
-            "подумать о картошке",
-            "купить картошку",
-            "приготовить картошку",
-            "сделать из неё торт",
-            "подумать о картошке 2",
-            "купить картошку 2",
-            "приготовить картошку 2",
-            "сделать из неё торт 2"
-        )
-
-        var subtasks2: MutableList<Subtask> = MutableList(
-            sbtsks_strs2.size
-        ) { index -> Subtask(false, sbtsks_strs2[index]) }
-
-        var task2 = Task(
-            2,
-            "", "",
-            "Приготовиться к гостям",
-            "Гости-то придут",
-            subtasks2
-        )
-
-        task2.setFullDone(true)
-        task2.difficulty = Difficulty.normal
-
-        var subtasks3: MutableList<Subtask> = MutableList(
-            0
-        ) { index -> Subtask(false, "") }
-
-        var task3 = Task(
-            3,
-            "", "",
-            "Поесть",
-            "Очень важно",
-            subtasks3
-        )
-
-        task3.difficulty = Difficulty.easy
-
-
-
-        tasksList.add(task1)
-        tasksList.add(task2)
-        tasksList.add(task3)
-
-        //TMP
-        //-------------------------------------
-
-        awaiter(tasksList)
-    }
-
-    fun getHabits(loginFrom: String, loginTo: String, awaiter: (ArrayList<Habit>)->Unit) {
-        val habits: ArrayList<Habit> = ArrayList()
-        //TODO: Make normal habits load
-        //TODO: Use awaiter
-
-        //--------------------------------------------
-        //TMP
-
-        val habit1 = Habit(
-            1,
-            "", "",
-            "Бегать по утрам",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit2 = Habit(
-            2,
-            "", "",
-            "Учить английский",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit3 = Habit(
-            3,
-            "", "",
-            "Бросить пить",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
-        val habit4 = Habit(
-            4,
-            "", "",
-            "Точно не йога",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit5 = Habit(
-            5,
-            "", "",
-            "Учить немецкий",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit6 = Habit(
-            6,
-            "", "",
-            "Бросить курить",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit7 = Habit(
-            7,
-            "", "",
-            "Спать",
-            "С 6:30 до 7:00, не забыть \n разминку перед бегом и после",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit8 = Habit(
-            8,
-            "", "",
-            "Учить французский",
-            "По средам урок в 18:00",
-            HabitDoneStates.UNKNOWN
-        )
-
-        val habit9 = Habit(
-            9,
-            "", "",
-            "Бросить есть сладкое",
-            "Убиваем зеленаго змия весело \n и с пользой: во вторник встреча",
-            HabitDoneStates.UNKNOWN
-        )
-
-
-
-        habits.add(habit1)
-        habits.add(habit2)
-        habits.add(habit3)
-        habits.add(habit4)
-        habits.add(habit5)
-        habits.add(habit6)
-        habits.add(habit7)
-        habits.add(habit8)
-        habits.add(habit9)
-
-
-        //TMP
-        //----------------------------------------------
-
-        awaiter(habits)
-    }
-
-    fun getMarketItems(awaiter: (ArrayList<Item>) -> Unit){
-        //TODO: Это точно нормально?
-        NetworkService.getInstance().getItemsForMarket {
-            val items = ArrayList<Item>()
-            items.addAll(it)
-            awaiter(items)
-        }
-
-    }
-
-    fun getInventoryItems(awaiter: (ArrayList<Item>)->Unit ){
-        //TODO: Это точно нормально?
-        NetworkService.getInstance().getItemsForInventory{
-            val items = ArrayList<Item>()
-            items.addAll(it)
-            awaiter(items)
-        }
-    }
-
-    fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
-        //TMP
-        val news: ArrayList<NewsItem> = ArrayList()
-        val n1: NewsItem = NewsItem(
-            1, "20.12.2021", "Новогодний адвент",
-            "Хо-хо-хо! В страну Do заглянул Санта и оставил подарки нашим пользовательям! " +
-                    "Скорее скачивай последнюю версию!", ""
-            )
-
-        val n2: NewsItem = NewsItem(
-            2, "28.11.2021", "Версия 3.0.1.2",
-            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.", ""
-        )
-
-        val n3: NewsItem = NewsItem(
-            3, "27.11.2021", "Версия 3.0.1.1",
-            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.", ""
-        )
-
-        news.add(n1)
-        news.add(n2)
-        news.add(n3)
-
-        //TMP
-        awaiter(news)
-    }
-
-    fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){
-        //TMP
-        val news: ArrayList<NewsItem> = ArrayList()
-        val n1: NewsItem = NewsItem(
-            1, "20.12.2021", "Новогодний адвент",
-            "Хо-хо-хо! В страну Do заглянул Санта и оставил подарки нашим пользовательям! " +
-                    "Скорее скачивай последнюю версию!",
-            "1 " + App.getAppResources().getString(R.string.large_text)
-        )
-
-        val n2: NewsItem = NewsItem(
-            2, "28.11.2021", "Версия 3.0.1.2",
-            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.",
-            "2 " + App.getAppResources().getString(R.string.large_text)
-        )
-
-        val n3: NewsItem = NewsItem(
-            3, "27.11.2021", "Версия 3.0.1.1",
-            "Почищенны баги, добавлен новый функционал и вот это вот все прочее.",
-            "3 " + App.getAppResources().getString(R.string.large_text)
-        )
-
-        news.add(n1)
-        news.add(n2)
-        news.add(n3)
-
-        //TMP
-        awaiter(news[id-1])
-    }
-
-    fun registerUser(login: String, password: String, awaiter: (String)->Unit){
-        networkService.registerUser(login, password, awaiter)
-    }
-
-    // use in LoginActivity
-    fun checkNewLogin(login: String, awaiter: (String)->Unit){
-        //TODO: check validation and is it new (on server)
-
-        awaiter("")
-    }
-
-    // use in LoginActivity
-    fun checkPassword(password: String, awaiter: (String)->Unit){
-        //TODO: check validation (on server)
-
-        awaiter("")
-    }
-
-    // use in LoginActivity
-    fun tryLogin(login: String, awaiter: (String)->Unit){
-        //TODO: check, is there this login
-
-        awaiter("")
-    }
-
-    // use in LoginActivity
-    fun tryEnter(login: String, password: String, awaiter: (String)->Unit){
-        //TODO: try enter with this password and login
-
-        awaiter("")
-    }
-
-    // when enter in app, to not login again
-    fun isLogined(context: Context, awaiter: (Boolean)->Unit) {
-        //TODO: check on server, if is logined
-        //TODO: somewhere must be awaiter(PreferencesService.loadLogin(context) == "")
-        awaiter(false)
-    }
-
-    // after entering in
-    fun saveLogin(context: Context, login: String){
-        PreferencesService.saveLogin(context, login)
-    }
-
-    fun checkAvatarName(awaiter: (String)->Unit){
-        //TODO: send to check to server, from characterData
-        awaiter("")
+    fun setOtherUserFacePicture(user_login: String, picture_view: ImageView){
+        //TODO fun to get picture by login
     }
 
     // get body parts for avatar from server
     fun getAvatarPartPictureForWearing(view: ImageView, ap: AvatarParts, id: Int){
         networkService.setPictureOfAvatarPart(ap.number, id, view)
     }
+
+
+
+
+
+
+
+
+
+
+
+    fun getUserLogin() : String{
+        // TODO: храни логин на телефоне
+        return "ttt";
+    }
+
+    fun getUserToken() : String{
+        // TODO: храни токен на телефоне
+        return "ttt";
+    }
+
+
+
+
+
+
+
+    fun getUserData(awaiter: (UserData) -> Unit) {
+        networkService.userAPI.getUserData(getUserLogin(), getUserToken()).enqueue(
+            DataCallback<UserData>(awaiter)
+        )
+    }
+
+    fun registerUser(login: String, password: String, awaiter: (String)->Unit){
+        networkService.userAPI.register(login, password).enqueue(
+            // It was before a:
+            // DataCallback<SimpleServerAnswer> { awaiter(it.answer) }
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    // use in LoginActivity
+    fun checkLoginUniquness(login: String, awaiter: (String)->Unit){
+        networkService.userAPI.isLoginUnique(login).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    // use in LoginActivity
+    fun checkIsPasswordOK(password: String, awaiter: (String)->Unit){
+        networkService.userAPI.isLoginUnique(password).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    // use in LoginActivity
+    fun checkIsLoginExists(login: String, awaiter: (String)->Unit){
+        networkService.userAPI.isLoginExists(login).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    // use in LoginActivity
+    fun tryEnter(login: String, password: String, awaiter: (String)->Unit){
+        networkService.userAPI.enter(login, password).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    // when enter in app, to not login again
+    fun isLogined(awaiter: (Boolean)->Unit) {
+        networkService.userAPI.checkToken(getUserToken()).enqueue(
+            DataCallback<Boolean>(awaiter)
+        )
+    }
+
+
+
+
+
+
+
+
+    fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
+        val jsonObject = JsonObject()
+        val chosenPartsToJson = Gson().toJsonTree(chosenParts)
+        jsonObject.add("chosenParts", chosenPartsToJson) //Add Json Element in JsonObject
+        jsonObject.addProperty("avatarName", avatarName)
+
+        networkService.userAPI.changedAvatar(jsonObject, getUserToken()).enqueue(
+            DataCallback<String>{ awaiter() }
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+    fun setHabitState(id: Int, state: HabitDoneStates){
+        networkService.habitsAPI.setHabitState(id, state.type, getUserToken()).enqueue(
+            DataCallback<String>{}
+        )
+    }
+
+    fun createHabit(habit: Habit, awaiter: (error: String) -> Unit){
+        val jsonObject = JsonObject()
+        val habitToJson = Gson().toJsonTree(habit)
+        jsonObject.add("habit", habitToJson)
+
+        networkService.habitsAPI.createHabit(jsonObject, getUserToken()).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    fun editHabit(habit: Habit, awaiter: (error: String) -> Unit){
+        val jsonObject = JsonObject()
+        val habitToJson = Gson().toJsonTree(habit)
+        jsonObject.add("habit", habitToJson)
+
+        networkService.habitsAPI.editHabit(jsonObject, getUserToken()).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    fun getHabits(loginFrom: String, loginTo: String, awaiter: (ArrayList<Habit>)->Unit) {
+        networkService.habitsAPI.getHabits(
+            loginFrom,
+            loginTo,
+            getUserToken()
+        ).enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        HabitsArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+    fun setTaskState(id: Int, state: Boolean){
+        networkService.tasksAPI.setTaskState(id, if (state) 1 else 0, getUserToken()).enqueue(
+            DataCallback<String>{}
+        )
+    }
+
+    fun createTask(task: Task, awaiter: (error: String) -> Unit){
+        val jsonObject = JsonObject()
+        val habitToJson = Gson().toJsonTree(task)
+        jsonObject.add("task", habitToJson)
+
+        networkService.tasksAPI.createTask(jsonObject, getUserToken()).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    fun editTask(task: Task, awaiter: (error: String) -> Unit){
+        val jsonObject = JsonObject()
+        val habitToJson = Gson().toJsonTree(task)
+        jsonObject.add("task", habitToJson)
+
+        networkService.tasksAPI.editTask(jsonObject, getUserToken()).enqueue(
+            DataCallback<String>(awaiter)
+        )
+    }
+
+    fun getTasks(loginFrom:String, loginTo: String, awaiter: (ArrayList<Task>)->Unit){
+        networkService.tasksAPI.getTasks(
+            loginFrom,
+            loginTo,
+            getUserToken()
+        ).enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        TasksArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    fun getMarketItems(awaiter: (ArrayList<InventoryItem>) -> Unit){
+        networkService.itemsAPI.getMarketItems(
+            getUserToken()
+        ).enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        ItemsArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    }
+
+    fun getInventoryItems(awaiter: (ArrayList<InventoryItem>)->Unit ){
+        networkService.itemsAPI.getInventoryItems(
+            getUserToken()
+        ).enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        ItemsArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    }
+
+    fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
+        networkService.newsAPI.news.enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        NewsArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    }
+
+    fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){
+        networkService.newsAPI.getNewsItem(id).enqueue(
+            DataCallback<String>{
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        NewsItem::class.java
+                    )
+                )
+            }
+        )
+    }
+
+
+
+    // after entering in
+    fun saveLogin(context: Context, login: String){
+        PreferencesService.saveLogin(context, login)
+        //TODO: think about it
+    }
+
+    fun checkAvatarName(awaiter: (String)->Unit){
+        networkService.userAPI.checkAvatarName() //TODO: Доделай
+    }
+
+
+
+
+
+
 
     fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
         networkService.getAmountOfOneAvatarPartType(ap, awaiter)

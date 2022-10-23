@@ -1,7 +1,6 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.dos
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
+import com.example.graduationprojectandroid.data.Items.Habit
+import com.example.graduationprojectandroid.data.Items.Task
 import com.example.graduationprojectandroid.network.DataService
 
 private const val ARG_PARAM_LOGIN = "login"

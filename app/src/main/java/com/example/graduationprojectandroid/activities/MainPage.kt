@@ -10,10 +10,10 @@ import androidx.fragment.app.DialogFragment
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.fragments.for_main_page.News
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Habit
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.StudentItem
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Task
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
+import com.example.graduationprojectandroid.data.Items.Habit
+import com.example.graduationprojectandroid.data.Items.StudentItem
+import com.example.graduationprojectandroid.data.Items.Task
+import com.example.graduationprojectandroid.data.Items.TeacherItem
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.Dos
 import com.example.graduationprojectandroid.fragments.for_main_page.inventory.Inventory
 import com.example.graduationprojectandroid.fragments.for_main_page.other_users.FindTeachers

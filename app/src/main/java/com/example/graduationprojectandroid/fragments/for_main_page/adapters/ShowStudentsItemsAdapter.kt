@@ -8,10 +8,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.activities.StudentAssignments
 import com.example.graduationprojectandroid.databinding.SimpleLayoutShowStudentsItemBinding
 import com.example.graduationprojectandroid.fragments.AskQuestionDialogue
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.data.Items.StudentItem
 
 class ShowStudentsItemsAdapter(
     private var fragmentManager: FragmentManager,

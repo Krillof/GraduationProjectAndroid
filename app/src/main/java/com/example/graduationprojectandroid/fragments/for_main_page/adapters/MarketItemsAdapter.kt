@@ -3,48 +3,44 @@ package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.doOnAttach
-import androidx.core.view.doOnLayout
-import androidx.core.view.doOnPreDraw
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutMarketItemBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.BuyDialogue
-import com.example.graduationprojectandroid.network.NetworkService
+import com.example.graduationprojectandroid.data.Items.InventoryItem
 
 class MarketItemsAdapter (
     private var fragment_manager: FragmentManager,
-    private var items_arr: ArrayList<Item>
+    private var items_arr: ArrayList<InventoryItem>
 ) : RecyclerView.Adapter<MarketItemsAdapter.ItemView>()
 {
 
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutMarketItemBinding.bind(itemView)
 
-        fun bind(fragment_manager: FragmentManager, item: Item)
+        fun bind(fragment_manager: FragmentManager, inventoryItem: InventoryItem)
         = with(binding) {
-            moneyText.visibility = item.visibility
-            marketItemBackground.visibility = item.visibility
-            blackWhiteMoneyLogo.visibility = item.visibility
-            moneyText.visibility = item.visibility
-            marketItemBackground.visibility = item.visibility
-            picture.visibility = item.visibility
+            moneyText.visibility = inventoryItem.visibility
+            marketItemBackground.visibility = inventoryItem.visibility
+            blackWhiteMoneyLogo.visibility = inventoryItem.visibility
+            moneyText.visibility = inventoryItem.visibility
+            marketItemBackground.visibility = inventoryItem.visibility
+            picture.visibility = inventoryItem.visibility
 
-            if (item.visibility == View.VISIBLE) {
+            if (inventoryItem.visibility == View.VISIBLE) {
                 //TODO: check: NetworkService or DataService?
-                NetworkService.getInstance().setPictureById(item.picture_id, picture)
+                NetworkService.getInstance().setPictureById(inventoryItem.picture_id, picture)
             }
 
-            moneyText.text = item.money.toString()
+            moneyText.text = inventoryItem.money.toString()
 
-            if (item.visibility == View.VISIBLE)
+            if (inventoryItem.visibility == View.VISIBLE)
                 layout.setOnClickListener {
                     var df: DialogFragment? = null
-                    df = BuyDialogue(item) {
+                    df = BuyDialogue(inventoryItem) {
                         if (it){
-                            //TODO: Buy an item by DataService
+                            //TODO: Buy an inventoryItem by DataService
                         }
 
                         df?.dismiss()

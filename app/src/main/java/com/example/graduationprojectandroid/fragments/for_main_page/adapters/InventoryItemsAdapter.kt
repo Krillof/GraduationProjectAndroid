@@ -8,39 +8,37 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutInventoryItemBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.WearDialogue
-import com.example.graduationprojectandroid.network.DataService
-import com.example.graduationprojectandroid.network.NetworkService
+import com.example.graduationprojectandroid.data.Items.InventoryItem
 
 class InventoryItemsAdapter (
     private var fragment_manager: FragmentManager,
-    private var items_arr: ArrayList<Item>
+    private var items_arr: ArrayList<InventoryItem>
 ) : RecyclerView.Adapter<InventoryItemsAdapter.ItemView>()
 {
 
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutInventoryItemBinding.bind(itemView)
 
-        fun bind(fragment_manager: FragmentManager, item: Item)
+        fun bind(fragment_manager: FragmentManager, inventoryItem: InventoryItem)
             = with(binding) {
 
 
-            marketItemBackground.visibility = item.visibility
-            marketItemBackground.visibility = item.visibility
-            picture.visibility = item.visibility
+            marketItemBackground.visibility = inventoryItem.visibility
+            marketItemBackground.visibility = inventoryItem.visibility
+            picture.visibility = inventoryItem.visibility
 
 
-            if (item.visibility == View.VISIBLE) {
-                DataService.setPictureById(item.picture_id, picture)
+            if (inventoryItem.visibility == View.VISIBLE) {
+                DataService.setPictureById(inventoryItem.picture_id, picture)
             }
 
 
-            if (item.visibility == View.VISIBLE)
+            if (inventoryItem.visibility == View.VISIBLE)
                 layout.setOnClickListener {
                     var df: DialogFragment? = null
-                    df = WearDialogue(item) {
+                    df = WearDialogue(inventoryItem) {
                         if (it){
-                            //TODO: Wear item
+                            //TODO: Wear inventoryItem
                         }
 
                         df?.dismiss()

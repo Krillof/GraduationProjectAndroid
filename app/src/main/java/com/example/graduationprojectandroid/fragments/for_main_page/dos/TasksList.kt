@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentTasksListBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.data.Items.ParentizedTask
+import com.example.graduationprojectandroid.data.Items.Task
 
 /**
  * A simple [Fragment] subclass.

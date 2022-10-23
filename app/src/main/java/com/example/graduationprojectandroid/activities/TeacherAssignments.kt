@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.Header
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.TeacherItem
+import com.example.graduationprojectandroid.data.Items.TeacherItem
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.HabitsList
 import com.example.graduationprojectandroid.fragments.for_main_page.dos.TasksList
 import com.example.graduationprojectandroid.network.DataService

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.graduationprojectandroid.databinding.FragmentHabitsListBinding
 import com.example.graduationprojectandroid.fragments.for_main_page.adapters.*
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.data.Items.Habit
 
 
 /**

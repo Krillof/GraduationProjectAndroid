@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutHabitBinding
+import com.example.graduationprojectandroid.data.Items.Habit
+import com.example.graduationprojectandroid.data.States.HabitDoneStates
+import com.example.graduationprojectandroid.network.DataService
 
 class HabitsAdapter(
     private var habits_arr: ArrayList<Habit>,
@@ -37,6 +40,8 @@ class HabitsAdapter(
                     else
                         HabitDoneStates.UNKNOWN
 
+                DataService.setHabitState(habit.id, habit.done)
+
                 adapter.notifyDataSetChanged()
             }
 
@@ -46,6 +51,8 @@ class HabitsAdapter(
                         HabitDoneStates.UNDONE
                     else
                         HabitDoneStates.UNKNOWN
+
+                DataService.setHabitState(habit.id, habit.done)
 
                 adapter.notifyDataSetChanged()
             }

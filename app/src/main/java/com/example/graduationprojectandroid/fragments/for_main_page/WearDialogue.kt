@@ -9,13 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
-import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutWearItemBinding
-import com.example.graduationprojectandroid.fragments.for_main_page.adapters.Item
-import com.example.graduationprojectandroid.network.NetworkService
+import com.example.graduationprojectandroid.data.Items.InventoryItem
 
 class WearDialogue (
-    private var item: Item,
+    private var inventoryItem: InventoryItem,
     private var listener: (answer: Boolean) -> Unit
 ) : DialogFragment() {
 
@@ -47,11 +45,11 @@ class WearDialogue (
             = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
-        val text_part1 = getString(R.string.health)+" +"+item.plus_hp.toString()+"\n"
-        val text_part2 = getString(R.string.experience) + " +" + item.plus_exp.toString()
+        val text_part1 = getString(R.string.health)+" +"+inventoryItem.plus_hp.toString()+"\n"
+        val text_part2 = getString(R.string.experience) + " +" + inventoryItem.plus_exp.toString()
         infoText.text = text_part1 + text_part2
 
-        NetworkService.getInstance().setPictureById(item.id, picture)
+        NetworkService.getInstance().setPictureById(inventoryItem.id, picture)
 
         closeButton.setOnClickListener {
             listener(false)
@@ -65,9 +63,9 @@ class WearDialogue (
     companion object {
         @JvmStatic
         fun newInstance(
-            item: Item,
+            inventoryItem: InventoryItem,
             listener: (answer: Boolean) -> Unit
         ) =
-            BuyDialogue(item, listener)
+            BuyDialogue(inventoryItem, listener)
     }
 }

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutFindTeacherItemBinding
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.data.Items.TeacherItem
 
 class FindTeachersItemsAdapter (
     private var items_arr: ArrayList<TeacherItem>,

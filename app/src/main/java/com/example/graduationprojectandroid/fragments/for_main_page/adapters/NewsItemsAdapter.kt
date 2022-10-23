@@ -1,20 +1,13 @@
 package com.example.graduationprojectandroid.fragments.for_main_page.adapters
 
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.commit
-import androidx.fragment.app.findFragment
 import androidx.recyclerview.widget.RecyclerView
-import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.activities.ChangingAvatar
 import com.example.graduationprojectandroid.databinding.SimpleLayoutNewsItemBinding
-import com.example.graduationprojectandroid.fragments.SmallButton
+import com.example.graduationprojectandroid.data.Items.NewsItem
 
 class NewsItemsAdapter (
     private var choose_one_listener: (Int)->Unit,
