@@ -3,6 +3,8 @@ import com.example.graduationprojectandroid.network.UserData;
 import com.google.gson.JsonObject;
 
 
+import java.util.ArrayList;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -64,7 +66,11 @@ public interface UserAPI {
 
     // for avatar
     @POST("/changed_avatar")
-    Call<String> changedAvatar(@Body JsonObject jsonObject, @Query("token") String token);
+    Call<String> changedAvatar(
+            @Body ArrayList<Integer> choosenParts,
+            @Query("avatar_name") String avatarName,
+            @Query("token") String token
+    );
 
     @GET("/check_avatar_name")
     Call<String> checkAvatarName(@Query("avatar_name") String avatarName);

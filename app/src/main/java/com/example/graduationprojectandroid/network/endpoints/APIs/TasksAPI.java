@@ -1,5 +1,6 @@
 package com.example.graduationprojectandroid.network.endpoints.APIs;
 
+import com.example.graduationprojectandroid.data.Items.Task;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -18,13 +19,13 @@ public interface TasksAPI {
 
     @POST("/create_task")
     Call<String> createTask(
-            @Body JsonObject task,
+            @Body Task task,
             @Query("token") String token
     );
 
     @POST("/edit_task")
     Call<String> editTask(
-            @Body JsonObject task,
+            @Body Task task,
             @Query("token") String token
     );
 

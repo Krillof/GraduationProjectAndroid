@@ -1,5 +1,6 @@
 package com.example.graduationprojectandroid.network.endpoints.APIs;
 
+import com.example.graduationprojectandroid.data.Items.Habit;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -19,13 +20,13 @@ public interface HabitsAPI {
 
     @POST("/create_habit")
     Call<String> createHabit(
-            @Body JsonObject habit,
+            @Body Habit habit,
             @Query("token") String token
     );
 
     @POST("/edit_habit")
     Call<String> editHabit(
-            @Body JsonObject habit,
+            @Body Habit habit,
             @Query("token") String token
     );
 

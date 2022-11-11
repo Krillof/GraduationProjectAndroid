@@ -162,12 +162,11 @@ object DataService {
 
 
     fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
-        val jsonObject = JsonObject()
-        val chosenPartsToJson = Gson().toJsonTree(chosenParts)
-        jsonObject.add("chosenParts", chosenPartsToJson) //Add Json Element in JsonObject
-        jsonObject.addProperty("avatarName", avatarName)
-
-        networkService.userAPI.changedAvatar(jsonObject, getUserToken()).enqueue(
+        networkService.userAPI.changedAvatar(
+            chosenParts.toCollection(ArrayList()),
+            avatarName,
+            getUserToken()
+        ).enqueue(
             DataCallback<String>{ awaiter() }
         )
     }
@@ -188,21 +187,13 @@ object DataService {
     }
 
     fun createHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        val jsonObject = JsonObject()
-        val habitToJson = Gson().toJsonTree(habit)
-        jsonObject.add("habit", habitToJson)
-
-        networkService.habitsAPI.createHabit(jsonObject, getUserToken()).enqueue(
+        networkService.habitsAPI.createHabit(habit, getUserToken()).enqueue(
             DataCallback<String>(awaiter)
         )
     }
 
     fun editHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        val jsonObject = JsonObject()
-        val habitToJson = Gson().toJsonTree(habit)
-        jsonObject.add("habit", habitToJson)
-
-        networkService.habitsAPI.editHabit(jsonObject, getUserToken()).enqueue(
+        networkService.habitsAPI.editHabit(habit, getUserToken()).enqueue(
             DataCallback<String>(awaiter)
         )
     }
@@ -240,21 +231,13 @@ object DataService {
     }
 
     fun createTask(task: Task, awaiter: (error: String) -> Unit){
-        val jsonObject = JsonObject()
-        val habitToJson = Gson().toJsonTree(task)
-        jsonObject.add("task", habitToJson)
-
-        networkService.tasksAPI.createTask(jsonObject, getUserToken()).enqueue(
+        networkService.tasksAPI.createTask(task, getUserToken()).enqueue(
             DataCallback<String>(awaiter)
         )
     }
 
     fun editTask(task: Task, awaiter: (error: String) -> Unit){
-        val jsonObject = JsonObject()
-        val habitToJson = Gson().toJsonTree(task)
-        jsonObject.add("task", habitToJson)
-
-        networkService.tasksAPI.editTask(jsonObject, getUserToken()).enqueue(
+        networkService.tasksAPI.editTask(task, getUserToken()).enqueue(
             DataCallback<String>(awaiter)
         )
     }

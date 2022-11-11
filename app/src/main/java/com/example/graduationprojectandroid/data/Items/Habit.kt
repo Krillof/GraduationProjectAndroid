@@ -11,8 +11,7 @@ class Habit(
     val loginTo: String,
     var header: String,
     var text: String,
-    var done: HabitDoneStates,
-    val visibility: Int = View.VISIBLE
+    var done: HabitDoneStates
     ) : Serializable{
 
     public var difficulty: Difficulty = Difficulty.normal
