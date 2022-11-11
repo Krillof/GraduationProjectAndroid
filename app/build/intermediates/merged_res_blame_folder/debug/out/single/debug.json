@@ -324,12 +324,12 @@
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\bottom_menu_tasks_on.png"
     },
     {
-        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_vk.xml.flat",
-        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\brandico_vk.xml"
-    },
-    {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\layout_simple_layout_show_teacher_item.xml.flat",
         "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\layout\\simple_layout_show_teacher_item.xml"
+    },
+    {
+        "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_brandico_vk.xml.flat",
+        "source": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\src\\main\\res\\drawable\\brandico_vk.xml"
     },
     {
         "merged": "D:\\GitHubProjects\\GraduationProjectAndroid\\app\\build\\intermediates\\merged_res\\debug\\drawable_easy_on.xml.flat",

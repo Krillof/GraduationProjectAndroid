@@ -53,7 +53,7 @@ class ChangingAvatar : AppCompatActivity() {
                         .replace(R.id.fragment,avatarGivingNameMenu)
                         .replace(R.id.button_next,
                             Button.newInstance(getString(R.string.next)){
-                                DataService.checkAvatarName {
+                                DataService.checkAvatarName(avatarGivingNameMenu.getName()) {
                                     if (it == ""){
                                         DataService.changedAvatar(chosenParts,
                                             avatarGivingNameMenu.getName())

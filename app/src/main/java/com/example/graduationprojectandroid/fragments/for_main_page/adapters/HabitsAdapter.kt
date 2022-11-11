@@ -25,11 +25,6 @@ class HabitsAdapter(
 
         fun bind(habit: Habit, adapter: HabitsAdapter) = with(binding) {
 
-            anotherHeader.visibility = habit.visibility
-            text.visibility = habit.visibility
-            doneCheckbox.visibility = habit.visibility
-            undoneCheckbox.visibility = habit.visibility
-
             anotherHeader.text = habit.header
             text.text = habit.text
 

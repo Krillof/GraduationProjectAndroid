@@ -9,8 +9,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutBuyMarketItemBinding
 import com.example.graduationprojectandroid.data.Items.InventoryItem
+import com.example.graduationprojectandroid.network.DataService
 
 class BuyDialogue (
     private var inventoryItem: InventoryItem,
@@ -51,7 +53,9 @@ class BuyDialogue (
 
         moneyText.text = inventoryItem.money.toString()
 
-        NetworkService.getInstance().setPictureById(inventoryItem.id, picture)
+
+
+        DataService.setPictureById(inventoryItem.id, picture)
 
         closeButton.setOnClickListener {
             listener(false)

@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutMarketItemBinding
 import com.example.graduationprojectandroid.data.Items.InventoryItem
+import com.example.graduationprojectandroid.fragments.for_main_page.BuyDialogue
+import com.example.graduationprojectandroid.network.DataService
 
 class MarketItemsAdapter (
     private var fragment_manager: FragmentManager,
@@ -30,7 +32,7 @@ class MarketItemsAdapter (
 
             if (inventoryItem.visibility == View.VISIBLE) {
                 //TODO: check: NetworkService or DataService?
-                NetworkService.getInstance().setPictureById(inventoryItem.picture_id, picture)
+                DataService.setPictureById(inventoryItem.picture_id, picture)
             }
 
             moneyText.text = inventoryItem.money.toString()

@@ -21,7 +21,6 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@drawable/do_logo"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.GraduationProjectAndroid"
         android:usesCleartextTraffic="true" >
         <activity

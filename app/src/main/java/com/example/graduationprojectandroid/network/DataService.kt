@@ -2,21 +2,16 @@ package com.example.graduationprojectandroid.network
 
 import android.content.Context
 import android.widget.ImageView
-import com.example.graduationprojectandroid.App
+import com.example.graduationprojectandroid.GenericsAsTypeParameter
 import com.example.graduationprojectandroid.PreferencesService
-import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
 import com.example.graduationprojectandroid.data.Items.*
-import com.example.graduationprojectandroid.data.States.Difficulty
 import com.example.graduationprojectandroid.data.States.HabitDoneStates
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
 import com.google.gson.Gson
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.lang.reflect.Type
-import kotlin.reflect.typeOf
 
 object DataService {
 
@@ -42,21 +37,80 @@ object DataService {
         }
     }
 
-    data class HabitsArrayJson (
-        var data: ArrayList<Habit>
-    ) {}
 
-    data class TasksArrayJson (
-        var data: ArrayList<Task>
-    ) {}
 
-    data class ItemsArrayJson (
-        var data: ArrayList<InventoryItem>
-    ) {}
 
-    data class NewsArrayJson (
-        var data: ArrayList<NewsItem>
-    ) {}
+    fun checkSimpleAnswer(answer: SimpleServerAnswer) : Boolean {
+        if (answer.errors == ""){
+            openErrorPage()
+        }
+        return (answer.errors == "")
+    }
+
+    fun standardStringAnswer(awaiter: (String) -> Unit) : DataCallback<SimpleServerAnswer> {
+        return DataCallback<SimpleServerAnswer>{
+            checkSimpleAnswer(it)
+            awaiter(it.data)
+        }
+    }
+
+    fun standardBooleanAnswer(awaiter: (Boolean) -> Unit) : DataCallback<SimpleServerAnswer> {
+        return DataCallback<SimpleServerAnswer>{
+            checkSimpleAnswer(it)
+            awaiter(it.data == "1")
+        }
+    }
+
+    fun standardVoidAnswer(awaiter: () -> Unit) : DataCallback<SimpleServerAnswer> {
+        return DataCallback<SimpleServerAnswer>{
+            checkSimpleAnswer(it)
+            awaiter()
+        }
+    }
+
+    fun standardIntAnswer(awaiter: (Int) -> Unit) : DataCallback<SimpleServerAnswer> {
+        return DataCallback<SimpleServerAnswer>{
+            checkSimpleAnswer(it)
+            awaiter(it.data.toInt())
+        }
+    }
+
+    fun <E> standardListAnswer(awaiter: (ArrayList<E>) -> Unit) : DataCallback<SimpleServerAnswer> {
+        return DataCallback<SimpleServerAnswer> {
+            checkSimpleAnswer(it)
+            awaiter(
+                Gson().fromJson(
+                    it.data,
+                    object : GenericsAsTypeParameter<ArrayList<E>>() {}.type
+                )
+            )
+        }
+    }
+
+    /*
+        // IF standardListAnswer won't work write:
+
+
+        data class HabitsArrayJson(
+            var data: ArrayList<Habit>
+        ) {}
+
+        //..................
+
+        .....enqueue(
+            standardStringAnswer(){
+                awaiter(
+                    Gson().fromJson(
+                        it,
+                        HabitsArrayJson::class.java
+                    ).data
+                )
+            }
+        )
+    */
+
+
+
 
 
 
@@ -84,15 +138,12 @@ object DataService {
 
 
 
-
-
-
-
-
-    fun getUserLogin() : String{
-        // TODO: храни логин на телефоне
-        return "ttt";
+    // after entering in
+    fun saveToken(context: Context, token: String){
+        PreferencesService.saveLogin(context, token)
+        //TODO: think about it
     }
+
 
     fun getUserToken() : String{
         // TODO: храни токен на телефоне
@@ -106,52 +157,38 @@ object DataService {
 
 
     fun getUserData(awaiter: (UserData) -> Unit) {
-        networkService.userAPI.getUserData(getUserLogin(), getUserToken()).enqueue(
+        networkService.userAPI.getUserData(getUserToken()).enqueue(
             DataCallback<UserData>(awaiter)
         )
     }
 
     fun registerUser(login: String, password: String, awaiter: (String)->Unit){
-        networkService.userAPI.register(login, password).enqueue(
-            // It was before a:
-            // DataCallback<SimpleServerAnswer> { awaiter(it.answer) }
-            DataCallback<String>(awaiter)
-        )
+        networkService.userAPI.register(login, password).enqueue(standardStringAnswer(awaiter))
     }
 
     // use in LoginActivity
-    fun checkLoginUniquness(login: String, awaiter: (String)->Unit){
-        networkService.userAPI.isLoginUnique(login).enqueue(
-            DataCallback<String>(awaiter)
-        )
+    fun checkLoginUniquness(login: String, awaiter: (error: String)->Unit){
+        networkService.userAPI.isLoginUnique(login).enqueue(standardStringAnswer(awaiter))
     }
 
     // use in LoginActivity
-    fun checkIsPasswordOK(password: String, awaiter: (String)->Unit){
-        networkService.userAPI.isLoginUnique(password).enqueue(
-            DataCallback<String>(awaiter)
-        )
+    fun checkIsPasswordOK(password: String, awaiter: (error: String)->Unit){
+        networkService.userAPI.isLoginUnique(password).enqueue(standardStringAnswer(awaiter))
     }
 
     // use in LoginActivity
-    fun checkIsLoginExists(login: String, awaiter: (String)->Unit){
-        networkService.userAPI.isLoginExists(login).enqueue(
-            DataCallback<String>(awaiter)
-        )
+    fun checkIsLoginExists(login: String, awaiter: (error: String)->Unit){
+        networkService.userAPI.isLoginExists(login).enqueue(standardStringAnswer(awaiter))
     }
 
     // use in LoginActivity
-    fun tryEnter(login: String, password: String, awaiter: (String)->Unit){
-        networkService.userAPI.enter(login, password).enqueue(
-            DataCallback<String>(awaiter)
-        )
+    fun tryEnter(login: String, password: String, awaiter: (error: String)->Unit){
+        networkService.userAPI.enter(login, password).enqueue(standardStringAnswer(awaiter))
     }
 
     // when enter in app, to not login again
     fun isLogined(awaiter: (Boolean)->Unit) {
-        networkService.userAPI.checkToken(getUserToken()).enqueue(
-            DataCallback<Boolean>(awaiter)
-        )
+        networkService.userAPI.checkToken(getUserToken()).enqueue(standardBooleanAnswer(awaiter))
     }
 
 
@@ -167,7 +204,7 @@ object DataService {
             avatarName,
             getUserToken()
         ).enqueue(
-            DataCallback<String>{ awaiter() }
+            standardVoidAnswer(awaiter)
         )
     }
 
@@ -182,20 +219,18 @@ object DataService {
 
     fun setHabitState(id: Int, state: HabitDoneStates){
         networkService.habitsAPI.setHabitState(id, state.type, getUserToken()).enqueue(
-            DataCallback<String>{}
+            standardVoidAnswer() {}
         )
     }
 
     fun createHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        networkService.habitsAPI.createHabit(habit, getUserToken()).enqueue(
-            DataCallback<String>(awaiter)
-        )
+        networkService.habitsAPI.createHabit(habit, getUserToken())
+            .enqueue(standardStringAnswer(awaiter))
     }
 
     fun editHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        networkService.habitsAPI.editHabit(habit, getUserToken()).enqueue(
-            DataCallback<String>(awaiter)
-        )
+        networkService.habitsAPI.editHabit(habit, getUserToken())
+            .enqueue(standardStringAnswer(awaiter))
     }
 
     fun getHabits(loginFrom: String, loginTo: String, awaiter: (ArrayList<Habit>)->Unit) {
@@ -203,17 +238,10 @@ object DataService {
             loginFrom,
             loginTo,
             getUserToken()
-        ).enqueue(
-            DataCallback<String>{
-                awaiter(
-                    Gson().fromJson(
-                        it,
-                        HabitsArrayJson::class.java
-                    ).data
-                )
-            }
-        )
+        ).enqueue(standardListAnswer(awaiter))
     }
+
+
 
 
 
@@ -225,21 +253,18 @@ object DataService {
 
 
     fun setTaskState(id: Int, state: Boolean){
-        networkService.tasksAPI.setTaskState(id, if (state) 1 else 0, getUserToken()).enqueue(
-            DataCallback<String>{}
-        )
+        networkService.tasksAPI.setTaskState(id, if (state) 1 else 0, getUserToken())
+            .enqueue(standardVoidAnswer() {})
     }
 
     fun createTask(task: Task, awaiter: (error: String) -> Unit){
-        networkService.tasksAPI.createTask(task, getUserToken()).enqueue(
-            DataCallback<String>(awaiter)
-        )
+        networkService.tasksAPI.createTask(task, getUserToken())
+            .enqueue(standardStringAnswer(awaiter))
     }
 
     fun editTask(task: Task, awaiter: (error: String) -> Unit){
-        networkService.tasksAPI.editTask(task, getUserToken()).enqueue(
-            DataCallback<String>(awaiter)
-        )
+        networkService.tasksAPI.editTask(task, getUserToken())
+            .enqueue(standardStringAnswer(awaiter))
     }
 
     fun getTasks(loginFrom:String, loginTo: String, awaiter: (ArrayList<Task>)->Unit){
@@ -247,16 +272,7 @@ object DataService {
             loginFrom,
             loginTo,
             getUserToken()
-        ).enqueue(
-            DataCallback<String>{
-                awaiter(
-                    Gson().fromJson(
-                        it,
-                        TasksArrayJson::class.java
-                    ).data
-                )
-            }
-        )
+        ).enqueue(standardListAnswer(awaiter))
     }
 
 
@@ -273,49 +289,22 @@ object DataService {
     fun getMarketItems(awaiter: (ArrayList<InventoryItem>) -> Unit){
         networkService.itemsAPI.getMarketItems(
             getUserToken()
-        ).enqueue(
-            DataCallback<String>{
-                awaiter(
-                    Gson().fromJson(
-                        it,
-                        ItemsArrayJson::class.java
-                    ).data
-                )
-            }
-        )
+        ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getInventoryItems(awaiter: (ArrayList<InventoryItem>)->Unit ){
         networkService.itemsAPI.getInventoryItems(
             getUserToken()
-        ).enqueue(
-            DataCallback<String>{
-                awaiter(
-                    Gson().fromJson(
-                        it,
-                        ItemsArrayJson::class.java
-                    ).data
-                )
-            }
-        )
+        ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
-        networkService.newsAPI.news.enqueue(
-            DataCallback<String>{
-                awaiter(
-                    Gson().fromJson(
-                        it,
-                        NewsArrayJson::class.java
-                    ).data
-                )
-            }
-        )
+        networkService.newsAPI.news.enqueue(standardListAnswer(awaiter))
     }
 
     fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){
         networkService.newsAPI.getNewsItem(id).enqueue(
-            DataCallback<String>{
+            standardStringAnswer(){
                 awaiter(
                     Gson().fromJson(
                         it,
@@ -328,96 +317,87 @@ object DataService {
 
 
 
-    // after entering in
-    fun saveLogin(context: Context, login: String){
-        PreferencesService.saveLogin(context, login)
-        //TODO: think about it
+
+
+    fun checkAvatarName(avatarName: String, awaiter: (String)->Unit){
+        networkService.userAPI.checkAvatarName(avatarName)
+            .enqueue(standardStringAnswer(awaiter))
     }
-
-    fun checkAvatarName(awaiter: (String)->Unit){
-        networkService.userAPI.checkAvatarName() //TODO: Доделай
-    }
-
-
-
-
-
-
 
     fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
-        networkService.getAmountOfOneAvatarPartType(ap, awaiter)
+        networkService.userAPI.getAmountOfOneAvatarPartType(ap.number.toString())
+            .enqueue(standardIntAnswer(awaiter))
     }
 
+
+
+
+
+
     fun getUserTeachers(awaiter: (ArrayList<TeacherItem>) -> Unit){
-        var list: ArrayList<TeacherItem> = ArrayList()
-        //TODO: Это временное заполнение
-        list.add(TeacherItem("Анна Павловна"))
-        list.add(TeacherItem("Сергей Николаевич"))
-        list.add(TeacherItem("1111111111111111111111111"))
-        list.add(TeacherItem("2222222222222222222222222"))
-        list.add(TeacherItem("3333333333333333333333"))
-        list.add(TeacherItem("sdfhgdf"))
-        awaiter(list)
+        networkService.userTeachersAPI.getUserTeachers(
+            getUserToken()
+        ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getTeachersToFind(loginStartsWith: String, awaiter: (ArrayList<TeacherItem>) -> Unit){
-        var list: ArrayList<TeacherItem> = ArrayList()
-        //TODO: Это временное заполнение
-        list.add(TeacherItem("Анна Павловна"))
-        list.add(TeacherItem("Сергей Николаевич"))
-        list.add(TeacherItem("1111111111111111111111111"))
-        list.add(TeacherItem("2222222222222222222222222"))
-        list.add(TeacherItem("3333333333333333333333"))
-        list.add(TeacherItem("sdfhgdf"))
-        awaiter(list)
-    }
-
-    fun getUserStudents(awaiter: (ArrayList<StudentItem>) -> Unit){
-        var list: ArrayList<StudentItem> = ArrayList()
-        //TODO: Это временное заполнение
-        list.add(StudentItem("Анна Павловна"))
-        list.add(StudentItem("Сергей Николаевич"))
-        list.add(StudentItem("1111111111111111111111111"))
-        list.add(StudentItem("2222222222222222222222222"))
-        list.add(StudentItem("3333333333333333333333"))
-        list.add(StudentItem("sdfhgdf"))
-        awaiter(list)
-    }
-
-    fun getStudyRequests(loginStartsWith: String, awaiter: (ArrayList<StudentItem>) -> Unit){
-        var list: ArrayList<StudentItem> = ArrayList()
-        //TODO: Это временное заполнение
-        list.add(StudentItem("Анна Павловна"))
-        list.add(StudentItem("Сергей Николаевич"))
-        list.add(StudentItem("1111111111111111111111111"))
-        list.add(StudentItem("2222222222222222222222222"))
-        list.add(StudentItem("3333333333333333333333"))
-        list.add(StudentItem("sdfhgdf"))
-        awaiter(list)
+        networkService.userTeachersAPI.getTeachersToFind(
+            loginStartsWith,
+            getUserToken()
+        ).enqueue(standardListAnswer(awaiter))
     }
 
     fun abandonStudyWithTeacher(login: String, awaiter: () -> Unit){
-        //TODO: доделать
-        awaiter()
-    }
-
-    fun abandonStudyWithStudent(login: String, awaiter: () -> Unit){
-        //TODO: доделать
-        awaiter()
-    }
-
-    fun abandonStudyRequest(login: String, awaiter: () -> Unit){
-        //TODO: доделать
-        awaiter()
+        networkService.userTeachersAPI.abandonStudyWithTeacher(
+            login,
+            getUserToken()
+        ).enqueue(standardVoidAnswer(awaiter))
     }
 
     fun makeStudyRequest(login: String, awaiter: ()->Unit){
-        //TODO: доделать
-        awaiter()
+        networkService.userTeachersAPI.makeStudyRequest(
+            login,
+            getUserToken()
+        ).enqueue(standardVoidAnswer(awaiter))
+    }
+
+
+
+
+
+
+
+    fun getUserStudents(awaiter: (ArrayList<StudentItem>) -> Unit){
+        networkService.userStudentsAPI.getUserStudents(
+            getUserToken()
+        ).enqueue(standardListAnswer(awaiter))
+    }
+
+    fun getStudyRequests(loginStartsWith: String, awaiter: (ArrayList<StudentItem>) -> Unit){
+        networkService.userStudentsAPI.getStudyRequests(
+            loginStartsWith,
+            getUserToken()
+        ).enqueue(standardListAnswer(awaiter))
+    }
+
+    fun abandonStudyWithStudent(login: String, awaiter: () -> Unit){
+        networkService.userStudentsAPI.abandonStudyWithStudent(
+            login,
+            getUserToken()
+        ).enqueue(standardVoidAnswer(awaiter))
+    }
+
+    fun abandonStudyRequest(login: String, awaiter: () -> Unit){
+        networkService.userStudentsAPI.abandonStudyRequest(
+            login,
+            getUserToken()
+        ).enqueue(standardVoidAnswer(awaiter))
     }
 
     fun acceptStudyRequest(login: String, awaiter: ()->Unit){
-        //TODO: доделать
-        awaiter()
+        networkService.userStudentsAPI.acceptStudyRequest(
+            login,
+            getUserToken()
+        ).enqueue(standardVoidAnswer(awaiter))
     }
 }

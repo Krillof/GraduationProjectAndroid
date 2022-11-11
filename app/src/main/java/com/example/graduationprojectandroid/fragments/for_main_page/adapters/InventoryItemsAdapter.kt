@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutInventoryItemBinding
 import com.example.graduationprojectandroid.data.Items.InventoryItem
+import com.example.graduationprojectandroid.fragments.for_main_page.WearDialogue
+import com.example.graduationprojectandroid.network.DataService
 
 class InventoryItemsAdapter (
     private var fragment_manager: FragmentManager,

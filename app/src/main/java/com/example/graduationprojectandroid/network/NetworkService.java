@@ -4,21 +4,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageView;
 
-import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts;
-import com.example.graduationprojectandroid.data.Items.InventoryItem;
 import com.example.graduationprojectandroid.network.endpoints.APIs.HabitsAPI;
 import com.example.graduationprojectandroid.network.endpoints.APIs.ItemsAPI;
 import com.example.graduationprojectandroid.network.endpoints.APIs.NewsAPI;
 import com.example.graduationprojectandroid.network.endpoints.APIs.TasksAPI;
 import com.example.graduationprojectandroid.network.endpoints.APIs.UserAPI;
-import com.example.graduationprojectandroid.network.endpoints.JSONPlaceHolderApi;
+import com.example.graduationprojectandroid.network.endpoints.APIs.UserStudentsAPI;
+import com.example.graduationprojectandroid.network.endpoints.APIs.UserTeachersAPI;
 
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -72,6 +68,14 @@ public class NetworkService {
         return mRetrofit.create(NewsAPI.class);
     }
 
+    public UserTeachersAPI getUserTeachersAPI(){
+        return mRetrofit.create(UserTeachersAPI.class);
+    }
+
+    public UserStudentsAPI getUserStudentsAPI(){
+        return mRetrofit.create(UserStudentsAPI.class);
+    }
+
     //      -------APIs
 
     //--------Retrofit
@@ -120,134 +124,4 @@ public class NetworkService {
     }
 
     //---------getting picture
-
-
-    //--------------------
-
-
-    public void registerUser(String login, String password, AwaiterForRegisterUser awaiter){
-        //TODO: make it
-        awaiter.start("");
-    }
-
-
-    public void getItemsForMarket(AwaiterForMarketItems awaiter){
-        ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
-
-        //TODO: Get from server
-
-        inventoryItems.add(new InventoryItem(1,1, 19, 10, 15, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(2,1, 21, 3, 5, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(3,1, 128));
-        inventoryItems.add(new InventoryItem(1,1, 215));
-        inventoryItems.add(new InventoryItem(2,1,15));
-        inventoryItems.add(new InventoryItem(3,1,125));
-        inventoryItems.add(new InventoryItem(1,1,145));
-        inventoryItems.add(new InventoryItem(2,1,155));
-        inventoryItems.add(new InventoryItem(3,1,165));
-        inventoryItems.add(new InventoryItem(1,1,175));
-        inventoryItems.add(new InventoryItem(2,1,185));
-        inventoryItems.add(new InventoryItem(3,1,195));
-        inventoryItems.add(new InventoryItem(1,1,11655));
-        inventoryItems.add(new InventoryItem(2,1,1345));
-        inventoryItems.add(new InventoryItem(3,1,135));
-        inventoryItems.add(new InventoryItem(1,1,165));
-        inventoryItems.add(new InventoryItem(1,1, 19, 10, 15, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(2,1, 21, 3, 5, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(3,1, 128));
-        inventoryItems.add(new InventoryItem(1,1, 215));
-        inventoryItems.add(new InventoryItem(2,1,15));
-        inventoryItems.add(new InventoryItem(3,1,125));
-        inventoryItems.add(new InventoryItem(1,1,145));
-        inventoryItems.add(new InventoryItem(2,1,155));
-        inventoryItems.add(new InventoryItem(3,1,165));
-        inventoryItems.add(new InventoryItem(1,1,175));
-        inventoryItems.add(new InventoryItem(2,1,185));
-        inventoryItems.add(new InventoryItem(3,1,195));
-        inventoryItems.add(new InventoryItem(1,1,11655));
-        inventoryItems.add(new InventoryItem(2,1,1345));
-        inventoryItems.add(new InventoryItem(3,1,135));
-        inventoryItems.add(new InventoryItem(1,1,165));
-
-        awaiter.start(inventoryItems);
-    }
-
-    public void getItemsForInventory(AwaiterForInventoryItems awaiter){
-        ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
-
-        //TODO: Get from server
-
-        inventoryItems.add(new InventoryItem(1, 1, 19, 10, 15, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(2, 1, 21, 3, 5, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(3,1,  128));
-        inventoryItems.add(new InventoryItem(1,1,  215));
-        inventoryItems.add(new InventoryItem(2,1, 15));
-        inventoryItems.add(new InventoryItem(3,1, 125));
-        inventoryItems.add(new InventoryItem(1,1, 145));
-        inventoryItems.add(new InventoryItem(2,1, 155));
-        inventoryItems.add(new InventoryItem(3,1, 165));
-        inventoryItems.add(new InventoryItem(1,1, 175));
-        inventoryItems.add(new InventoryItem(2,1, 185));
-        inventoryItems.add(new InventoryItem(3,1, 195));
-        inventoryItems.add(new InventoryItem(1,1, 11655));
-        inventoryItems.add(new InventoryItem(2,1, 1345));
-        inventoryItems.add(new InventoryItem(3,1, 135));
-        inventoryItems.add(new InventoryItem(1,1, 165));
-        inventoryItems.add(new InventoryItem(1,1,  19, 10, 15, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(2,1,  21, 3, 5, View.VISIBLE));
-        inventoryItems.add(new InventoryItem(3,1,  128));
-        inventoryItems.add(new InventoryItem(1,1,  215));
-        inventoryItems.add(new InventoryItem(2,1, 15));
-        inventoryItems.add(new InventoryItem(3,1, 125));
-        inventoryItems.add(new InventoryItem(1,1, 145));
-        inventoryItems.add(new InventoryItem(2,1, 155));
-        inventoryItems.add(new InventoryItem(3,1, 165));
-        inventoryItems.add(new InventoryItem(1,1, 175));
-        inventoryItems.add(new InventoryItem(2,1, 185));
-        inventoryItems.add(new InventoryItem(3,1, 195));
-        inventoryItems.add(new InventoryItem(1,1, 11655));
-        inventoryItems.add(new InventoryItem(2,1, 1345));
-        inventoryItems.add(new InventoryItem(3,1, 135));
-        inventoryItems.add(new InventoryItem(1,1, 165));
-
-        awaiter.start(inventoryItems);
-    }
-
-    public void getAmountOfOneAvatarPartType(AvatarParts ap,
-                                             AwaiterForAmountOfOneAvatarPartType awaiter)
-            throws Exception
-    {
-
-        switch (ap){ //TODO: Get from SERVER
-            case BODY:
-                awaiter.start(15);
-                break;
-            case HAIR:
-                awaiter.start(2);
-                break;
-            case EYES:
-                awaiter.start(5);
-                break;
-            default:
-                throw new Exception("NetworkService: getAmountOfOneAvatarPartType: Unknown AvatarPart");
-        }
-    }
-
-    public void getUserData(AwaiterForGetUserData awaiter){
-        //TODO: get userData from data server
-        awaiter.start(new UserData(
-                "abc", "Avocado",
-                129, 65, 100, 220, 378,
-                13, 1, 1, 1, 1,
-                1, 1, 1
-        ));
-    }
-
-    public void changedAvatar(List<Integer> chosenParts,
-                              String avatarName,
-                              AwaiterForChangedAvatar awaiter){
-        //TODO: not sure in list
-        //TODO: send choosen parts (see table with numbers)
-        awaiter.start();
-    }
 }

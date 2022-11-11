@@ -1,6 +1,7 @@
 package com.example.graduationprojectandroid.network.endpoints.APIs;
 
 import com.example.graduationprojectandroid.data.Items.Task;
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -11,26 +12,26 @@ import retrofit2.http.Query;
 
 public interface TasksAPI {
     @POST("/set_task_state")
-    Call<String> setTaskState(
+    Call<SimpleServerAnswer> setTaskState(
             @Query("task_id") int taskId,
             @Query("task_state") int taskState,
             @Query("token") String token
     );
 
     @POST("/create_task")
-    Call<String> createTask(
+    Call<SimpleServerAnswer> createTask(
             @Body Task task,
             @Query("token") String token
     );
 
     @POST("/edit_task")
-    Call<String> editTask(
+    Call<SimpleServerAnswer> editTask(
             @Body Task task,
             @Query("token") String token
     );
 
     @GET("/get_tasks")
-    Call<String> getTasks(
+    Call<SimpleServerAnswer> getTasks(
             @Query("login_from") String loginFrom,
             @Query("login_to") String loginTo,
             @Query("token") String token

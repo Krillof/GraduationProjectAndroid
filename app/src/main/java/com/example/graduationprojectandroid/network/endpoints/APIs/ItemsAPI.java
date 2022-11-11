@@ -1,17 +1,19 @@
 package com.example.graduationprojectandroid.network.endpoints.APIs;
 
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface ItemsAPI {
     @GET("/get_market_items")
-    Call<String> getMarketItems(
+    Call<SimpleServerAnswer> getMarketItems(
             @Query("token") String token
     );
 
     @GET("/get_inventory_items")
-    Call<String> getInventoryItems(
+    Call<SimpleServerAnswer> getInventoryItems(
             @Query("token") String token
     );
 }
