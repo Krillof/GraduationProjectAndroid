@@ -1,39 +1,38 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
-import com.example.graduationprojectandroid.data.Items.Task;
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
-import com.google.gson.JsonObject;
+import com.example.graduationprojectandroid.data.Items.Task
+import retrofit2.http.GET
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import retrofit2.http.POST
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.Query
 
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
-public interface TasksAPI {
+interface TasksAPI {
     @POST("/set_task_state")
-    Call<SimpleServerAnswer> setTaskState(
-            @Query("task_id") int taskId,
-            @Query("task_state") int taskState,
-            @Query("token") String token
-    );
+    fun setTaskState(
+        @Query("task_id") taskId: Int,
+        @Query("task_state") taskState: Int,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/create_task")
-    Call<SimpleServerAnswer> createTask(
-            @Body Task task,
-            @Query("token") String token
-    );
+    fun createTask(
+        @Body task: Task?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/edit_task")
-    Call<SimpleServerAnswer> editTask(
-            @Body Task task,
-            @Query("token") String token
-    );
+    fun editTask(
+        @Body task: Task?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_tasks")
-    Call<SimpleServerAnswer> getTasks(
-            @Query("login_from") String loginFrom,
-            @Query("login_to") String loginTo,
-            @Query("token") String token
-    );
+    fun getTasks(
+        @Query("login_from") loginFrom: String?,
+        @Query("login_to") loginTo: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 }

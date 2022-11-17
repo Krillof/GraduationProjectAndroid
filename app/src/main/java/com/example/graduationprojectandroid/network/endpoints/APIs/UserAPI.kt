@@ -1,81 +1,51 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
-import com.example.graduationprojectandroid.network.UserData;
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
-import com.google.gson.JsonObject;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
+import com.example.graduationprojectandroid.network.UserData
+import retrofit2.http.GET
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import retrofit2.http.POST
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.Query
+import java.util.ArrayList
 
-import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
-public interface UserAPI {
-
-    // for registration
-    @POST("/is_login_unique")
-    Call<SimpleServerAnswer> isLoginUnique(
-            @Query("login") String login
-    );
-
-    @POST("/is_password_ok")
-    Call<SimpleServerAnswer> isPasswordOK(
-            @Query("password") String password
-    );
-
+interface UserAPI {
     @POST("/register")
-    Call<SimpleServerAnswer> register(
-            @Query("login") String login, @Query("password") String password
-    );
-
-
-
-
-    // log in
-    @POST("/check_login_existence")
-    Call<SimpleServerAnswer> isLoginExists(
-            @Query("login") String login
-    );
+    fun register(
+        @Query("login") login: String?, @Query("password") password: String?
+    ): Call<UserValidationAnswer>
 
     @POST("/enter")
-    Call<SimpleServerAnswer> enter(
-            @Query("login") String login, @Query("password") String password
-    );
-    
+    fun enter(
+        @Query("login") login: String?, @Query("password") password: String?
+    ): Call<UserValidationAnswer>
+
     @GET("/check_token")
-    Call<SimpleServerAnswer> checkToken(
-            @Query("check_token") String token
-    );
-
-
-
-
-
-
+    fun checkToken(
+        @Query("check_token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_user_data")
-    Call<UserData> getUserData(
-            @Query("token") String token
-    );
-
-
-
-
+    fun getUserData(
+        @Query("token") token: String?
+    ): Call<UserData>
 
     // for avatar
     @POST("/changed_avatar")
-    Call<SimpleServerAnswer> changedAvatar(
-            @Body ArrayList<Integer> choosenParts,
-            @Query("avatar_name") String avatarName,
-            @Query("token") String token
-    );
+    fun changedAvatar(
+        @Body choosenParts: ArrayList<Int?>?,
+        @Query("avatar_name") avatarName: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/check_avatar_name")
-    Call<SimpleServerAnswer> checkAvatarName(@Query("avatar_name") String avatarName);
+    fun checkAvatarName(
+        @Query("avatar_name") avatarName: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_amount_of_one_avatar_part_type")
-    Call<SimpleServerAnswer> getAmountOfOneAvatarPartType(@Query("avatar_part_type") String partNumber);
-
+    fun getAmountOfOneAvatarPartType(
+        @Query("avatar_part_type") partNumber: String?
+    ): Call<SimpleServerAnswer>
 }

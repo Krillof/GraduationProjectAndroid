@@ -1,39 +1,39 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
+import retrofit2.http.GET
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import retrofit2.http.POST
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
+import retrofit2.Call
+import retrofit2.http.Query
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
-public interface UserStudentsAPI {
+interface UserStudentsAPI {
     @GET("/get_user_students")
-    Call<SimpleServerAnswer> getUserStudents(
-            @Query("token") String token
-    );
+    fun getUserStudents(
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_study_requests")
-    Call<SimpleServerAnswer> getStudyRequests(
-            @Query("login_starts_with") String loginStartsWith,
-            @Query("token") String token
-    );
+    fun getStudyRequests(
+        @Query("login_starts_with") loginStartsWith: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/abandon_study_with_student")
-    Call<SimpleServerAnswer> abandonStudyWithStudent(
-            @Query("login") String login,
-            @Query("token") String token
-    );
+    fun abandonStudyWithStudent(
+        @Query("login") login: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/abandon_study_request")
-    Call<SimpleServerAnswer> abandonStudyRequest(
-            @Query("login") String login,
-            @Query("token") String token
-    );
+    fun abandonStudyRequest(
+        @Query("login") login: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/accept_study_request")
-    Call<SimpleServerAnswer> acceptStudyRequest(
-            @Query("login") String login,
-            @Query("token") String token
-    );
+    fun acceptStudyRequest(
+        @Query("login") login: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 }

@@ -8,6 +8,7 @@ import com.example.graduationprojectandroid.fragments.for_changing_avatar.Avatar
 import com.example.graduationprojectandroid.data.Items.*
 import com.example.graduationprojectandroid.data.States.HabitDoneStates
 import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,9 +16,7 @@ import retrofit2.Response
 
 object DataService {
 
-    private val networkService: NetworkService = NetworkService.getInstance()
-
-    fun openErrorPage(){
+    public fun openErrorPage(){
         //TODO
     }
 
@@ -40,44 +39,47 @@ object DataService {
 
 
 
-    fun checkSimpleAnswer(answer: SimpleServerAnswer) : Boolean {
-        if (answer.errors == ""){
-            openErrorPage()
-        }
-        return (answer.errors == "")
-    }
-
-    fun standardStringAnswer(awaiter: (String) -> Unit) : DataCallback<SimpleServerAnswer> {
+    private fun standardStringAnswer(awaiter: (String) -> Unit)
+    : DataCallback<SimpleServerAnswer> {
         return DataCallback<SimpleServerAnswer>{
-            checkSimpleAnswer(it)
-            awaiter(it.data)
+            it.checkErrors()
+            awaiter(it.data!!)
         }
     }
 
-    fun standardBooleanAnswer(awaiter: (Boolean) -> Unit) : DataCallback<SimpleServerAnswer> {
+    private fun standardUserValidationAnswer(
+        awaiter: (UserValidationAnswer.ValidationData)->Unit
+    ) : Callback<UserValidationAnswer> {
+        return DataCallback<UserValidationAnswer>{
+            it.checkErrors()
+            awaiter(it.data!!)
+        }
+    }
+
+    private fun standardBooleanAnswer(awaiter: (Boolean) -> Unit) : Callback<SimpleServerAnswer> {
         return DataCallback<SimpleServerAnswer>{
-            checkSimpleAnswer(it)
+            it.checkErrors()
             awaiter(it.data == "1")
         }
     }
 
-    fun standardVoidAnswer(awaiter: () -> Unit) : DataCallback<SimpleServerAnswer> {
+    private fun standardVoidAnswer(awaiter: () -> Unit) : Callback<SimpleServerAnswer> {
         return DataCallback<SimpleServerAnswer>{
-            checkSimpleAnswer(it)
+            it.checkErrors()
             awaiter()
         }
     }
 
-    fun standardIntAnswer(awaiter: (Int) -> Unit) : DataCallback<SimpleServerAnswer> {
+    private fun standardIntAnswer(awaiter: (Int) -> Unit) : Callback<SimpleServerAnswer> {
         return DataCallback<SimpleServerAnswer>{
-            checkSimpleAnswer(it)
-            awaiter(it.data.toInt())
+            it.checkErrors()
+            awaiter(it.data!!.toInt())
         }
     }
 
-    fun <E> standardListAnswer(awaiter: (ArrayList<E>) -> Unit) : DataCallback<SimpleServerAnswer> {
+    private fun <E> standardListAnswer(awaiter: (ArrayList<E>) -> Unit) : Callback<SimpleServerAnswer> {
         return DataCallback<SimpleServerAnswer> {
-            checkSimpleAnswer(it)
+            it.checkErrors()
             awaiter(
                 Gson().fromJson(
                     it.data,
@@ -117,11 +119,11 @@ object DataService {
 
 
     fun setPictureById(picture_id: Int, picture_view: ImageView){
-        networkService.setPictureById(picture_id, picture_view)
+        RetrofitClient.setPictureById(picture_id, picture_view)
     }
 
     fun setPictureOfAvatarPart(type: Int, id: Int, view: ImageView){
-        networkService.setPictureOfAvatarPart(type, id, view);
+        RetrofitClient.setPictureOfAvatarPart(type, id, view);
     }
 
     fun setOtherUserFacePicture(user_login: String, picture_view: ImageView){
@@ -130,7 +132,7 @@ object DataService {
 
     // get body parts for avatar from server
     fun getAvatarPartPictureForWearing(view: ImageView, ap: AvatarParts, id: Int){
-        networkService.setPictureOfAvatarPart(ap.number, id, view)
+        RetrofitClient.setPictureOfAvatarPart(ap.number, id, view)
     }
 
 
@@ -145,7 +147,7 @@ object DataService {
     }
 
 
-    fun getUserToken() : String{
+    private fun getUserToken() : String{
         // TODO: храни токен на телефоне
         return "ttt";
     }
@@ -157,49 +159,39 @@ object DataService {
 
 
     fun getUserData(awaiter: (UserData) -> Unit) {
-        networkService.userAPI.getUserData(getUserToken()).enqueue(
+        RetrofitClient.getUserAPI().getUserData(getUserToken()).enqueue(
             DataCallback<UserData>(awaiter)
         )
     }
 
-    fun registerUser(login: String, password: String, awaiter: (String)->Unit){
-        networkService.userAPI.register(login, password).enqueue(standardStringAnswer(awaiter))
+    fun tryRegister(
+        login: String, password: String,
+        awaiter: (UserValidationAnswer.ValidationData)->Unit
+    ){
+        RetrofitClient.getUserAPI().register(login, password)
+            .enqueue(
+                standardUserValidationAnswer(awaiter)
+            )
     }
 
     // use in LoginActivity
-    fun checkLoginUniquness(login: String, awaiter: (error: String)->Unit){
-        networkService.userAPI.isLoginUnique(login).enqueue(standardStringAnswer(awaiter))
-    }
-
-    // use in LoginActivity
-    fun checkIsPasswordOK(password: String, awaiter: (error: String)->Unit){
-        networkService.userAPI.isLoginUnique(password).enqueue(standardStringAnswer(awaiter))
-    }
-
-    // use in LoginActivity
-    fun checkIsLoginExists(login: String, awaiter: (error: String)->Unit){
-        networkService.userAPI.isLoginExists(login).enqueue(standardStringAnswer(awaiter))
-    }
-
-    // use in LoginActivity
-    fun tryEnter(login: String, password: String, awaiter: (error: String)->Unit){
-        networkService.userAPI.enter(login, password).enqueue(standardStringAnswer(awaiter))
+    fun tryEnter(
+        login: String, password: String,
+        awaiter: (UserValidationAnswer.ValidationData)->Unit
+    ){
+        RetrofitClient.getUserAPI().enter(login, password)
+            .enqueue(standardUserValidationAnswer(awaiter))
     }
 
     // when enter in app, to not login again
     fun isLogined(awaiter: (Boolean)->Unit) {
-        networkService.userAPI.checkToken(getUserToken()).enqueue(standardBooleanAnswer(awaiter))
+        RetrofitClient.getUserAPI().checkToken(getUserToken())
+            .enqueue(standardBooleanAnswer(awaiter))
     }
 
 
-
-
-
-
-
-
     fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
-        networkService.userAPI.changedAvatar(
+        RetrofitClient.getUserAPI().changedAvatar(
             chosenParts.toCollection(ArrayList()),
             avatarName,
             getUserToken()
@@ -218,23 +210,23 @@ object DataService {
 
 
     fun setHabitState(id: Int, state: HabitDoneStates){
-        networkService.habitsAPI.setHabitState(id, state.type, getUserToken()).enqueue(
+        RetrofitClient.getHabitsAPI().setHabitState(id, state.type, getUserToken()).enqueue(
             standardVoidAnswer() {}
         )
     }
 
     fun createHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        networkService.habitsAPI.createHabit(habit, getUserToken())
+        RetrofitClient.getHabitsAPI().createHabit(habit, getUserToken())
             .enqueue(standardStringAnswer(awaiter))
     }
 
     fun editHabit(habit: Habit, awaiter: (error: String) -> Unit){
-        networkService.habitsAPI.editHabit(habit, getUserToken())
+        RetrofitClient.getHabitsAPI().editHabit(habit, getUserToken())
             .enqueue(standardStringAnswer(awaiter))
     }
 
     fun getHabits(loginFrom: String, loginTo: String, awaiter: (ArrayList<Habit>)->Unit) {
-        networkService.habitsAPI.getHabits(
+        RetrofitClient.getHabitsAPI().getHabits(
             loginFrom,
             loginTo,
             getUserToken()
@@ -253,22 +245,22 @@ object DataService {
 
 
     fun setTaskState(id: Int, state: Boolean){
-        networkService.tasksAPI.setTaskState(id, if (state) 1 else 0, getUserToken())
+        RetrofitClient.getTasksAPI().setTaskState(id, if (state) 1 else 0, getUserToken())
             .enqueue(standardVoidAnswer() {})
     }
 
     fun createTask(task: Task, awaiter: (error: String) -> Unit){
-        networkService.tasksAPI.createTask(task, getUserToken())
+        RetrofitClient.getTasksAPI().createTask(task, getUserToken())
             .enqueue(standardStringAnswer(awaiter))
     }
 
     fun editTask(task: Task, awaiter: (error: String) -> Unit){
-        networkService.tasksAPI.editTask(task, getUserToken())
+        RetrofitClient.getTasksAPI().editTask(task, getUserToken())
             .enqueue(standardStringAnswer(awaiter))
     }
 
     fun getTasks(loginFrom:String, loginTo: String, awaiter: (ArrayList<Task>)->Unit){
-        networkService.tasksAPI.getTasks(
+        RetrofitClient.getTasksAPI().getTasks(
             loginFrom,
             loginTo,
             getUserToken()
@@ -287,23 +279,28 @@ object DataService {
 
 
     fun getMarketItems(awaiter: (ArrayList<InventoryItem>) -> Unit){
-        networkService.itemsAPI.getMarketItems(
+        RetrofitClient.getItemsAPI().getMarketItems(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getInventoryItems(awaiter: (ArrayList<InventoryItem>)->Unit ){
-        networkService.itemsAPI.getInventoryItems(
+        RetrofitClient.getItemsAPI().getInventoryItems(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
+
+
+
+
+
     fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
-        networkService.newsAPI.news.enqueue(standardListAnswer(awaiter))
+        RetrofitClient.getNewsAPI().news.enqueue(standardListAnswer(awaiter))
     }
 
     fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){
-        networkService.newsAPI.getNewsItem(id).enqueue(
+        RetrofitClient.getNewsAPI().getNewsItem(id).enqueue(
             standardStringAnswer(){
                 awaiter(
                     Gson().fromJson(
@@ -320,12 +317,12 @@ object DataService {
 
 
     fun checkAvatarName(avatarName: String, awaiter: (String)->Unit){
-        networkService.userAPI.checkAvatarName(avatarName)
+        RetrofitClient.getUserAPI().checkAvatarName(avatarName)
             .enqueue(standardStringAnswer(awaiter))
     }
 
     fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
-        networkService.userAPI.getAmountOfOneAvatarPartType(ap.number.toString())
+        RetrofitClient.getUserAPI().getAmountOfOneAvatarPartType(ap.number.toString())
             .enqueue(standardIntAnswer(awaiter))
     }
 
@@ -335,27 +332,27 @@ object DataService {
 
 
     fun getUserTeachers(awaiter: (ArrayList<TeacherItem>) -> Unit){
-        networkService.userTeachersAPI.getUserTeachers(
+        RetrofitClient.getUserTeachersAPI().getUserTeachers(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getTeachersToFind(loginStartsWith: String, awaiter: (ArrayList<TeacherItem>) -> Unit){
-        networkService.userTeachersAPI.getTeachersToFind(
+        RetrofitClient.getUserTeachersAPI().getTeachersToFind(
             loginStartsWith,
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
     fun abandonStudyWithTeacher(login: String, awaiter: () -> Unit){
-        networkService.userTeachersAPI.abandonStudyWithTeacher(
+        RetrofitClient.getUserTeachersAPI().abandonStudyWithTeacher(
             login,
             getUserToken()
         ).enqueue(standardVoidAnswer(awaiter))
     }
 
     fun makeStudyRequest(login: String, awaiter: ()->Unit){
-        networkService.userTeachersAPI.makeStudyRequest(
+        RetrofitClient.getUserTeachersAPI().makeStudyRequest(
             login,
             getUserToken()
         ).enqueue(standardVoidAnswer(awaiter))
@@ -368,34 +365,34 @@ object DataService {
 
 
     fun getUserStudents(awaiter: (ArrayList<StudentItem>) -> Unit){
-        networkService.userStudentsAPI.getUserStudents(
+        RetrofitClient.getUserStudentsAPI().getUserStudents(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
     fun getStudyRequests(loginStartsWith: String, awaiter: (ArrayList<StudentItem>) -> Unit){
-        networkService.userStudentsAPI.getStudyRequests(
+        RetrofitClient.getUserStudentsAPI().getStudyRequests(
             loginStartsWith,
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
     fun abandonStudyWithStudent(login: String, awaiter: () -> Unit){
-        networkService.userStudentsAPI.abandonStudyWithStudent(
+        RetrofitClient.getUserStudentsAPI().abandonStudyWithStudent(
             login,
             getUserToken()
         ).enqueue(standardVoidAnswer(awaiter))
     }
 
     fun abandonStudyRequest(login: String, awaiter: () -> Unit){
-        networkService.userStudentsAPI.abandonStudyRequest(
+        RetrofitClient.getUserStudentsAPI().abandonStudyRequest(
             login,
             getUserToken()
         ).enqueue(standardVoidAnswer(awaiter))
     }
 
     fun acceptStudyRequest(login: String, awaiter: ()->Unit){
-        networkService.userStudentsAPI.acceptStudyRequest(
+        RetrofitClient.getUserStudentsAPI().acceptStudyRequest(
             login,
             getUserToken()
         ).enqueue(standardVoidAnswer(awaiter))

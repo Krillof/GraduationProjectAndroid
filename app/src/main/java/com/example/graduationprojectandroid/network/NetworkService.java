@@ -20,6 +20,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkService {
+    /*
     //singleton
     private static NetworkService mInstance;
 
@@ -32,7 +33,7 @@ public class NetworkService {
     //---------singleton
 
     //Retrofit
-    private static final String BASE_URL = "https://graduationprojectdo.azurewebsites.net/";
+    private static final String BASE_URL = "https://graduationprojectdo.azurewebsites.net";
     private final Retrofit mRetrofit;
 
     private NetworkService() {
@@ -124,4 +125,6 @@ public class NetworkService {
     }
 
     //---------getting picture
+
+     */
 }

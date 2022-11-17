@@ -1,33 +1,33 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
+import retrofit2.http.GET
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import retrofit2.http.POST
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
+import retrofit2.Call
+import retrofit2.http.Query
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
-public interface UserTeachersAPI {
+interface UserTeachersAPI {
     @GET("/get_user_teachers")
-    Call<SimpleServerAnswer> getUserTeachers(
-            @Query("token") String token
-    );
+    fun getUserTeachers(
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_teachers_to_find")
-    Call<SimpleServerAnswer> getTeachersToFind(
-            @Query("login_starts_with") String loginStartsWith,
-            @Query("token") String token
-    );
+    fun getTeachersToFind(
+        @Query("login_starts_with") loginStartsWith: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/abandon_study_with_teacher")
-    Call<SimpleServerAnswer> abandonStudyWithTeacher(
-            @Query("login") String login,
-            @Query("token") String token
-    );
+    fun abandonStudyWithTeacher(
+        @Query("login") login: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/make_study_request")
-    Call<SimpleServerAnswer> makeStudyRequest(
-            @Query("login") String login,
-            @Query("token") String token
-    );
+    fun makeStudyRequest(
+        @Query("login") login: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 }

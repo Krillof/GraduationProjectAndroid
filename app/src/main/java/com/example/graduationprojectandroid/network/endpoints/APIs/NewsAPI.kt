@@ -1,17 +1,16 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
-
-public interface NewsAPI {
-    @GET("/get_news")
-    Call<SimpleServerAnswer> getNews();
+interface NewsAPI {
+    @get:GET("/get_news")
+    val news: Call<SimpleServerAnswer>
 
     @GET("/get_news_item")
-    Call<SimpleServerAnswer> getNewsItem(
-            @Query("news_item_id") int newsItemId
-    );
+    fun getNewsItem(
+        @Query("news_item_id") newsItemId: Int
+    ): Call<SimpleServerAnswer>
 }

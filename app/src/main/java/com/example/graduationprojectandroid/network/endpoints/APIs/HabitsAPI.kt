@@ -1,41 +1,37 @@
-package com.example.graduationprojectandroid.network.endpoints.APIs;
+package com.example.graduationprojectandroid.network.endpoints.APIs
 
-import com.example.graduationprojectandroid.data.Items.Habit;
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer;
-import com.google.gson.JsonObject;
+import retrofit2.http.POST
+import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
+import com.example.graduationprojectandroid.data.Items.Habit
+import retrofit2.Call
+import retrofit2.http.Body
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-import retrofit2.Call;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
-import retrofit2.http.Query;
-
-public interface HabitsAPI {
-
+interface HabitsAPI {
     @POST("/set_habit_state")
-    Call<SimpleServerAnswer> setHabitState(
-            @Query("habit_id") int habitId,
-            @Query("habit_state") int habitState,
-            @Query("token") String token
-    );
+    fun setHabitState(
+        @Query("habit_id") habitId: Int,
+        @Query("habit_state") habitState: Int,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/create_habit")
-    Call<SimpleServerAnswer> createHabit(
-            @Body Habit habit,
-            @Query("token") String token
-    );
+    fun createHabit(
+        @Body habit: Habit?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @POST("/edit_habit")
-    Call<SimpleServerAnswer> editHabit(
-            @Body Habit habit,
-            @Query("token") String token
-    );
+    fun editHabit(
+        @Body habit: Habit?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 
     @GET("/get_habits")
-    Call<SimpleServerAnswer> getHabits(
-            @Query("login_from") String loginFrom,
-            @Query("login_to") String loginTo,
-            @Query("token") String token
-    );
-
+    fun getHabits(
+        @Query("login_from") loginFrom: String?,
+        @Query("login_to") loginTo: String?,
+        @Query("token") token: String?
+    ): Call<SimpleServerAnswer>
 }

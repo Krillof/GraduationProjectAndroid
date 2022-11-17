@@ -9,6 +9,7 @@ import com.example.graduationprojectandroid.fragments.for_login.OrEnterBy
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
 import com.example.graduationprojectandroid.network.DataService
+import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
 import kotlin.system.exitProcess
 
 
@@ -19,76 +20,55 @@ class LoginActivity : AppCompatActivity() {
         val PASSWORD = "PASSWORD"
     }
 
-    private fun nextActivity(login: String, password: String, isRegistering: Boolean){
-        if (isRegistering) {
-            val context = this
-            DataService.registerUser(login, password) {
-                if (it == "") {
-                    MainPage.currentState = MainPage.MainPageStates.DOS
-                    startActivity(Intent(context, ChangingAvatar::class.java))
-                    finish()
-                } else {
-                    var infoDialogue: InfoDialogue? = null
-                    infoDialogue = InfoDialogue.newInstance(it){
-                        //it's ok that "it" isn't in use - program just informing user
-                        infoDialogue?.dismissAllowingStateLoss()
-                    }
-                    infoDialogue.show(supportFragmentManager, "info_dialogue")
-                }
-            }
-        } else {
-            startActivity(Intent(this, MainPage::class.java))
-            finish()
-        }
-    }
-
-    private fun setGetLoginPassword(loginErrorMessage: String, passwordErrorMessage: String){
+    private fun setGetLoginPassword(validationData: UserValidationAnswer.ValidationData){
         supportFragmentManager.commit {
+            var loginErrorMessage: String = ""
+            var passwordErrorMessage: String = ""
+            if (validationData.isLoginInvalid()){
+                loginErrorMessage = validationData.message!!
+            } else {
+                passwordErrorMessage = validationData.message!!
+            }
+
             val getLoginPassword = GetLoginPassword(
                 { login, password, isRegistering ->
                     tryGetIn(login, password, isRegistering)
                 },
-                "", "")
+                loginErrorMessage, passwordErrorMessage)
             replace(R.id.main_login_fragment, getLoginPassword)
         }
     }
 
 
     private fun tryGetIn(login: String, password: String, isRegistering: Boolean){
-        if (isRegistering){
-            val newLoginAnswer = DataService.checkLoginUniquness(login){
-                if (it == ""){
-                    val passwordAnswer = DataService.checkIsPasswordOK(password){
-                        if (it == ""){
-                            // go to avatar creating
-                            nextActivity(login, password, true)
-                        } else {
-                            // write error message for password from it
-                            setGetLoginPassword("", it)
-                        }
-                    }
-                } else {
-                    // write error message for login from it
-                    setGetLoginPassword(it, "")
-                }
-            }
+        val context = this
 
-        } else {
-            val tryLogin = DataService.checkIsLoginExists(login){
-                if (it == ""){
-                    val tryPassword = DataService.tryEnter(login, password){
-                        if (it == ""){
-                            // go to main page
-                            nextActivity(login, password, false)
-                        } else {
-                            // write error message for password from it
-                            setGetLoginPassword("", it)
-                        }
+        if (isRegistering) {
+            DataService.tryRegister(login, password) { validationData ->
+                if (validationData.isValid()) {
+                    DataService.saveToken(context, validationData.token!!)
+                    MainPage.currentState = MainPage.MainPageStates.DOS
+                    startActivity(Intent(context, ChangingAvatar::class.java))
+                    finish()
+                } else setGetLoginPassword(validationData)
+                /*
+                TODO: why is it here?
+                else {
+                    var infoDialogue: InfoDialogue? = null
+                    infoDialogue = InfoDialogue.newInstance(it){
+                        //it's ok that "it" isn't in use - program just informing user
+                        infoDialogue?.dismissAllowingStateLoss()
                     }
-                } else {
-                    // write error message for login from it
-                    setGetLoginPassword(it, "")
-                }
+                    infoDialogue.show(supportFragmentManager, "info_dialogue")
+                }*/
+            }
+        } else {
+            DataService.tryEnter(login, password){ validationData ->
+                if (validationData.isValid()){
+                    DataService.saveToken(context, validationData.token!!)
+                    startActivity(Intent(this, MainPage::class.java))
+                    finish()
+                } else setGetLoginPassword(validationData)
             }
         }
     }
