@@ -41,7 +41,7 @@ class AvatarPartsChoiceMenu(
 
         val choices = listOf(choice1, choice2, choice3)
 
-        DataService.getAmountOfOneAvatarPartType(currentAvatarPartPage){ amount ->
+        DataService.getAmountOfOneTypeAvatarParts(currentAvatarPartPage){ amount ->
 
 
             avatarPartsList.layoutManager = GridLayoutManager(avatarPartsList.context, 5)

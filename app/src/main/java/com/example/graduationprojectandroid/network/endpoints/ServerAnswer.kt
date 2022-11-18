@@ -6,7 +6,7 @@ abstract class ServerAnswer {
     abstract var errors: String?
     fun checkErrors() {
         if (errors != "") {
-            DataService.openErrorPage()
+            DataService.openErrorPage(errors!!)
         }
     }
 }

@@ -1,7 +1,10 @@
 package com.example.graduationprojectandroid.network
 
 import android.content.Context
+import android.util.Log
 import android.widget.ImageView
+import android.widget.Toast
+import com.example.graduationprojectandroid.App
 import com.example.graduationprojectandroid.GenericsAsTypeParameter
 import com.example.graduationprojectandroid.PreferencesService
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
@@ -16,8 +19,10 @@ import retrofit2.Response
 
 object DataService {
 
-    public fun openErrorPage(){
+    fun openErrorPage(message: String){
         //TODO
+        Toast.makeText(App.getAppContext(), "Error on server", Toast.LENGTH_SHORT).show()
+        Log.println(Log.ERROR, "Callback error", message)
     }
 
     class DataCallback<T>(
@@ -27,12 +32,13 @@ object DataService {
             if (response.isSuccessful){
                 awaiter(response.body()!!)
             } else {
-                openErrorPage()
+                openErrorPage("Response wasn't succesfull: "
+                        + response.message() + " " + response.code())
             }
         }
 
         override fun onFailure(call: Call<T>, t: Throwable) {
-            openErrorPage()
+            openErrorPage("Response was failed: " + t.message)
         }
     }
 
@@ -141,15 +147,22 @@ object DataService {
 
 
     // after entering in
-    fun saveToken(context: Context, token: String){
-        PreferencesService.saveLogin(context, token)
-        //TODO: think about it
+    fun saveToken(token: String){
+        PreferencesService.saveToken(token)
     }
 
+    private var token: String? = null
 
-    private fun getUserToken() : String{
-        // TODO: храни токен на телефоне
-        return "ttt";
+
+    private fun getUserToken() : String {
+        return token!!
+    }
+
+    // when enter in app, to not login again
+    fun checkToken(awaiter: (Boolean)->Unit) {
+        token = PreferencesService.loadToken()
+        RetrofitClient.getUserAPI().checkToken(getUserToken())
+            .enqueue(standardBooleanAnswer(awaiter))
     }
 
 
@@ -168,7 +181,7 @@ object DataService {
         login: String, password: String,
         awaiter: (UserValidationAnswer.ValidationData)->Unit
     ){
-        RetrofitClient.getUserAPI().register(login, password)
+        RetrofitClient.getUserAPI().tryRegister(login, password)
             .enqueue(
                 standardUserValidationAnswer(awaiter)
             )
@@ -179,15 +192,11 @@ object DataService {
         login: String, password: String,
         awaiter: (UserValidationAnswer.ValidationData)->Unit
     ){
-        RetrofitClient.getUserAPI().enter(login, password)
+        RetrofitClient.getUserAPI().tryEnter(login, password)
             .enqueue(standardUserValidationAnswer(awaiter))
     }
 
-    // when enter in app, to not login again
-    fun isLogined(awaiter: (Boolean)->Unit) {
-        RetrofitClient.getUserAPI().checkToken(getUserToken())
-            .enqueue(standardBooleanAnswer(awaiter))
-    }
+
 
 
     fun changedAvatar(chosenParts: Array<Int>, avatarName: String, awaiter: ()->Unit){
@@ -321,8 +330,8 @@ object DataService {
             .enqueue(standardStringAnswer(awaiter))
     }
 
-    fun getAmountOfOneAvatarPartType(ap: AvatarParts, awaiter: (Int) -> Unit){
-        RetrofitClient.getUserAPI().getAmountOfOneAvatarPartType(ap.number.toString())
+    fun getAmountOfOneTypeAvatarParts(ap: AvatarParts, awaiter: (Int) -> Unit){
+        RetrofitClient.getUserAPI().getAmountOfOneTypeAvatarParts(ap.number.toString())
             .enqueue(standardIntAnswer(awaiter))
     }
 

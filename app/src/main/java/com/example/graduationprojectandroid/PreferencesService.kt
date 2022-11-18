@@ -4,17 +4,22 @@ import android.content.Context
 
 object PreferencesService {
 
-    private val SAVING_LOGIN_STR = "DO_LOGIN"
-    private val KEY_TO_LOGIN_STR = "LOGIN"
+    private val SAVING_TOKEN_STR = "DO_TOKEN"
+    private val KEY_TO_TOKEN_STR = "TOKEN"
 
-    fun loadLogin(context: Context) : String? {
-        val sharedPreferences =  context.getSharedPreferences(SAVING_LOGIN_STR, Context.MODE_PRIVATE)
-        return sharedPreferences.getString(KEY_TO_LOGIN_STR, "")
+    fun isTokenExists() : Boolean{
+        val sharedPreferences = App.getAppContext().getSharedPreferences(SAVING_TOKEN_STR, Context.MODE_PRIVATE)
+        return sharedPreferences.contains(KEY_TO_TOKEN_STR)
     }
 
-    fun saveLogin(context: Context, login: String){
-        val sharedPreferences =  context.getSharedPreferences(SAVING_LOGIN_STR, Context.MODE_PRIVATE)
-        sharedPreferences.edit().putString(KEY_TO_LOGIN_STR, login).apply()
+    fun loadToken() : String? {
+        val sharedPreferences = App.getAppContext().getSharedPreferences(SAVING_TOKEN_STR, Context.MODE_PRIVATE)
+        return sharedPreferences.getString(KEY_TO_TOKEN_STR, "")
+    }
+
+    fun saveToken(login: String){
+        val sharedPreferences =  App.getAppContext().getSharedPreferences(SAVING_TOKEN_STR, Context.MODE_PRIVATE)
+        sharedPreferences.edit().putString(KEY_TO_TOKEN_STR, login).apply()
     }
 
 

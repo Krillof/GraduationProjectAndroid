@@ -3,7 +3,10 @@ package com.example.graduationprojectandroid.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+import com.example.graduationprojectandroid.App
+import com.example.graduationprojectandroid.PreferencesService
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.network.DataService
 
@@ -14,13 +17,19 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Toast.makeText(App.getAppContext(), "Toasts are working", Toast.LENGTH_SHORT).show()
 
-        DataService.isLogined(){
-            if (it){
-                startActivity(Intent(this, MainPage::class.java))
-            } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+        if (PreferencesService.isTokenExists()) {
+            DataService.checkToken() {
+                if (it) {
+                    startActivity(Intent(this, MainPage::class.java))
+                } else {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
+                finish()
             }
+        } else {
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
 

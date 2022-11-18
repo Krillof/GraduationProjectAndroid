@@ -13,7 +13,7 @@ import java.net.URL
 
 object RetrofitClient {
     //Retrofit
-    private const val BASE_URL = "https://graduationprojectdo.azurewebsites.net/api"
+    private const val BASE_URL = "https://graduationprojectwebapi.azurewebsites.net/api/"
     private var mRetrofit: Retrofit
         = Retrofit.Builder()
         .baseUrl(BASE_URL)

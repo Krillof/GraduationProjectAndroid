@@ -11,20 +11,24 @@ import retrofit2.http.Query
 import java.util.ArrayList
 
 interface UserAPI {
-    @POST("/register")
-    fun register(
-        @Query("login") login: String?, @Query("password") password: String?
+    @POST("mobileappusers/tryregister")
+    fun tryRegister(
+        @Query("login") login: String?,
+        @Query("password") password: String?
     ): Call<UserValidationAnswer>
 
-    @POST("/enter")
-    fun enter(
-        @Query("login") login: String?, @Query("password") password: String?
+    @POST("mobileappusers/tryenter")
+    fun tryEnter(
+        @Query("login") login: String?,
+        @Query("password") password: String?
     ): Call<UserValidationAnswer>
 
-    @GET("/check_token")
+    @POST("mobileappusers/checktoken")
     fun checkToken(
-        @Query("check_token") token: String?
+        @Query("token") token: String?
     ): Call<SimpleServerAnswer>
+
+
 
     @GET("/get_user_data")
     fun getUserData(
@@ -44,8 +48,8 @@ interface UserAPI {
         @Query("avatar_name") avatarName: String?
     ): Call<SimpleServerAnswer>
 
-    @GET("/get_amount_of_one_avatar_part_type")
-    fun getAmountOfOneAvatarPartType(
+    @GET("/get_amount_of_one_type_avatar_parts")
+    fun getAmountOfOneTypeAvatarParts(
         @Query("avatar_part_type") partNumber: String?
     ): Call<SimpleServerAnswer>
 }

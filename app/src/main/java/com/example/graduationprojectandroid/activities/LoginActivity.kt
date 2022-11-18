@@ -46,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         if (isRegistering) {
             DataService.tryRegister(login, password) { validationData ->
                 if (validationData.isValid()) {
-                    DataService.saveToken(context, validationData.token!!)
+                    DataService.saveToken(validationData.token!!)
                     MainPage.currentState = MainPage.MainPageStates.DOS
                     startActivity(Intent(context, ChangingAvatar::class.java))
                     finish()
@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
         } else {
             DataService.tryEnter(login, password){ validationData ->
                 if (validationData.isValid()){
-                    DataService.saveToken(context, validationData.token!!)
+                    DataService.saveToken(validationData.token!!)
                     startActivity(Intent(this, MainPage::class.java))
                     finish()
                 } else setGetLoginPassword(validationData)
