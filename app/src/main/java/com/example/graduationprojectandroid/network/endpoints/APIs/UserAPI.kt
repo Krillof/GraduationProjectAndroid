@@ -1,56 +1,53 @@
 package com.example.graduationprojectandroid.network.endpoints.APIs
 
 import com.example.graduationprojectandroid.network.UserData
-import retrofit2.http.GET
 import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
-import retrofit2.http.POST
 import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Query
+import retrofit2.http.*
 import java.util.ArrayList
 
 interface UserAPI {
-    @POST("mobileappusers/tryregister")
+    @GET("mobileappusers/tryregister")
     fun tryRegister(
         @Query("login") login: String?,
         @Query("password") password: String?
     ): Call<UserValidationAnswer>
 
-    @POST("mobileappusers/tryenter")
+    @GET("mobileappusers/tryenter")
     fun tryEnter(
         @Query("login") login: String?,
         @Query("password") password: String?
     ): Call<UserValidationAnswer>
 
-    @POST("mobileappusers/checktoken")
+    @GET("mobileappusers/checktoken")
     fun checkToken(
         @Query("token") token: String?
     ): Call<SimpleServerAnswer>
 
 
 
-    @POST("mobileappusers/getuserdata")
+    @GET("mobileappusers/getuserdata")
     fun getUserData(
         @Query("token") token: String?
     ): Call<UserData>
 
     // for avatar
-    @POST("mobileappusers/changedavatar")
+    @GET("mobileappusers/changedavatar")
     fun changedAvatar(
-        @Body choosenParts: ArrayList<Int?>?,
+        @Query("choosen_parts") choosenParts: ArrayList<Int?>?,
         @Query("avatar_name") avatarName: String?,
         @Query("token") token: String?
     ): Call<SimpleServerAnswer>
 
-    @POST("mobileappusers/checkavatarname")
+    @GET("mobileappusers/checkavatarname")
     fun checkAvatarName(
         @Query("avatar_name") avatarName: String?
     ): Call<SimpleServerAnswer>
 
 
-    @POST("mobileappusers/getamountofonetypeavatarparts")
+    @GET("mobileappusers/getamountofonetypeavatarparts")
     fun getAmountOfOneTypeAvatarParts(
-        @Query("avatar_part_type") partNumber: String?
+        @Query("avatar_part_type") partNumber: Int?
     ): Call<SimpleServerAnswer>
 }

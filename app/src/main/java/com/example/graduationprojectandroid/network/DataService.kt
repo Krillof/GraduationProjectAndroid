@@ -328,7 +328,7 @@ object DataService {
     }
 
     fun getAmountOfOneTypeAvatarParts(ap: AvatarParts, awaiter: (Int) -> Unit){
-        RetrofitClient.getUserAPI().getAmountOfOneTypeAvatarParts(ap.number.toString())
+        RetrofitClient.getUserAPI().getAmountOfOneTypeAvatarParts(ap.number)
             .enqueue(standardIntAnswer(awaiter))
     }
 
