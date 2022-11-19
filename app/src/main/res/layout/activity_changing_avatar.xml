@@ -47,7 +47,7 @@
 
     <ImageView
 
-        android:id="@+id/background_rectangle"
+        android:id="@+id/eyes_rectangle"
 
         android:layout_width="270dp"
         android:layout_height="275dp"

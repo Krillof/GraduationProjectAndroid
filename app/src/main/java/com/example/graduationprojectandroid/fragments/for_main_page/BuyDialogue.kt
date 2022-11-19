@@ -11,11 +11,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutBuyMarketItemBinding
-import com.example.graduationprojectandroid.data.Items.InventoryItem
+import com.example.graduationprojectandroid.data.Items.MarketItem
 import com.example.graduationprojectandroid.network.DataService
 
 class BuyDialogue (
-    private var inventoryItem: InventoryItem,
+    private var marketItem: MarketItem,
     private var listener: (answer: Boolean) -> Unit
 ) : DialogFragment() {
 
@@ -47,15 +47,15 @@ class BuyDialogue (
             = with(binding) {
         super.onViewCreated(view, savedInstanceState)
 
-        val text_part1 = getString(R.string.health)+" +"+inventoryItem.plus_hp.toString()+"\n"
-        val text_part2 = getString(R.string.experience) + " +" + inventoryItem.plus_exp.toString()
+        val text_part1 = getString(R.string.health)+" +"+marketItem.plus_hp.toString()+"\n"
+        val text_part2 = getString(R.string.experience) + " +" + marketItem.plus_exp.toString()
         infoText.text = text_part1 + text_part2
 
-        moneyText.text = inventoryItem.money.toString()
+        moneyText.text = marketItem.money.toString()
 
 
 
-        DataService.setPictureById(inventoryItem.id, picture)
+        DataService.setMarketItemPicture(marketItem.id, picture)
 
         closeButton.setOnClickListener {
             listener(false)
@@ -69,9 +69,9 @@ class BuyDialogue (
     companion object {
         @JvmStatic
         fun newInstance(
-            inventoryItem: InventoryItem,
+            marketItem: MarketItem,
             listener: (answer: Boolean) -> Unit
         ) =
-            BuyDialogue(inventoryItem, listener)
+            BuyDialogue(marketItem, listener)
     }
 }

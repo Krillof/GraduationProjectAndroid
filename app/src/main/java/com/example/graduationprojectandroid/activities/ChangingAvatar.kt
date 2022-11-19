@@ -14,7 +14,9 @@ import com.example.graduationprojectandroid.network.DataService
 
 class ChangingAvatar : AppCompatActivity() {
     override fun onBackPressed() {
-        //TODO: Доделай, что делать, если нажали на кнопку "Назад" здесь
+        MainPage.currentState = MainPage.MainPageStates.DOS
+        startActivity(Intent(this, MainPage::class.java))
+        finish()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +27,7 @@ class ChangingAvatar : AppCompatActivity() {
         // TODO: go to xml and make under button a rectangle for not showing under button avatar parts if they will get under it
         val body_rectangle = findViewById<ImageView>(R.id.body_rectangle)
         val hair_rectangle = findViewById<ImageView>(R.id.hair_rectangle)
-        val background_rectangle = findViewById<ImageView>(R.id.background_rectangle)
+        val background_rectangle = findViewById<ImageView>(R.id.eyes_rectangle)
 
         val avatar_parts_rectangle = arrayOf(body_rectangle, hair_rectangle, background_rectangle)
 
@@ -35,10 +37,10 @@ class ChangingAvatar : AppCompatActivity() {
         avatar_parts_rectangle.forEachIndexed { index, imageView ->
             DataService
                 .getAvatarPartPictureForWearing(
-                    imageView,
+                    1,
                     AvatarParts.values()[index],
-                    1
-                );
+                    imageView
+                )
         }
 
         DataService.getUserData { ch_dt ->
@@ -79,10 +81,10 @@ class ChangingAvatar : AppCompatActivity() {
 
                     DataService
                         .getAvatarPartPictureForWearing(
-                            avatar_parts_rectangle[switchedAvatarPart.number],
+                            chosenParts[switchedAvatarPart.number],
                             switchedAvatarPart,
-                            chosenParts[switchedAvatarPart.number]
-                        );
+                            avatar_parts_rectangle[switchedAvatarPart.number]
+                        )
                 }
             );
 

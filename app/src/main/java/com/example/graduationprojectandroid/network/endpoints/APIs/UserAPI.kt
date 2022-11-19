@@ -30,25 +30,26 @@ interface UserAPI {
 
 
 
-    @GET("/get_user_data")
+    @POST("mobileappusers/getuserdata")
     fun getUserData(
         @Query("token") token: String?
     ): Call<UserData>
 
     // for avatar
-    @POST("/changed_avatar")
+    @POST("mobileappusers/changedavatar")
     fun changedAvatar(
         @Body choosenParts: ArrayList<Int?>?,
         @Query("avatar_name") avatarName: String?,
         @Query("token") token: String?
     ): Call<SimpleServerAnswer>
 
-    @GET("/check_avatar_name")
+    @POST("mobileappusers/checkavatarname")
     fun checkAvatarName(
         @Query("avatar_name") avatarName: String?
     ): Call<SimpleServerAnswer>
 
-    @GET("/get_amount_of_one_type_avatar_parts")
+
+    @POST("mobileappusers/getamountofonetypeavatarparts")
     fun getAmountOfOneTypeAvatarParts(
         @Query("avatar_part_type") partNumber: String?
     ): Call<SimpleServerAnswer>

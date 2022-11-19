@@ -34,91 +34,92 @@
 22-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:14:9-46
 23        android:supportsRtl="true"
 23-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:15:9-35
-24        android:theme="@style/Theme.GraduationProjectAndroid"
-24-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:16:9-62
-25        android:usesCleartextTraffic="true" >
-25-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:17:9-44
-26        <activity
-26-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:9-21:40
-27            android:name="com.example.graduationprojectandroid.activities.StudentAssignments"
-27-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-58
-28            android:exported="false" />
-28-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:13-37
-29        <activity
-29-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:9-24:40
-30            android:name="com.example.graduationprojectandroid.activities.TeacherAssignments"
-30-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-58
-31            android:exported="false" />
-31-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:13-37
-32        <activity
-32-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:9-29:81
-33            android:name="com.example.graduationprojectandroid.activities.NewsItemPage"
-33-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-52
-34            android:exported="false"
-34-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:13-37
-35            android:screenOrientation="portrait"
-35-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:13-49
-36            android:theme="@style/Theme.GraduationProjectAndroid.NoActionBar" />
-36-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-78
-37        <activity
-37-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:9-33:52
-38            android:name="com.example.graduationprojectandroid.activities.ChangingAvatar"
-38-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-54
-39            android:exported="true"
-39-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:13-36
-40            android:screenOrientation="portrait" />
-40-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:13-49
-41        <activity
-41-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:9-37:52
-42            android:name="com.example.graduationprojectandroid.activities.CreatingTask"
-42-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-52
-43            android:exported="true"
-43-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:13-36
-44            android:screenOrientation="portrait" />
-44-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-49
-45        <activity
-45-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:9-41:52
-46            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
-46-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-53
-47            android:exported="true"
-47-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:13-36
-48            android:screenOrientation="portrait" />
-48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:41:13-49
-49        <activity
-49-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:9-45:52
-50            android:name="com.example.graduationprojectandroid.activities.MainPage"
-50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:43:13-48
-51            android:exported="true"
-51-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:44:13-36
-52            android:screenOrientation="portrait" />
-52-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:45:13-49
-53        <activity
-53-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:46:9-49:52
-54            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
-54-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:47:13-53
-55            android:exported="true"
-55-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:48:13-36
-56            android:screenOrientation="portrait" />
-56-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:13-49
-57        <activity
-57-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:50:9-59:20
-58            android:name="com.example.graduationprojectandroid.activities.MainActivity"
-58-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:13-52
-59            android:exported="true"
-59-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:52:13-36
-60            android:screenOrientation="portrait" >
-60-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:53:13-49
-61            <intent-filter>
-61-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:54:13-58:29
-62                <action android:name="android.intent.action.MAIN" />
-62-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:17-69
-62-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:25-66
-63
-64                <category android:name="android.intent.category.LAUNCHER" />
-64-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:17-77
-64-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:27-74
-65            </intent-filter>
-66        </activity>
-67    </application>
-68
-69</manifest>
+24        android:testOnly="true"
+25        android:theme="@style/Theme.GraduationProjectAndroid"
+25-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:16:9-62
+26        android:usesCleartextTraffic="true" >
+26-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:17:9-44
+27        <activity
+27-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:19:9-21:40
+28            android:name="com.example.graduationprojectandroid.activities.StudentAssignments"
+28-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:20:13-58
+29            android:exported="false" />
+29-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:21:13-37
+30        <activity
+30-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:22:9-24:40
+31            android:name="com.example.graduationprojectandroid.activities.TeacherAssignments"
+31-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:23:13-58
+32            android:exported="false" />
+32-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:24:13-37
+33        <activity
+33-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:25:9-29:81
+34            android:name="com.example.graduationprojectandroid.activities.NewsItemPage"
+34-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:26:13-52
+35            android:exported="false"
+35-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:27:13-37
+36            android:screenOrientation="portrait"
+36-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:28:13-49
+37            android:theme="@style/Theme.GraduationProjectAndroid.NoActionBar" />
+37-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:29:13-78
+38        <activity
+38-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:30:9-33:52
+39            android:name="com.example.graduationprojectandroid.activities.ChangingAvatar"
+39-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:31:13-54
+40            android:exported="true"
+40-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:32:13-36
+41            android:screenOrientation="portrait" />
+41-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:33:13-49
+42        <activity
+42-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:34:9-37:52
+43            android:name="com.example.graduationprojectandroid.activities.CreatingTask"
+43-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:35:13-52
+44            android:exported="true"
+44-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:36:13-36
+45            android:screenOrientation="portrait" />
+45-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:37:13-49
+46        <activity
+46-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:38:9-41:52
+47            android:name="com.example.graduationprojectandroid.activities.CreatingHabit"
+47-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:39:13-53
+48            android:exported="true"
+48-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:40:13-36
+49            android:screenOrientation="portrait" />
+49-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:41:13-49
+50        <activity
+50-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:42:9-45:52
+51            android:name="com.example.graduationprojectandroid.activities.MainPage"
+51-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:43:13-48
+52            android:exported="true"
+52-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:44:13-36
+53            android:screenOrientation="portrait" />
+53-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:45:13-49
+54        <activity
+54-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:46:9-49:52
+55            android:name="com.example.graduationprojectandroid.activities.LoginActivity"
+55-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:47:13-53
+56            android:exported="true"
+56-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:48:13-36
+57            android:screenOrientation="portrait" />
+57-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:49:13-49
+58        <activity
+58-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:50:9-59:20
+59            android:name="com.example.graduationprojectandroid.activities.MainActivity"
+59-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:51:13-52
+60            android:exported="true"
+60-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:52:13-36
+61            android:screenOrientation="portrait" >
+61-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:53:13-49
+62            <intent-filter>
+62-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:54:13-58:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:17-69
+63-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:55:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:17-77
+65-->D:\GitHubProjects\GraduationProjectAndroid\app\src\main\AndroidManifest.xml:57:27-74
+66            </intent-filter>
+67        </activity>
+68    </application>
+69
+70</manifest>

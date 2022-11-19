@@ -1,6 +1,5 @@
 package com.example.graduationprojectandroid.fragments.for_changing_avatar
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,8 +15,6 @@ class AvatarPartsAdapter(
     private val choosingListener: (Int, (Int)->Unit)->Unit
 ) : RecyclerView.Adapter<AvatarPartsAdapter.AvatarPartView>()
 {
-
-    private val EMPTIES = 30
 
     class AvatarPartView(
         var itemView: View
@@ -53,7 +50,7 @@ class AvatarPartsAdapter(
         )
     }
 
-    override fun getItemCount(): Int = (amount + EMPTIES)
+    override fun getItemCount(): Int = amount
 
     override fun onBindViewHolder(holder: AvatarPartView, position: Int) {
         val context = this

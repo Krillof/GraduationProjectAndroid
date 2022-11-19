@@ -1,6 +1,5 @@
 package com.example.graduationprojectandroid.network
 
-import android.content.Context
 import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
@@ -124,21 +123,20 @@ object DataService {
 
 
 
-    fun setPictureById(picture_id: Int, picture_view: ImageView){
-        RetrofitClient.setPictureById(picture_id, picture_view)
+    fun setMarketItemPicture(picture_id: Int, picture_view: ImageView){
+        RetrofitClient.getMarketItemPicture(picture_id, picture_view)
     }
 
     fun setPictureOfAvatarPart(type: Int, id: Int, view: ImageView){
-        RetrofitClient.setPictureOfAvatarPart(type, id, view);
+        RetrofitClient.getAvatarPartPicture(id, view)
     }
 
     fun setOtherUserFacePicture(user_login: String, picture_view: ImageView){
-        //TODO fun to get picture by login
+        RetrofitClient.getFacePicture(user_login, picture_view)
     }
 
-    // get body parts for avatar from server
-    fun getAvatarPartPictureForWearing(view: ImageView, ap: AvatarParts, id: Int){
-        RetrofitClient.setPictureOfAvatarPart(ap.number, id, view)
+    fun getAvatarPartPictureForWearing(number: Int, ap:AvatarParts, view: ImageView){
+        RetrofitClient.getAvatarPartPictureByTypeAndNumber(ap.number, number, view)
     }
 
 
@@ -187,7 +185,6 @@ object DataService {
             )
     }
 
-    // use in LoginActivity
     fun tryEnter(
         login: String, password: String,
         awaiter: (UserValidationAnswer.ValidationData)->Unit
@@ -287,13 +284,13 @@ object DataService {
 
 
 
-    fun getMarketItems(awaiter: (ArrayList<InventoryItem>) -> Unit){
+    fun getMarketItems(awaiter: (ArrayList<MarketItem>) -> Unit){
         RetrofitClient.getItemsAPI().getMarketItems(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))
     }
 
-    fun getInventoryItems(awaiter: (ArrayList<InventoryItem>)->Unit ){
+    fun getInventoryItems(awaiter: (ArrayList<MarketItem>)->Unit ){
         RetrofitClient.getItemsAPI().getInventoryItems(
             getUserToken()
         ).enqueue(standardListAnswer(awaiter))

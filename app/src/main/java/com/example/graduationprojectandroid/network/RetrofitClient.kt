@@ -13,10 +13,10 @@ import java.net.URL
 
 object RetrofitClient {
     //Retrofit
-    private const val BASE_URL = "https://graduationprojectwebapi.azurewebsites.net/api/"
+    private const val BASE_URL = "https://graduationprojectwebapi.azurewebsites.net/"
     private var mRetrofit: Retrofit
         = Retrofit.Builder()
-        .baseUrl(BASE_URL)
+        .baseUrl(BASE_URL + "api/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
@@ -66,8 +66,8 @@ object RetrofitClient {
             val urldisplay = urls[0]
             var mIcon11: Bitmap? = null
             try {
-                val `in` = URL(urldisplay).openStream()
-                mIcon11 = BitmapFactory.decodeStream(`in`)
+                val inputStream = URL(urldisplay).openStream()
+                mIcon11 = BitmapFactory.decodeStream(inputStream)
             } catch (e: Exception) {
                 Log.e("Ошибка передачи изображения", e.message!!)
                 e.printStackTrace()
@@ -76,18 +76,29 @@ object RetrofitClient {
         }
     }
 
-    fun setPictureByURL(URL: String?, view: ImageView) {
-        DownloadImageTask(view)
-            .execute("https://awontis.com/wp-content/uploads/revslider/home-business-slide3/icon-slide4.png")
+
+
+    private fun setPictureByURL(URL: String?, view: ImageView) {
+        DownloadImageTask(view).execute(URL)
     }
 
-    fun setPictureById(id: Int, view: ImageView) {
-        setPictureByURL(BASE_URL + "", view)
+    fun getAvatarPartPicture(id: Int, view: ImageView){
+        setPictureByURL(BASE_URL + "files/getavatarpartpicture?id="+id.toString(), view)
     }
 
-    fun setPictureOfAvatarPart(type: Int, id: Int, view: ImageView) {
-        //TODO: get from SERVER choosing_pictures for avatar parts
-        setPictureByURL(BASE_URL + "", view)
+    fun getAvatarPartPictureByTypeAndNumber(type: Int, number: Int, view: ImageView){
+        setPictureByURL(BASE_URL
+                + "files/getavatarpartpicturebytypeandnumber?type=" + type.toString()
+                + "&number=" + number.toString(),
+            view)
+    }
+
+    fun getMarketItemPicture(id: Int, view: ImageView){
+        setPictureByURL(BASE_URL + "files/getmarketitempicture?id="+id.toString(), view)
+    }
+
+    fun getFacePicture(login: String, view:ImageView){
+        setPictureByURL(BASE_URL + "files/getfacepicture?login="+login, view)
     }
 
     //---------getting picture

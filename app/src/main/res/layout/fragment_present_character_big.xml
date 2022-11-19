@@ -193,7 +193,7 @@
         />
 
     <View
-        android:id="@+id/background_rectangle"
+        android:id="@+id/eyes_rectangle"
 
         android:layout_width="54dp"
         android:layout_height="54dp"

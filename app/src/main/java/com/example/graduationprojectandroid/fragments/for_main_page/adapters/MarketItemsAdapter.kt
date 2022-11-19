@@ -8,41 +8,41 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduationprojectandroid.R
 import com.example.graduationprojectandroid.databinding.SimpleLayoutMarketItemBinding
-import com.example.graduationprojectandroid.data.Items.InventoryItem
+import com.example.graduationprojectandroid.data.Items.MarketItem
 import com.example.graduationprojectandroid.fragments.for_main_page.BuyDialogue
 import com.example.graduationprojectandroid.network.DataService
 
 class MarketItemsAdapter (
     private var fragment_manager: FragmentManager,
-    private var items_arr: ArrayList<InventoryItem>
+    private var items_arr: ArrayList<MarketItem>
 ) : RecyclerView.Adapter<MarketItemsAdapter.ItemView>()
 {
 
     class ItemView(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val binding = SimpleLayoutMarketItemBinding.bind(itemView)
 
-        fun bind(fragment_manager: FragmentManager, inventoryItem: InventoryItem)
+        fun bind(fragment_manager: FragmentManager, marketItem: MarketItem)
         = with(binding) {
-            moneyText.visibility = inventoryItem.visibility
-            marketItemBackground.visibility = inventoryItem.visibility
-            blackWhiteMoneyLogo.visibility = inventoryItem.visibility
-            moneyText.visibility = inventoryItem.visibility
-            marketItemBackground.visibility = inventoryItem.visibility
-            picture.visibility = inventoryItem.visibility
+            moneyText.visibility = marketItem.visibility
+            marketItemBackground.visibility = marketItem.visibility
+            blackWhiteMoneyLogo.visibility = marketItem.visibility
+            moneyText.visibility = marketItem.visibility
+            marketItemBackground.visibility = marketItem.visibility
+            picture.visibility = marketItem.visibility
 
-            if (inventoryItem.visibility == View.VISIBLE) {
+            if (marketItem.visibility == View.VISIBLE) {
                 //TODO: check: NetworkService or DataService?
-                DataService.setPictureById(inventoryItem.picture_id, picture)
+                DataService.setMarketItemPicture(marketItem.id, picture)
             }
 
-            moneyText.text = inventoryItem.money.toString()
+            moneyText.text = marketItem.money.toString()
 
-            if (inventoryItem.visibility == View.VISIBLE)
+            if (marketItem.visibility == View.VISIBLE)
                 layout.setOnClickListener {
                     var df: DialogFragment? = null
-                    df = BuyDialogue(inventoryItem) {
+                    df = BuyDialogue(marketItem) {
                         if (it){
-                            //TODO: Buy an inventoryItem by DataService
+                            //TODO: Buy an marketItem by DataService
                         }
 
                         df?.dismiss()
