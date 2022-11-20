@@ -19,6 +19,7 @@ import com.example.graduationprojectandroid.databinding.FragmentInputBinding
 class Input(
     private val hint: String,
     private val errorMessage: String,
+    private val startValue: String,
     private val listener: (value: String)->Unit
 ): Fragment() {
 
@@ -46,6 +47,7 @@ class Input(
         }
 
         inputText.hint = hint
+        inputText.setText(startValue)
         inputText.doAfterTextChanged {
             listener(inputText.text.toString())
         }
@@ -58,8 +60,8 @@ class Input(
 
     companion object {
         @JvmStatic
-        fun newInstance(hint: String, errorMessage: String = "",
+        fun newInstance(hint: String, errorMessage: String = "", startValue: String = "",
                         listener: (value: String) -> Unit = {}) =
-            Input(hint, errorMessage, listener)
+            Input(hint, errorMessage, startValue, listener)
     }
 }

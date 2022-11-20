@@ -9,12 +9,12 @@ import com.example.graduationprojectandroid.PreferencesService
 import com.example.graduationprojectandroid.fragments.for_changing_avatar.AvatarParts
 import com.example.graduationprojectandroid.data.Items.*
 import com.example.graduationprojectandroid.data.States.HabitDoneStates
-import com.example.graduationprojectandroid.network.endpoints.SimpleServerAnswer
-import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
+import com.example.graduationprojectandroid.network.endpoints.ServerAnswer
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.system.exitProcess
 
 object DataService {
 
@@ -22,6 +22,9 @@ object DataService {
         //TODO
         Toast.makeText(App.getAppContext(), "Error on server", Toast.LENGTH_SHORT).show()
         Log.println(Log.ERROR, "Callback error", message)
+
+        android.os.Process.killProcess(android.os.Process.myPid())
+        exitProcess(0)
     }
 
     class DataCallback<T>(
@@ -29,6 +32,7 @@ object DataService {
     ) : Callback<T>{
         override fun onResponse(call: Call<T>,  response: Response<T>){
             if (response.isSuccessful){
+                Log.println(Log.DEBUG, "Got succesfull response!", response.body()!!.toString())
                 awaiter(response.body()!!)
             } else {
                 openErrorPage("Response wasn't succesfull: "
@@ -45,49 +49,56 @@ object DataService {
 
 
     private fun standardStringAnswer(awaiter: (String) -> Unit)
-    : DataCallback<SimpleServerAnswer> {
-        return DataCallback<SimpleServerAnswer>{
+    : DataCallback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
             it.checkErrors()
-            awaiter(it.data!!)
+            awaiter(it.Data!!)
         }
     }
 
-    private fun standardUserValidationAnswer(
-        awaiter: (UserValidationAnswer.ValidationData)->Unit
-    ) : Callback<UserValidationAnswer> {
-        return DataCallback<UserValidationAnswer>{
+    private fun standardValidationAnswerData(
+        awaiter: (ValidationData)->Unit
+    ) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
             it.checkErrors()
-            awaiter(it.data!!)
+            awaiter(Gson().fromJson(it.Data!!, ValidationData::class.java))
         }
     }
 
-    private fun standardBooleanAnswer(awaiter: (Boolean) -> Unit) : Callback<SimpleServerAnswer> {
-        return DataCallback<SimpleServerAnswer>{
+    private fun standardBooleanAnswer(awaiter: (Boolean) -> Unit) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
             it.checkErrors()
-            awaiter(it.data == "1")
+            awaiter(it.Data == "1")
         }
     }
 
-    private fun standardVoidAnswer(awaiter: () -> Unit) : Callback<SimpleServerAnswer> {
-        return DataCallback<SimpleServerAnswer>{
+    private fun standardVoidAnswer(awaiter: () -> Unit) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
             it.checkErrors()
             awaiter()
         }
     }
 
-    private fun standardIntAnswer(awaiter: (Int) -> Unit) : Callback<SimpleServerAnswer> {
-        return DataCallback<SimpleServerAnswer>{
+    private fun standardIntAnswer(awaiter: (Int) -> Unit) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
             it.checkErrors()
-            awaiter(it.data!!.toInt())
+            awaiter(it.Data!!.toInt())
         }
     }
 
-    private fun <E> standardListAnswer(awaiter: (ArrayList<E>) -> Unit) : Callback<SimpleServerAnswer> {
-        return DataCallback<SimpleServerAnswer> {
+    private fun standardUserDataAnswer(awaiter: (UserData) -> Unit) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer>{
+            it.checkErrors()
+            awaiter(Gson().fromJson(it.Data!!, UserData::class.java))
+        }
+    }
+
+    private fun <E> standardListAnswer(awaiter: (ArrayList<E>) -> Unit) : Callback<ServerAnswer> {
+        return DataCallback<ServerAnswer> {
             it.checkErrors()
             awaiter(
                 Gson().fromJson(
-                    it.data,
+                    it.Data,
                     object : GenericsAsTypeParameter<ArrayList<E>>() {}.type
                 )
             )
@@ -149,17 +160,27 @@ object DataService {
         PreferencesService.saveToken(token)
     }
 
+    fun saveLogin(login: String){
+        PreferencesService.saveLogin(login)
+    }
+
     private var token: String? = null
 
 
     private fun getUserToken() : String {
+        if (token == null)
+            token = PreferencesService.loadToken()
         return token!!
+    }
+
+    private fun getUserLogin() : String {
+        return PreferencesService.loadLogin()!!
     }
 
     // when enter in app, to not login again
     fun checkToken(awaiter: (Boolean)->Unit) {
         token = PreferencesService.loadToken()
-        RetrofitClient.getUserAPI().checkToken(getUserToken())
+        RetrofitClient.getUserAPI().checkToken(getUserLogin(), getUserToken())
             .enqueue(standardBooleanAnswer(awaiter))
     }
 
@@ -167,30 +188,36 @@ object DataService {
 
 
 
-
+    fun test(awaiter: (String)->Unit){
+        RetrofitClient.getUserAPI().test("administrator", "12345").enqueue(
+            DataCallback<String>{
+                awaiter(it)
+            }
+        )
+    }
 
     fun getUserData(awaiter: (UserData) -> Unit) {
         RetrofitClient.getUserAPI().getUserData(getUserToken()).enqueue(
-            DataCallback<UserData>(awaiter)
+            standardUserDataAnswer(awaiter)
         )
     }
 
     fun tryRegister(
         login: String, password: String,
-        awaiter: (UserValidationAnswer.ValidationData)->Unit
+        awaiter: (ValidationData)->Unit
     ){
         RetrofitClient.getUserAPI().tryRegister(login, password)
             .enqueue(
-                standardUserValidationAnswer(awaiter)
+                standardValidationAnswerData(awaiter)
             )
     }
 
     fun tryEnter(
         login: String, password: String,
-        awaiter: (UserValidationAnswer.ValidationData)->Unit
+        awaiter: (ValidationData)->Unit
     ){
         RetrofitClient.getUserAPI().tryEnter(login, password)
-            .enqueue(standardUserValidationAnswer(awaiter))
+            .enqueue(standardValidationAnswerData(awaiter))
     }
 
 
@@ -302,7 +329,7 @@ object DataService {
 
 
     fun getNews(awaiter: (ArrayList<NewsItem>)->Unit){
-        RetrofitClient.getNewsAPI().news.enqueue(standardListAnswer(awaiter))
+        RetrofitClient.getNewsAPI().getNews().enqueue(standardListAnswer(awaiter))
     }
 
     fun getNewsItemById(id: Int, awaiter: (NewsItem)->Unit){

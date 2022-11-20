@@ -2,11 +2,15 @@ package com.example.graduationprojectandroid.network.endpoints
 
 import com.example.graduationprojectandroid.network.DataService
 
-abstract class ServerAnswer {
-    abstract var errors: String?
-    fun checkErrors() {
-        if (errors != "") {
-            DataService.openErrorPage(errors!!)
-        }
+data class ServerAnswer(
+    var Errors: String?,
+    var Data: String?
+) {
+    fun checkErrors(){
+        if (Errors == null)
+            DataService.openErrorPage("Errors is null")
+
+        if (Errors != "")
+            DataService.openErrorPage(Data!!)
     }
 }

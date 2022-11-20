@@ -18,7 +18,8 @@ import com.example.graduationprojectandroid.fragments.Input
 class GetLoginPassword(
     private var listener: (login: String, password: String, isRegistering: Boolean) -> Unit,
     private val loginErrorMessage: String,
-    private val passwordErrorMessage: String
+    private val passwordErrorMessage: String,
+    private val prevEnteredLogin: String = ""
 ) : Fragment() {
 
     private var isRegistering = false
@@ -59,11 +60,12 @@ class GetLoginPassword(
 
             if (input1 == null) input1 = Input.newInstance(
                 getString(R.string.login),
-                loginErrorMessage
+                loginErrorMessage,
+                prevEnteredLogin
             )
             replace(R.id.input_1, input1!!) // Может быть, что id берётся для другого. Берегись и проверяй!
 
-            if (input2 == null) input2= Input.newInstance(
+            if (input2 == null) input2 = Input.newInstance(
                 getString(R.string.password),
                 passwordErrorMessage
             )

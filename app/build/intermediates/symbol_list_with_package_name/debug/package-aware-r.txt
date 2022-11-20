@@ -2071,7 +2071,6 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id avatar_parts_list
-id background_rectangle
 id bad_habit_checkbox_pic
 id bad_habit_checkbox_touch_area
 id barrier
@@ -2234,6 +2233,7 @@ id exp_text
 id exp_text_header
 id expand_activities_button
 id expanded_menu
+id eyes_rectangle
 id fade
 id fill
 id fill_horizontal

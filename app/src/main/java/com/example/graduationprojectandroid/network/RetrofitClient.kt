@@ -1,28 +1,37 @@
 package com.example.graduationprojectandroid.network
 
-import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.util.Log
 import android.widget.ImageView
 import com.example.graduationprojectandroid.network.endpoints.APIs.*
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.net.URL
+import java.util.concurrent.TimeUnit
+
 
 object RetrofitClient {
     //Retrofit
     private const val BASE_URL = "https://graduationprojectwebapi.azurewebsites.net/"
+    val okHttpClient: OkHttpClient = OkHttpClient.Builder()
+        .readTimeout(60, TimeUnit.SECONDS)
+        .connectTimeout(60, TimeUnit.SECONDS)
+        .build()
     private var mRetrofit: Retrofit
         = Retrofit.Builder()
         .baseUrl(BASE_URL + "api/")
+        .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
+        .client(okHttpClient)
         .build()
 
+
+
     //      APIs
-
-
     fun getUserAPI(): UserAPI {
         return mRetrofit.create(UserAPI::class.java)
     }

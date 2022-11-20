@@ -7,9 +7,8 @@ import androidx.fragment.app.commit
 import com.example.graduationprojectandroid.fragments.for_login.GetLoginPassword
 import com.example.graduationprojectandroid.fragments.for_login.OrEnterBy
 import com.example.graduationprojectandroid.R
-import com.example.graduationprojectandroid.fragments.for_main_page.InfoDialogue
+import com.example.graduationprojectandroid.data.Items.ValidationData
 import com.example.graduationprojectandroid.network.DataService
-import com.example.graduationprojectandroid.network.endpoints.UserValidationAnswer
 import kotlin.system.exitProcess
 
 
@@ -20,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         val PASSWORD = "PASSWORD"
     }
 
-    private fun setGetLoginPassword(validationData: UserValidationAnswer.ValidationData){
+    private fun setGetLoginPassword(validationData: ValidationData, prevLogin: String = ""){
         supportFragmentManager.commit {
             var loginErrorMessage: String = ""
             var passwordErrorMessage: String = ""
@@ -34,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
                 { login, password, isRegistering ->
                     tryGetIn(login, password, isRegistering)
                 },
-                loginErrorMessage, passwordErrorMessage)
+                loginErrorMessage, passwordErrorMessage, prevLogin)
             replace(R.id.main_login_fragment, getLoginPassword)
         }
     }
@@ -47,10 +46,11 @@ class LoginActivity : AppCompatActivity() {
             DataService.tryRegister(login, password) { validationData ->
                 if (validationData.isValid()) {
                     DataService.saveToken(validationData.token!!)
+                    DataService.saveLogin(login)
                     MainPage.currentState = MainPage.MainPageStates.DOS
                     startActivity(Intent(context, ChangingAvatar::class.java))
                     finish()
-                } else setGetLoginPassword(validationData)
+                } else setGetLoginPassword(validationData, login)
                 /*
                 TODO: why is it here?
                 else {
@@ -66,9 +66,10 @@ class LoginActivity : AppCompatActivity() {
             DataService.tryEnter(login, password){ validationData ->
                 if (validationData.isValid()){
                     DataService.saveToken(validationData.token!!)
+                    DataService.saveLogin(login)
                     startActivity(Intent(this, MainPage::class.java))
                     finish()
-                } else setGetLoginPassword(validationData)
+                } else setGetLoginPassword(validationData, login)
             }
         }
     }
@@ -76,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         moveTaskToBack(true)
         android.os.Process.killProcess(android.os.Process.myPid())
-        exitProcess(1)
+        exitProcess(0)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
